@@ -3,8 +3,14 @@
 
 <table border=0>
 <tr valign=top><td>	
-	<b>Thank you for your interest in SSEPlus!</b><br><br>Here are a few quick links to get you started:	
+	<b>Thank you for your interest in SSEPlus!</b><br>
+	<br>
+	Here are a few quick links to get you started:	
 	<table border=1 cellspacing=0>
+	<tr>
+	  <td>\htmlonly <a href=http://sourceforge.net/projects/sseplus><b>SourceForge Project</b></a> \endhtmlonly</td>
+	  <td>Downloads, forums, SVN access, and more</td>
+	</tr>
 	<tr>
 	  <td>\htmlonly <a href=fntable.html><b>Function Table</b></a> \endhtmlonly</td>
 	  <td>Alphabetical list of functions</td>
