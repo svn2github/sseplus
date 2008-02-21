@@ -23,7 +23,7 @@
 	
 	To use SSEPlus in your project, include the files found in "SSEPlus_Root/SSEPlus/include".
 	
-	For an introduction to SIMD programming try the MSDN entry on MSDN \htmlonly <a href=http://www.google.com/search?hl=en&q=MMX+SSE+and+SSE2+Intrinsics+site%3Atechnet.microsoft.com&btnI=745><b>MMX SSE and SSE2 Intrinsics</b></a> \endhtmlonly		
+	For an introduction to SIMD programming try this entry on MSDN \htmlonly <a href=http://search.msdn.microsoft.com/Default.aspx?brand=Msdn&refinement=00&locale=en-us&lang=en-us%2fDefault.aspx&query=MMX%20SSE%20and%20SSE2%20Intrinsics><b>MMX SSE and SSE2 Intrinsics</b></a> \endhtmlonly		
 	
 	</td><td>\image html "SSEPlus.png"</td></tr>
 </table>
