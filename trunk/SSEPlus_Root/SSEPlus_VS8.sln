@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSEPlus", "SSEPlus", "{40939260-1034-4384-AC8B-AD07CA9484F1}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\SSEPlus.h = SSEPlus\include\SSEPlus.h
+		SSEPlus\include\SSEPlus_base.h = SSEPlus\include\SSEPlus_base.h
+		SSEPlus\include\SSEPlus_platform.h = SSEPlus\include\SSEPlus_platform.h
+		SSEPlus\include\SSEPlus_REF.h = SSEPlus\include\SSEPlus_REF.h
+		SSEPlus\include\SSEPlus_SSE.h = SSEPlus\include\SSEPlus_SSE.h
+		SSEPlus\include\SSEPlus_SSE2.h = SSEPlus\include\SSEPlus_SSE2.h
+		SSEPlus\include\SSEPlus_SSE3.h = SSEPlus\include\SSEPlus_SSE3.h
+		SSEPlus\include\SSEPlus_SSE4.1.h = SSEPlus\include\SSEPlus_SSE4.1.h
+		SSEPlus\include\SSEPlus_SSE4.2.h = SSEPlus\include\SSEPlus_SSE4.2.h
+		SSEPlus\include\SSEPlus_SSE4a.h = SSEPlus\include\SSEPlus_SSE4a.h
+		SSEPlus\include\SSEPlus_SSSE3.h = SSEPlus\include\SSEPlus_SSSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "number", "number", "{1C5EA8AA-FE76-4215-902C-0690FEDD3952}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\number\SSEPlus_number_REF.h = SSEPlus\include\number\SSEPlus_number_REF.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "arithmetic", "arithmetic", "{19B644A9-F5C4-4F8A-AAF0-29C54F985B73}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\arithmetic\SSEPlus_arithmetic_REF.h = SSEPlus\include\arithmetic\SSEPlus_arithmetic_REF.h
+		SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE2.h = SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE2.h
+		SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE3.h = SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logical", "logical", "{1EEF414C-83E0-4677-BED2-D95F6EA5394D}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\logical\SSEPlus_logical_REF.h = SSEPlus\include\logical\SSEPlus_logical_REF.h
+		SSEPlus\include\logical\SSEPlus_logical_SSE2.h = SSEPlus\include\logical\SSEPlus_logical_SSE2.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "native", "native", "{D8972632-EBC9-4280-803D-2CA3194234CD}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\native\SSEPlus_native_SSE.h = SSEPlus\include\native\SSEPlus_native_SSE.h
+		SSEPlus\include\native\SSEPlus_native_SSE2.h = SSEPlus\include\native\SSEPlus_native_SSE2.h
+		SSEPlus\include\native\SSEPlus_native_SSE3.h = SSEPlus\include\native\SSEPlus_native_SSE3.h
+		SSEPlus\include\native\SSEPlus_native_SSE4.1.h = SSEPlus\include\native\SSEPlus_native_SSE4.1.h
+		SSEPlus\include\native\SSEPlus_native_SSE4.2.h = SSEPlus\include\native\SSEPlus_native_SSE4.2.h
+		SSEPlus\include\native\SSEPlus_native_SSE4a.h = SSEPlus\include\native\SSEPlus_native_SSE4a.h
+		SSEPlus\include\native\SSEPlus_native_SSSE3.h = SSEPlus\include\native\SSEPlus_native_SSSE3.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_Sanity", "SSEPlus_Test\C_Sanity\C_Sanity_VS8.vcproj", "{036975A0-FEFE-4368-B2DC-00AED74162E1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "SSEPlus_Test\UnitTest\UnitTest_VS8.vcproj", "{F03780C2-A5F6-469E-9B61-C737CBD0F256}"
+	ProjectSection(ProjectDependencies) = postProject
+		{036975A0-FEFE-4368-B2DC-00AED74162E1} = {036975A0-FEFE-4368-B2DC-00AED74162E1}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "emulation", "emulation", "{FB805B4D-7B84-41E1-9F8A-0FCE84BED95F}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\emulation\SSEPlus_emulation_REF.h = SSEPlus\include\emulation\SSEPlus_emulation_REF.h
+		SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h
+		SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "map", "map", "{3D5F3F95-E2BB-4A00-A66E-65BD341FEBC7}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\map\SSEPlus_MAP_SSE2.h = SSEPlus\include\map\SSEPlus_MAP_SSE2.h
+		SSEPlus\include\map\SSEPlus_MAP_SSE3.h = SSEPlus\include\map\SSEPlus_MAP_SSE3.h
+		SSEPlus\include\map\SSEPlus_UNMAP_ALL.h = SSEPlus\include\map\SSEPlus_UNMAP_ALL.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Debug|Win32.Build.0 = Debug|Win32
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Debug|x64.ActiveCfg = Debug|x64
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Debug|x64.Build.0 = Debug|x64
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Release|Win32.ActiveCfg = Release|Win32
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Release|Win32.Build.0 = Release|Win32
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Release|x64.ActiveCfg = Release|x64
+		{036975A0-FEFE-4368-B2DC-00AED74162E1}.Release|x64.Build.0 = Release|x64
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Debug|Win32.Build.0 = Debug|Win32
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Debug|x64.ActiveCfg = Debug|x64
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Debug|x64.Build.0 = Debug|x64
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Release|Win32.ActiveCfg = Release|Win32
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Release|Win32.Build.0 = Release|Win32
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Release|x64.ActiveCfg = Release|x64
+		{F03780C2-A5F6-469E-9B61-C737CBD0F256}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C5EA8AA-FE76-4215-902C-0690FEDD3952} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+		{19B644A9-F5C4-4F8A-AAF0-29C54F985B73} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+		{1EEF414C-83E0-4677-BED2-D95F6EA5394D} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+		{D8972632-EBC9-4280-803D-2CA3194234CD} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+		{FB805B4D-7B84-41E1-9F8A-0FCE84BED95F} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+		{3D5F3F95-E2BB-4A00-A66E-65BD341FEBC7} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSEPlus", "SSEPlus", "{57367AD4-4041-4B94-881E-DCF97ED721F6}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\SSEPlus.h = SSEPlus\include\SSEPlus.h
+		SSEPlus\include\SSEPlus_base.h = SSEPlus\include\SSEPlus_base.h
+		SSEPlus\include\SSEPlus_platform.h = SSEPlus\include\SSEPlus_platform.h
+		SSEPlus\include\SSEPlus_REF.h = SSEPlus\include\SSEPlus_REF.h
+		SSEPlus\include\SSEPlus_SSE.h = SSEPlus\include\SSEPlus_SSE.h
+		SSEPlus\include\SSEPlus_SSE2.h = SSEPlus\include\SSEPlus_SSE2.h
+		SSEPlus\include\SSEPlus_SSE3.h = SSEPlus\include\SSEPlus_SSE3.h
+		SSEPlus\include\SSEPlus_SSE4.1.h = SSEPlus\include\SSEPlus_SSE4.1.h
+		SSEPlus\include\SSEPlus_SSE4.2.h = SSEPlus\include\SSEPlus_SSE4.2.h
+		SSEPlus\include\SSEPlus_SSE4a.h = SSEPlus\include\SSEPlus_SSE4a.h
+		SSEPlus\include\SSEPlus_SSSE3.h = SSEPlus\include\SSEPlus_SSSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "number", "number", "{576B9D7D-1289-4C93-9481-DA95D52EB01B}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\number\SSEPlus_number_REF.h = SSEPlus\include\number\SSEPlus_number_REF.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "arithmetic", "arithmetic", "{C406A1CF-DF79-4A97-841B-997002BD4F5C}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\arithmetic\SSEPlus_arithmetic_REF.h = SSEPlus\include\arithmetic\SSEPlus_arithmetic_REF.h
+		SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE2.h = SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE2.h
+		SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE3.h = SSEPlus\include\arithmetic\SSEPlus_arithmetic_SSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logical", "logical", "{CF41646C-F5E2-4D86-A467-58C34C17D0D5}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\logical\SSEPlus_logical_REF.h = SSEPlus\include\logical\SSEPlus_logical_REF.h
+		SSEPlus\include\logical\SSEPlus_logical_SSE2.h = SSEPlus\include\logical\SSEPlus_logical_SSE2.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "native", "native", "{BAE06500-EA1E-4610-B0C3-214B53A77DDF}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\native\SSEPlus_native_SSE.h = SSEPlus\include\native\SSEPlus_native_SSE.h
+		SSEPlus\include\native\SSEPlus_native_SSE2.h = SSEPlus\include\native\SSEPlus_native_SSE2.h
+		SSEPlus\include\native\SSEPlus_native_SSE3.h = SSEPlus\include\native\SSEPlus_native_SSE3.h
+		SSEPlus\include\native\SSEPlus_native_SSE4.1.h = SSEPlus\include\native\SSEPlus_native_SSE4.1.h
+		SSEPlus\include\native\SSEPlus_native_SSE4.2.h = SSEPlus\include\native\SSEPlus_native_SSE4.2.h
+		SSEPlus\include\native\SSEPlus_native_SSE4a.h = SSEPlus\include\native\SSEPlus_native_SSE4a.h
+		SSEPlus\include\native\SSEPlus_native_SSSE3.h = SSEPlus\include\native\SSEPlus_native_SSSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "emulation", "emulation", "{0EB3243B-2182-4D58-ABBA-00A03A5F0E4C}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\emulation\SSEPlus_emulation_REF.h = SSEPlus\include\emulation\SSEPlus_emulation_REF.h
+		SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h
+		SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "map", "map", "{658F37DE-BEA3-4A6F-B0FC-A3716FC266C9}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\map\SSEPlus_MAP_SSE2.h = SSEPlus\include\map\SSEPlus_MAP_SSE2.h
+		SSEPlus\include\map\SSEPlus_MAP_SSE3.h = SSEPlus\include\map\SSEPlus_MAP_SSE3.h
+		SSEPlus\include\map\SSEPlus_UNMAP_ALL.h = SSEPlus\include\map\SSEPlus_UNMAP_ALL.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "SSEPlus_Test\UnitTest\UnitTest_VS9.vcproj", "{C95C8424-6D59-40E4-8904-619F0B1B7926}"
+	ProjectSection(ProjectDependencies) = postProject
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60} = {162D2217-8DCA-4CD2-AB6D-05C564A5BD60}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_Sanity", "SSEPlus_Test\C_Sanity\C_Sanity_VS9.vcproj", "{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "convert", "convert", "{E19A9A88-501A-4F98-BD8C-EEE093D7CB40}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\convert\SSEPlus_convert_SSE2.h = SSEPlus\include\convert\SSEPlus_convert_SSE2.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Debug|Win32.Build.0 = Debug|Win32
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Debug|x64.ActiveCfg = Debug|x64
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Debug|x64.Build.0 = Debug|x64
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Release|Win32.ActiveCfg = Release|Win32
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Release|Win32.Build.0 = Release|Win32
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Release|x64.ActiveCfg = Release|x64
+		{C95C8424-6D59-40E4-8904-619F0B1B7926}.Release|x64.Build.0 = Release|x64
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Debug|Win32.ActiveCfg = Debug|Win32
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Debug|Win32.Build.0 = Debug|Win32
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Debug|x64.ActiveCfg = Debug|x64
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Debug|x64.Build.0 = Debug|x64
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Release|Win32.ActiveCfg = Release|Win32
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Release|Win32.Build.0 = Release|Win32
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Release|x64.ActiveCfg = Release|x64
+		{162D2217-8DCA-4CD2-AB6D-05C564A5BD60}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{576B9D7D-1289-4C93-9481-DA95D52EB01B} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{C406A1CF-DF79-4A97-841B-997002BD4F5C} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{CF41646C-F5E2-4D86-A467-58C34C17D0D5} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{BAE06500-EA1E-4610-B0C3-214B53A77DDF} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{0EB3243B-2182-4D58-ABBA-00A03A5F0E4C} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{658F37DE-BEA3-4A6F-B0FC-A3716FC266C9} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{E19A9A88-501A-4F98-BD8C-EEE093D7CB40} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+	EndGlobalSection
+EndGlobal
