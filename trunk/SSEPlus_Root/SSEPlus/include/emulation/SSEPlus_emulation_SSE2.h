@@ -607,18 +607,55 @@ __m128 ssp_round_ps_SSE2( __m128  a, int iRoundMode )
     return A.f;
 }
 
+SSEPLUS_FORCEINLINE
+__m128d ssp_round_pd_SSE2( __m128d  a, int iRoundMode )
+{
+    #pragma message( "" WARN() "SSEPlus SSE2 rounding functions overflow if input outside 32 bit integer range" )
+
+    enum ENUM_MXCSR
+    {
+        CSR_ROUND_TO_EVEN = 0x00001F80, //
+        CSR_ROUND_DOWN    = 0x00003F80, //
+        CSR_ROUND_UP      = 0x00005F80, //
+        CSR_ROUND_TRUNC   = 0x00007F80, //(_mm_getcsr() & ~_mm_ROUND_MASK) | _mm_ROUND_TOWARD_ZERO;
+    }; 
+
+    ssp_u32 bak = _mm_getcsr();
+    ssp_m128 A, i;
+    A.d = a;
+
+    switch( iRoundMode & 0x3 )
+    {
+    case SSEPLUS_FROUND_CUR_DIRECTION:                                      break;
+    case SSEPLUS_FROUND_TO_ZERO:            _mm_setcsr( CSR_ROUND_TRUNC  ); break;
+    case SSEPLUS_FROUND_TO_POS_INF:         _mm_setcsr( CSR_ROUND_UP     ); break;
+    case SSEPLUS_FROUND_TO_NEG_INF:         _mm_setcsr( CSR_ROUND_DOWN   ); break;
+    default:                            _mm_setcsr( CSR_ROUND_TO_EVEN); break;
+    }
+    
+    i.i    = _mm_cvtpd_epi32( A.d );            // Convert to integer
+    A.d    = _mm_cvtepi32_pd( i.i );            // Convert back to float
+
+    _mm_setcsr( bak );
+    return A.d;
+}
+
 /** \IMP{SSE2,_mm_round_ss, SSE4.1} */
 SSEPLUS_FORCEINLINE
 __m128 ssp_round_ss_SSE2( __m128  a, __m128  b, int iRoundMode )
 {
-    ssp_m128 A,B;
-    A.f = a;
-    B.f = ssp_round_ps_SSE2( b, iRoundMode );
+	//Commented code will generate linker error in x64 platform
+    //ssp_m128 A,B;
+    //A.f = a;
+    //B.f = ssp_round_ps_SSE2( b, iRoundMode );
 
-    A.f = _mm_move_ss( A.f, B.f );
+    //A.f = _mm_move_ss( A.f, B.f );
 
-    //A.f32[0] = B.f32[0];
-    return A.f;
+    ////A.f32[0] = B.f32[0];
+	//return A.f;
+	b = ssp_round_ps_SSE2(b, iRoundMode);
+	b = _mm_shuffle_ps(b, a, _MM_SHUFFLE(1,1,0,0));
+    return _mm_shuffle_ps(b, a, _MM_SHUFFLE(3,2,2,0)); 
 }
 
 /** \IMP{SSE2,_mm_ceil_ps, SSE4.1} */
@@ -635,26 +672,52 @@ __m128 ssp_floor_ps_SSE2( __m128 a )
     return ssp_round_ps_SSE2( a, SSEPLUS_FROUND_TO_NEG_INF );
 }
 
+/** \IMP{SSE2,_mm_floor_pd, SSE4.1} */
+SSEPLUS_FORCEINLINE
+__m128d ssp_floor_pd_SSE2( __m128d a )
+{
+    return ssp_round_pd_SSE2( a, SSEPLUS_FROUND_TO_NEG_INF );
+}
 
-//SSEPLUS_FORCEINLINE
-//__m128d _mm_floor_pd( __m128d a ) //_mm_ceil_pd [68 cycles]
-//{
-//    return _mm_floor_pd_REF(a);
-//
-//    //a.f64[0] = floor( a.f64[0] );
-//    //a.f64[1] = floor( a.f64[1] );
-//    //return a;
-//}
+/** \IMP{SSE2,_mm_ceil_pd, SSE4.1} */
+SSEPLUS_FORCEINLINE
+__m128d ssp_ceil_pd_SSE2( __m128d a )
+{
+    return ssp_round_pd_SSE2( a, SSEPLUS_FROUND_TO_POS_INF );
+}
 
-//SSEPLUS_FORCEINLINE
-//__m128d _mm_ceil_pd( __m128d a ) //_mm_ceil_pd [75 cycles]
-//{
-//    return _mm_ceil_pd_REF(a);
-//
-//    //a.f64[0] = ceil( a.f64[0] );
-//    //a.f64[1] = ceil( a.f64[1] );
-//    //return a;
-//}
+/** \IMP{SSE2,_mm_ceil_sd, SSE4.1} */
+SSEPLUS_FORCEINLINE __m128d ssp_floor_sd_SSE2( __m128d a, __m128d b)                              
+{
+	b = ssp_round_pd_SSE2(b, SSEPLUS_FROUND_TO_NEG_INF );
+
+    return _mm_shuffle_pd(b, a, _MM_SHUFFLE2(1,0));
+}
+
+/** \IMP{SSE2,_mm_ceil_sd, SSE4.1} */
+SSEPLUS_FORCEINLINE __m128d ssp_ceil_sd_SSE2( __m128d a, __m128d b)                              
+{
+	b = ssp_round_pd_SSE2(b, SSEPLUS_FROUND_TO_POS_INF );
+
+    return _mm_shuffle_pd(b, a, _MM_SHUFFLE2(1,0));
+}
+
+/** \IMP{SSE2,_mm_floor_ss, SSE4.1} */
+SSEPLUS_FORCEINLINE __m128 ssp_floor_ss_SSE2( __m128 a, __m128 b)                              
+{
+	b = ssp_round_ps_SSE2(b, SSEPLUS_FROUND_TO_NEG_INF );
+	b = _mm_shuffle_ps(b, a, _MM_SHUFFLE(1,1,0,0));
+    return _mm_shuffle_ps(b, a, _MM_SHUFFLE(3,2,2,0));
+}
+
+/** \IMP{SSE2,_mm_ceil_ss, SSE4.1} */
+SSEPLUS_FORCEINLINE __m128 ssp_ceil_ss_SSE2( __m128 a, __m128 b)                              
+{
+	b = ssp_round_ps_SSE2(b, SSEPLUS_FROUND_TO_POS_INF );
+	b = _mm_shuffle_ps(b, a, _MM_SHUFFLE(1,1,0,0));
+    return _mm_shuffle_ps(b, a, _MM_SHUFFLE(3,2,2,0));
+}
+
 
 //SSEPLUS_FORCEINLINE
 //__m128i _mm_mul_epi32( __m128i a, __m128i b ) //_mm_mul_epi32
