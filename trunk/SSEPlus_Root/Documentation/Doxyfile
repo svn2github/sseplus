@@ -4,16 +4,16 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "\"SSEPlus\"          "
+PROJECT_NAME           = "\"SSEPlus\"           "
 PROJECT_NUMBER         = 
-OUTPUT_DIRECTORY       = "publish         "
+OUTPUT_DIRECTORY       = "publish          "
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = English
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
-ABBREVIATE_BRIEF       = "The $name class          " \
-                         "The $name widget          " \
-                         "The $name file          " \
+ABBREVIATE_BRIEF       = "The $name class           " \
+                         "The $name widget           " \
+                         "The $name file           " \
                          is \
                          provides \
                          specifies \
@@ -25,7 +25,7 @@ ABBREVIATE_BRIEF       = "The $name class          " \
 ALWAYS_DETAILED_SEC    = NO
 INLINE_INHERITED_MEMB  = NO
 FULL_PATH_NAMES        = YES
-STRIP_FROM_PATH        = D:\Sandbox
+STRIP_FROM_PATH        = D:\Sandbox\SSEPlus_Root\SSEPlus
 STRIP_FROM_INC_PATH    = 
 SHORT_NAMES            = NO
 JAVADOC_AUTOBRIEF      = NO
@@ -35,8 +35,8 @@ DETAILS_AT_TOP         = NO
 INHERIT_DOCS           = YES
 SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 8
-ALIASES                = "IMP{3}=\htmlonly \1 implementation of <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=\2&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\2</b></a> [\3]. (Searches MSDN) \endhtmlonly      " \
-                         "MSDN{1}=\htmlonly <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=_\1&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\1</b></a>\endhtmlonly    "
+ALIASES                = "IMP{3}=\htmlonly \1 implementation of <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=\2&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\2</b></a> [\3]. (Searches MSDN) \endhtmlonly       " \
+                         "MSDN{1}=\htmlonly <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=_\1&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\1</b></a>\endhtmlonly     "
 OPTIMIZE_OUTPUT_FOR_C  = YES
 OPTIMIZE_OUTPUT_JAVA   = NO
 BUILTIN_STL_SUPPORT    = NO
@@ -83,12 +83,12 @@ WARNINGS               = YES
 WARN_IF_UNDOCUMENTED   = YES
 WARN_IF_DOC_ERROR      = YES
 WARN_NO_PARAMDOC       = NO
-WARN_FORMAT            = "$file:$line: $text          "
+WARN_FORMAT            = "$file:$line: $text           "
 WARN_LOGFILE           = 
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = "..\SSEPlus\include         " \
+INPUT                  = "..\SSEPlus\include          " \
                          Documentation.txt \
                          Table.txt
 INPUT_ENCODING         = UTF-8
