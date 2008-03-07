@@ -20,7 +20,7 @@
 	  <td>Functions listed by optimization target</td>
 	</tr>
 	<tr>
-	  <td>\htmlonly <a href=../../SSEPlus_NDA.pdf><b>SSEPlus_NDA.pdf</b></a> \endhtmlonly</td>
+	  <td>\htmlonly <a href=../../SSEPlus.pdf><b>SSEPlus.pdf</b></a> \endhtmlonly</td>
 	  <td>Introduction to the project</td>
 	</tr>	
 	</table>
@@ -39,8 +39,7 @@
 \page fnTable Function Table
 The Function Table contains an alphabetic listing of all functions provided by SSEPlus.\n\n
 -The <b>Intrinsic Name</b> column gives the name of the function. (Links to MSDN).\n
--The <b>Instruction Set</b> column indicates the source instruction set.\n
-    - Instruction sets that include (MMX) indicate that the instruction operates on 64 bit MMX registers. 
+-The <b>Instruction Set</b> column indicates the source instruction set.\n  
 -The other columns indicate the presence of a comaptible implementation. (Links to function documentation).\n\n
 For example _mm_adsub_ps has a column entry for SSE2 and SSE3. Implementations are available for both instruction sets.
 

@@ -1,0 +1,6548 @@
+/**
+\page fnTable Function Table
+<table>
+<tr>
+  <th>Intrinsic Name</th>
+  <th>Instruction Set</th>
+  <th>REF</th>
+  <th>SSE</th>
+  <th>SSE2</th>
+  <th>SSE3</th>
+  <th>SSSE3</th>
+  <th>SSE4A</th>
+  <th>SSE4.1</th>
+  <th>SSE4.2</th>
+  <th>SSE5</th>
+</tr>
+<tr><td>\MSDN{_mm_abs_epi16}</td><td>SSSE3</td>  <td>\link ssp_abs_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_abs_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_abs_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_abs_epi32}</td><td>SSSE3</td>  <td>\link ssp_abs_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_abs_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_abs_epi32_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_abs_epi8}</td><td>SSSE3</td>  <td>\link ssp_abs_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_abs_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_abs_epi8_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_add_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_si64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_add_si64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_add_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_add_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_adds_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_adds_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_adds_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_adds_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_adds_epu16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_adds_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_adds_epu8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_adds_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_addsub_pd}</td><td>SSE3</td>  <td>\link ssp_addsub_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_addsub_pd_SSE2() SSE2\endlink</td>
+  <td>\link ssp_addsub_pd_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_addsub_ps}</td><td>SSE3</td>  <td>\link ssp_addsub_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_addsub_ps_SSE2() SSE2\endlink</td>
+  <td>\link ssp_addsub_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_alignr_epi8}</td><td>SSSE3</td>  <td>\link ssp_alignr_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_alignr_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_alignr_epi8_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_and_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_and_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_and_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_and_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_and_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_and_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_andnot_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_andnot_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_andnot_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_andnot_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_andnot_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_andnot_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_avg_epu16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_avg_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_avg_epu8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_avg_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_avg_pu16}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_avg_pu16_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_avg_pu8}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_avg_pu8_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_blend_epi16}</td><td>SSE4.1</td>  <td>\link ssp_blend_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blend_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blend_epi16_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_blend_pd}</td><td>SSE4.1</td>  <td>\link ssp_blend_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blend_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blend_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_blend_ps}</td><td>SSE4.1</td>  <td>\link ssp_blend_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blend_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_blendv_epi8}</td><td>SSE4.1</td>  <td>\link ssp_blendv_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blendv_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blendv_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_blendv_pd}</td><td>SSE4.1</td>  <td>\link ssp_blendv_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blendv_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_blendv_ps}</td><td>SSE4.1</td>  <td>\link ssp_blendv_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_blendv_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_castpd_ps}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_castpd_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_castpd_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_castpd_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_castps_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_castps_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_castps_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_castps_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_castsi128_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_castsi128_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_castsi128_ps}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_castsi128_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ceil_pd}</td><td>SSE4.1</td>  <td>\link ssp_ceil_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ceil_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ceil_ps}</td><td>SSE4.1</td>  <td>\link ssp_ceil_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ceil_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ceil_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ceil_sd}</td><td>SSE4.1</td>  <td>\link ssp_ceil_sd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ceil_sd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ceil_ss}</td><td>SSE4.1</td>  <td>\link ssp_ceil_ss_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ceil_ss_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_clflush}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_clflush_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmov_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmov_si128_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cmpeq_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpeq_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpeq_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestra}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestra_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestrc}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestrc_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestri}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestri_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestrm}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestrm_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestro}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestro_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestrs}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestrs_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpestrz}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpestrz_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpge_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpge_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpge_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpge_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpge_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpge_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpge_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpge_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_epi64}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_epi64_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpgt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpgt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistra}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistra_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistrc}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistrc_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistri}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistri_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistrm}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistrm_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistro}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistro_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistrs}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistrs_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpistrz}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpistrz_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmple_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmple_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmple_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmple_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmple_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmple_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmple_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmple_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmplt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmplt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpneq_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpneq_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpneq_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpneq_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpneq_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpneq_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpneq_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpneq_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnge_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpnge_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnge_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpnge_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnge_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpnge_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnge_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpnge_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpngt_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpngt_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpngt_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpngt_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpngt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpngt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpngt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpngt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnle_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpnle_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnle_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpnle_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnle_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpnle_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnle_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpnle_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnlt_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpnlt_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnlt_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpnlt_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnlt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpnlt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpnlt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpnlt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpord_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpord_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpord_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpord_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpord_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpord_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpord_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpord_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpunord_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpunord_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpunord_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpunord_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpunord_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cmpunord_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cmpunord_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cmpunord_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comeq_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comeq_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comfalse_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comge_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comge_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comgt_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comgt_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comieq_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comieq_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comieq_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_comieq_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comige_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comige_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comige_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_comige_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comigt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comigt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comigt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_comigt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comile_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comile_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comile_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_comile_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comilt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comilt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comilt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_comilt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comineq_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comineq_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comineq_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_comineq_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comle_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comle_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comlt_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comlt_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comneq_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comneq_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnge_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnge_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnge_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnge_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnge_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnge_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnge_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnge_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comngt_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comngt_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comngt_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comngt_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comngt_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comngt_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comngt_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comngt_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnle_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnle_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnle_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnle_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnle_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnle_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnle_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnle_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnlt_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnlt_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnlt_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comnlt_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comoneq_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comoneq_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comoneq_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comoneq_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comord_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comord_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comord_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comord_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comord_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comord_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comord_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comord_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epu64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comtrue_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comueq_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comueq_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comueq_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comueq_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comueq_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comueq_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comueq_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comueq_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comunord_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comunord_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comunord_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comunord_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comunord_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comunord_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_comunord_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_comunord_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_crc32_u16}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_crc32_u16_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_crc32_u32}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_crc32_u32_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_crc32_u64}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_crc32_u64_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_crc32_u8}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_crc32_u8_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvt_si2ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvt_si2ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvt_ss2si}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvt_ss2si_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi16_epi32}</td><td>SSE4.1</td>  <td>\link ssp_cvtepi16_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi16_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi16_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi16_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cvtepi16_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi16_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi16_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi32_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cvtepi32_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi32_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi32_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi32_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi32_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi32_ps}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi32_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi8_epi16}</td><td>SSE4.1</td>  <td>\link ssp_cvtepi8_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi8_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi8_epi16_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi8_epi32}</td><td>SSE4.1</td>  <td>\link ssp_cvtepi8_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi8_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi8_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepi8_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cvtepi8_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi8_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepi8_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepu16_epi32}</td><td>SSE4.1</td>  <td>\link ssp_cvtepu16_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu16_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu16_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepu16_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cvtepu16_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu16_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu16_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepu32_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cvtepu32_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu32_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu32_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepu8_epi16}</td><td>SSE4.1</td>  <td>\link ssp_cvtepu8_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu8_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu8_epi16_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepu8_epi32}</td><td>SSE4.1</td>  <td>\link ssp_cvtepu8_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu8_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu8_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtepu8_epi64}</td><td>SSE4.1</td>  <td>\link ssp_cvtepu8_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu8_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtepu8_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpd_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtpd_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpd_ps}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtpd_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpi16_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtpi16_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpi32_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtpi32_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpi32_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtpi32_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpi32x2_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtpi32x2_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpi8_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtpi8_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtps_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtps_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtps_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtps_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtps_pi8}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtps_pi8_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpu16_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtpu16_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtpu8_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtpu8_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsd_f64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsd_f64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsd_si32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsd_si32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsd_si64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsd_si64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsd_ss}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsd_ss_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi128_si32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi128_si32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi128_si64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi128_si64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi32_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi32_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi32_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi32_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi32_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi32_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi64_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi64_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi64_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi64_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtsi64_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtsi64_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtss_f32}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtss_f32_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtss_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvtss_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtss_si32}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtss_si32_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtss_si64}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtss_si64_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvtt_ss2si}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvtt_ss2si_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvttpd_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvttpd_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvttps_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvttps_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvttsd_si32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvttsd_si32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvttsd_si64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_cvttsd_si64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvttss_si32}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvttss_si32_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_cvttss_si64}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_cvttss_si64_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_div_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_div_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_div_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_div_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_div_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_div_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_div_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_div_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_dp_pd}</td><td>SSE4.1</td>  <td>\link ssp_dp_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_dp_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_dp_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_dp_ps}</td><td>SSE4.1</td>  <td>\link ssp_dp_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_dp_ps_SSE2() SSE2\endlink</td>
+  <td>\link ssp_dp_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_dp_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extract_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extract_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extract_epi32}</td><td>SSE4.1</td>  <td>\link ssp_extract_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extract_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extract_epi64}</td><td>SSE4.1</td>  <td>\link ssp_extract_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extract_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extract_epi8}</td><td>SSE4.1</td>  <td>\link ssp_extract_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extract_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extract_ps}</td><td>SSE4.1</td>  <td>\link ssp_extract_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extract_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extract_si64}</td><td>SSE4a</td>  <td>\link ssp_extract_si64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extract_si64_SSE4A() SSE4A\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_extracti_si64}</td><td>SSE4a</td>  <td>\link ssp_extracti_si64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_extracti_si64_SSE4A() SSE4A\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_floor_pd}</td><td>SSE4.1</td>  <td>\link ssp_floor_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_floor_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_floor_ps}</td><td>SSE4.1</td>  <td>\link ssp_floor_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_floor_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_floor_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_floor_sd}</td><td>SSE4.1</td>  <td>\link ssp_floor_sd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_floor_sd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_floor_ss}</td><td>SSE4.1</td>  <td>\link ssp_floor_ss_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_floor_ss_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_frcz_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_frcz_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_frcz_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_frcz_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_frcz_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_frcz_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_frcz_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_frcz_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_getcsr}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_getcsr_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hadd_epi16}</td><td>SSSE3</td>  <td>\link ssp_hadd_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hadd_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hadd_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hadd_epi32}</td><td>SSSE3</td>  <td>\link ssp_hadd_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hadd_epi32_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hadd_pd}</td><td>SSE3</td>  <td>\link ssp_hadd_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hadd_pd_SSE2() SSE2\endlink</td>
+  <td>\link ssp_hadd_pd_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hadd_ps}</td><td>SSE3</td>  <td>\link ssp_hadd_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hadd_ps_SSE2() SSE2\endlink</td>
+  <td>\link ssp_hadd_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_haddd_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddd_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddd_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddd_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddq_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddq_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddq_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddq_epu16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epu16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddq_epu32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epu32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddq_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_hadds_epi16}</td><td>SSSE3</td>  <td>\link ssp_hadds_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hadds_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_haddw_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddw_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_haddw_epu8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_haddw_epu8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_hsub_epi16}</td><td>SSSE3</td>  <td>\link ssp_hsub_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsub_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsub_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hsub_epi32}</td><td>SSSE3</td>  <td>\link ssp_hsub_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsub_epi32_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hsub_pd}</td><td>SSE3</td>  <td>\link ssp_hsub_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsub_pd_SSE2() SSE2\endlink</td>
+  <td>\link ssp_hsub_pd_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hsub_ps}</td><td>SSE3</td>  <td>\link ssp_hsub_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsub_ps_SSE2() SSE2\endlink</td>
+  <td>\link ssp_hsub_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hsubd_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsubd_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_hsubq_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsubq_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_hsubs_epi16}</td><td>SSSE3</td>  <td>\link ssp_hsubs_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsubs_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_hsubw_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_hsubw_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_insert_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_insert_epi32}</td><td>SSE4.1</td>  <td>\link ssp_insert_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_insert_epi64}</td><td>SSE4.1</td>  <td>\link ssp_insert_epi64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_insert_epi8}</td><td>SSE4.1</td>  <td>\link ssp_insert_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_insert_ps}</td><td>SSE4.1</td>  <td>\link ssp_insert_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_insert_si64}</td><td>SSE4a</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_insert_si64_SSE4A() SSE4A\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_inserti_si64}</td><td>SSE4a</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_inserti_si64_SSE4A() SSE4A\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_lddqu_si128}</td><td>SSE3</td>  <td>\link ssp_lddqu_si128_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_lddqu_si128_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_lfence}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_lfence_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_load_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_load_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load_ps1}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_load_ps1_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_load_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_load_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_load_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load1_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_load1_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_load1_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_load1_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loaddup_pd}</td><td>SSE3</td>  <td>\link ssp_loaddup_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loaddup_pd_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadh_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loadh_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadl_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loadl_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadl_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loadl_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadr_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loadr_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadr_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_loadr_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadu_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loadu_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadu_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_loadu_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_loadu_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_loadu_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_macc_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macc_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macc_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macc_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macc_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macc_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macc_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macc_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macc_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macc_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macc_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macc_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maccd_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maccd_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macchi_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macchi_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_macclo_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_macclo_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maccs_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maccs_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maccs_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maccs_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maccsd_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maccsd_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maccshi_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maccshi_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maccslo_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maccslo_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_madd_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_madd_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_maddd_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maddd_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maddsd_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maddsd_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_maddubs_epi16}</td><td>SSSE3</td>  <td>\link ssp_maddubs_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maddubs_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maddubs_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_maskmove_si64}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_maskmove_si64_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_maskmoveu_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_maskmoveu_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_epi32}</td><td>SSE4.1</td>  <td>\link ssp_max_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_epi8}</td><td>SSE4.1</td>  <td>\link ssp_max_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_epu16}</td><td>SSE4.1</td>  <td>\link ssp_max_epu16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epu16_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_epu32}</td><td>SSE4.1</td>  <td>\link ssp_max_epu32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epu32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epu32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_epu8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_max_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_pu8}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_max_pu8_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_max_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_max_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_max_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mfence}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mfence_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_epi32}</td><td>SSE4.1</td>  <td>\link ssp_min_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_epi8}</td><td>SSE4.1</td>  <td>\link ssp_min_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_epu16}</td><td>SSE4.1</td>  <td>\link ssp_min_epu16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epu16_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_epu32}</td><td>SSE4.1</td>  <td>\link ssp_min_epu32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epu32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epu32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_epu8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_min_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_pu8}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_min_pu8_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_min_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_min_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_min_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_minpos_epu16}</td><td>SSE4.1</td>  <td>\link ssp_minpos_epu16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_minpos_epu16_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_move_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_move_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_move_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_move_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_move_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_move_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movedup_pd}</td><td>SSE3</td>  <td>\link ssp_movedup_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movedup_pd_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movehdup_ps}</td><td>SSE3</td>  <td>\link ssp_movehdup_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movehdup_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movehl_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_movehl_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_moveldup_ps}</td><td>SSE3</td>  <td>\link ssp_moveldup_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_moveldup_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movelh_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_movelh_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movemask_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movemask_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movemask_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movemask_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movemask_pi8}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_movemask_pi8_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movemask_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_movemask_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movepi64_pi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movepi64_pi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_movpi64_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movpi64_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mpsadbw_epu8}</td><td>SSE4.1</td>  <td>\link ssp_mpsadbw_epu8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mpsadbw_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mpsadbw_epu8_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_msub_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_msub_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_msub_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_msub_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_msub_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_msub_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_msub_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_msub_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_mul_epi32}</td><td>SSE4.1</td>  <td>\link ssp_mul_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mul_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mul_epu32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mul_epu32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mul_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mul_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mul_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_mul_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mul_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mul_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mul_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_mul_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mulhi_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mulhi_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mulhi_epu16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mulhi_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mulhrs_epi16}</td><td>SSSE3</td>  <td>\link ssp_mulhrs_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mulhrs_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mullo_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mullo_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_mullo_epi32}</td><td>SSE4.1</td>  <td>\link ssp_mullo_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_mullo_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_nmacc_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmacc_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmacc_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmacc_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmsub_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmsub_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmsub_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_nmsub_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_or_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_or_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_or_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_or_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_or_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_or_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_packs_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_packs_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_packs_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_packs_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_packus_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_packus_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_packus_epi32}</td><td>SSE4.1</td>  <td>\link ssp_packus_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_packus_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_packus_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_pause}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_pause_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_perm_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_perm_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_perm_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_perm_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_perm_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_perm_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_popcnt_u32}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_popcnt_u32_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_popcnt_u64}</td><td>SSE4.2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_popcnt_u64_SSE4.2() SSE4.2\endlink</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_prefetch}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_prefetch_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_rcp_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_rcp_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_rcp_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_rcp_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_rot_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_rot_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_rot_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_rot_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_roti_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_roti_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_roti_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_roti_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_round_pd}</td><td>SSE4.1</td>  <td>\link ssp_round_pd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_round_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_pd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_round_ps}</td><td>SSE4.1</td>  <td>\link ssp_round_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ps_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_round_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ps_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_round_sd}</td><td>SSE4.1</td>  <td>\link ssp_round_sd_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_sd_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_round_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_sd_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_round_ss}</td><td>SSE4.1</td>  <td>\link ssp_round_ss_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ss_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ss_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_round_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ss_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_rsqrt_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_rsqrt_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_rsqrt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_rsqrt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sad_epu8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sad_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sad_pu8}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_sad_pu8_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_set_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_ps1}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_set_ps1_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_set_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set1_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set1_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set1_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set1_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set1_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set1_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set1_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set1_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set1_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_set1_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_set1_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_set1_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setcsr}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_setcsr_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setl_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setl_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setr_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setr_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setr_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setr_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setr_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setr_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setr_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setr_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setr_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_setr_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setzero_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setzero_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setzero_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_setzero_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_setzero_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_setzero_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sfence}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_sfence_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sha_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_sha_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_sha_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_sha_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_shl_epi16}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi16_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_shl_epi32}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi32_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_shl_epi64}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi64_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_shl_epi8}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi8_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_shuffle_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shuffle_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_shuffle_epi8}</td><td>SSSE3</td>  <td>\link ssp_shuffle_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shuffle_epi8_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_shuffle_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shuffle_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_shuffle_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_shuffle_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_shufflehi_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shufflehi_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_shufflelo_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_shufflelo_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sign_epi16}</td><td>SSSE3</td>  <td>\link ssp_sign_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sign_epi16_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sign_epi32}</td><td>SSSE3</td>  <td>\link ssp_sign_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sign_epi32_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sign_epi8}</td><td>SSSE3</td>  <td>\link ssp_sign_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sign_epi8_SSSE3() SSSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sll_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sll_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sll_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sll_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sll_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sll_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_slli_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_slli_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_slli_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_slli_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_slli_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_slli_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_slli_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_slli_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sqrt_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sqrt_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sqrt_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_sqrt_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sqrt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sqrt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sqrt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_sqrt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sra_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sra_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sra_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sra_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srai_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srai_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srai_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srai_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srl_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srl_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srl_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srl_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srl_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srl_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srli_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srli_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srli_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srli_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srli_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srli_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_srli_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_srli_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_store_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_store_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store_ps1}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_store_ps1_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_store_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_store_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_store_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store1_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_store1_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_store1_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_store1_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storeh_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_storeh_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storel_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_storel_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storel_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_storel_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storer_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_storer_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storer_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_storer_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storeu_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_storeu_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storeu_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_storeu_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_storeu_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_storeu_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_load_si128}</td><td>SSE4.1</td>  <td>\link ssp_stream_load_si128_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_stream_load_si128_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_stream_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_stream_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_sd}</td><td>SSE4a</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_stream_sd_SSE4A() SSE4A\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_stream_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_si32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_stream_si32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_stream_ss}</td><td>SSE4a</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_stream_ss_SSE4A() SSE4A\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_sub_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_si64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_sub_si64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_sub_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_sub_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_subs_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_subs_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_subs_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_subs_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_subs_epu16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_subs_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_subs_epu8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_subs_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_testc_si128}</td><td>SSE4.1</td>  <td>\link ssp_testc_si128_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_testc_si128_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_testc_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_testc_si128_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_testnzc_si128}</td><td>SSE4.1</td>  <td>\link ssp_testnzc_si128_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_testnzc_si128_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_testnzc_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_testnzc_si128_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_testz_si128}</td><td>SSE4.1</td>  <td>\link ssp_testz_si128_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_testz_si128_SSE4.1() SSE4.1\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_testz_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_testz_si128_SSE5() SSE5\endlink</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomieq_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ucomieq_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomieq_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_ucomieq_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomige_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ucomige_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomige_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_ucomige_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomigt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ucomigt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomigt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_ucomigt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomile_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ucomile_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomile_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_ucomile_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomilt_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ucomilt_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomilt_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_ucomilt_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomineq_sd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_ucomineq_sd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_ucomineq_ss}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_ucomineq_ss_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpackhi_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpackhi_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpackhi_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpackhi_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpackhi_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpackhi_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpackhi_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpackhi_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpackhi_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpackhi_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpackhi_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_unpackhi_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpacklo_epi16}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpacklo_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpacklo_epi32}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpacklo_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpacklo_epi64}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpacklo_epi64_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpacklo_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpacklo_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpacklo_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_unpacklo_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_unpacklo_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_unpacklo_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_xor_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_xor_pd_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_xor_ps}</td><td>SSE</td>  <td>&nbsp;</td>
+  <td>\link ssp_xor_ps_SSE() SSE\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>\MSDN{_mm_xor_si128}</td><td>SSE2</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_xor_si128_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_arithmetic_hadd4_dup_ps</td><td>SSP</td>  <td>\link ssp_arithmetic_hadd4_dup_ps_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_arithmetic_hadd4_dup_ps_SSE2() SSE2\endlink</td>
+  <td>\link ssp_arithmetic_hadd4_dup_ps_SSE3() SSE3\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_arithmetic_hadd4_epi16</td><td>SSP</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_arithmetic_hadd4_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_arithmetic_hadd4_epu16</td><td>SSP</td>  <td>\link ssp_arithmetic_hadd4_epu16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_logical_bitwise_choose</td><td>SSP</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_bitwise_choose_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_logical_cmpgt_epu16</td><td>SSP</td>  <td>\link ssp_logical_cmpgt_epu16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmpgt_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_logical_cmpgt_epu32</td><td>SSP</td>  <td>\link ssp_logical_cmpgt_epu32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmpgt_epu32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_logical_cmplt_epu16</td><td>SSP</td>  <td>\link ssp_logical_cmplt_epu16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmplt_epu16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_logical_cmplt_epu32</td><td>SSP</td>  <td>\link ssp_logical_cmplt_epu32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmplt_epu32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_number_changeSNanToQNaN_F32</td><td>SSP</td>  <td>\link ssp_number_changeSNanToQNaN_F32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_number_changeSNanToQNaN_F64</td><td>SSP</td>  <td>\link ssp_number_changeSNanToQNaN_F64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_number_isValidNumber_F32</td><td>SSP</td>  <td>\link ssp_number_isValidNumber_F32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_number_isValidNumber_F64</td><td>SSP</td>  <td>\link ssp_number_isValidNumber_F64_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_round_ps_neg_zero</td><td>SSP</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_round_ps_neg_zero_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+*/

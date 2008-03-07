@@ -3,6 +3,6 @@
 ::This software is subject to the Apache v2.0 License.
 ::
 
-Debug\CSVToDox.exe Test.csv > ..\table.txt
+Debug\CSVToDox.exe Function_Table.csv > ..\Function_Table.txt
 
 Pause
