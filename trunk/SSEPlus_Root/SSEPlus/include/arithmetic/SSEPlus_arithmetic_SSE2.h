@@ -12,7 +12,7 @@
  *  @{
  *  @name Arithmetic Operations */
 
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128 ssp_arithmetic_hadd4_dup_ps_SSE2( __m128 a )      // [18 cycles]                 // Sum all 4 values
 {
     __m128 t;
@@ -34,7 +34,7 @@ __m128 ssp_arithmetic_hadd4_dup_ps_SSE2( __m128 a )      // [18 cycles]         
 
     offset indicates desired position of sum (0,1,2,3)
 */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128i ssp_arithmetic_hadd4_epi16_SSE2( __m128i a, const unsigned int offset )      // Sum 2 sets of 4 values, dest in 0, and 4
 {
     ssp_m128 A,B;
@@ -86,10 +86,10 @@ __m128i ssp_arithmetic_hadd4_epi16_SSE2( __m128i a, const unsigned int offset ) 
 //}  
 
 /** This function wraps ssp_round_ps_SSE2. It guarantees that numbers rounding to 0 from a negative will generate a negative zero. */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128 ssp_round_ps_neg_zero_SSE2( __m128  a, int iRoundMode )
 {
-    const static __m128i SIGN_BIT = CONST_SET_32I( 0x80000000, 0x80000000, 0x80000000,0x80000000 );
+    const static __m128i SIGN_BIT = SSP_CONST_SET_32I( 0x80000000, 0x80000000, 0x80000000,0x80000000 );
     ssp_m128 A, sign;
     A.f = a;
     

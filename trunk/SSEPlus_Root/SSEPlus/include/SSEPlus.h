@@ -11,11 +11,25 @@
 #include "SSEPlus_SSE2.h"
 #include "SSEPlus_SSE3.h"
 
-#ifdef SSEPLUS_SSSE3_SSE4A_SSE41_SSE42
+#ifdef SSP_COMPILER_SUPPORTS_SSSE3
 #include "SSEPlus_SSSE3.h"
+#endif 
+
+#ifdef SSP_COMPILER_SUPPORTS_SSE4a
 #include "SSEPlus_SSE4a.h"
+#endif 
+
+#ifdef SSP_COMPILER_SUPPORTS_SSE41
 #include "SSEPlus_SSE4.1.h"
+#endif 
+
+#ifdef SSP_COMPILER_SUPPORTS_SSE42
 #include "SSEPlus_SSE4.2.h"
-#endif // SSEPLUS_SSSE3_SSE4A_SSE41_SSE42
+#endif 
+
+#ifdef SSP_COMPILER_SUPPORTS_SSE5
+#include "SSEPlus_SSE5.h"
+#endif 
+
 
 #endif // __SSEPLUS_H__

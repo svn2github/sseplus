@@ -104,16 +104,6 @@ __m128        ssp_unpackhi_ps_SSE (__m128 _A, __m128 _B);
 __m128        ssp_unpacklo_ps_SSE (__m128 _A, __m128 _B);
 __m128        ssp_xor_ps_SSE (__m128 _A, __m128 _B);
 
-//============================================
-// SSE Native (MMX)
-//============================================
-__m128        ssp_cvt_pi2ps_SSE (__m128, __m64);
-__m64         ssp_cvt_ps2pi_SSE (__m128 _A);
-__m64         ssp_cvtt_ps2pi_SSE (__m128 _A);
-__m128        ssp_loadh_pi_SSE (__m128, __m64 const*);
-__m128        ssp_loadl_pi_SSE (__m128, __m64 const*);
-void          ssp_storeh_pi_SSE (__m64 *, __m128);
-void          ssp_storel_pi_SSE (__m64 *, __m128);
 
 #include "native/SSEPlus_native_SSE.h"
 

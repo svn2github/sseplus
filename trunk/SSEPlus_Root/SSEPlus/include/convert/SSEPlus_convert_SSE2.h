@@ -12,7 +12,7 @@
  *  @name Convert Operations */
 
 /** \IMP{SSE2,ssp_convert_odd_even_epi16_SSE2,custom} */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 void ssp_convert_odd_even_epi16_SSE2( __m128i *a, __m128i *b )
 {
     // IN
@@ -43,7 +43,7 @@ void ssp_convert_odd_even_epi16_SSE2( __m128i *a, __m128i *b )
 
 
 /** \IMP{SSE2,ssp_convert_odd_even_epi32_SSE2,custom} */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 void ssp_convert_odd_even_ps_SSE2( __m128 *a, __m128 *b )
 {
     // IN
@@ -62,7 +62,7 @@ void ssp_convert_odd_even_ps_SSE2( __m128 *a, __m128 *b )
 }
 
 /** \IMP{SSE2,ssp_convert_odd_even_epi32_SSE2,custom} */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 void ssp_convert_odd_even_epi32_SSE2( __m128i *a, __m128i *b )
 {
     // IN

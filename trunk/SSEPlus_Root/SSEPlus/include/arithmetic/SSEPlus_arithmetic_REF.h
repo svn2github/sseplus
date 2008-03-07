@@ -10,7 +10,7 @@
  *  @{
  *  @name Arithmetic Operations{ */
 
-SSEPLUS_FORCEINLINE __m128 ssp_arithmetic_hadd4_dup_ps_REF( __m128 a )      // Sum all 4 values
+SSP_FORCEINLINE __m128 ssp_arithmetic_hadd4_dup_ps_REF( __m128 a )      // Sum all 4 values
 {
     ssp_m128 A;
     ssp_f32 t;
@@ -28,7 +28,7 @@ SSEPLUS_FORCEINLINE __m128 ssp_arithmetic_hadd4_dup_ps_REF( __m128 a )      // S
     return A.f;
 }  
 
-SSEPLUS_FORCEINLINE __m128i ssp_arithmetic_hadd4_epu16_REF( __m128i a )      // Sum 2 sets of 4 values, dest in 0, and 4
+SSP_FORCEINLINE __m128i ssp_arithmetic_hadd4_epu16_REF( __m128i a )      // Sum 2 sets of 4 values, dest in 0, and 4
 {
     ssp_m128 A;
     A.i = a;

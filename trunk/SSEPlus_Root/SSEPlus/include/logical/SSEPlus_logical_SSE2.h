@@ -12,7 +12,7 @@
  *  @name Logical Operations */
 
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu16_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu16_SSE2( __m128i a, __m128i b )
 {
     __m128i signMask, mask;
 
@@ -23,7 +23,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu16_SSE2( __m128i a, __m128i b )
     return mask;
 }
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_SSE2( __m128i a, __m128i b )
 {
     __m128i signMask, mask;
 
@@ -34,7 +34,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_SSE2( __m128i a, __m128i b )
     return mask;
 }
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu32_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu32_SSE2( __m128i a, __m128i b )
 {
     __m128i signMask, mask;
 
@@ -45,7 +45,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu32_SSE2( __m128i a, __m128i b )
     return mask;
 }
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_SSE2( __m128i a, __m128i b )
 {
     __m128i signMask, mask;
 
@@ -58,7 +58,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_SSE2( __m128i a, __m128i b )
 
 
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_bitwise_choose_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 
+SSP_FORCEINLINE __m128i ssp_logical_bitwise_choose_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 
 {
     a = _mm_and_si128   ( a,    mask );                                 // clear a where mask = 0
     b = _mm_andnot_si128( mask, b    );                                 // clear b where mask = 1
@@ -66,22 +66,22 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_bitwise_choose_SSE2( __m128i a, __m128i 
     return a; 
 }
 
-//SSEPLUS_FORCEINLINE
+//SSP_FORCEINLINE
 //__m128i ssp_generate_mask_imm8_to_epi16_SSE2( int mask )
 //{
 //    __m128i screen;
-//    const static __m128i mulShiftImm = CONST_SET_16I( 0x0100, 0x0200, 0x0400, 0x0800, 0x1000, 0x2000, 0x4000, 0x8000 ); // Shift mask multiply moves all bits to left, becomes MSB
+//    const static __m128i mulShiftImm = SSP_CONST_SET_16I( 0x0100, 0x0200, 0x0400, 0x0800, 0x1000, 0x2000, 0x4000, 0x8000 ); // Shift mask multiply moves all bits to left, becomes MSB
 //    screen = _mm_set1_epi16  ( mask                );   // Load the mask into register
 //    screen = _mm_mullo_epi16 ( screen, mulShiftImm );   // Shift bits to MSB
 //    screen = _mm_srai_epi16  ( screen, 15          );   // Shift bits to obtain 0xFFFF or 0x0000
 //    return screen;
 //}
 
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128i ssp_movmask_imm8_to_epi32_SSE2( int mask )
 {
     __m128i screen;
-    const static __m128i mulShiftImm = CONST_SET_16I( 0x1000, 0x0000, 0x2000, 0x0000, 0x4000, 0x0000, 0x8000, 0x0000 ); // Shift mask multiply moves all bits to left, becomes MSB
+    const static __m128i mulShiftImm = SSP_CONST_SET_16I( 0x1000, 0x0000, 0x2000, 0x0000, 0x4000, 0x0000, 0x8000, 0x0000 ); // Shift mask multiply moves all bits to left, becomes MSB
     screen = _mm_set1_epi16 ( mask                );   // Load the mask into register
     screen = _mm_mullo_epi16( screen, mulShiftImm );   // Shift bits to MSB
     screen = _mm_srai_epi32 ( screen, 31          );   // Shift bits to obtain all F's or all 0's
@@ -92,7 +92,7 @@ __m128i ssp_movmask_imm8_to_epi32_SSE2( int mask )
 
  r_:= (a_<=b_) ? 0xff : 0x0
 */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128i ssp_logical_cmplte_epi8( __m128i a, __m128i b )
 {
     a = _mm_cmpgt_epi8( a, b );
@@ -104,7 +104,7 @@ __m128i ssp_logical_cmplte_epi8( __m128i a, __m128i b )
 
  r_:= (a_>=b_) ? 0xff : 0x0
 */
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128i ssp_logical_cmpgte_epi8( __m128i a, __m128i b )
 {
     a = _mm_cmplt_epi8( a, b );

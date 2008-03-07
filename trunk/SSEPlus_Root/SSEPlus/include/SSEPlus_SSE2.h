@@ -224,21 +224,6 @@ __m128d   ssp_xor_pd_SSE2           ( __m128d _A, __m128d _B );
 __m128i   ssp_xor_si128_SSE2        ( __m128i _A, __m128i _B );
 
 //============================================
-// SSE2 Native (MMX)
-//============================================
-__m64     ssp_add_si64_SSE2         ( __m64 _A, __m64 _B );
-__m64     ssp_cvtpd_pi32_SSE2       ( __m128d _A );
-__m128d   ssp_cvtpi32_pd_SSE2       ( __m64 _A );
-__m64     ssp_cvttpd_pi32_SSE2      ( __m128d _A );
-__m64     ssp_movepi64_pi64_SSE2    ( __m128i _Q );
-__m128i   ssp_movpi64_epi64_SSE2    ( __m64 _Q );
-__m64     ssp_mul_su32_SSE2         ( __m64 _A, __m64 _B );
-__m128i   ssp_set_epi64_SSE2        ( __m64 _Q1, __m64 _Q0 );
-__m128i   ssp_set1_epi64_SSE2       ( __m64 _Q );
-__m128i   ssp_setr_epi64_SSE2       ( __m64 _Q0, __m64 _Q1 );
-__m64     ssp_sub_si64_SSE2         ( __m64 _A, __m64 _B );
-
-//============================================
 // SSE3 Emulation
 //============================================
 __m128d   ssp_addsub_pd_SSE2        ( __m128d a, __m128d b ); 
@@ -273,27 +258,6 @@ __m128i   ssp_sign_epi16_SSE2       ( __m128i a, __m128i b );
 __m128i   ssp_sign_epi32_SSE2       ( __m128i a, __m128i b );
 __m128i   ssp_sign_epi8_SSE2        ( __m128i a, __m128i b );
 
-//============================================
-// SSSE3 Emulation (MMX)
-//============================================
-#ifdef SYS32
-__m64     ssp_abs_pi16_SSE2         ( __m64 a );
-__m64     ssp_abs_pi32_SSE2         ( __m64 a );
-__m64     ssp_abs_pi8_SSE2          ( __m64 a );
-__m64     ssp_alignr_pi8_SSE2       ( __m64 a, __m64 b, const int n );
-__m64     ssp_hadd_pi16_SSE2        ( __m64 a, __m64 b );
-__m64     ssp_hadd_pi32_SSE2        ( __m64 a, __m64 b );
-__m64     ssp_hadds_pi16_SSE2       ( __m64 a, __m64 b );
-__m64     ssp_hsub_pi16_SSE2        ( __m64 a, __m64 b );
-__m64     ssp_hsub_pi32_SSE2        ( __m64 a, __m64 b );
-__m64     ssp_hsubs_pi16_SSE2       ( __m64 a, __m64 b );
-__m64     ssp_maddubs_pi16_SSE2     ( __m64 a, __m64 b );
-__m64     ssp_mulhrs_pi16_SSE2      ( __m64 a, __m64 b );
-__m64     ssp_shuffle_pi8_SSE2      ( __m64 a, __m64 b );
-__m64     ssp_sign_pi16_SSE2        ( __m64 a, __m64 b );
-__m64     ssp_sign_pi32_SSE2        ( __m64 a, __m64 b );
-__m64     ssp_sign_pi8_SSE2         ( __m64 a, __m64 b );
-#endif
 
 //============================================
 // SSE4A Emulation
@@ -394,9 +358,6 @@ int       ssp_popcnt_u64_SSE2       ( ssp_u64 a );
 
 #include "native/SSEPlus_native_SSE2.h" 
 #include "emulation/SSEPlus_emulation_SSE2.h" 
-#ifdef SYS32
-#include "emulation/SSEPlus_emulation_mmx_SSE2.h" 
-#endif
 #include "arithmetic/SSEPlus_arithmetic_SSE2.h"
 #include "logical/SSEPlus_logical_SSE2.h"
 

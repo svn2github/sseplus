@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSEPlus", "SSEPlus", "{4093
 		SSEPlus\include\SSEPlus_SSE4.1.h = SSEPlus\include\SSEPlus_SSE4.1.h
 		SSEPlus\include\SSEPlus_SSE4.2.h = SSEPlus\include\SSEPlus_SSE4.2.h
 		SSEPlus\include\SSEPlus_SSE4a.h = SSEPlus\include\SSEPlus_SSE4a.h
+		SSEPlus\include\SSEPlus_SSE5.h = SSEPlus\include\SSEPlus_SSE5.h
 		SSEPlus\include\SSEPlus_SSSE3.h = SSEPlus\include\SSEPlus_SSSE3.h
 	EndProjectSection
 EndProject
@@ -66,6 +67,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "map", "map", "{3D5F3F95-E2B
 		SSEPlus\include\map\SSEPlus_UNMAP_ALL.h = SSEPlus\include\map\SSEPlus_UNMAP_ALL.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "convert", "convert", "{D280F51C-0CA4-4ED4-8119-C53E3F2F776D}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\convert\sseplus_convert_sse2.h = SSEPlus\include\convert\sseplus_convert_sse2.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -101,5 +107,6 @@ Global
 		{D8972632-EBC9-4280-803D-2CA3194234CD} = {40939260-1034-4384-AC8B-AD07CA9484F1}
 		{FB805B4D-7B84-41E1-9F8A-0FCE84BED95F} = {40939260-1034-4384-AC8B-AD07CA9484F1}
 		{3D5F3F95-E2BB-4A00-A66E-65BD341FEBC7} = {40939260-1034-4384-AC8B-AD07CA9484F1}
+		{D280F51C-0CA4-4ED4-8119-C53E3F2F776D} = {40939260-1034-4384-AC8B-AD07CA9484F1}
 	EndGlobalSection
 EndGlobal

@@ -342,12 +342,10 @@ std::string ToStr( __m64 a )
             oss << A.u64;
             break;           
         }
-    default:
-		MMX_EMPTY;
+    default:		
         return "Unknown print format";
-    }
-			
-	MMX_EMPTY;
+    }			
+	
     return oss.str();
 }
 

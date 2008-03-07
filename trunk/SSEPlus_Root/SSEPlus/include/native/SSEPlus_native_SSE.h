@@ -18,390 +18,390 @@
  */
 
 /** \IMP{SSE Native,_mm_add_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_add_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_add_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_add_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_add_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_add_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_add_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_add_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_sub_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_sub_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_sub_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_sub_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_sub_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_sub_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_sub_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_sub_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_mul_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_mul_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_mul_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_mul_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_mul_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_mul_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_mul_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_mul_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_div_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_div_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_div_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_div_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_div_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_div_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_div_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_div_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_sqrt_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_sqrt_ss_SSE( __m128 a )
+SSP_FORCEINLINE __m128 ssp_sqrt_ss_SSE( __m128 a )
 {
     return _mm_sqrt_ss( a );
 }
 
 /** \IMP{SSE Native,_mm_sqrt_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_sqrt_ps_SSE( __m128 a )
+SSP_FORCEINLINE __m128 ssp_sqrt_ps_SSE( __m128 a )
 {
     return _mm_sqrt_ps( a );
 }
 
 /** \IMP{SSE Native,_mm_rcp_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_rcp_ss_SSE( __m128 a )
+SSP_FORCEINLINE __m128 ssp_rcp_ss_SSE( __m128 a )
 {
     return _mm_rcp_ss( a );
 }
 
 /** \IMP{SSE Native,_mm_rcp_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_rcp_ps_SSE( __m128 a )
+SSP_FORCEINLINE __m128 ssp_rcp_ps_SSE( __m128 a )
 {
     return _mm_rcp_ps( a );
 }
 
 /** \IMP{SSE Native,_mm_rsqrt_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_rsqrt_ss_SSE( __m128 a )
+SSP_FORCEINLINE __m128 ssp_rsqrt_ss_SSE( __m128 a )
 {
     return _mm_rsqrt_ss( a );
 }
 
 /** \IMP{SSE Native,_mm_rsqrt_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_rsqrt_ps_SSE( __m128 a )
+SSP_FORCEINLINE __m128 ssp_rsqrt_ps_SSE( __m128 a )
 {
     return _mm_rsqrt_ps( a );
 }
 
 /** \IMP{SSE Native,_mm_min_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_min_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_min_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_min_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_min_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_min_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_min_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_min_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_max_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_max_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_max_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_max_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_max_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_max_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_max_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_max_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_and_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_and_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_and_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_and_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_andnot_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_andnot_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_andnot_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_andnot_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_or_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_or_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_or_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_or_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_xor_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_xor_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_xor_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_xor_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpeq_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpeq_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpeq_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpeq_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpeq_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpeq_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpeq_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpeq_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmplt_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmplt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmplt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmplt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmplt_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmplt_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmplt_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmplt_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmple_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmple_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmple_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmple_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmple_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmple_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmple_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmple_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpgt_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpgt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpgt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpgt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpgt_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpgt_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpgt_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpgt_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpge_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpge_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpge_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpge_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpge_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpge_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpge_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpge_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpneq_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpneq_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpneq_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpneq_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpneq_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpneq_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpneq_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpneq_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpnlt_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpnlt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpnlt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpnlt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpnlt_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpnlt_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpnlt_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpnlt_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpnle_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpnle_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpnle_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpnle_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpnle_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpnle_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpnle_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpnle_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpngt_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpngt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpngt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpngt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpngt_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpngt_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpngt_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpngt_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpnge_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpnge_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpnge_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpnge_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpnge_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpnge_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpnge_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpnge_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpord_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpord_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpord_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpord_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpord_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpord_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpord_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpord_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpunord_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpunord_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpunord_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpunord_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cmpunord_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cmpunord_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_cmpunord_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_cmpunord_ps( a, b );
 }
 
 /** \IMP{SSE Native,_mm_comieq_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_comieq_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_comieq_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_comieq_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_comilt_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_comilt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_comilt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_comilt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_comile_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_comile_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_comile_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_comile_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_comigt_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_comigt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_comigt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_comigt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_comige_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_comige_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_comige_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_comige_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_comineq_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_comineq_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_comineq_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_comineq_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_ucomieq_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_ucomieq_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_ucomieq_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_ucomieq_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_ucomilt_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_ucomilt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_ucomilt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_ucomilt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_ucomile_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_ucomile_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_ucomile_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_ucomile_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_ucomigt_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_ucomigt_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_ucomigt_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_ucomigt_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_ucomige_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_ucomige_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_ucomige_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_ucomige_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_ucomineq_ss,SSE} */
-SSEPLUS_FORCEINLINE int ssp_ucomineq_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE int ssp_ucomineq_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_ucomineq_ss( a, b );
 }
 
 /** \IMP{SSE Native,_mm_cvt_ss2si,SSE} */
-SSEPLUS_FORCEINLINE int ssp_cvt_ss2si_SSE( __m128 a )
+SSP_FORCEINLINE int ssp_cvt_ss2si_SSE( __m128 a )
 {
     return _mm_cvt_ss2si( a );
 }
 
 /** \IMP{SSE Native,_mm_cvt_ps2pi,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_cvt_ps2pi_SSE( __m128 a )
+SSP_FORCEINLINE __m64 ssp_cvt_ps2pi_SSE( __m128 a )
 {
     return _mm_cvt_ps2pi( a );
 }
 
 /** \IMP{SSE Native,_mm_cvtt_ss2si,SSE} */
-SSEPLUS_FORCEINLINE int ssp_cvtt_ss2si_SSE( __m128 a )
+SSP_FORCEINLINE int ssp_cvtt_ss2si_SSE( __m128 a )
 {
     return _mm_cvtt_ss2si( a );
 }
 
 /** \IMP{SSE Native,_mm_cvtt_ps2pi,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_cvtt_ps2pi_SSE( __m128 a )
+SSP_FORCEINLINE __m64 ssp_cvtt_ps2pi_SSE( __m128 a )
 {
     return _mm_cvtt_ps2pi( a );
 }
 
 /** \IMP{SSE Native,_mm_cvt_si2ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvt_si2ss_SSE( __m128 a, int imm )
+SSP_FORCEINLINE __m128 ssp_cvt_si2ss_SSE( __m128 a, int imm )
 {
     return _mm_cvt_si2ss( a, imm );
 }
 
 /** \IMP{SSE Native,_mm_cvt_pi2ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvt_pi2ps_SSE( __m128 a, __m64 b )
+SSP_FORCEINLINE __m128 ssp_cvt_pi2ps_SSE( __m128 a, __m64 b )
 {
     return _mm_cvt_pi2ps( a, b );
 }
 //TODO: Write Ref implementation. Will only work on VS9 & GCC
-//SSEPLUS_FORCEINLINE float ssp_cvtss_f32_SSE( __m128 a )
+//SSP_FORCEINLINE float ssp_cvtss_f32_SSE( __m128 a )
 //{
 //    return _mm_cvtss_f32( a );
 //}
@@ -411,15 +411,15 @@ SSEPLUS_FORCEINLINE __m128 ssp_cvt_pi2ps_SSE( __m128 a, __m64 b )
  */
 #if defined(SYS64)
 //TODO: Write Ref implementation. Will only work on VS9 & GCC
-//SSEPLUS_FORCEINLINE __int64 ssp_cvtss_si64_SSE( __m128 a )
+//SSP_FORCEINLINE __int64 ssp_cvtss_si64_SSE( __m128 a )
 //{
 //    return _mm_cvtss_si64( a );
 //}
-//SSEPLUS_FORCEINLINE __int64 ssp_cvttss_si64_SSE( __m128 a )
+//SSP_FORCEINLINE __int64 ssp_cvttss_si64_SSE( __m128 a )
 //{
 //    return _mm_cvttss_si64( a );
 //}
-//SSEPLUS_FORCEINLINE __m128  ssp_cvtsi64_ss_SSE( __m128 a, __int64 b )
+//SSP_FORCEINLINE __m128  ssp_cvtsi64_ss_SSE( __m128 a, __int64 b )
 //{
 //    return _mm_cvtsi64_ss( a, b );
 //}
@@ -430,7 +430,7 @@ SSEPLUS_FORCEINLINE __m128 ssp_cvt_pi2ps_SSE( __m128 a, __m64 b )
  */
 
 /**\IMP{SSE Native,_mm_shuffle_ps,SSE} */
-SSEPLUS_FORCEINLINE  __m128 ssp_shuffle_ps_SSE( __m128 a, __m128 b, unsigned int imm8 )
+SSP_FORCEINLINE  __m128 ssp_shuffle_ps_SSE( __m128 a, __m128 b, unsigned int imm8 )
 {
     switch( imm8 & 0xFF )
     {
@@ -439,55 +439,55 @@ SSEPLUS_FORCEINLINE  __m128 ssp_shuffle_ps_SSE( __m128 a, __m128 b, unsigned int
 }
 
 /**\IMP{SSE Native,_mm_unpackhi_ps,SSE} */
-SSEPLUS_FORCEINLINE  __m128 ssp_unpackhi_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE  __m128 ssp_unpackhi_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_unpackhi_ps( a, b );
 }
 
 /**\IMP{SSE Native,_mm_unpacklo_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_unpacklo_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_unpacklo_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_unpacklo_ps( a, b );
 }
 
 /**\IMP{SSE Native,_mm_loadh_pi,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_loadh_pi_SSE( __m128 a, __m64 const* b )
+SSP_FORCEINLINE __m128 ssp_loadh_pi_SSE( __m128 a, __m64 const* b )
 {
     return _mm_loadh_pi( a, b );
 }
 
 /**\IMP{SSE Native,_mm_movehl_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_movehl_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_movehl_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_movehl_ps( a, b );
 }
 
 /**\IMP{SSE Native,_mm_movelh_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_movelh_ps_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_movelh_ps_SSE( __m128 a, __m128 b )
 {
     return _mm_movelh_ps( a, b );
 }
 
 /**\IMP{SSE Native,_mm_storeh_pi,SSE} */
-SSEPLUS_FORCEINLINE void ssp_storeh_pi_SSE( __m64 *a, __m128 b )
+SSP_FORCEINLINE void ssp_storeh_pi_SSE( __m64 *a, __m128 b )
 {
     _mm_storeh_pi( a, b );
 }
 
 /**\IMP{SSE Native,_mm_loadl_pi,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_loadl_pi_SSE( __m128 a, __m64 const* b )
+SSP_FORCEINLINE __m128 ssp_loadl_pi_SSE( __m128 a, __m64 const* b )
 {
     return _mm_loadl_pi( a, b );
 }
 
 /**\IMP{SSE Native,_mm_storel_pi,SSE} */
-SSEPLUS_FORCEINLINE void ssp_storel_pi_SSE( __m64 *a, __m128 b )
+SSP_FORCEINLINE void ssp_storel_pi_SSE( __m64 *a, __m128 b )
 {
     _mm_storel_pi( a, b );
 }
 
 /**\IMP{SSE Native,_mm_movemask_ps,SSE} */
-SSEPLUS_FORCEINLINE int ssp_movemask_ps_SSE( __m128 a )
+SSP_FORCEINLINE int ssp_movemask_ps_SSE( __m128 a )
 {
     return _mm_movemask_ps( a );
 }
@@ -498,7 +498,7 @@ SSEPLUS_FORCEINLINE int ssp_movemask_ps_SSE( __m128 a )
  */
 
 /**\IMP{SSE Native,_mm_pextrw,SSE} */
-SSEPLUS_FORCEINLINE int ssp_pextrw_SSE( __m64 a, int imm )
+SSP_FORCEINLINE int ssp_pextrw_SSE( __m64 a, int imm )
 {
     switch( imm & 0x3 )
     {
@@ -507,7 +507,7 @@ SSEPLUS_FORCEINLINE int ssp_pextrw_SSE( __m64 a, int imm )
 }
 
 /**\IMP{SSE Native,_mm_pinsrw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pinsrw_SSE( __m64 a, int b, int imm )
+SSP_FORCEINLINE __m64 ssp_pinsrw_SSE( __m64 a, int b, int imm )
 {
     switch( imm & 0x3 )
     {
@@ -516,43 +516,43 @@ SSEPLUS_FORCEINLINE __m64 ssp_pinsrw_SSE( __m64 a, int b, int imm )
 }
 
 /**\IMP{SSE Native,_mm_pmaxsw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pmaxsw_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pmaxsw_SSE( __m64 a, __m64 b )
 {
     return _m_pmaxsw( a, b );
 }
 
 /**\IMP{SSE Native,_mm_pmaxub,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pmaxub_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pmaxub_SSE( __m64 a, __m64 b )
 {
     return _m_pmaxub( a, b );
 }
 
 /**\IMP{SSE Native,_mm_pminsw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pminsw_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pminsw_SSE( __m64 a, __m64 b )
 {
     return _m_pminsw( a, b );
 }
 
 /**\IMP{SSE Native,_mm_pminub,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pminub_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pminub_SSE( __m64 a, __m64 b )
 {
     return _m_pminub( a, b );
 }
 
 /**\IMP{SSE Native,_mm_pmovmskb,SSE} */
-SSEPLUS_FORCEINLINE int ssp_pmovmskb_SSE( __m64 a )
+SSP_FORCEINLINE int ssp_pmovmskb_SSE( __m64 a )
 {
     return _m_pmovmskb( a );
 }
 
 /**\IMP{SSE Native,_mm_pmulhuw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pmulhuw_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pmulhuw_SSE( __m64 a, __m64 b )
 {
     return _m_pmulhuw( a, b );
 }
 
 /**\IMP{SSE Native,_mm_pshufw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pshufw_SSE( __m64 a, int imm )
+SSP_FORCEINLINE __m64 ssp_pshufw_SSE( __m64 a, int imm )
 {
     switch( imm & 0xFF )
     {
@@ -561,25 +561,25 @@ SSEPLUS_FORCEINLINE __m64 ssp_pshufw_SSE( __m64 a, int imm )
 }
 
 /**\IMP{SSE Native,_mm_maskmovq,SSE} */
-SSEPLUS_FORCEINLINE void ssp_maskmovq_SSE( __m64 a, __m64 b, char *c )
+SSP_FORCEINLINE void ssp_maskmovq_SSE( __m64 a, __m64 b, char *c )
 {
     _m_maskmovq( a, a, c );
 }
 
 /**\IMP{SSE Native,_mm_pavgb,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pavgb_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pavgb_SSE( __m64 a, __m64 b )
 {
     return _m_pavgb( a, b );
 }
 
 /**\IMP{SSE Native,_mm_pavgw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_pavgw_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_pavgw_SSE( __m64 a, __m64 b )
 {
     return _m_pavgw( a, b );
 }
 
 /**\IMP{SSE Native,_mm_psadbw,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_psadbw_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m64 ssp_psadbw_SSE( __m64 a, __m64 b )
 {
     return _m_psadbw( a, b );
 }
@@ -589,97 +589,97 @@ SSEPLUS_FORCEINLINE __m64 ssp_psadbw_SSE( __m64 a, __m64 b )
  */
 
 /**\IMP{SSE Native,_mm_set_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_set_ss_SSE( float a )
+SSP_FORCEINLINE __m128 ssp_set_ss_SSE( float a )
 {
     return _mm_set_ss( a );
 }
 
 /**\IMP{SSE Native,_mm_set_ps1,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_set_ps1_SSE( float a )
+SSP_FORCEINLINE __m128 ssp_set_ps1_SSE( float a )
 {
     return _mm_set_ps1( a );
 }
 
 /**\IMP{SSE Native,_mm_set_ps_SSE,SSE} */
-SSEPLUS_FORCEINLINE __m128 _mm_set_ps_SSE( float a, float b, float c, float d )
+SSP_FORCEINLINE __m128 _mm_set_ps_SSE( float a, float b, float c, float d )
 {
     return _mm_set_ps( a, b, c, d );
 }
 
 /**\IMP{SSE Native,_mm_setr_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_setr_ps_SSE( float a, float b, float c, float d )
+SSP_FORCEINLINE __m128 ssp_setr_ps_SSE( float a, float b, float c, float d )
 {
     return _mm_setr_ps( a, b, c, d );
 }
 
 /**\IMP{SSE Native,_mm_setzero_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_setzero_ps_SSE( void )
+SSP_FORCEINLINE __m128 ssp_setzero_ps_SSE( void )
 {
     return _mm_setzero_ps( );
 }
 
 /**\IMP{SSE Native,_mm_load_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_load_ss_SSE( float const*a )
+SSP_FORCEINLINE __m128 ssp_load_ss_SSE( float const*a )
 {
     return _mm_load_ss( a );
 }
 
 /**\IMP{SSE Native,_mm_load_ps1,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_load_ps1_SSE( float const*a )
+SSP_FORCEINLINE __m128 ssp_load_ps1_SSE( float const*a )
 {
     return _mm_load_ps1( a );
 }
 
 /**\IMP{SSE Native,_mm_load_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_load_ps_SSE( float const*a )
+SSP_FORCEINLINE __m128 ssp_load_ps_SSE( float const*a )
 {
     return _mm_load_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_loadr_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_loadr_ps_SSE( float const*a )
+SSP_FORCEINLINE __m128 ssp_loadr_ps_SSE( float const*a )
 {
     return _mm_loadr_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_loadu_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_loadu_ps_SSE( float const*a )
+SSP_FORCEINLINE __m128 ssp_loadu_ps_SSE( float const*a )
 {
     return _mm_loadu_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_store_ss,SSE} */
-SSEPLUS_FORCEINLINE void ssp_store_ss_SSE( float *v, __m128 a )
+SSP_FORCEINLINE void ssp_store_ss_SSE( float *v, __m128 a )
 {
     _mm_store_ss( v, a );
 }
 
 /**\IMP{SSE Native,_mm_store_ps1,SSE} */
-SSEPLUS_FORCEINLINE void ssp_store_ps1_SSE( float *v, __m128 a )
+SSP_FORCEINLINE void ssp_store_ps1_SSE( float *v, __m128 a )
 {
     _mm_store_ps1( v, a );
 }
 
 /**\IMP{SSE Native,_mm_store_ps,SSE} */
-SSEPLUS_FORCEINLINE void ssp_store_ps_SSE( float *v, __m128 a )
+SSP_FORCEINLINE void ssp_store_ps_SSE( float *v, __m128 a )
 {
     _mm_store_ps( v, a );
 }
 
 /**\IMP{SSE Native,_mm_storer_ps,SSE} */
-SSEPLUS_FORCEINLINE void ssp_storer_ps_SSE( float *v, __m128 a )
+SSP_FORCEINLINE void ssp_storer_ps_SSE( float *v, __m128 a )
 {
     _mm_storer_ps( v, a );
 }
 
 /**\IMP{SSE Native,_mm_storeu_ps,SSE} */
-SSEPLUS_FORCEINLINE void ssp_storeu_ps_SSE( float *v, __m128 a )
+SSP_FORCEINLINE void ssp_storeu_ps_SSE( float *v, __m128 a )
 {
     _mm_storeu_ps( v, a );
 }
 
 /**\IMP{SSE Native,_mm_prefetch,SSE} */
-SSEPLUS_FORCEINLINE void ssp_prefetch_SSE( char *a, int sel )
+SSP_FORCEINLINE void ssp_prefetch_SSE( char *a, int sel )
 {
     switch( sel & 0x3 )
     {
@@ -691,25 +691,25 @@ SSEPLUS_FORCEINLINE void ssp_prefetch_SSE( char *a, int sel )
 }
 
 /**\IMP{SSE Native,_mm_stream_pi,SSE} */
-SSEPLUS_FORCEINLINE void ssp_stream_pi_SSE( __m64 *a,  __m64 b )
+SSP_FORCEINLINE void ssp_stream_pi_SSE( __m64 *a,  __m64 b )
 {
     _mm_stream_pi( a,  b );
 }
 
 /**\IMP{SSE Native,_mm_stream_ps,SSE} */
-SSEPLUS_FORCEINLINE void ssp_stream_ps_SSE( float *a, __m128 b )
+SSP_FORCEINLINE void ssp_stream_ps_SSE( float *a, __m128 b )
 {
     _mm_stream_ps( a, b );
 }
 
 /**\IMP{SSE Native,_mm_move_ss,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_move_ss_SSE( __m128 a, __m128 b )
+SSP_FORCEINLINE __m128 ssp_move_ss_SSE( __m128 a, __m128 b )
 {
     return _mm_move_ss( a, b );
 }
 
 /**\IMP{SSE Native,_mm_sfence,SSE} */
-SSEPLUS_FORCEINLINE void ssp_sfence_SSE( void )
+SSP_FORCEINLINE void ssp_sfence_SSE( void )
 {
     _mm_sfence( );
 }
@@ -721,50 +721,50 @@ SSEPLUS_FORCEINLINE void ssp_sfence_SSE( void )
 }
 
 /**\IMP{SSE Native,_mm_setcsr,SSE} */
-SSEPLUS_FORCEINLINE void ssp_setcsr_SSE( unsigned int a )
+SSP_FORCEINLINE void ssp_setcsr_SSE( unsigned int a )
 {
     _mm_setcsr( a );
 }
 
 
 /**\IMP{SSE Native,_mm_cvtpi16_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvtpi16_ps_SSE( __m64 a )
+SSP_FORCEINLINE __m128 ssp_cvtpi16_ps_SSE( __m64 a )
 {
     return _mm_cvtpi16_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_cvtpu16_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvtpu16_ps_SSE( __m64 a )
+SSP_FORCEINLINE __m128 ssp_cvtpu16_ps_SSE( __m64 a )
 {
     return _mm_cvtpu16_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_cvtps_pi16,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_cvtps_pi16_SSE( __m128 a )
+SSP_FORCEINLINE __m64 ssp_cvtps_pi16_SSE( __m128 a )
 {
     return _mm_cvtps_pi16( a );
 }
 
 /**\IMP{SSE Native,_mm_cvtpi8_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvtpi8_ps_SSE( __m64 a )
+SSP_FORCEINLINE __m128 ssp_cvtpi8_ps_SSE( __m64 a )
 {
     return _mm_cvtpi8_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_cvtpu8_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvtpu8_ps_SSE( __m64 a )
+SSP_FORCEINLINE __m128 ssp_cvtpu8_ps_SSE( __m64 a )
 {
     return _mm_cvtpu8_ps( a );
 }
 
 /**\IMP{SSE Native,_mm_cvtps_pi8,SSE} */
-SSEPLUS_FORCEINLINE __m64 ssp_cvtps_pi8_SSE( __m128 a )
+SSP_FORCEINLINE __m64 ssp_cvtps_pi8_SSE( __m128 a )
 {
     return _mm_cvtps_pi8( a );
 }
 
 /**\IMP{SSE Native,_mm_cvtpi32x2_ps,SSE} */
-SSEPLUS_FORCEINLINE __m128 ssp_cvtpi32x2_ps_SSE( __m64 a, __m64 b )
+SSP_FORCEINLINE __m128 ssp_cvtpi32x2_ps_SSE( __m64 a, __m64 b )
 {
     return _mm_cvtpi32x2_ps( a, b );
 }

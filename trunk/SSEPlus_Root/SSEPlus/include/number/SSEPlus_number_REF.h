@@ -10,7 +10,7 @@
  *  @name Number Operations */
 
 
-SSEPLUS_FORCEINLINE int ssp_number_isValidNumber_F32_REF( ssp_s32* val )//TODO: move into utility collection
+SSP_FORCEINLINE int ssp_number_isValidNumber_F32_REF( ssp_s32* val )//TODO: move into utility collection
 {
     // Check for NAN, +infin, or -infin (exponent: 111 1111 1)
     // Are the exponent bits all 1's?
@@ -20,7 +20,7 @@ SSEPLUS_FORCEINLINE int ssp_number_isValidNumber_F32_REF( ssp_s32* val )//TODO: 
     }
     return 1;
 }
-SSEPLUS_FORCEINLINE int ssp_number_isValidNumber_F64_REF( ssp_s64* val )   //TODO: move into utility collection
+SSP_FORCEINLINE int ssp_number_isValidNumber_F64_REF( ssp_s64* val )   //TODO: move into utility collection
 {
     // Check for NAN, +infin, or -infin (exponent: 1111 1111)
     // Are the exponent bits all 1's?
@@ -31,7 +31,7 @@ SSEPLUS_FORCEINLINE int ssp_number_isValidNumber_F64_REF( ssp_s64* val )   //TOD
     return 1;
 }
 
-SSEPLUS_FORCEINLINE ssp_f32 ssp_number_changeSNanToQNaN_F32_REF( ssp_s32* val )//TODO: move into utility collection
+SSP_FORCEINLINE ssp_f32 ssp_number_changeSNanToQNaN_F32_REF( ssp_s32* val )//TODO: move into utility collection
 {
     ssp_f32* retVal = (ssp_f32*)val;
     // Check if the value is already a QNaN
@@ -47,7 +47,7 @@ SSEPLUS_FORCEINLINE ssp_f32 ssp_number_changeSNanToQNaN_F32_REF( ssp_s32* val )/
     return *retVal;
 }
 
-SSEPLUS_FORCEINLINE ssp_f64 ssp_number_changeSNanToQNaN_F64_REF( ssp_s64* val )//TODO: move into utility collection
+SSP_FORCEINLINE ssp_f64 ssp_number_changeSNanToQNaN_F64_REF( ssp_s64* val )//TODO: move into utility collection
 {
     ssp_f64* retVal = (ssp_f64*)val;
     // Check if the value is already a QNaN

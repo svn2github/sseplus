@@ -7,6 +7,11 @@
 #include "../include/csvTable.h" 
 #include "../../../SSEPlus/include/SSEPlus.h"
 
+// Decoder Table
+// 1 - REF      2 - SSE2
+// 3 - SSE3     4 - SSSE3
+// 5 - SSE4a    6 - SSE4.1
+// 7 - SSE4.2   8 - SSE5
 #define TEST_1(     f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
 #define TEST_2(     f,t,...)Test<__VA_ARGS__,f##_SSE2,  0,f##_SSE2,  1,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,enum_##t >( csv[#f], #f, 
 #define TEST_3(     f,t,...)Test<__VA_ARGS__,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  1,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,enum_##t >( csv[#f], #f, 
@@ -24,23 +29,30 @@
 #define TEST_126(   f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_SSE4_1,1,enum_##t >( csv[#f], #f, 
 #define TEST_1236(  f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  1,f##_REF,   0,f##_REF,   0,f##_SSE4_1,1,enum_##t >( csv[#f], #f, 
 
-#ifndef SSEPLUS_SSSE3_SSE4A_SSE41_SSE42
+// This code allows the unit test project to compile when the compiler doesn't support higher level SSE instructions
+#ifndef SSP_COMPILER_SUPPORTS_SSSE3
 #undef  TEST_14
-#undef  TEST_15
-#undef  TEST_16
+#define TEST_14  TEST_1
 #undef  TEST_124
-#undef  TEST_125
-#undef  TEST_126
-#undef  TEST_1236
+#define TEST_124 TEST_12
+#endif 
 
-#define TEST_14    TEST_1
-#define TEST_15    TEST_1
-#define TEST_16    TEST_1
-#define TEST_124   TEST_12
-#define TEST_125   TEST_12
-#define TEST_126   TEST_12
-#define TEST_1236  TEST_123
-#endif
+#ifndef SSP_COMPILER_SUPPORTS_SSE4a
+#undef  TEST_15
+#define TEST_15  TEST_1
+#undef  TEST_125
+#define TEST_125 TEST_12
+#endif 
+
+#ifndef SSP_COMPILER_SUPPORTS_SSE41
+#undef  TEST_16
+#define TEST_16   TEST_1
+#undef  TEST_126
+#define TEST_126  TEST_12
+#undef  TEST_1236
+#define TEST_1236 TEST_123
+#endif 
+
 
 #define MIN_INT     (-2147483647 - 1) /* minimum (signed) int value */
 
@@ -179,93 +191,6 @@ void SSSE3_Tests( CSVTable & csv )
         vS8(1, -60,  76, 125,  100, -97, -15, 42, 32, 127, -127,  -52,  10, -1,  31, 25),
         vS8(0,   1,  -1,   1,   -1,  -1,   1,  0,  1,  31,  -42, -128, 127,  0,  -1, 1));
 
-}
-
-void SSSE3_MMX_Tests( CSVTable & csv )
-{
-#ifdef SYS32
-    TEST_124( ssp_abs_pi16, ssp_s16, __m64, __m64)  
-        vmS16(0,  1234,  32767, -32768), 
-        vmS16(0, -1234, -32767, -32768));  
-
-    TEST_124( ssp_abs_pi32, ssp_s32, __m64, __m64)  
-        vmS32(  32768,  MIN_INT), 
-        vmS32( -32768,  MIN_INT)); //MIN_INT = -2147483648 
-
-    TEST_124( ssp_abs_pi8, ssp_s8, __m64, __m64)  
-        vmS8(77,  88, 99,  127, 0, -128, 111,  100), 
-        vmS8(77, -88, 99, -127, 0, -128, 111, -100));
-
-    TEST_124(ssp_alignr_pi8, ssp_u32, __m64, __m64, __m64, int ) 
-        vmU32(0x89ABCDEF, 0xFFDDEECC),
-        vmU32(0x01234567, 0x89ABCDEF),
-        vmU32(0xFFDDEECC, 0xBBAA9988), 4);
-
-    TEST_124( ssp_hadd_pi16, ssp_s16, __m64, __m64, __m64 )   
-        vmS16(32766, -1,  3,  -32766),
-        vmS16( 1,  2,  3,  32767), 
-        vmS16(-3, -32767, -5,  4));
-    TEST_124( ssp_hadd_pi32, ssp_s32, __m64, __m64, __m64 )   
-        vmS32(-4,  3),
-        vmS32( 1,  2), 
-        vmS32(-1, -3));
-    TEST_124( ssp_hadd_pi32, ssp_s32, __m64, __m64, __m64 )   
-        vmS32(2147483646,  MIN_INT),
-        vmS32( 1,  2147483647), 
-        vmS32(-3, -2147483647));
-
-    TEST_124( ssp_hadds_pi16, ssp_s16, __m64, __m64, __m64 )   
-        vmS16(-32768, -1,  3,  32767),
-        vmS16( 1,  2,  3,  32767), 
-        vmS16(-3, -32767, -5,  4));
-
-    TEST_124( ssp_hsub_pi16, ssp_s16, __m64, __m64, __m64 )   
-        vmS16(32766, 9,  1,  -32766),
-        vmS16( 1,  2,  -3,  32767), 
-        vmS16( 3, -32767, -5,  4));
-    TEST_124( ssp_hsub_pi32, ssp_s32, __m64, __m64, __m64 )   
-        vmS32(-2,  1),
-        vmS32( 1,  2), 
-        vmS32(-1, -3));
-    TEST_124( ssp_hsub_pi32, ssp_s32, __m64, __m64, __m64 )   
-        vmS32(2147483646,  MIN_INT),
-        vmS32(-1,  2147483647), 
-        vmS32( 3, -2147483647));
-    TEST_124( ssp_hsubs_pi16, ssp_s16, __m64, __m64, __m64 )   
-        vmS16(-32768, -1,  1,  32767),
-        vmS16( 1,  2,  -3,  32767), 
-        vmS16( 3, -32767, 5,  4));	  
-
-    TEST_124(ssp_maddubs_pi16, ssp_s16, __m64, __m64, __m64 ) 
-        vmS16(32767, -32768, -10000, -95),
-        vmU8(255, 254,  253,  252, 100,  200, 50, 1 ),
-        vmS8(127, 100, -127, -126, 100, -100, -2, 5)); 
-
-    TEST_124(ssp_mulhrs_pi16, ssp_s16, __m64, __m64, __m64 ) 
-        vmS16(1,     -8,  -0x20,    0x80),
-        vmS16(255, -254, 0x1000, -0x2000),
-        vmS16(127, 1000, -0x100, -0x200 ));
-
-    TEST_124(ssp_shuffle_pi8, ssp_s8, __m64, __m64, __m64)
-        vmS8(1, 0, 4, 0, 16, 0, 64, 0),
-        vmS8(127, 64, 32, 16, 8, 4, 2, 1),
-        vmU8(0x00, 0x81, 0x02, 0x83, 0x04, 0x85, 0x06, 0x87));	
-
-    TEST_124(ssp_sign_pi16, ssp_s16, __m64, __m64, __m64)
-        vmS16( 1753, -5319,     0, 32000),
-        vmS16(-1753,  5319, -6000, 32000),
-        vmS16(-4096,    -1,     0,  1));
-    TEST_124(ssp_sign_pi32, ssp_s32, __m64, __m64, __m64)
-        vmS32( 75000,  0),
-        vmS32(-75000, 70000),
-        vmS32( -1293,  0));
-    TEST_124(ssp_sign_pi8, ssp_s8, __m64, __m64, __m64)
-        vmS8(29,   0,  15,   27, 31, -51,    0, 42),
-        vmS8(29, -81, -15,  -27, 31,  51, -120, 42),
-        vmS8( 1,   0, -51, -128, 127,  -1,   0,  1));
-
-    MMX_EMPTY; 
-#endif
 }
 
 
@@ -658,57 +583,57 @@ void SSE4_1_Tests( CSVTable & csv )
     TEST_126( ssp_round_pd, ssp_f64, __m128d, __m128d, int  )        
         vF64( 128.0, -315.0   ),
         vF64( 127.5, -315.125 ),
-        SSEPLUS_FROUND_TO_NEAREST_INT );
+        SSP_FROUND_TO_NEAREST_INT );
     TEST_126( ssp_round_pd, ssp_f64, __m128d, __m128d, int  )   
         vF64( 128.0, -315.0   ),
         vF64( 127.5, -315.125 ),
-        SSEPLUS_FROUND_TO_POS_INF     );
+        SSP_FROUND_TO_POS_INF     );
     TEST_126( ssp_round_pd, ssp_f64, __m128d, __m128d, int  )
         vF64( 127.0, -316.0   ),
         vF64( 127.5, -315.525 ),
-        SSEPLUS_FROUND_TO_NEG_INF     );
+        SSP_FROUND_TO_NEG_INF     );
     TEST_126( ssp_round_pd, ssp_f64, __m128d, __m128d, int  )
         vF64( 40.0, -30.0     ),
         vF64( 40.5, -30.9     ),
-        SSEPLUS_FROUND_TO_ZERO        );
+        SSP_FROUND_TO_ZERO        );
 
     TEST_126( ssp_round_ps, ssp_f32, __m128, __m128, int )
         vF32( 128.0f, -315.0f,   0.0f,   -1.0f   ),
         vF32( 127.5f, -315.125f, 0.123f, -0.789f ),
-        SSEPLUS_FROUND_TO_NEAREST_INT   );
+        SSP_FROUND_TO_NEAREST_INT   );
     TEST_126( ssp_round_ps, ssp_f32, __m128, __m128, int )
         vF32( 128.0f, -315.0f,   1.0f,   0.0f   ),
         vF32( 127.5f, -315.125f, 0.123f, -0.789f ),
-        SSEPLUS_FROUND_TO_POS_INF       );
+        SSP_FROUND_TO_POS_INF       );
     TEST_126( ssp_round_ps, ssp_f32, __m128, __m128, int )
         vF32( 127.0f, -316.0f,   0.0f,   -1.0f   ),
         vF32( 127.5f, -315.525f, 0.123f, -0.789f ),
-        SSEPLUS_FROUND_TO_NEG_INF       );
+        SSP_FROUND_TO_NEG_INF       );
     TEST_126( ssp_round_ps, ssp_f32, __m128, __m128, int )
         vF32( 40.0f, -30.0f,     0.0f,   0.0f   ),
         vF32( 40.5f, -30.9f    , 0.123f, -0.789f ),
-        SSEPLUS_FROUND_TO_ZERO          );
+        SSP_FROUND_TO_ZERO          );
 
     TEST_126( ssp_round_ss, ssp_f32, __m128, __m128, __m128, int  )
         vF32( -315.125f, 0.123f, 127.5f, 128.0f ), 
         vF32( -315.125f, 0.123f, 127.5f,   0.0f ),
         vF32(  127.5f,   0.3f,   1.4f,   127.5f ),
-        SSEPLUS_FROUND_TO_NEAREST_INT   );
+        SSP_FROUND_TO_NEAREST_INT   );
     TEST_126( ssp_round_ss, ssp_f32, __m128, __m128, __m128, int )
         vF32( 127.5f, -315.125f, 0.123f,   -0.0f   ),
         vF32( 127.5f, -315.125f, 0.123f,  127.5f   ),
         vF32(  127.5f,   0.3f,   1.4f,     -0.789f ),
-        SSEPLUS_FROUND_TO_POS_INF       );
+        SSP_FROUND_TO_POS_INF       );
     TEST_126( ssp_round_ss, ssp_f32, __m128, __m128, __m128, int )
         vF32( 127.5f, -315.525f, 0.123f,  -1.0f   ),
         vF32( 127.5f, -315.525f, 0.123f, 127.5f   ),
         vF32(  127.5f,   0.3f,   1.4f,    -0.789f ),
-        SSEPLUS_FROUND_TO_NEG_INF       );
+        SSP_FROUND_TO_NEG_INF       );
     TEST_126( ssp_round_ss, ssp_f32, __m128, __m128, __m128, int )
         vF32( 40.5f, -30.9f    , 0.123f,  -0.0f   ),
         vF32( 40.5f, -30.9f    , 0.123f, 127.5f   ),
         vF32(  127.5f,   0.3f,   1.4f,    -0.789f ),
-        SSEPLUS_FROUND_TO_ZERO          );   
+        SSP_FROUND_TO_ZERO          );   
 
     TEST_126( ssp_testc_si128, ssp_u32, int,   __m128i,__m128i )
         1,
@@ -750,18 +675,18 @@ void SSE4_1_Tests( CSVTable & csv )
     //input.u64[0] = 0x7FF0000000000001ll; input.u64[1] = 0xFFF8FFFFFFFFFFFFll;
     //TEST_1(__m128d, __m128d, int,  ARG(ssp_f64, ssp_round_pd ), vF64( expected_output.f64[1], expected_output.f64[0] ),
     //                                                      vF64( input.f64[1], input.f64[0] ),
-    //                                                      SSEPLUS_FROUND_TO_NEAREST_INT );
+    //                                                      SSP_FROUND_TO_NEAREST_INT );
     //expected_output.u64[0] = 0x7FF8FFFFFFFFFFFFll; expected_output.u64[1] = 0xFFFFFFFFFFFFFFFFll; 
     //input.u64[0] = 0x7FF8FFFFFFFFFFFFll; input.u64[1] = 0xFFFFFFFFFFFFFFFFll;
     //TEST_1(__m128d, __m128d, int,  ARG(ssp_f64, ssp_round_pd ), vF64( expected_output.f64[1], expected_output.f64[0]  ),
     //                                                      vF64( input.f64[1], input.f64[0]  ),
-    //                                                      SSEPLUS_FROUND_TO_NEAREST_INT );
+    //                                                      SSP_FROUND_TO_NEAREST_INT );
 
     //expected_output.s32[0] = 0xFFD00000; expected_output.s32[1] = 0x7FD010101; expected_output.s32[3] = 0xFFFFFFFE;
     //input.s32[0] = 0xFFD00000; input.s32[1] = 0x7FD010101; input.s32[2] = 0xFFFFFFFE;
     //TEST_1(__m128, __m128, int,  ARG(ssp_f32, ssp_round_ps ), vF32( expected_output.f32[0], expected_output.f32[1], 129.0f, expected_output.f32[3] ),
     //                                                    vF32( input.f32[0], input.f32[1], 128.5f, input.f32[2] ),
-    //                                                    SSEPLUS_FROUND_TO_NEAREST_INT   );
+    //                                                    SSP_FROUND_TO_NEAREST_INT   );
 }
 
 
@@ -820,11 +745,7 @@ int main(int argc, char *argv[])
 
     PrintHeader();
     SSSE3_Tests( csv );
-    std::cout << std::endl;
-
-    PrintHeader();
-    SSSE3_MMX_Tests( csv );
-    std::cout << std::endl;
+    std::cout << std::endl;   
 
     PrintHeader();
     SSE4A_Tests( csv );

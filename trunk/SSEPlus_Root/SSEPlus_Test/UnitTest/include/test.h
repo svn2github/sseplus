@@ -9,13 +9,13 @@
 #include "../../../SSEPlus/include/SSEPlus_platform.h"
 #include <list>
 
-#if defined(SSEPLUS_MSVC)
+#if defined(SSP_MSVC)
 
 #include <windows.h>
 #include <intrin.h>
 #define get_rdtsc __rdtsc
 
-#elif defined(SSEPLUS_GNUC)
+#elif defined(SSP_GNUC)
 
 #include <stdlib.h>
 #include <signal.h>
@@ -31,13 +31,6 @@ static inline unsigned long long get_rdtsc()
 	return ((unsigned long long)high << 32) | (unsigned long long)low;
 }
 	
-#endif
-
-//#pragma warning( disable: 4799 )
-#ifdef SYS32
-#define	MMX_EMPTY _mm_empty()
-#else
-#define	MMX_EMPTY 
 #endif
 
 #include "format.h"
@@ -146,11 +139,8 @@ namespace p
            oss << "Expected[ " << ToStr<epf>(expected) << " ]";
 
            errorList += " " + oss.str();
-			MMX_EMPTY;
            return false;
-       }
-	   
-	   MMX_EMPTY;
+       }	    
        return true;
     }    
 
@@ -172,8 +162,6 @@ namespace p
             out = fn( out ); 
 
         NO_OPT( out );
-			
-		MMX_EMPTY;
     }    
 
     template< typename TR, typename T1, typename T2, enumPrintFormat epf, TR(*fn)(T1,T2) >
@@ -187,8 +175,6 @@ namespace p
             out = fn( out,b );    
 
         NO_OPT( out );  
-		
-		MMX_EMPTY;
     }   
 
     template< typename TR, typename T1, typename T2, typename T3, enumPrintFormat epf, TR(*fn)(T1,T2,T3) >
@@ -202,7 +188,6 @@ namespace p
             out = fn( out,b,c );    
 
         NO_OPT( out );
-		MMX_EMPTY;
     }
 
     template< typename TR, typename T1, typename T2, typename T3, typename T4, enumPrintFormat epf, TR(*fn)(T1,T2,T3,T4) >
@@ -216,7 +201,6 @@ namespace p
             out = fn( out,b,c,d );    
 
         NO_OPT( out );
-		MMX_EMPTY;
     }
 
     // Type specific overloads
@@ -290,8 +274,6 @@ namespace p
             *a = *a+1;
             fn( a, b );    
         }
-		
-		MMX_EMPTY;
     } 
 
     template< typename TR, typename T1, typename T2, enumPrintFormat epf, TR(*fn)(T1,T2) >
@@ -308,7 +290,7 @@ namespace p
     }
 };
 
-#ifdef SSEPLUS_MSVC
+#ifdef SSP_MSVC
 
 // STATUS_ILLEGAL_INSTRUCTION #include <windows.h> 
 #define TRY(  ... )             \
@@ -323,9 +305,9 @@ namespace p
 
 #endif
 
-#ifdef SSEPLUS_GNUC
+#ifdef SSP_GNUC
 
-#define SSEPLUS_SIGILL_RET 1
+#define SSP_SIGILL_RET 1
 sigjmp_buf env;
 
 void handle_illegal_instruction(int num)
@@ -333,7 +315,7 @@ void handle_illegal_instruction(int num)
 	if(num == SIGILL)
 	{
 		signal(SIGILL, handle_illegal_instruction);
-		siglongjmp(env, SSEPLUS_SIGILL_RET);
+		siglongjmp(env, SSP_SIGILL_RET);
 	}
 	else
 	{
@@ -350,7 +332,7 @@ void handle_illegal_instruction(int num)
 	    {                                                      \
 	        __VA_ARGS__;                                       \
 	    }                                                      \
-	    else if(sj == SSEPLUS_SIGILL_RET)                      \
+	    else if(sj == SSP_SIGILL_RET)                      \
 	    {                                                      \
 	        PrintException( cycles );                          \
 	    }                                                      \
@@ -388,7 +370,6 @@ void Test( const CSVLine & csv, const char *name, TEXP exp, T1 a, T2 b )
     if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TEXP,T1,T2,TR,epf,fn_sse4a  >( cycles,exp,a,b ) ); } else { PrintSpace(); }
     if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TEXP,T1,T2,TR,epf,fn_sse4_1 >( cycles,exp,a,b ) ); } else { PrintSpace(); }  
     PrintErrors( p::errorList );
-	MMX_EMPTY;
 }
 
 
@@ -417,8 +398,6 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, __m128i expMask=
     if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,epf,fn_sse4a  >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }
     if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,epf,fn_sse4_1 >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }   
     PrintErrors( p::errorList );
-			
-	MMX_EMPTY;
 }
 
 //====================================
@@ -444,7 +423,6 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, __m128i ex
     if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,T2,epf,fn_sse4a  >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }
     if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,T2,epf,fn_sse4_1 >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }  
     PrintErrors( p::errorList );
-	MMX_EMPTY;
 }
 
 //====================================
@@ -470,7 +448,6 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, __m1
     if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,T2,T3,epf,fn_sse4a  >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
     if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,T2,T3,epf,fn_sse4_1 >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
     PrintErrors( p::errorList );
-	MMX_EMPTY;
 }
 
 //====================================
@@ -496,7 +473,6 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, T4 d
     if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_sse4a  >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
     if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_sse4_1 >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
     PrintErrors( p::errorList );
-	MMX_EMPTY;
 }
 
 //====================================

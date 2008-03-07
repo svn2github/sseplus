@@ -12,7 +12,7 @@
  *  @{
  *  @name Logical Operations */
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu16_REF( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu16_REF( __m128i a, __m128i b )
 {
     ssp_m128 A, B;
     A.i = a;
@@ -29,7 +29,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu16_REF( __m128i a, __m128i b )
     return A.i;
 }
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_REF( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_REF( __m128i a, __m128i b )
 {
     ssp_m128 A, B;
     A.i = a;
@@ -48,7 +48,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_REF( __m128i a, __m128i b )
 
 
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu32_REF( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu32_REF( __m128i a, __m128i b )
 {
     ssp_m128 A, B;
     A.i = a;
@@ -61,7 +61,7 @@ SSEPLUS_FORCEINLINE __m128i ssp_logical_cmplt_epu32_REF( __m128i a, __m128i b )
     return A.i;
 }
 
-SSEPLUS_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_REF( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_REF( __m128i a, __m128i b )
 {
     ssp_m128 A, B;
     A.i = a;

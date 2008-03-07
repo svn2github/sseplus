@@ -14,11 +14,11 @@
  *  @name Emulated Instructions */
 
 /** \IMP{SSE3,_mm_dp_ps,SSE4.1} */ 
-SSEPLUS_FORCEINLINE
+SSP_FORCEINLINE
 __m128 ssp_dp_ps_SSE3( __m128 a, __m128 b, const int mask )                 
 {
-    const static __m128i mulShiftImm_0123 = CONST_SET_32I( 0x010000, 0x020000, 0x040000, 0x080000 );   // Shift mask multiply moves 0,1,2,3 bits to left, becomes MSB
-    const static __m128i mulShiftImm_4567 = CONST_SET_32I( 0x100000, 0x200000, 0x400000, 0x800000 );   // Shift mask multiply moves 4,5,6,7 bits to left, becomes MSB
+    const static __m128i mulShiftImm_0123 = SSP_CONST_SET_32I( 0x010000, 0x020000, 0x040000, 0x080000 );   // Shift mask multiply moves 0,1,2,3 bits to left, becomes MSB
+    const static __m128i mulShiftImm_4567 = SSP_CONST_SET_32I( 0x100000, 0x200000, 0x400000, 0x800000 );   // Shift mask multiply moves 4,5,6,7 bits to left, becomes MSB
 
     // Begin mask preparation
     ssp_m128 mHi, mLo;
