@@ -1,4 +1,4 @@
-Intrinsic Name,Instruction Set,REF,SSE,SSE2,SSE3,SSSE3,SSE4A,SSE4.1,SSE4.2,SSE5
+Intrinsic Name,Instruction Set,REF,SSE,SSE2,SSE3,SSSE3,SSE4A,SSE4_1,SSE4_2,SSE5
 _mm_abs_epi16,SSSE3,X,,X,,X,,,,
 _mm_abs_epi32,SSSE3,X,,X,,X,,,,
 _mm_abs_epi8,SSSE3,X,,X,,X,,,,
@@ -493,14 +493,10 @@ _mm_roti_epi16,SSE5,,,,,,,,,X
 _mm_roti_epi32,SSE5,,,,,,,,,X
 _mm_roti_epi64,SSE5,,,,,,,,,X
 _mm_roti_epi8,SSE5,,,,,,,,,X
-_mm_round_pd,SSE4.1,X,,,,,,X,,
-_mm_round_pd,SSE5,,,,,,,,,X
-_mm_round_ps,SSE4.1,X,,X,,,,X,,
-_mm_round_ps,SSE5,,,,,,,,,X
-_mm_round_sd,SSE4.1,X,,,,,,X,,
-_mm_round_sd,SSE5,,,,,,,,,X
-_mm_round_ss,SSE4.1,X,,X,,,,X,,
-_mm_round_ss,SSE5,,,,,,,,,X
+_mm_round_pd,SSE4.1/5,X,,,,,,X,,X
+_mm_round_ps,SSE4.1/5,X,,X,,,,X,,X
+_mm_round_sd,SSE4.1/5,X,,,,,,X,,X
+_mm_round_ss,SSE4.1/5,X,,X,,,,X,,X
 _mm_rsqrt_ps ,SSE,,X,,,,,,,
 _mm_rsqrt_ss ,SSE,,X,,,,,,,
 _mm_sad_epu8,SSE2,,,X,,,,,,
@@ -510,10 +506,10 @@ _mm_set_epi32,SSE2,,,X,,,,,,
 _mm_set_epi64,SSE2,,,X,,,,,,
 _mm_set_epi8,SSE2,,,X,,,,,,
 _mm_set_pd,SSE2,,,X,,,,,,
-_mm_set_ps ,SSE,,X,
-_mm_set_ps1 ,SSE,,X,
-_mm_set_sd,SSE2,,,X
-_mm_set_ss ,SSE,,X,
+_mm_set_ps ,SSE,,X,,,,,,,
+_mm_set_ps1 ,SSE,,X,,,,,,,
+_mm_set_sd,SSE2,,,X,,,,,,
+_mm_set_ss ,SSE,,X,,,,,,,
 _mm_set1_epi16,SSE2,,,X
 _mm_set1_epi32,SSE2,,,X
 _mm_set1_epi64,SSE2,,,X
@@ -526,10 +522,10 @@ _mm_setr_epi16,SSE2,,,X
 _mm_setr_epi32,SSE2,,,X
 _mm_setr_epi8,SSE2,,,X
 _mm_setr_pd,SSE2,,,X
-_mm_setr_ps ,SSE,,X,,,,,,,
-_mm_setzero_pd,SSE2,,,X,,,,,,
-_mm_setzero_ps ,SSE,,X,,,,,,,
-_mm_setzero_si128,SSE2,,,X,,,,,,
+_mm_setr_ps ,SSE,,X,
+_mm_setzero_pd,SSE2,,,X
+_mm_setzero_ps ,SSE,,X,
+_mm_setzero_si128,SSE2,,,X
 _mm_sfence ,SSE,,X,,,,,,,
 _mm_sha_epi16,SSE5,,,,,,,,,X
 _mm_sha_epi32,SSE5,,,,,,,,,X
@@ -542,10 +538,10 @@ _mm_shl_epi8,SSE5,,,,,,,,,X
 _mm_shuffle_epi32,SSE2,,,X,,,,,,
 _mm_shuffle_epi8,SSSE3,X,,,,X,,,,
 _mm_shuffle_pd,SSE2,,,X,,,,,,
-_mm_shuffle_ps ,SSE,,X,,,
-_mm_shufflehi_epi16,SSE2,,,X,,
-_mm_shufflelo_epi16,SSE2,,,X,,
-_mm_sign_epi16,SSSE3,X,,,,X
+_mm_shuffle_ps ,SSE,,X,,,,,,,
+_mm_shufflehi_epi16,SSE2,,,X,,,,,,
+_mm_shufflelo_epi16,SSE2,,,X,,,,,,
+_mm_sign_epi16,SSSE3,X,,,,X,,,,
 _mm_sign_epi32,SSSE3,X,,,,X
 _mm_sign_epi8,SSSE3,X,,,,X
 _mm_sll_epi16,SSE2,,,X,,
@@ -558,10 +554,10 @@ _mm_slli_si128,SSE2,,,X,,
 _mm_sqrt_pd,SSE2,,,X,,
 _mm_sqrt_ps ,SSE,,X,,,
 _mm_sqrt_sd,SSE2,,,X,,
-_mm_sqrt_ss ,SSE,,X,
-_mm_sra_epi16,SSE2,,,X
-_mm_sra_epi32,SSE2,,,X
-_mm_srai_epi16,SSE2,,,X
+_mm_sqrt_ss ,SSE,,X,,,
+_mm_sra_epi16,SSE2,,,X,,
+_mm_sra_epi32,SSE2,,,X,,
+_mm_srai_epi16,SSE2,,,X,,
 _mm_srai_epi32,SSE2,,,X
 _mm_srl_epi16,SSE2,,,X
 _mm_srl_epi32,SSE2,,,X
@@ -574,10 +570,10 @@ _mm_store_pd,SSE2,,,X
 _mm_store_ps ,SSE,,X,
 _mm_store_ps1 ,SSE,,X,
 _mm_store_sd,SSE2,,,X
-_mm_store_si128,SSE2,,,X,,,,
-_mm_store_ss ,SSE,,X,,,,,
-_mm_store1_pd,SSE2,,,X,,,,
-_mm_store1_ps,SSE,,X,,,,,
+_mm_store_si128,SSE2,,,X
+_mm_store_ss ,SSE,,X,
+_mm_store1_pd,SSE2,,,X
+_mm_store1_ps,SSE,,X,
 _mm_storeh_pd,SSE2,,,X,,,,
 _mm_storel_epi64,SSE2,,,X,,,,
 _mm_storel_pd,SSE2,,,X,,,,
@@ -590,38 +586,35 @@ _mm_stream_load_si128,SSE4.1,X,,,,,,X
 _mm_stream_pd,SSE2,,,X,,,,
 _mm_stream_ps ,SSE,,X,,,,,
 _mm_stream_sd,SSE4a,,,,,,X,
-_mm_stream_si128,SSE2,,,X,,,
-_mm_stream_si32,SSE2,,,X,,,
-_mm_stream_ss,SSE4a,,,,,,X
-_mm_sub_epi16,SSE2,,,X,,,
-_mm_sub_epi32,SSE2,,,X,,,
-_mm_sub_epi64,SSE2,,,X,,,
-_mm_sub_epi8,SSE2,,,X,,,
-_mm_sub_pd,SSE2,,,X,,,
-_mm_sub_ps ,SSE,,X,,,,
-_mm_sub_sd,SSE2,,,X,,,
-_mm_sub_si64,SSE2,,,X,,,
-_mm_sub_ss ,SSE,,X,,,,
-_mm_subs_epi16,SSE2,,,X,,,
-_mm_subs_epi8,SSE2,,,X,,,
-_mm_subs_epu16,SSE2,,,X,,,
-_mm_subs_epu8,SSE2,,,X,,,
-_mm_testc_si128,SSE4.1,X,,,,,,X,,
-_mm_testc_si128,SSE5,,,,,,,,,X
-_mm_testnzc_si128,SSE4.1,X,,,,,,X,,
-_mm_testnzc_si128,SSE5,,,,,,,,,X
-_mm_testz_si128,SSE4.1,X,,,,,,X,,
-_mm_testz_si128,SSE5,,,,,,,,,X
+_mm_stream_si128,SSE2,,,X,,,,
+_mm_stream_si32,SSE2,,,X,,,,
+_mm_stream_ss,SSE4a,,,,,,X,
+_mm_sub_epi16,SSE2,,,X,,,,
+_mm_sub_epi32,SSE2,,,X,,,,,,
+_mm_sub_epi64,SSE2,,,X,,,,,,
+_mm_sub_epi8,SSE2,,,X,,,,,,
+_mm_sub_pd,SSE2,,,X,,,,,,
+_mm_sub_ps ,SSE,,X,,,,,,,
+_mm_sub_sd,SSE2,,,X,,,,,,
+_mm_sub_si64,SSE2,,,X,,,,,,
+_mm_sub_ss ,SSE,,X,,,,,,,
+_mm_subs_epi16,SSE2,,,X,,,,,,
+_mm_subs_epi8,SSE2,,,X,,,,,,
+_mm_subs_epu16,SSE2,,,X,,,,,,
+_mm_subs_epu8,SSE2,,,X,,,,,,
+_mm_testc_si128,SSE4.1/5,X,,,,,,X,,X
+_mm_testnzc_si128,SSE4.1/5,X,,,,,,X,,X
+_mm_testz_si128,SSE4.1/5,X,,,,,,X,,X
 _mm_ucomieq_sd,SSE2,,,X,,,,,,
-_mm_ucomieq_ss ,SSE,,X,,,,,,,
-_mm_ucomige_sd,SSE2,,,X,,,,,,
-_mm_ucomige_ss ,SSE,,X,,,,,,,
-_mm_ucomigt_sd,SSE2,,,X,,,,,,
-_mm_ucomigt_ss ,SSE,,X,,,,,,,
-_mm_ucomile_sd,SSE2,,,X,,,,,,
-_mm_ucomile_ss ,SSE,,X,,,,,,,
-_mm_ucomilt_sd,SSE2,,,X,,,,,,
-_mm_ucomilt_ss ,SSE,,X,,,,,,,
+_mm_ucomieq_ss ,SSE,,X,
+_mm_ucomige_sd,SSE2,,,X
+_mm_ucomige_ss ,SSE,,X,
+_mm_ucomigt_sd,SSE2,,,X
+_mm_ucomigt_ss ,SSE,,X,
+_mm_ucomile_sd,SSE2,,,X
+_mm_ucomile_ss ,SSE,,X,
+_mm_ucomilt_sd,SSE2,,,X
+_mm_ucomilt_ss ,SSE,,X,
 _mm_ucomineq_sd,SSE2,,,X
 _mm_ucomineq_ss ,SSE,,X,
 _mm_unpackhi_epi16,SSE2,,,X
@@ -629,15 +622,15 @@ _mm_unpackhi_epi32,SSE2,,,X
 _mm_unpackhi_epi64,SSE2,,,X
 _mm_unpackhi_epi8,SSE2,,,X
 _mm_unpackhi_pd,SSE2,,,X
-_mm_unpackhi_ps ,SSE,,X,
-_mm_unpacklo_epi16,SSE2,,,X
-_mm_unpacklo_epi32,SSE2,,,X
-_mm_unpacklo_epi64,SSE2,,,X
-_mm_unpacklo_epi8,SSE2,,,X
-_mm_unpacklo_pd,SSE2,,,X
-_mm_unpacklo_ps ,SSE,,X,
-_mm_xor_pd,SSE2,,,X
-_mm_xor_ps ,SSE,,X,
+_mm_unpackhi_ps ,SSE,,X,,
+_mm_unpacklo_epi16,SSE2,,,X,
+_mm_unpacklo_epi32,SSE2,,,X,
+_mm_unpacklo_epi64,SSE2,,,X,
+_mm_unpacklo_epi8,SSE2,,,X,
+_mm_unpacklo_pd,SSE2,,,X,
+_mm_unpacklo_ps ,SSE,,X,,
+_mm_xor_pd,SSE2,,,X,
+_mm_xor_ps ,SSE,,X,,
 _mm_xor_si128,SSE2,,,X,
 ssp_arithmetic_hadd4_dup_ps,SSP,X,,X,X
 ssp_arithmetic_hadd4_epi16,SSP,,,X,
@@ -645,10 +638,10 @@ ssp_arithmetic_hadd4_epu16,SSP,X,,,
 ssp_logical_bitwise_choose,SSP,,,X,
 ssp_logical_cmpgt_epu16,SSP,X,,X,
 ssp_logical_cmpgt_epu32,SSP,X,,X,
-ssp_logical_cmplt_epu16,SSP,X,,X,
-ssp_logical_cmplt_epu32,SSP,X,,X,
-ssp_number_changeSNanToQNaN_F32,SSP,X,,,
-ssp_number_changeSNanToQNaN_F64,SSP,X,,,
-ssp_number_isValidNumber_F32,SSP,X,,,
-ssp_number_isValidNumber_F64,SSP,X,,,
-ssp_round_ps_neg_zero,SSP,,,X,
+ssp_logical_cmplt_epu16,SSP,X,,X
+ssp_logical_cmplt_epu32,SSP,X,,X
+ssp_number_changeSNanToQNaN_F32,SSP,X,,
+ssp_number_changeSNanToQNaN_F64,SSP,X,,
+ssp_number_isValidNumber_F32,SSP,X,,
+ssp_number_isValidNumber_F64,SSP,X,,
+ssp_round_ps_neg_zero,SSP,,,X

@@ -10,8 +10,8 @@
   <th>SSE3</th>
   <th>SSSE3</th>
   <th>SSE4A</th>
-  <th>SSE4.1</th>
-  <th>SSE4.2</th>
+  <th>SSE4_1</th>
+  <th>SSE4_2</th>
   <th>SSE5</th>
 </tr>
 <tr><td>\MSDN{_mm_abs_epi16}</td><td>SSSE3</td>  <td>\link ssp_abs_epi16_REF() REF\endlink</td>
@@ -310,7 +310,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_blend_epi16_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_blend_epi16_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -320,7 +320,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_blend_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_blend_pd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -330,7 +330,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_blend_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_blend_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -340,7 +340,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_blendv_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_blendv_epi8_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -350,7 +350,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_blendv_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_blendv_pd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -360,7 +360,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_blendv_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_blendv_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -430,7 +430,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_ceil_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_ceil_pd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -440,7 +440,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_ceil_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_ceil_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -450,7 +450,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_ceil_sd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_ceil_sd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -460,7 +460,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_ceil_ss_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_ceil_ss_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -510,7 +510,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpeq_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cmpeq_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -571,7 +571,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestra_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestra_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpestrc}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -581,7 +581,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestrc_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestrc_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpestri}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -591,7 +591,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestri_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestri_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpestrm}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -601,7 +601,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestrm_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestrm_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpestro}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -611,7 +611,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestro_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestro_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpestrs}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -621,7 +621,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestrs_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestrs_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpestrz}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -631,7 +631,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpestrz_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpestrz_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpge_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
@@ -701,7 +701,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpgt_epi64_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpgt_epi64_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpgt_epi8}</td><td>SSE2</td>  <td>&nbsp;</td>
@@ -761,7 +761,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistra_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistra_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpistrc}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -771,7 +771,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistrc_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistrc_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpistri}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -781,7 +781,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistri_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistri_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpistrm}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -791,7 +791,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistrm_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistrm_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpistro}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -801,7 +801,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistro_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistro_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpistrs}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -811,7 +811,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistrs_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistrs_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmpistrz}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -821,7 +821,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cmpistrz_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_cmpistrz_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cmple_pd}</td><td>SSE2</td>  <td>&nbsp;</td>
@@ -2621,7 +2621,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_crc32_u16_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_crc32_u16_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_crc32_u32}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -2631,7 +2631,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_crc32_u32_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_crc32_u32_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_crc32_u64}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -2641,7 +2641,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_crc32_u64_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_crc32_u64_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_crc32_u8}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -2651,7 +2651,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_crc32_u8_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_crc32_u8_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_cvt_si2ss}</td><td>SSE</td>  <td>&nbsp;</td>
@@ -2680,7 +2680,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepi16_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepi16_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2690,7 +2690,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepi16_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepi16_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2700,7 +2700,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepi32_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepi32_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2730,7 +2730,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepi8_epi16_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepi8_epi16_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2740,7 +2740,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepi8_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepi8_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2750,7 +2750,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepi8_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepi8_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2760,7 +2760,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepu16_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepu16_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2770,7 +2770,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepu16_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepu16_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2780,7 +2780,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepu32_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepu32_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2790,7 +2790,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepu8_epi16_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepu8_epi16_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2800,7 +2800,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepu8_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepu8_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -2810,7 +2810,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_cvtepu8_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_cvtepu8_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3210,7 +3210,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_dp_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_dp_pd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3220,7 +3220,7 @@
   <td>\link ssp_dp_ps_SSE3() SSE3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_dp_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_dp_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3240,7 +3240,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_extract_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_extract_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3250,7 +3250,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_extract_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_extract_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3260,7 +3260,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_extract_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_extract_epi8_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3270,7 +3270,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_extract_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_extract_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3300,7 +3300,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_floor_pd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_floor_pd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3310,7 +3310,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_floor_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_floor_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3320,7 +3320,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_floor_sd_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_floor_sd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3330,7 +3330,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_floor_ss_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_floor_ss_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3650,7 +3650,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_insert_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_insert_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3660,7 +3660,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_insert_epi64_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_insert_epi64_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3670,7 +3670,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_insert_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_insert_epi8_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -3680,7 +3680,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_insert_ps_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_insert_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4110,7 +4110,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_max_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_max_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4120,7 +4120,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_max_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_max_epi8_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4130,7 +4130,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_max_epu16_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_max_epu16_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4140,7 +4140,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_max_epu32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_max_epu32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4230,7 +4230,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_min_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_min_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4240,7 +4240,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_min_epi8_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_min_epi8_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4250,7 +4250,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_min_epu16_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_min_epu16_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4260,7 +4260,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_min_epu32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_min_epu32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4330,7 +4330,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_minpos_epu16_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_minpos_epu16_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4480,7 +4480,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_mpsadbw_epu8_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_mpsadbw_epu8_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4530,7 +4530,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_mul_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_mul_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4630,7 +4630,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_mullo_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_mullo_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4780,7 +4780,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_packus_epi32_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_packus_epi32_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -4831,7 +4831,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_popcnt_u32_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_popcnt_u32_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_popcnt_u64}</td><td>SSE4.2</td>  <td>&nbsp;</td>
@@ -4841,7 +4841,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_popcnt_u64_SSE4.2() SSE4.2\endlink</td>
+  <td>\link ssp_popcnt_u64_SSE4_2() SSE4_2\endlink</td>
   <td>&nbsp;</td>
 </tr>
 <tr><td>\MSDN{_mm_prefetch}</td><td>SSE</td>  <td>&nbsp;</td>
@@ -4954,83 +4954,43 @@
   <td>&nbsp;</td>
   <td>\link ssp_roti_epi8_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_round_pd}</td><td>SSE4.1</td>  <td>\link ssp_round_pd_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_round_pd}</td><td>SSE4.1/5</td>  <td>\link ssp_round_pd_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_round_pd_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_round_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_pd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_pd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_round_ps}</td><td>SSE4.1</td>  <td>\link ssp_round_ps_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_round_ps}</td><td>SSE4.1/5</td>  <td>\link ssp_round_ps_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_ps_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_round_ps_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_round_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_ps_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_ps_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_round_sd}</td><td>SSE4.1</td>  <td>\link ssp_round_sd_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_round_sd}</td><td>SSE4.1/5</td>  <td>\link ssp_round_sd_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_round_sd_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_round_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_sd_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_sd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_round_ss}</td><td>SSE4.1</td>  <td>\link ssp_round_ss_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_round_ss}</td><td>SSE4.1/5</td>  <td>\link ssp_round_ss_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_ss_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_round_ss_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_round_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_ss_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_ss_SSE5() SSE5\endlink</td>
 </tr>
@@ -5890,7 +5850,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_stream_load_si128_SSE4.1() SSE4.1\endlink</td>
+  <td>\link ssp_stream_load_si128_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
@@ -6084,63 +6044,33 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<tr><td>\MSDN{_mm_testc_si128}</td><td>SSE4.1</td>  <td>\link ssp_testc_si128_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_testc_si128}</td><td>SSE4.1/5</td>  <td>\link ssp_testc_si128_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_testc_si128_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_testc_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_testc_si128_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_testc_si128_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_testnzc_si128}</td><td>SSE4.1</td>  <td>\link ssp_testnzc_si128_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_testnzc_si128}</td><td>SSE4.1/5</td>  <td>\link ssp_testnzc_si128_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_testnzc_si128_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_testnzc_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_testnzc_si128_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_testnzc_si128_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_testz_si128}</td><td>SSE4.1</td>  <td>\link ssp_testz_si128_REF() REF\endlink</td>
+<tr><td>\MSDN{_mm_testz_si128}</td><td>SSE4.1/5</td>  <td>\link ssp_testz_si128_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>\link ssp_testz_si128_SSE4.1() SSE4.1\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr><td>\MSDN{_mm_testz_si128}</td><td>SSE5</td>  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_testz_si128_SSE4_1() SSE4_1\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_testz_si128_SSE5() SSE5\endlink</td>
 </tr>

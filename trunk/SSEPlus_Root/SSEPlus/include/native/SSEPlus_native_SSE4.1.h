@@ -197,17 +197,6 @@ SSP_FORCEINLINE __m128i ssp_insert_epi32_SSE4_1(__m128i dst, int s, const int nd
     }
 }
 
-#ifdef SYS64
-/** \IMP{SSE4.1 Native,_mm_insert_epi64,SSE4.1} */ 
-SSP_FORCEINLINE __m128i ssp_insert_epi64_SSE4_1(__m128i dst, ssp_s64 s, const int ndx)
-{
-    switch( ndx & 0x1 )
-    {
-        CASE_2( _mm_insert_epi64, dst, s );
-    }
-}
-#endif
-
 /** \IMP{SSE4.1 Native,_mm_extract_epi8,SSE4.1} */ 
 SSP_FORCEINLINE int ssp_extract_epi8_SSE4_1(__m128i src, const int ndx)
 {
@@ -224,17 +213,6 @@ SSP_FORCEINLINE int ssp_extract_epi32_SSE4_1(__m128i src, const int ndx)
         CASE_4( _mm_extract_epi32, src );
     }
 }
-
-#ifdef SYS64
-/** \IMP{SSE4.1 Native,_mm_extract_epi64,SSE4.1} */ 
-SSP_FORCEINLINE ssp_s64 ssp_extract_epi64_SSE4_1(__m128i src, const int ndx)
-{
-    switch( ndx & 0x1 )
-    {
-        CASE_2( _mm_extract_epi64, src );
-    }
-}
-#endif
 
 /** \IMP{SSE4.1 Native,_mm_minpos_epu16,SSE4.1} */ 
 SSP_FORCEINLINE __m128i ssp_minpos_epu16_SSE4_1(__m128i shortValues)
@@ -375,6 +353,26 @@ SSP_FORCEINLINE __m128 ssp_round_ss_SSE4_1(__m128 dst, __m128  a, int iRoundMode
     }
 }
 
+
+#ifdef SYS64
+/** \IMP{SSE4.1 Native,_mm_insert_epi64,SSE4.1} */ 
+SSP_FORCEINLINE __m128i ssp_insert_epi64_SSE4_1(__m128i dst, ssp_s64 s, const int ndx)
+{
+    switch( ndx & 0x1 )
+    {
+        CASE_2( _mm_insert_epi64, dst, s );
+    }
+}
+
+/** \IMP{SSE4.1 Native,_mm_extract_epi64,SSE4.1} */ 
+SSP_FORCEINLINE ssp_s64 ssp_extract_epi64_SSE4_1(__m128i src, const int ndx)
+{
+    switch( ndx & 0x1 )
+    {
+        CASE_2( _mm_extract_epi64, src );
+    }
+}
+#endif
 
 //@}
 //@}

@@ -43,6 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "native", "native", "{BAE065
 		SSEPlus\include\native\SSEPlus_native_SSE4.1.h = SSEPlus\include\native\SSEPlus_native_SSE4.1.h
 		SSEPlus\include\native\SSEPlus_native_SSE4.2.h = SSEPlus\include\native\SSEPlus_native_SSE4.2.h
 		SSEPlus\include\native\SSEPlus_native_SSE4a.h = SSEPlus\include\native\SSEPlus_native_SSE4a.h
+		SSEPlus\include\native\sseplus_native_SSE5.h = SSEPlus\include\native\sseplus_native_SSE5.h
 		SSEPlus\include\native\SSEPlus_native_SSSE3.h = SSEPlus\include\native\SSEPlus_native_SSSE3.h
 	EndProjectSection
 EndProject
