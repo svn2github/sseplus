@@ -1330,7 +1330,7 @@ SSP_FORCEINLINE __m128  ssp_floor_ss_REF( __m128  a, __m128  b )
     return A.f;
 }
 
-/** \IMP{Reference,_mm_round_pd, SSE4.1} */
+/** \IMP{Reference,_mm_round_pd, SSE4.1 and SSE5} */
 SSP_FORCEINLINE __m128d ssp_round_pd_REF( __m128d val, int iRoundMode )                     
 {
     ssp_s64 *valPtr;
@@ -1384,7 +1384,7 @@ SSP_FORCEINLINE __m128d ssp_round_pd_REF( __m128d val, int iRoundMode )
     return Val.d;
 }
 
-/** \IMP{Reference,_mm_round_ps, SSE4.1} */
+/** \IMP{Reference,_mm_round_ps, SSE4.1 and SSE5} */
 SSP_FORCEINLINE __m128  ssp_round_ps_REF( __m128  val, int iRoundMode )                     
 {
     ssp_s32 *valPtr;
@@ -1512,7 +1512,7 @@ SSP_FORCEINLINE __m128  ssp_round_ps_REF( __m128  val, int iRoundMode )
     return Val.f;
 }
 
-/** \IMP{Reference,_mm_round_sd, SSE4.1} */
+/** \IMP{Reference,_mm_round_sd, SSE4.1 and SSE5} */
 SSP_FORCEINLINE __m128d ssp_round_sd_REF( __m128d dst, __m128d val, int iRoundMode )        
 {
     ssp_s64 *valPtr;
@@ -1549,7 +1549,7 @@ SSP_FORCEINLINE __m128d ssp_round_sd_REF( __m128d dst, __m128d val, int iRoundMo
     return Dst.d;
 }
 
-/** \IMP{Reference,_mm_round_ss, SSE4.1} */
+/** \IMP{Reference,_mm_round_ss, SSE4.1 and SSE5} */
 SSP_FORCEINLINE __m128  ssp_round_ss_REF( __m128  dst, __m128  val, int iRoundMode )        //_mm_round_ss
 {
     ssp_s32 *valPtr;
@@ -1593,7 +1593,7 @@ SSP_FORCEINLINE __m128  ssp_round_ss_REF( __m128  dst, __m128  val, int iRoundMo
 //---------------------------------------
 // Test
 //---------------------------------------
-/** \IMP{Reference,_mm_testc_si128, SSE4.1} */
+/** \IMP{Reference,_mm_testc_si128, SSE4.1 and SSE5} */
 SSP_FORCEINLINE int ssp_testc_si128_REF( __m128i a, __m128i b)                              
 {
     ssp_m128 A,B;
@@ -1604,7 +1604,7 @@ SSP_FORCEINLINE int ssp_testc_si128_REF( __m128i a, __m128i b)
            ( (A.s64[1] & B.s64[1]) == A.s64[1] ) ;
 }
 
-/** \IMP{Reference,_mm_testz_si128, SSE4.1} */
+/** \IMP{Reference,_mm_testz_si128, SSE4.1 and SSE5} */
 SSP_FORCEINLINE int ssp_testz_si128_REF( __m128i a, __m128i b)                              
 {
     ssp_m128 A,B;
@@ -1615,7 +1615,7 @@ SSP_FORCEINLINE int ssp_testz_si128_REF( __m128i a, __m128i b)
            ( (A.s64[1] & B.s64[1]) == 0 ) ;
 }
 
-/** \IMP{Reference,_mm_testnzc_si128, SSE4.1} */
+/** \IMP{Reference,_mm_testnzc_si128, SSE4.1 and SSE5} */
 SSP_FORCEINLINE int ssp_testnzc_si128_REF( __m128i a, __m128i b)                            
 {
     int zf, cf;
