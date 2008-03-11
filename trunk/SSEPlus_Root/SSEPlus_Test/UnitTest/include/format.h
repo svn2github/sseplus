@@ -380,6 +380,8 @@ void PrintHeader()
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << " SSSE3"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << " SSE4A"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "SSE4.1"; 
+    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "SSE4.2"; 
+    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "  SSE5"; 
     std::cout << "," << std::endl;
 
     /*std::cout << std::setfill( '-' );
@@ -405,11 +407,38 @@ void PrintSpace()
     std::cout << ",          ";
 }
 
-void PrintException( unsigned int expectedCycles )
+void PrintException( unsigned int expectedCycles ) // Instruction threw exception
 {
     std::cout << "," << std::setw(COL_WIDTH_CYCLES) << std::right << "x" << "|" << std::left << std::setw(COL_WIDTH_EXP) << expectedCycles;
 }
 
+void PrintDisabled( unsigned int expectedCycles ) // No support on CPU
+{
+    std::cout << "," << std::setw(COL_WIDTH_CYCLES) << std::right << "-" << "|" << std::left << std::setw(COL_WIDTH_EXP) << expectedCycles;
+}
+
+void PrintFail( unsigned int expectedCycles ) // Failed its test
+{
+    std::cout << "," << std::setw(COL_WIDTH_CYCLES) << std::right << "F" << "|" << std::left << std::setw(COL_WIDTH_EXP) << expectedCycles;
+}
+
+void PrintResult( unsigned int expectedCycles, double elapsed )
+{
+    std::cout.setf( std::ios::fixed, std::ios::floatfield);
+    std::cout.setf( std::ios::showpoint);
+    std::cout << std::setprecision(1) << ",";  
+    std::cout << std::right << std::setw(COL_WIDTH_CYCLES) << elapsed;
+
+    if( expectedCycles /*&& elapsed > expectedCycles+1*/ )
+    { 
+        std::cout <<  "|" << std::left << std::setw(COL_WIDTH_EXP) << expectedCycles;  
+    }
+    else
+    {
+        std::cout << std::setw( COL_WIDTH_EXP + COL_WIDTH_BAR) << " " ;  
+    } 
+
+}
 
 
 void PrintErrors( std::string & errorList )

@@ -12,22 +12,27 @@
 // 3 - SSE3     4 - SSSE3
 // 5 - SSE4a    6 - SSE4.1
 // 7 - SSE4.2   8 - SSE5
-#define TEST_1(     f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_2(     f,t,...)Test<__VA_ARGS__,f##_SSE2,  0,f##_SSE2,  1,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,enum_##t >( csv[#f], #f, 
-#define TEST_3(     f,t,...)Test<__VA_ARGS__,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  1,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,enum_##t >( csv[#f], #f, 
-#define TEST_4(     f,t,...)Test<__VA_ARGS__,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 1,f##_SSSE3, 0,f##_SSSE3, 0,enum_##t >( csv[#f], #f,
-#define TEST_5(     f,t,...)Test<__VA_ARGS__,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 1,f##_SSE4A, 0,enum_##t >( csv[#f], #f, 
-#define TEST_6(     f,t,...)Test<__VA_ARGS__,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,1,enum_##t >( csv[#f], #f, 
-#define TEST_12(    f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_13(    f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_REF,   0,f##_SSE3,  1,f##_REF,   0,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_14(    f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_REF,   0,f##_REF,   0,f##_SSSE3, 1,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_15(    f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_REF,   0,f##_REF,   0,f##_REF  , 0,f##_SSE4A, 1,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_16(    f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_SSE4_1,1,enum_##t >( csv[#f], #f, 
-#define TEST_123(   f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  1,f##_REF,   0,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_124(   f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_REF,   0,f##_SSSE3, 1,f##_REF,   0,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_125(   f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_REF,   0,f##_REF,   0,f##_SSE4A, 1,f##_REF,   0,enum_##t >( csv[#f], #f, 
-#define TEST_126(   f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_SSE4_1,1,enum_##t >( csv[#f], #f, 
-#define TEST_1236(  f,t,...)Test<__VA_ARGS__,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  1,f##_REF,   0,f##_REF,   0,f##_SSE4_1,1,enum_##t >( csv[#f], #f, 
+//                                           1:REF        2:SSE2       3:SSE3       4:SSSE3      5:SSE4a      6:SSE4.1     7:SSE4.2     8:SSE5     
+#define TEST_1(     f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_2(     f,t,...)Test<__VA_ARGS__,0,f##_SSE2,  1,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  enum_##t >( csv[#f], #f, 
+#define TEST_3(     f,t,...)Test<__VA_ARGS__,0,f##_SSE3,  0,f##_SSE3,  1,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  enum_##t >( csv[#f], #f, 
+#define TEST_4(     f,t,...)Test<__VA_ARGS__,0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 1,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, enum_##t >( csv[#f], #f,
+#define TEST_5(     f,t,...)Test<__VA_ARGS__,0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 1,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, enum_##t >( csv[#f], #f, 
+#define TEST_6(     f,t,...)Test<__VA_ARGS__,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,1,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,enum_##t >( csv[#f], #f, 
+#define TEST_7(     f,t,...)Test<__VA_ARGS__,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,1,f##_SSE4_2,0,f##_SSE4_2,enum_##t >( csv[#f], #f, 
+#define TEST_8(     f,t,...)Test<__VA_ARGS__,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,1,f##_SSE5  ,enum_##t >( csv[#f], #f, 
+
+#define TEST_12(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_13(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   1,f##_SSE3,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_14(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSSE3, 0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_15(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF  , 1,f##_SSE4A, 0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_16(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_123(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_124(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   1,f##_SSSE3, 0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_125(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   1,f##_SSE4A, 0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_126(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_128(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE5,  enum_##t >( csv[#f], #f, 
+#define TEST_1236(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
 
 // This code allows the unit test project to compile when the compiler doesn't support higher level SSE instructions
 #ifndef SSP_COMPILER_SUPPORTS_SSSE3
@@ -51,6 +56,11 @@
 #define TEST_126  TEST_12
 #undef  TEST_1236
 #define TEST_1236 TEST_123
+#endif 
+
+#ifndef SSP_COMPILER_SUPPORTS_SSE5
+#undef  TEST_128
+#define TEST_128   TEST_12
 #endif 
 
 
@@ -690,6 +700,16 @@ void SSE4_1_Tests( CSVTable & csv )
 }
 
 
+void SSE5_Tests( CSVTable & csv )
+{
+    TEST_128( ssp_macc_ps, ssp_f32, __m128, __m128, __m128, __m128 )
+        vF32( 24.75f,-0.09f,0.0f, 14.19f ),
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f), 
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f),
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f));
+
+}
+
 void SSP_Tests( CSVTable & csv )
 {
     TEST_123( ssp_arithmetic_hadd4_dup_ps, ssp_f32, __m128, __m128)
@@ -754,6 +774,10 @@ int main(int argc, char *argv[])
     PrintHeader();
     SSE4_1_Tests( csv );
     std::cout << std::endl;    
+
+    PrintHeader();
+    SSE5_Tests( csv );
+    std::cout << std::endl;  
 
     PrintHeader();
     SSP_Tests( csv );

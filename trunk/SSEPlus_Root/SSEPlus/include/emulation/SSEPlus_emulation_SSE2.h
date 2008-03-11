@@ -16,6 +16,16 @@
  *  @name Emulated Instructions
  *  @{ */
 
+
+/** \IMP2{SSE2 Native,_mm_macc_ps,fmaddps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_macc_ps_SSE2( __m128 a, __m128 b, __m128 c )
+{
+    a = _mm_mul_ps( a, b );
+    a = _mm_add_ps( a, c );
+    return a;
+}
+
+
 /** \IMP{SSE2,_mm_abs_epi8,SSSE3} */
 SSP_FORCEINLINE
 __m128i ssp_abs_epi8_SSE2 (__m128i a)

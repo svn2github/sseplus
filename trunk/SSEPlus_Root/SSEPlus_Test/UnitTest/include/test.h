@@ -7,6 +7,7 @@
 
 #include "csvTable.h"
 #include "../../../SSEPlus/include/SSEPlus_platform.h"
+#include "../../../SSEPlus/include/SSEPlus_CPUID.h"
 #include <list>
 
 #if defined(SSP_MSVC)
@@ -71,12 +72,10 @@ namespace p
         ssp_u32 expCycles;
         bool pass;
 
-        Timer( bool pass_, unsigned int expCycles_ )
-        :start    ( get_rdtsc() )
-        ,expCycles( expCycles_  )
-        ,pass     ( pass_       ){}
+        Timer()
+        :start( get_rdtsc() ){}
 
-        ~Timer()
+        double Elapsed()
         {
             ssp_u64 stop = get_rdtsc(); 
 
@@ -85,29 +84,10 @@ namespace p
             if( elapsed > 9999.9 )
                 elapsed = 9999.9;
 
-            std::cout.setf( std::ios::fixed, std::ios::floatfield);
-            std::cout.setf( std::ios::showpoint);
-            std::cout << std::setprecision(1) << ",";
-            
+            if( elapsed < 0 )
+                elapsed = 0;
 
-            unsigned int width = COL_WIDTH_CYCLES;
-
-            if( !pass )
-            {
-                --width;
-                std::cout << "#";
-            }          
-
-            std::cout <<  std::right << std::setw(width) << elapsed;
-
-            if( expCycles && elapsed > expCycles+1 )
-            { 
-                std::cout <<  "|" << std::left << std::setw(COL_WIDTH_EXP) << expCycles;  
-            }
-            else
-            {
-                std::cout << std::setw( COL_WIDTH_EXP + COL_WIDTH_BAR) << " " ;  
-            } 
+            return elapsed;          
         }
     };
 
@@ -116,33 +96,51 @@ namespace p
     //
     // Equal
     // 
-  
+
+     
     template< enumPrintFormat epf, typename T >
     bool Equal( T value, T expected, __m128i expMask )
     {
-        if( 16 == sizeof(T) )
+        if( 16 == sizeof(T) )   
         {
-            __m128i tmp = *((__m128i*)&value);
+            __m128i tmp = *((__m128i*)&value);      // Apply the mask to the actual value
             tmp = _mm_and_si128( tmp, expMask );
             value = *((T*)&tmp);           
 
-            tmp = *((__m128i*)&expected);
-			tmp = _mm_and_si128( tmp, expMask );
-			expected = *((T*)&tmp);      
+            tmp = *((__m128i*)&expected);           // Apply the mask to the expected value
+	        tmp = _mm_and_si128( tmp, expMask );
+	        expected = *((T*)&tmp);      
+        }   
+
+        if( enum_ssp_f32 == epf )                   // Fix up the -0's
+        {
+            ssp_m128 V,E;
+            V.f = *((__m128*)&value   );
+            E.f = *((__m128*)&expected);
+
+            for( int i=0; i<4; ++i )
+            {
+                if( -0 == V.f32[i] ) V.f32[i] = 0;
+                if( -0 == E.f32[i] ) E.f32[i] = 0;                
+            }
+
+            value    = *((T*)&V.f);
+            expected = *((T*)&E.f);
         }
 
-
-       if( memcmp(&value,&expected,sizeof(T)) )
-       {
+        if( memcmp(&value,&expected,sizeof(T)) )
+        {
            std::ostringstream oss;
            oss << "ERROR[ "    << ToStr<epf>(value   ) << " ] ";
            oss << "Expected[ " << ToStr<epf>(expected) << " ]";
 
            errorList += " " + oss.str();
            return false;
-       }	    
+        }       
+
        return true;
-    }    
+    } 
+    
 
     //
     // Test
@@ -152,141 +150,173 @@ namespace p
     #define NO_OPT( a ) g_no_opt = *(ssp_u32*)&a;    
 
     template< typename TR, typename T1, enumPrintFormat epf, TR(*fn)(T1) >
-    void Test( ssp_u32 expCycles, TR exp, T1 a, __m128i expMask )
+    double Test( TR exp, T1 a, __m128i expMask )
     {
         TR out = fn( a );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ) )
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
             out = fn( out ); 
 
+        double elapsed = t.Elapsed();
+
         NO_OPT( out );
+        return elapsed;        
     }    
 
     template< typename TR, typename T1, typename T2, enumPrintFormat epf, TR(*fn)(T1,T2) >
-    void Test( ssp_u32 expCycles, TR exp, T1 a, T2 b, __m128i expMask )
+    double Test( TR exp, T1 a, T2 b, __m128i expMask )
     {   
         TR out = fn( a,b );
-        bool pass= Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ) )
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
-            out = fn( out,b );    
+            out = fn( out,b );  
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );  
+        return elapsed;   
     }   
 
     template< typename TR, typename T1, typename T2, typename T3, enumPrintFormat epf, TR(*fn)(T1,T2,T3) >
-    void Test( ssp_u32 expCycles, TR exp, T1 a, T2 b, T3 c, __m128i expMask )
+    double Test( TR exp, T1 a, T2 b, T3 c, __m128i expMask )
     {
         TR out = fn( a,b,c );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
-            out = fn( out,b,c );    
+            out = fn( out,b,c );  
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 
     template< typename TR, typename T1, typename T2, typename T3, typename T4, enumPrintFormat epf, TR(*fn)(T1,T2,T3,T4) >
-    void Test( ssp_u32 expCycles, TR exp, T1 a, T2 b, T3 c, T4 d, __m128i expMask )
+    double Test( TR exp, T1 a, T2 b, T3 c, T4 d, __m128i expMask )
     {
         TR out = fn( a,b,c,d );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
             out = fn( out,b,c,d );    
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 
     // Type specific overloads
 
     template< typename TR, typename T1, enumPrintFormat epf, TR(*fn)(T1) >
-    void Test( ssp_u32 expCycles, __m128i exp, int a, __m128i expMask )
+    double Test( __m128i exp, int a, __m128i expMask )
     {
         TR out = fn( a );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
         {
             out = fn( a ); 
             out = _mm_xor_si128(out, out);
         }
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 
     template< typename TR, typename T1, enumPrintFormat epf, TR(*fn)(T1) >
-    void Test( ssp_u32 expCycles, TR exp, const __m128i * a, __m128i expMask )//This is a load. TODO: ?
+    double Test( TR exp, const __m128i * a, __m128i expMask )//This is a load. TODO: ?
     {
         TR out = fn( a );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
             out = fn( a ); 
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 
     template< typename TR, typename T1, enumPrintFormat epf, TR(*fn)(T1) >
-    void Test( ssp_u32 expCycles, TR exp, const double * a, __m128i expMask )//This is a load. TODO: ?
+    double Test( TR exp, const double * a, __m128i expMask )//This is a load. TODO: ?
     {
         TR out = fn( a );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
             out = fn( a ); 
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 
     template< typename TR, typename T1, typename T2, enumPrintFormat epf, TR(*fn)(T1,T2) >
-    void Test( ssp_u32 expCycles, int exp, T1 a, T2 b, __m128i expMask )
+    double Test( int exp, T1 a, T2 b, __m128i expMask )
     {
         TR out = fn( a,b );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
             out |= fn( a, b );    
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 
     template< typename TEXP, typename T1, typename T2, typename TR, enumPrintFormat epf, TR(*fn)(T1,T2) >
-    void Test( ssp_u32 expCycles, TEXP exp, T1 a, T2 b )
+    double Test( TEXP exp, T1 a, T2 b )
     {   
         fn( a,b );
-        bool pass = false;
-        if( *exp == *a )
-            pass = true;
+       
+        if( *exp != *a )
+            return -1.0;
 
-        Timer t( pass, expCycles );    
+        Timer t;    
         for( int i=0; i<LOOP_COUNT; ++i )
         {
             *a = *a+1;
             fn( a, b );    
         }
+        double elapsed = t.Elapsed();
+
+        return elapsed;   
     } 
 
     template< typename TR, typename T1, typename T2, enumPrintFormat epf, TR(*fn)(T1,T2) >
-    void Test( ssp_u32 expCycles, ssp_s64 exp, T1 a, T2 b, __m128i expMask )
+    double Test( ssp_s64 exp, T1 a, T2 b, __m128i expMask )
     {
         TR out = fn( a,b );
-        bool pass = Equal<epf>( out, exp, expMask );
+        if( !Equal<epf>( out, exp, expMask ))
+            return -1.0;
 
-        Timer t( pass, expCycles );  
+        Timer t;  
         for( int i=0; i<LOOP_COUNT; ++i )
-            out = fn( a, (T2)out );    
+            out = fn( a, (T2)out ); 
+
+        double elapsed = t.Elapsed();
 
         NO_OPT( out );
+        return elapsed;   
     }
 };
 
@@ -300,7 +330,7 @@ namespace p
         }                       \
         catch( ... )            \
         {                       \
-            PrintException( cycles );   \
+            tmp = -2.0;         \
         }
 
 #endif
@@ -334,7 +364,7 @@ void handle_illegal_instruction(int num)
 	    }                                                      \
 	    else if(sj == SSP_SIGILL_RET)                      \
 	    {                                                      \
-	        PrintException( cycles );                          \
+	        tmp = -2.0;                                       \
 	    }                                                      \
 	    else                                                   \
 	    {                                                      \
@@ -345,31 +375,118 @@ void handle_illegal_instruction(int num)
 
 #endif
 
+void Setup_Paths( bool enable[ SSP_SSE_COUNT ],
+                  bool do_REF,   bool do_SSE2,   bool do_SSE3,   bool do_SSSE3, 
+                  bool do_SSE4a, bool do_SSE4_1, bool do_SSE4_2, bool do_SSE5 )
+{ 
+    enable[SSP_REF    ] = do_REF;
+    enable[SSP_SSE2   ] = do_SSE2   && ssp_is_supported(SSP_SSE2  );
+    enable[SSP_SSE3   ] = do_SSE3   && ssp_is_supported(SSP_SSE3  );
+    enable[SSP_SSSE3  ] = do_SSSE3  && ssp_is_supported(SSP_SSSE3 );
+    enable[SSP_SSE4a  ] = do_SSSE3  && ssp_is_supported(SSP_SSE4a );
+    enable[SSP_SSE4_1 ] = do_SSE4_1 && ssp_is_supported(SSP_SSE4_1);
+    enable[SSP_SSE4_2 ] = do_SSE4_2 && ssp_is_supported(SSP_SSE4_2);
+    enable[SSP_SSE5   ] = do_SSE5   && ssp_is_supported(SSP_SSE5  );
+}
+
+
+void Cleanup( double res[ SSP_SSE_COUNT ], std::string &errorList, const CSVLine & csv, 
+                  bool do_REF,   bool do_SSE2,   bool do_SSE3,   bool do_SSSE3, 
+                  bool do_SSE4a, bool do_SSE4_1, bool do_SSE4_2, bool do_SSE5 )
+{
+    if     ( !do_REF                       ){ PrintSpace();                              }   
+    else if( -1 == res[SSP_REF]            ){ PrintFail     ( 0                        );}
+    else if( -2 == res[SSP_REF]            ){ PrintException( 0                        );}
+    else                                    { PrintResult   ( 0, res[SSP_REF]          );}  
+
+    if     ( !do_SSE2                      ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSE2   )){ PrintDisabled (csv.SSE2                  );} 
+    else if( -1 == res[SSP_SSE2]           ){ PrintFail     (csv.SSE2                  );}
+    else if( -2 == res[SSP_SSE2]           ){ PrintException(csv.SSE2                  );}
+    else                                    { PrintResult   (csv.SSE2,res[SSP_SSE2]    );}  
+
+    if     ( !do_SSE3                      ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSE3   )){ PrintDisabled (csv.SSE3                  );} 
+    else if( -1 == res[SSP_SSE3]           ){ PrintFail     (csv.SSE3                  );}
+    else if( -2 == res[SSP_SSE3]           ){ PrintException(csv.SSE3                  );}
+    else                                    { PrintResult   (csv.SSE3,res[SSP_SSE3]    );}  
+
+    if     ( !do_SSSE3                     ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSSE3  )){ PrintDisabled (csv.SSSE3                 );} 
+    else if( -1 == res[SSP_SSSE3]          ){ PrintFail     (csv.SSSE3                 );}
+    else if( -2 == res[SSP_SSSE3]          ){ PrintException(csv.SSSE3                 );}
+    else                                    { PrintResult   (csv.SSSE3,res[SSP_SSSE3]  );}  
+
+    if     ( !do_SSE4a                     ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSE4a  )){ PrintDisabled (csv.SSE4a                 );} 
+    else if( -1 == res[SSP_SSE4a]          ){ PrintFail     (csv.SSE4a                 );}
+    else if( -2 == res[SSP_SSE4a]          ){ PrintException(csv.SSE4a                 );}
+    else                                    { PrintResult   (csv.SSE4a,res[SSP_SSE4a]  );}   
+
+    if     ( !do_SSE4_1                    ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSE4_1 )){ PrintDisabled (csv.SSE4_1                );} 
+    else if( -1 == res[SSP_SSE4_1]         ){ PrintFail     (csv.SSE4_1                );}
+    else if( -2 == res[SSP_SSE4_1]         ){ PrintException(csv.SSE4_1                );}
+    else                                    { PrintResult   (csv.SSE4_1,res[SSP_SSE4_1]);} 
+
+    if     ( !do_SSE4_2                    ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSE4_2 )){ PrintDisabled (csv.SSE4_2                );} 
+    else if( -1 == res[SSP_SSE4_2]         ){ PrintFail     (csv.SSE4_2                );}
+    else if( -2 == res[SSP_SSE4_2]         ){ PrintException(csv.SSE4_2                );}
+    else                                    { PrintResult   (csv.SSE4_2,res[SSP_SSE4_2]);} 
+
+    if     ( !do_SSE5                      ){ PrintSpace();                              }
+    else if( !ssp_is_supported(SSP_SSE5   )){ PrintDisabled (csv.SSE5                  );} 
+    else if( -1 == res[SSP_SSE5]           ){ PrintFail     (csv.SSE5                  );}
+    else if( -2 == res[SSP_SSE5]           ){ PrintException(csv.SSE5                  );}
+    else                                    { PrintResult   (csv.SSE5,res[SSP_SSE5]    );} 
+
+    PrintErrors( errorList ); 
+}   
+
+
+// Will print either
+// nothing      function is disabled
+// "-"          function is not supported in hardware 
+// "x"          function threw exception
+// "123"        cycle time (prints from the destructor of the timer)
+
+
 //
 // External Test Entry Points (void return type)
 // 
 //====================================
 template< 
     typename TEXP, typename T1, typename T2, typename TR,
-    TR(*fn_ref    )(T1,T2), bool REF_RUN,
-    TR(*fn_sse2   )(T1,T2), bool SSE2_RUN,
-	TR(*fn_sse3   )(T1,T2), bool SSE3_RUN,
-	TR(*fn_ssse3  )(T1,T2), bool SSSE3_RUN,
-    TR(*fn_sse4a  )(T1,T2), bool SSE4A_RUN,
-    TR(*fn_sse4_1 )(T1,T2), bool SSE4_1_RUN,
+    bool do_REF   ,TR(*fn_ref    )(T1,T2), 
+    bool do_SSE2  ,TR(*fn_sse2   )(T1,T2), 
+	bool do_SSE3  ,TR(*fn_sse3   )(T1,T2), 
+	bool do_SSSE3 ,TR(*fn_ssse3  )(T1,T2), 
+    bool do_SSE4a ,TR(*fn_sse4a  )(T1,T2), 
+    bool do_SSE4_1,TR(*fn_sse4_1 )(T1,T2), 
+    bool do_SSE4_2,TR(*fn_sse4_2 )(T1,T2), 
+    bool do_SSE5  ,TR(*fn_sse5   )(T1,T2), 
     enumPrintFormat epf
 >
 void Test( const CSVLine & csv, const char *name, TEXP exp, T1 a, T2 b )
 {
-    unsigned int cycles=0;
-    PrintName( name, csv.source );
-    if(REF_RUN   ){ cycles=0;         TRY( p::Test<TEXP,T1,T2,TR,epf,fn_ref    >( cycles,exp,a,b ) ); } else { PrintSpace(); }
-    if(SSE2_RUN  ){ cycles=csv.SSE2;  TRY( p::Test<TEXP,T1,T2,TR,epf,fn_sse2   >( cycles,exp,a,b ) ); } else { PrintSpace(); }
-    if(SSE3_RUN  ){ cycles=csv.SSE3;  TRY( p::Test<TEXP,T1,T2,TR,epf,fn_sse3   >( cycles,exp,a,b ) ); } else { PrintSpace(); }
-	if(SSSE3_RUN ){ cycles=csv.SSSE3; TRY( p::Test<TEXP,T1,T2,TR,epf,fn_ssse3  >( cycles,exp,a,b ) ); } else { PrintSpace(); }
-    if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TEXP,T1,T2,TR,epf,fn_sse4a  >( cycles,exp,a,b ) ); } else { PrintSpace(); }
-    if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TEXP,T1,T2,TR,epf,fn_sse4_1 >( cycles,exp,a,b ) ); } else { PrintSpace(); }  
-    PrintErrors( p::errorList );
+    PrintName( name, csv.source );    
+    
+    bool   enable[ SSP_SSE_COUNT ];
+    double res   [ SSP_SSE_COUNT ], tmp;
+
+    Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );      
+    
+    if( enable[SSP_REF   ] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_ref    >( exp,a,b ) ); res[SSP_REF   ]=tmp; } 
+    if( enable[SSP_SSE2  ] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_sse2   >( exp,a,b ) ); res[SSP_SSE2  ]=tmp; } 
+    if( enable[SSP_SSE3  ] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_sse3   >( exp,a,b ) ); res[SSP_SSE3  ]=tmp; } 
+    if( enable[SSP_SSSE3 ] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_ssse3  >( exp,a,b ) ); res[SSP_SSSE3 ]=tmp; }
+    if( enable[SSP_SSE4a ] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_sse4a  >( exp,a,b ) ); res[SSP_SSE4a ]=tmp; }
+    if( enable[SSP_SSE4_1] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_sse4_1 >( exp,a,b ) ); res[SSP_SSE4_1]=tmp; }
+    if( enable[SSP_SSE4_2] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_sse4_2 >( exp,a,b ) ); res[SSP_SSE4_2]=tmp; }
+    if( enable[SSP_SSE5  ] ){ TRY( tmp=p::Test<TEXP,T1,T2,TR,epf,fn_sse5   >( exp,a,b ) ); res[SSP_SSE5  ]=tmp; }
+
+    Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
 
 
@@ -379,100 +496,144 @@ void Test( const CSVLine & csv, const char *name, TEXP exp, T1 a, T2 b )
 //====================================
 template< 
     typename TR, typename T1, 
-    TR(*fn_ref    )(T1), bool REF_RUN,
-    TR(*fn_sse2   )(T1), bool SSE2_RUN,
-	TR(*fn_sse3   )(T1), bool SSE3_RUN,
-    TR(*fn_ssse3  )(T1), bool SSSE3_RUN,
-    TR(*fn_sse4a  )(T1), bool SSE4A_RUN,
-    TR(*fn_sse4_1 )(T1), bool SSE4_1_RUN,
+    bool do_REF   ,TR(*fn_ref    )(T1), 
+    bool do_SSE2  ,TR(*fn_sse2   )(T1), 
+	bool do_SSE3  ,TR(*fn_sse3   )(T1), 
+    bool do_SSSE3 ,TR(*fn_ssse3  )(T1), 
+    bool do_SSE4a ,TR(*fn_sse4a  )(T1), 
+    bool do_SSE4_1,TR(*fn_sse4_1 )(T1), 
+    bool do_SSE4_2,TR(*fn_sse4_2 )(T1), 
+    bool do_SSE5  ,TR(*fn_sse5   )(T1), 
     enumPrintFormat epf
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
     unsigned int cycles=0;
     PrintName( name, csv.source );
-    if(REF_RUN   ){ cycles=0;         TRY( p::Test<TR,T1,epf,fn_ref    >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }
-    if(SSE2_RUN  ){ cycles=csv.SSE2;  TRY( p::Test<TR,T1,epf,fn_sse2   >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }
-    if(SSE3_RUN  ){ cycles=csv.SSE3;  TRY( p::Test<TR,T1,epf,fn_sse3   >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }
-	if(SSSE3_RUN ){ cycles=csv.SSSE3; TRY( p::Test<TR,T1,epf,fn_ssse3  >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }
-    if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,epf,fn_sse4a  >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }
-    if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,epf,fn_sse4_1 >( cycles,exp,a,expMask ) ); } else { PrintSpace(); }   
-    PrintErrors( p::errorList );
+
+    bool enable[ SSP_SSE_COUNT ];
+    double res [ SSP_SSE_COUNT ], tmp;
+
+    Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );      
+
+    if( enable[SSP_REF   ] ){ TRY( tmp=p::Test<TR,T1,epf,fn_ref    >( exp,a,expMask ) ); res[SSP_REF   ]=tmp; } 
+    if( enable[SSP_SSE2  ] ){ TRY( tmp=p::Test<TR,T1,epf,fn_sse2   >( exp,a,expMask ) ); res[SSP_SSE2  ]=tmp; } 
+    if( enable[SSP_SSE3  ] ){ TRY( tmp=p::Test<TR,T1,epf,fn_sse3   >( exp,a,expMask ) ); res[SSP_SSE3  ]=tmp; } 
+	if( enable[SSP_SSSE3 ] ){ TRY( tmp=p::Test<TR,T1,epf,fn_ssse3  >( exp,a,expMask ) ); res[SSP_SSSE3 ]=tmp; } 
+    if( enable[SSP_SSE4a ] ){ TRY( tmp=p::Test<TR,T1,epf,fn_sse4a  >( exp,a,expMask ) ); res[SSP_SSE4a ]=tmp; } 
+    if( enable[SSP_SSE4_1] ){ TRY( tmp=p::Test<TR,T1,epf,fn_sse4_1 >( exp,a,expMask ) ); res[SSP_SSE4_1]=tmp; }  
+    if( enable[SSP_SSE4_2] ){ TRY( tmp=p::Test<TR,T1,epf,fn_sse4_2 >( exp,a,expMask ) ); res[SSP_SSE4_2]=tmp; }  
+    if( enable[SSP_SSE5  ] ){ TRY( tmp=p::Test<TR,T1,epf,fn_sse5   >( exp,a,expMask ) ); res[SSP_SSE5  ]=tmp; }  
+    
+    Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
 
 //====================================
 
 template< 
     typename TR, typename T1, typename T2,
-    TR (*fn_ref    )(T1,T2), bool REF_RUN,
-    TR (*fn_sse2   )(T1,T2), bool SSE2_RUN,
-	TR (*fn_sse3   )(T1,T2), bool SSE3_RUN,
-	TR (*fn_ssse3  )(T1,T2), bool SSSE3_RUN,
-    TR (*fn_sse4a  )(T1,T2), bool SSE4A_RUN,
-    TR (*fn_sse4_1 )(T1,T2), bool SSE4_1_RUN,
+    bool do_REF   ,TR (*fn_ref    )(T1,T2), 
+    bool do_SSE2  ,TR (*fn_sse2   )(T1,T2), 
+	bool do_SSE3  ,TR (*fn_sse3   )(T1,T2), 
+	bool do_SSSE3 ,TR (*fn_ssse3  )(T1,T2), 
+    bool do_SSE4a ,TR (*fn_sse4a  )(T1,T2), 
+    bool do_SSE4_1,TR (*fn_sse4_1 )(T1,T2), 
+    bool do_SSE4_2,TR (*fn_sse4_2 )(T1,T2), 
+    bool do_SSE5  ,TR (*fn_sse5   )(T1,T2), 
     enumPrintFormat epf
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
     unsigned int cycles=0;
     PrintName( name, csv.source );
-    if(REF_RUN   ){ cycles=0;         TRY( p::Test<TR,T1,T2,epf,fn_ref    >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }
-    if(SSE2_RUN  ){ cycles=csv.SSE2;  TRY( p::Test<TR,T1,T2,epf,fn_sse2   >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }
-    if(SSE3_RUN  ){ cycles=csv.SSE3;  TRY( p::Test<TR,T1,T2,epf,fn_sse3   >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }
-	if(SSSE3_RUN ){ cycles=csv.SSSE3; TRY( p::Test<TR,T1,T2,epf,fn_ssse3  >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }
-    if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,T2,epf,fn_sse4a  >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }
-    if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,T2,epf,fn_sse4_1 >( cycles,exp,a,b,expMask ) ); } else { PrintSpace(); }  
-    PrintErrors( p::errorList );
+
+    bool enable[ SSP_SSE_COUNT ];
+    double res [ SSP_SSE_COUNT ], tmp;
+
+    Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
+
+    if( enable[SSP_REF   ] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_ref    >( exp,a,b,expMask ) ); res[SSP_REF   ]=tmp; } 
+    if( enable[SSP_SSE2  ] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_sse2   >( exp,a,b,expMask ) ); res[SSP_SSE2  ]=tmp; } 
+    if( enable[SSP_SSE3  ] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_sse3   >( exp,a,b,expMask ) ); res[SSP_SSE3  ]=tmp; } 
+	if( enable[SSP_SSSE3 ] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_ssse3  >( exp,a,b,expMask ) ); res[SSP_SSSE3 ]=tmp; } 
+    if( enable[SSP_SSE4a ] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_sse4a  >( exp,a,b,expMask ) ); res[SSP_SSE4a ]=tmp; } 
+    if( enable[SSP_SSE4_1] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_sse4_1 >( exp,a,b,expMask ) ); res[SSP_SSE4_1]=tmp; } 
+    if( enable[SSP_SSE4_2] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_sse4_2 >( exp,a,b,expMask ) ); res[SSP_SSE4_2]=tmp; } 
+    if( enable[SSP_SSE5  ] ){ TRY( tmp=p::Test<TR,T1,T2,epf,fn_sse5   >( exp,a,b,expMask ) ); res[SSP_SSE5  ]=tmp; } 
+    
+    Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
 
 //====================================
 
 template< 
     typename TR, typename T1, typename T2, typename T3, 
-    TR(*fn_ref    )(T1,T2,T3), bool REF_RUN,
-    TR(*fn_sse2   )(T1,T2,T3), bool SSE2_RUN,
-    TR(*fn_sse3   )(T1,T2,T3), bool SSE3_RUN,
-	TR(*fn_ssse3  )(T1,T2,T3), bool SSSE3_RUN,
-    TR(*fn_sse4a  )(T1,T2,T3), bool SSE4A_RUN,
-	TR(*fn_sse4_1 )(T1,T2,T3), bool SSE4_1_RUN,
+    bool do_REF   ,TR(*fn_ref    )(T1,T2,T3), 
+    bool do_SSE2  ,TR(*fn_sse2   )(T1,T2,T3), 
+    bool do_SSE3  ,TR(*fn_sse3   )(T1,T2,T3), 
+	bool do_SSSE3 ,TR(*fn_ssse3  )(T1,T2,T3), 
+    bool do_SSE4a ,TR(*fn_sse4a  )(T1,T2,T3), 
+	bool do_SSE4_1,TR(*fn_sse4_1 )(T1,T2,T3), 
+    bool do_SSE4_2,TR(*fn_sse4_2 )(T1,T2,T3), 
+    bool do_SSE5  ,TR(*fn_sse5   )(T1,T2,T3), 
     enumPrintFormat epf 
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
     unsigned int cycles=0;
     PrintName( name, csv.source );
-    if(REF_RUN   ){ cycles=0;         TRY( p::Test<TR,T1,T2,T3,epf,fn_ref    >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
-    if(SSE2_RUN  ){ cycles=csv.SSE2;  TRY( p::Test<TR,T1,T2,T3,epf,fn_sse2   >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
-    if(SSE3_RUN  ){ cycles=csv.SSE3;  TRY( p::Test<TR,T1,T2,T3,epf,fn_sse3   >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
-	if(SSSE3_RUN ){ cycles=csv.SSSE3; TRY( p::Test<TR,T1,T2,T3,epf,fn_ssse3  >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
-    if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,T2,T3,epf,fn_sse4a  >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
-    if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,T2,T3,epf,fn_sse4_1 >( cycles,exp,a,b,c,expMask ) ); } else { PrintSpace(); }
-    PrintErrors( p::errorList );
+
+    bool enable[ SSP_SSE_COUNT ];
+    double res [ SSP_SSE_COUNT ], tmp;
+
+    Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
+
+    if( enable[SSP_REF   ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_ref    >( exp,a,b,c,expMask ) ); res[SSP_REF   ]=tmp; } 
+    if( enable[SSP_SSE2  ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_sse2   >( exp,a,b,c,expMask ) ); res[SSP_SSE2  ]=tmp; } 
+    if( enable[SSP_SSE3  ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_sse3   >( exp,a,b,c,expMask ) ); res[SSP_SSE3  ]=tmp; } 
+	if( enable[SSP_SSSE3 ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_ssse3  >( exp,a,b,c,expMask ) ); res[SSP_SSSE3 ]=tmp; } 
+    if( enable[SSP_SSE4a ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_sse4a  >( exp,a,b,c,expMask ) ); res[SSP_SSE4a ]=tmp; } 
+    if( enable[SSP_SSE4_1] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_sse4_1 >( exp,a,b,c,expMask ) ); res[SSP_SSE4_1]=tmp; } 
+    if( enable[SSP_SSE4_2] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_sse4_2 >( exp,a,b,c,expMask ) ); res[SSP_SSE4_2]=tmp; } 
+    if( enable[SSP_SSE5  ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,epf,fn_sse5   >( exp,a,b,c,expMask ) ); res[SSP_SSE5  ]=tmp; } 
+    
+    Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
 
 //====================================
 
 template< 
     typename TR, typename T1, typename T2, typename T3, typename T4,
-    TR(*fn_ref    )(T1,T2,T3,T4), bool REF_RUN,
-    TR(*fn_sse2   )(T1,T2,T3,T4), bool SSE2_RUN,
-    TR(*fn_sse3   )(T1,T2,T3,T4), bool SSE3_RUN,
-	TR(*fn_ssse3  )(T1,T2,T3,T4), bool SSSE3_RUN,
-    TR(*fn_sse4a  )(T1,T2,T3,T4), bool SSE4A_RUN,
-	TR(*fn_sse4_1 )(T1,T2,T3,T4), bool SSE4_1_RUN,
+    bool do_REF   ,TR(*fn_ref    )(T1,T2,T3,T4), 
+    bool do_SSE2  ,TR(*fn_sse2   )(T1,T2,T3,T4), 
+    bool do_SSE3  ,TR(*fn_sse3   )(T1,T2,T3,T4), 
+	bool do_SSSE3 ,TR(*fn_ssse3  )(T1,T2,T3,T4), 
+    bool do_SSE4a ,TR(*fn_sse4a  )(T1,T2,T3,T4), 
+	bool do_SSE4_1,TR(*fn_sse4_1 )(T1,T2,T3,T4), 
+    bool do_SSE4_2,TR(*fn_sse4_2 )(T1,T2,T3,T4), 
+    bool do_SSE5  ,TR(*fn_sse5   )(T1,T2,T3,T4), 
     enumPrintFormat epf 
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, T4 d, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
     unsigned int cycles=0;
     PrintName( name, csv.source );
-    if(REF_RUN   ){ cycles=0;         TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_ref    >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
-    if(SSE2_RUN  ){ cycles=csv.SSE2;  TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_sse2   >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
-    if(SSE3_RUN  ){ cycles=csv.SSE3;  TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_sse3   >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
-	if(SSSE3_RUN ){ cycles=csv.SSSE3; TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_ssse3  >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
-    if(SSE4A_RUN ){ cycles=csv.SSE4a; TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_sse4a  >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
-    if(SSE4_1_RUN){ cycles=csv.SSE41; TRY( p::Test<TR,T1,T2,T3,T4,epf,fn_sse4_1 >( cycles,exp,a,b,c,d,expMask ) ); } else { PrintSpace(); }
-    PrintErrors( p::errorList );
+
+    bool enable[ SSP_SSE_COUNT ];
+    double res [ SSP_SSE_COUNT ], tmp;
+
+    Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
+
+    if( enable[SSP_REF   ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_ref    >( exp,a,b,c,d,expMask ) ); res[SSP_REF   ]=tmp; } 
+    if( enable[SSP_SSE2  ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_sse2   >( exp,a,b,c,d,expMask ) ); res[SSP_SSE2  ]=tmp; } 
+    if( enable[SSP_SSE3  ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_sse3   >( exp,a,b,c,d,expMask ) ); res[SSP_SSE3  ]=tmp; } 
+	if( enable[SSP_SSSE3 ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_ssse3  >( exp,a,b,c,d,expMask ) ); res[SSP_SSSE3 ]=tmp; } 
+    if( enable[SSP_SSE4a ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_sse4a  >( exp,a,b,c,d,expMask ) ); res[SSP_SSE4a ]=tmp; } 
+    if( enable[SSP_SSE4_1] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_sse4_1 >( exp,a,b,c,d,expMask ) ); res[SSP_SSE4_1]=tmp; } 
+    if( enable[SSP_SSE4_2] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_sse4_2 >( exp,a,b,c,d,expMask ) ); res[SSP_SSE4_2]=tmp; } 
+    if( enable[SSP_SSE5  ] ){ TRY( tmp=p::Test<TR,T1,T2,T3,T4,epf,fn_sse5   >( exp,a,b,c,d,expMask ) ); res[SSP_SSE5  ]=tmp; } 
+    
+    Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
 
 //====================================

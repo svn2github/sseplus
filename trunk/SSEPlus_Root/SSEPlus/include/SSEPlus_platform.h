@@ -21,7 +21,7 @@
 #define SSP_COMPILER_SUPPORTS_SSE42
 #endif
 
-#define SSP_FORCEINLINE         __forceinline
+#define SSP_FORCEINLINE                 __forceinline
 #define SSP_INCLUDE_FILE_SSE3           <intrin.h>          // All intrinsics, including SSE3
 #define SSP_INCLUDE_FILE_SSE4a          <intrin.h>          // All intrinsics, including SSE4a
 #define SSP_INCLUDE_FILE_SSE5           "SSEPlus_NoSSE5.h"  // SSE5
@@ -44,7 +44,7 @@
 #endif
 #endif
 
-#define SSP_FORCEINLINE         __inline__
+#define SSP_FORCEINLINE                 __inline__
 #define SSP_INCLUDE_FILE_SSE3           <pmmintrin.h>           // SSE3
 #define SSP_INCLUDE_FILE_SSE4a          <ammintrin.h>           // All intrinsics, including SSE4a
 #define SSP_INCLUDE_FILE_SSE5           <bmmintrin.h>           // SSE5

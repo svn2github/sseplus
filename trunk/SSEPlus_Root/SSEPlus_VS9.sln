@@ -5,6 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSEPlus", "SSEPlus", "{5736
 	ProjectSection(SolutionItems) = preProject
 		SSEPlus\include\SSEPlus.h = SSEPlus\include\SSEPlus.h
 		SSEPlus\include\SSEPlus_base.h = SSEPlus\include\SSEPlus_base.h
+		SSEPlus\include\SSEPlus_CPUID.h = SSEPlus\include\SSEPlus_CPUID.h
 		SSEPlus\include\SSEPlus_platform.h = SSEPlus\include\SSEPlus_platform.h
 		SSEPlus\include\SSEPlus_REF.h = SSEPlus\include\SSEPlus_REF.h
 		SSEPlus\include\SSEPlus_SSE.h = SSEPlus\include\SSEPlus_SSE.h

@@ -15,6 +15,25 @@
  *  @{
  *  @name Emulated Instructions{ */
 
+
+/** \IMP2{Reference,_mm_macc_ps,fmaddps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_macc_ps_REF( __m128 a, __m128 b, __m128 c )
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = A.f32[0] * B.f32[0] + C.f32[0];
+    A.f32[1] = A.f32[1] * B.f32[1] + C.f32[1];
+    A.f32[2] = A.f32[2] * B.f32[2] + C.f32[2];
+    A.f32[3] = A.f32[3] * B.f32[3] + C.f32[3];
+
+    return A.f;
+}
+
+
+
 //---------------------------------------
 // AddSubtract
 //---------------------------------------
@@ -1235,6 +1254,7 @@ SSP_FORCEINLINE __m128i ssp_packus_epi32_REF( __m128i a, __m128i b )
     return A.i;
 }
 
+
 //---------------------------------------
 // Round
 //---------------------------------------
@@ -1242,7 +1262,7 @@ SSP_FORCEINLINE __m128i ssp_packus_epi32_REF( __m128i a, __m128i b )
 SSP_FORCEINLINE __m128d ssp_ceil_pd_REF( __m128d a )                                        
 {
     ssp_m128 A;
-    A.d = a;
+    A.d = a;    
 
     A.f64[0] = ceil( A.f64[0] );
     A.f64[1] = ceil( A.f64[1] );

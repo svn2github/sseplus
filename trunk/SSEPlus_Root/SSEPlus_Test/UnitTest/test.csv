@@ -1,19 +1,19 @@
-Name,Source,SSE2,SSE3      ,SSSE3,SSE4A,SSE41,SSE42
-ssp_addsub_pd                 ,3,6,4,,,,
-ssp_addsub_ps                 ,3,6,4,,,,
-ssp_hadd_pd                   ,3,9,4,,,,
-ssp_hadd_ps                   ,3,8,4,,,,
-ssp_hsub_pd                   ,3,8,4,,,,
-ssp_hsub_ps,3,16,8,,,,
-ssp_lddqu_si128               ,3,,1,,,,
-ssp_loaddup_pd                ,3,,1,,,,
-ssp_movedup_pd                ,3,,2,,,,
-ssp_movehdup_ps               ,3,,2,,,,
-ssp_moveldup_ps               ,3,,2,,,,
-ssp_blend_epi16               ,4.1,6,,,,,
-ssp_blend_pd                  ,4.1,8,,,,,
-ssp_blend_ps                  ,4.1,,,,,,
-ssp_blendv_epi8               ,4.1,6,,,,,
+Name,Source,SSE2,SSE3      ,SSSE3,SSE4A,SSE41,SSE42,SSE5
+ssp_addsub_pd                 ,3,6,4,,,,,
+ssp_addsub_ps                 ,3,6,4,,,,,
+ssp_hadd_pd                   ,3,9,4,,,,,
+ssp_hadd_ps                   ,3,8,4,,,,,
+ssp_hsub_pd                   ,3,8,4,,,,,
+ssp_hsub_ps,3,16,8,,,,,
+ssp_lddqu_si128               ,3,,1,,,,,
+ssp_loaddup_pd                ,3,,1,,,,,
+ssp_movedup_pd                ,3,,2,,,,,
+ssp_movehdup_ps               ,3,,2,,,,,
+ssp_moveldup_ps               ,3,,2,,,,,
+ssp_blend_epi16               ,4.1,6,,,,,,
+ssp_blend_pd                  ,4.1,8,,,,,,
+ssp_blend_ps                  ,4.1,,,,,,,
+ssp_blendv_epi8               ,4.1,6,,,,,,
 ssp_blendv_pd                 ,4.1,
 ssp_blendv_ps                 ,4.1,
 ssp_ceil_pd                   ,4.1,
@@ -99,3 +99,4 @@ ssp_lzcnt64,4A
 ssp_popcnt16,4A
 ssp_popcnt,4A
 ssp_popcnt64,4A
+ssp_macc_ps,5
