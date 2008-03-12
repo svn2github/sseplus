@@ -307,7 +307,6 @@ void SSE4A_Tests( CSVTable & csv )
 }
 
 
-
 void SSE4_1_Tests( CSVTable & csv ) 
 {
 
@@ -370,9 +369,14 @@ void SSE4_1_Tests( CSVTable & csv )
             *reinterpret_cast<ssp_f32 *>(&maskValue0) ) );  
     }
 
+   
+
     TEST_126( ssp_ceil_pd, ssp_f64, __m128d,__m128d  )
         vF64(1.0f,3.0f), 
         vF64(.1f,2.1f)           ); 
+
+    
+
     TEST_126( ssp_ceil_ps, ssp_f32, __m128, __m128 )  
         vF32(1.0f,3.0f,4.0f,4.0f), 
         vF32(.1f,2.1f,3.9f,4.0f) );
@@ -698,7 +702,6 @@ void SSE4_1_Tests( CSVTable & csv )
     //                                                    vF32( input.f32[0], input.f32[1], 128.5f, input.f32[2] ),
     //                                                    SSP_FROUND_TO_NEAREST_INT   );
 }
-
 
 void SSE5_Tests( CSVTable & csv )
 {

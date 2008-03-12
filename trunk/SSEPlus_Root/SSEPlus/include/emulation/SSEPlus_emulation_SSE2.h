@@ -560,21 +560,21 @@ __m128 ssp_dp_ps_SSE2( __m128 a, __m128 b, const int mask )                  // 
 
     // Begin mask preparation
     ssp_m128 mHi, mLo;
-    mLo.i = _mm_set1_epi32( mask );                             // Load the mask into register
-    mLo.i = _mm_slli_si128( mLo.i, 3 );                         // Shift into reach of the 16 bit multiply
+    mLo.i = _mm_set1_epi32( mask );                                 // Load the mask into register
+    mLo.i = _mm_slli_si128( mLo.i, 3 );                             // Shift into reach of the 16 bit multiply
 
-    mHi.i = _mm_mullo_epi16( mLo.i, mulShiftImm_0123 );   // Shift the bits
-    mLo.i = _mm_mullo_epi16( mLo.i, mulShiftImm_4567 );   // Shift the bits
+    mHi.i = _mm_mullo_epi16( mLo.i, mulShiftImm_0123 );             // Shift the bits
+    mLo.i = _mm_mullo_epi16( mLo.i, mulShiftImm_4567 );             // Shift the bits
 
-    mHi.i = _mm_cmplt_epi32( mHi.i, _mm_setzero_si128() );    // FFFFFFFF if bit set, 00000000 if not set
-    mLo.i = _mm_cmplt_epi32( mLo.i, _mm_setzero_si128() );    // FFFFFFFF if bit set, 00000000 if not set
+    mHi.i = _mm_cmplt_epi32( mHi.i, _mm_setzero_si128() );          // FFFFFFFF if bit set, 00000000 if not set
+    mLo.i = _mm_cmplt_epi32( mLo.i, _mm_setzero_si128() );          // FFFFFFFF if bit set, 00000000 if not set
     // End mask preparation - Mask bits 0-3 in mLo, 4-7 in mHi
 
-    a = _mm_and_ps( a, mHi.f );                                       // Clear input using the high bits of the mask
+    a = _mm_and_ps( a, mHi.f );                                     // Clear input using the high bits of the mask
     a = _mm_mul_ps( a, b );
 
-    a = ssp_arithmetic_hadd4_dup_ps_SSE2( a );                          // Horizontally add the 4 values
-    a = _mm_and_ps( a, mLo.f );                                      // Clear output using low bits of the mask
+    a = ssp_arithmetic_hadd4_dup_ps_SSE2( a );                      // Horizontally add the 4 values
+    a = _mm_and_ps( a, mLo.f );                                     // Clear output using low bits of the mask
     return a;
 }
 
@@ -610,12 +610,14 @@ __m128 ssp_round_ps_SSE2( __m128  a, int iRoundMode )
     default:                            _mm_setcsr( CSR_ROUND_TO_EVEN); break;
     }
     
-    i.i    = _mm_cvtps_epi32( A.f );            // Convert to integer
-    A.f    = _mm_cvtepi32_ps( i.i );            // Convert back to float
+    i.i    = _mm_cvtps_epi32( A.f );    // Convert to integer
+    A.f    = _mm_cvtepi32_ps( i.i );    // Convert back to float
 
-    _mm_setcsr( bak );
+    i.u32[0] = bak;                     // Workaround for a bug in the MSVC compiler. MSVC was hoisting the mxcsr restore above the converts. 
+    _mm_setcsr( i.u32[0] );
     return A.f;
 }
+
 
 SSP_FORCEINLINE
 __m128d ssp_round_pd_SSE2( __m128d  a, int iRoundMode )
@@ -633,6 +635,7 @@ __m128d ssp_round_pd_SSE2( __m128d  a, int iRoundMode )
     ssp_u32 bak = _mm_getcsr();
     ssp_m128 A, i;
     A.d = a;
+    
 
     switch( iRoundMode & 0x3 )
     {
@@ -643,10 +646,11 @@ __m128d ssp_round_pd_SSE2( __m128d  a, int iRoundMode )
     default:                            _mm_setcsr( CSR_ROUND_TO_EVEN); break;
     }
     
-    i.i    = _mm_cvtpd_epi32( A.d );            // Convert to integer
-    A.d    = _mm_cvtepi32_pd( i.i );            // Convert back to float
+    i.i    = _mm_cvtpd_epi32( A.d );    // Convert to integer
+    A.d    = _mm_cvtepi32_pd( i.i );    // Convert back to float
 
-    _mm_setcsr( bak );
+    i.u32[0] = bak;                     // Workaround for a bug in the MSVC compiler. MSVC was hoisting the mxcsr restore above the converts. 
+    _mm_setcsr( i.u32[0] );             
     return A.d;
 }
 
