@@ -368,14 +368,11 @@ void SSE4_1_Tests( CSVTable & csv )
             *reinterpret_cast<ssp_f32 *>(&maskValue1), 
             *reinterpret_cast<ssp_f32 *>(&maskValue0) ) );  
     }
-
-   
+  
 
     TEST_126( ssp_ceil_pd, ssp_f64, __m128d,__m128d  )
         vF64(1.0f,3.0f), 
-        vF64(.1f,2.1f)           ); 
-
-    
+        vF64(.1f,2.1f)           );    
 
     TEST_126( ssp_ceil_ps, ssp_f32, __m128, __m128 )  
         vF32(1.0f,3.0f,4.0f,4.0f), 
@@ -707,10 +704,21 @@ void SSE5_Tests( CSVTable & csv )
 {
     TEST_128( ssp_macc_ps, ssp_f32, __m128, __m128, __m128, __m128 )
         vF32( 24.75f,-0.09f,0.0f, 14.19f ),
-        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f), 
-        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f),
-        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f));
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f   ), 
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f   ),
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f   ));
 
+    TEST_128( ssp_macc_pd, ssp_f64, __m128d, __m128d, __m128d, __m128d )
+        vF64( 24.75, 14.19 ),
+        vF64(-5.5  , 3.3   ), 
+        vF64(-5.5  , 3.3   ),
+        vF64(-5.5  , 3.3   ));
+
+    TEST_128( ssp_macc_ss, ssp_f32, __m128, __m128, __m128, __m128 )
+        vF32( 3.0f  , 2.0f ,1.0f, 14.19f ),
+        vF32( 3.0f  , 2.0f ,1.0f, 3.3f   ), 
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f   ),
+        vF32(-5.5f  ,-0.1f ,0.0f, 3.3f   ));
 }
 
 void SSP_Tests( CSVTable & csv )

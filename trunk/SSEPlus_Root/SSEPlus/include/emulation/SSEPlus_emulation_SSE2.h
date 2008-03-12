@@ -17,12 +17,30 @@
  *  @{ */
 
 
-/** \IMP2{SSE2 Native,_mm_macc_ps,fmaddps,SSE5} */ 
+/** \IMP2{SSE2,_mm_macc_ps,fmaddps,SSE5} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ps_SSE2( __m128 a, __m128 b, __m128 c )
 {
     a = _mm_mul_ps( a, b );
     a = _mm_add_ps( a, c );
     return a;
+}
+
+/** \IMP2{SSE2,_mm_macc_pd,fmaddps,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_macc_pd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    a = _mm_mul_pd( a, b );
+    a = _mm_add_pd( a, c );
+    return a;
+}
+
+/** \IMP2{SSE2,_mm_macc_ss,fmaddss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_macc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
+{
+    b = ssp_macc_ps_SSE2( a, b, c );
+                                                        // TODO: benchmark vs logical_bitwise_choose
+    b = _mm_shuffle_ps( a, b, _MM_SHUFFLE(0,0,1,0) );   // b: B0 B0 A1 A0
+    b = _mm_shuffle_ps( b, a, _MM_SHUFFLE(3,2,1,2) );   // b: A3 A2 A1 B0
+    return b;
 }
 
 
@@ -667,8 +685,8 @@ __m128 ssp_round_ss_SSE2( __m128  a, __m128  b, int iRoundMode )
 
     ////A.f32[0] = B.f32[0];
 	//return A.f;
-	b = ssp_round_ps_SSE2(b, iRoundMode);
-	b = _mm_shuffle_ps(b, a, _MM_SHUFFLE(1,1,0,0));
+	b = ssp_round_ps_SSE2(b, iRoundMode);               // B contains modified values through whole vector
+	b =    _mm_shuffle_ps(b, a, _MM_SHUFFLE(1,1,0,0));  
     return _mm_shuffle_ps(b, a, _MM_SHUFFLE(3,2,2,0)); 
 }
 

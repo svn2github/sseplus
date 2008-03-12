@@ -33,6 +33,33 @@ SSP_FORCEINLINE __m128 ssp_macc_ps_REF( __m128 a, __m128 b, __m128 c )
 }
 
 
+/** \IMP2{Reference,_mm_macc_pd,fmaddpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_macc_pd_REF( __m128d a, __m128d b, __m128d c )
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = A.f64[0] * B.f64[0] + C.f64[0];
+    A.f64[1] = A.f64[1] * B.f64[1] + C.f64[1]; 
+    return A.d;
+}
+
+/** \IMP2{Reference,_mm_macc_ss,fmaddss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_macc_ss_REF(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = A.f32[0] * B.f32[0] + C.f32[0];   
+    return A.f;
+}
+
+
+
 
 //---------------------------------------
 // AddSubtract

@@ -74,6 +74,12 @@ ssp_u16 MAX_U16 = 65535;
 #define SSP_FROUND_RAISE_EXC         0x00
 #define SSP_FROUND_NO_EXC            0x08
 
+//---------------------------------------
+// Floating point precision requirements
+//---------------------------------------
+const static float  SSP_F32_ALLOWANCE =  0.0000000001f;
+const static double SSP_F64_ALLOWANCE =  0.0000000001;
+
 
 //---------------------------------------
 // Warning macros

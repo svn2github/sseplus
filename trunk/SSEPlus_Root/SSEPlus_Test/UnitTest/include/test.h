@@ -96,11 +96,63 @@ namespace p
     //
     // Equal
     // 
+    
+
+    template< typename T >
+    bool Equal_f32( T value, T expected ) // Floating point compare
+    {
+        ssp_m128 V, E;
+        V.f = *((__m128*)&value    );   
+        E.f = *((__m128*)&expected ); 
+
+        for( unsigned int i=0; i<sizeof(T)/sizeof(float); ++i )
+        {
+            if( V.f32[i] > 0 )
+            {
+                if( (V.f32[i] < E.f32[i] * (1.0f-SSP_F32_ALLOWANCE)) 
+                 || (V.f32[i] > E.f32[i] * (1.0f+SSP_F32_ALLOWANCE)) ) return false;
+            }
+            else
+            {
+                if( (V.f32[i] > E.f32[i] * (1.0f-SSP_F32_ALLOWANCE)) 
+                 || (V.f32[i] < E.f32[i] * (1.0f+SSP_F32_ALLOWANCE)) ) return false;
+
+            }       
+        }
+        return true;
+    }
+
+    template< typename T >
+    bool Equal_f64( T value, T expected ) // Floating point compare
+    {
+        ssp_m128 V, E;
+        V.d = *((__m128d*)&value    );   
+        E.d = *((__m128d*)&expected ); 
+
+        for( unsigned int i=0; i<sizeof(T)/sizeof(double); ++i )
+        {
+            if( V.f64[i] > 0 )
+            {
+                if( (V.f64[i] < E.f64[i] * (1.0-SSP_F64_ALLOWANCE)) 
+                 || (V.f64[i] > E.f64[i] * (1.0+SSP_F64_ALLOWANCE)) ) return false;
+            }
+            else
+            {
+                if( (V.f64[i] > E.f64[i] * (1.0-SSP_F64_ALLOWANCE)) 
+                 || (V.f64[i] < E.f64[i] * (1.0+SSP_F64_ALLOWANCE)) ) return false;
+
+            }          
+        }
+        return true;
+    }
+
 
      
     template< enumPrintFormat epf, typename T >
     bool Equal( T value, T expected, __m128i expMask )
     {
+        bool equal = true;
+
         if( 16 == sizeof(T) )   
         {
             __m128i tmp = *((__m128i*)&value);      // Apply the mask to the actual value
@@ -110,37 +162,26 @@ namespace p
             tmp = *((__m128i*)&expected);           // Apply the mask to the expected value
 	        tmp = _mm_and_si128( tmp, expMask );
 	        expected = *((T*)&tmp);      
-        }   
+        }  
 
-        if( enum_ssp_f32 == epf )                   // Fix up the -0's
+        switch( epf )
         {
-            ssp_m128 V,E;
-            V.f = *((__m128*)&value   );
-            E.f = *((__m128*)&expected);
-
-            for( int i=0; i<4; ++i )
-            {
-                if( -0 == V.f32[i] ) V.f32[i] = 0;
-                if( -0 == E.f32[i] ) E.f32[i] = 0;                
-            }
-
-            value    = *((T*)&V.f);
-            expected = *((T*)&E.f);
+            case enum_ssp_f32: equal = Equal_f32( value, expected );                break;
+            case enum_ssp_f64: equal = Equal_f64( value, expected );                break;
+            default:           equal = (0 == memcmp(&value,&expected,sizeof(T) ));  break;
         }
-
-        if( memcmp(&value,&expected,sizeof(T)) )
+        
+        if( !equal )
         {
            std::ostringstream oss;
            oss << "ERROR[ "    << ToStr<epf>(value   ) << " ] ";
            oss << "Expected[ " << ToStr<epf>(expected) << " ]";
 
            errorList += " " + oss.str();
-           return false;
-        }       
+        }
 
-       return true;
-    } 
-    
+        return equal;
+    }     
 
     //
     // Test
@@ -473,7 +514,7 @@ void Test( const CSVLine & csv, const char *name, TEXP exp, T1 a, T2 b )
     PrintName( name, csv.source );    
     
     bool   enable[ SSP_SSE_COUNT ];
-    double res   [ SSP_SSE_COUNT ], tmp;
+    double res   [ SSP_SSE_COUNT ], tmp;    // tmp indirection allows use of macro
 
     Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );      
     
@@ -512,7 +553,7 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, __m128i expMask=
     PrintName( name, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
-    double res [ SSP_SSE_COUNT ], tmp;
+    double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
 
     Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );      
 
@@ -548,7 +589,7 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, __m128i ex
     PrintName( name, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
-    double res [ SSP_SSE_COUNT ], tmp;
+    double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
 
     Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 
@@ -584,7 +625,7 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, __m1
     PrintName( name, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
-    double res [ SSP_SSE_COUNT ], tmp;
+    double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
 
     Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 
@@ -620,7 +661,7 @@ void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, T4 d
     PrintName( name, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
-    double res [ SSP_SSE_COUNT ], tmp;
+    double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
 
     Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 

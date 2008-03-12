@@ -100,3 +100,4 @@ ssp_popcnt16,4A
 ssp_popcnt,4A
 ssp_popcnt64,4A
 ssp_macc_ps,5
+ssp_macc_pd,5
