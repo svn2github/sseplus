@@ -161,15 +161,19 @@ namespace p
 
             tmp = *((__m128i*)&expected);           // Apply the mask to the expected value
 	        tmp = _mm_and_si128( tmp, expMask );
-	        expected = *((T*)&tmp);      
-        }  
+	        expected = *((T*)&tmp);     
 
-        switch( epf )
+            switch( epf )
+            {
+                case enum_ssp_f32: equal = Equal_f32( value, expected );                break;
+                case enum_ssp_f64: equal = Equal_f64( value, expected );                break;
+                default:           equal = (0 == memcmp(&value,&expected,sizeof(T) ));  break;
+            }
+        } 
+        else
         {
-            case enum_ssp_f32: equal = Equal_f32( value, expected );                break;
-            case enum_ssp_f64: equal = Equal_f64( value, expected );                break;
-            default:           equal = (0 == memcmp(&value,&expected,sizeof(T) ));  break;
-        }
+            equal = memcmp( &value, &expected, sizeof(T) ) == 0;
+        }               
         
         if( !equal )
         {

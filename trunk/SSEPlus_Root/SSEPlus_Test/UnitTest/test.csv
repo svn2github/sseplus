@@ -12,14 +12,14 @@ ssp_movehdup_ps               ,3,,2,,,,,
 ssp_moveldup_ps               ,3,,2,,,,,
 ssp_blend_epi16               ,4.1,6,,,,,,
 ssp_blend_pd                  ,4.1,8,,,,,,
-ssp_blend_ps                  ,4.1,,,,,,,
+ssp_blend_ps                  ,4.1,6,,,,,,
 ssp_blendv_epi8               ,4.1,6,,,,,,
-ssp_blendv_pd                 ,4.1,
-ssp_blendv_ps                 ,4.1,
-ssp_ceil_pd                   ,4.1,
-ssp_ceil_ps                   ,4.1,34
-ssp_ceil_sd                   ,4.1,
-ssp_ceil_ss                   ,4.1,
+ssp_blendv_pd                 ,4.1,8
+ssp_blendv_ps                 ,4.1,8
+ssp_ceil_pd                   ,4.1,38
+ssp_ceil_ps                   ,4.1,32
+ssp_ceil_sd                   ,4.1,35
+ssp_ceil_ss                   ,4.1,40
 ssp_cmpeq_epi64               ,4.1,6
 ssp_cvtepi16_epi32            ,4.1,10
 ssp_cvtepi16_epi64            ,4.1,12
@@ -35,17 +35,17 @@ ssp_cvtepu8_epi32             ,4.1,4,
 ssp_cvtepu8_epi32             ,4.1,4,
 ssp_cvtepu8_epi64             ,4.1,6,
 ssp_dp_pd                     ,4.1,24,
-ssp_dp_ps                     ,4.1,30,22
-ssp_extract_epi32             ,4.1,,
-ssp_extract_epi64             ,4.1,,
-ssp_extract_epi8              ,4.1,,
+ssp_dp_ps                     ,4.1,28,22
+ssp_extract_epi32             ,4.1,2,
+ssp_extract_epi64             ,4.1,14,
+ssp_extract_epi8              ,4.1,2,
 ssp_extract_ps                ,4.1,,
-ssp_floor_pd                  ,4.1,,
-ssp_floor_ps                  ,4.1,38,
-ssp_floor_sd                  ,4.1,,
-ssp_floor_ss                  ,4.1,,
-ssp_insert_epi32              ,4.1,,
-ssp_insert_epi8               ,4.1,,
+ssp_floor_pd                  ,4.1,38,
+ssp_floor_ps                  ,4.1,32,
+ssp_floor_sd                  ,4.1,35,
+ssp_floor_ss                  ,4.1,40,
+ssp_insert_epi32              ,4.1,7,
+ssp_insert_epi8               ,4.1,10,
 ssp_insert_ps                 ,4.1,
 ssp_max_epi32                 ,4.1,9
 ssp_max_epi8                  ,4.1,9
@@ -58,28 +58,28 @@ ssp_min_epu32                 ,4.1,13
 ssp_minpos_epu16              ,4.1,
 ssp_mpsadbw_epu8              ,4.1,83
 ssp_packus_epi32              ,4.1,6
-ssp_round_pd                  ,4.1,
+ssp_round_pd                  ,4.1,38
 ssp_round_ps                  ,4.1,34
-ssp_round_ss                  ,4.1,
-ssp_testc_si128               ,4.1,
-ssp_testnzc_si128             ,4.1,,,
-ssp_testz_si128               ,4.1,,,
+ssp_round_ss                  ,4.1,37
+ssp_testc_si128               ,4.1,5
+ssp_testnzc_si128             ,4.1,5,,
+ssp_testz_si128               ,4.1,5,,
 ssp_abs_epi16,S3,7,,1
 ssp_abs_epi32,S3,7,,1
 ssp_abs_epi8,S3,7,,1
 ssp_alignr_epi8,S3,4,,2
 ssp_hadd_epi16                ,S3,9,,6
-ssp_hadd_epi32            ,S3,10,,5
-ssp_hadds_epi16                ,S3,9,,3
-ssp_hsub_epi16                ,S3,9,,6
-ssp_hsub_epi32               ,S3,8,,5
-ssp_hsubs_epi16                ,S3,9,,6
-ssp_maddubs_epi16,S3,28,,3
-ssp_mulhrs_epi16,S3,,,3
-ssp_shuffle_epi8,S3,,,3
+ssp_hadd_epi32            ,S3,8,,5
+ssp_hadds_epi16                ,S3,12,,3
+ssp_hsub_epi16                ,S3,12,,6
+ssp_hsub_epi32               ,S3,10,,5
+ssp_hsubs_epi16                ,S3,12,,6
+ssp_maddubs_epi16,S3,12,,3
+ssp_mulhrs_epi16,S3,25,,3
+ssp_shuffle_epi8,S3,63,,3
 ssp_sign_epi16,S3,3,,1
-ssp_sign_epi32,S3,9,,1
-ssp_sign_epi8,S3,9,,1
+ssp_sign_epi32,S3,12,,1
+ssp_sign_epi8,S3,12,,1
 ssp_arithmetic_hadd4_dup_ps       ,ssp,18,12,
 ssp_logical_bitwise_choose    ,ssp,4,,
 ssp_logical_cmpgt_epu16       ,ssp,9,,
@@ -87,17 +87,31 @@ ssp_logical_cmpgt_epu32       ,ssp,9,,
 ssp_logical_cmplt_epu16       ,ssp,9,,
 ssp_logical_cmplt_epu32       ,ssp,9,,
 ssp_movmask_imm8_to_epi32,ssp,,,
-ssp_extract_si64,4A,,,
-ssp_extracti_si64,4A,,,
-ssp_insert_si64,4A,,,
-ssp_inserti_si64,4A,,,
+ssp_extract_si64,4A,6,,
+ssp_extracti_si64,4A,4,,
+ssp_insert_si64,4A,6,,
+ssp_inserti_si64,4A,6,,
 ssp_stream_sd,4A,,,
 ssp_stream_ss,4A,,,
 ssp_lzcnt16,4A,,,
-ssp_lzcnt,4A
-ssp_lzcnt64,4A
-ssp_popcnt16,4A
-ssp_popcnt,4A
-ssp_popcnt64,4A
-ssp_macc_ps,5
-ssp_macc_pd,5
+ssp_lzcnt,4A,
+ssp_lzcnt64,4A,
+ssp_popcnt16,4A,
+ssp_popcnt,4A,
+ssp_popcnt64,4A,
+ssp_macc_ps                   ,5,8
+ssp_macc_pd                   ,5,11
+ssp_macc_ss                   ,5,16
+ssp_macc_sd                   ,5,16
+ssp_nmacc_ps                  ,5,12
+ssp_nmacc_pd                  ,5,12
+ssp_nmacc_ss                  ,5,20
+ssp_nmacc_sd                  ,5,20
+ssp_msub_ps                   ,5,8
+ssp_msub_pd                   ,5,8
+ssp_msub_ss                   ,5,16
+ssp_msub_sd                   ,5,16
+ssp_nmsub_ps                  ,5,12
+ssp_nmsub_pd                  ,5,12
+ssp_nmsub_ss                  ,5,20
+ssp_nmsub_sd                  ,5,20

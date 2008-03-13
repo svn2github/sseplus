@@ -469,7 +469,7 @@ void SSE4_1_Tests( CSVTable & csv )
         vS32( 0xFEDCBA98, 0x76543210, 0xFEDCBA98, 0x76543210 ),
         2);
 #ifdef SYS64
-    TEST_126( ssp_extract_epi64, ssp_s64,  ssp_s64, __m128i, int ) 
+    TEST_126( ssp_extract_epi64, ssp_s64,  ssp_s64, __m128i, int ) // TODO: Handle this more gracefully
         0xFFEEDDCCBBAA9988ll,
         vU64(0xFFEEDDCCBBAA9988ll, 0x7766554433221100ll),
         1 );     

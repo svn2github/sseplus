@@ -429,7 +429,7 @@ void PrintResult( unsigned int expectedCycles, double elapsed )
     std::cout << std::setprecision(1) << ",";  
     std::cout << std::right << std::setw(COL_WIDTH_CYCLES) << elapsed;
 
-    if( expectedCycles /*&& elapsed > expectedCycles+1*/ )
+    if( expectedCycles && elapsed > expectedCycles+1)
     { 
         std::cout <<  "|" << std::left << std::setw(COL_WIDTH_EXP) << expectedCycles;  
     }

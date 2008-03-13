@@ -578,10 +578,10 @@ SSP_FORCEINLINE ssp_s64 ssp_extract_epi64_REF( __m128i a, const int ndx )
 
 /** \IMP{Reference,_mm_extract_ps, SSE4.1} */
 SSP_FORCEINLINE int ssp_extract_ps_REF( __m128 a, const int ndx )                          
-{
+{ 
     ssp_m128 A;
-    A.f = a;
-    return (int)A.s32[ndx&0x3];
+    A.f = a; 
+    return A.s32[ndx&0x3];
 }
 
 
