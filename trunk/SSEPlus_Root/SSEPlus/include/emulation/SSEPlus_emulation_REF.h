@@ -15,8 +15,11 @@
  *  @{
  *  @name Emulated Instructions{ */
 
+//--------------------------------------
+// Multiply Add
+//--------------------------------------
 
-/** \IMP2{Reference,_mm_macc_ps,fmaddps,SSE5} */ 
+/** \IMP5{Reference,_mm_macc_ps,fmaddps,SSE5} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ps_REF( __m128 a, __m128 b, __m128 c )
 {
     ssp_m128 A,B,C;
@@ -28,12 +31,10 @@ SSP_FORCEINLINE __m128 ssp_macc_ps_REF( __m128 a, __m128 b, __m128 c )
     A.f32[1] = A.f32[1] * B.f32[1] + C.f32[1];
     A.f32[2] = A.f32[2] * B.f32[2] + C.f32[2];
     A.f32[3] = A.f32[3] * B.f32[3] + C.f32[3];
-
     return A.f;
 }
 
-
-/** \IMP2{Reference,_mm_macc_pd,fmaddpd,SSE5} */ 
+/** \IMP5{Reference,_mm_macc_pd,fmaddpd,SSE5} */ 
 SSP_FORCEINLINE __m128d ssp_macc_pd_REF( __m128d a, __m128d b, __m128d c )
 {
     ssp_m128 A,B,C;
@@ -46,7 +47,7 @@ SSP_FORCEINLINE __m128d ssp_macc_pd_REF( __m128d a, __m128d b, __m128d c )
     return A.d;
 }
 
-/** \IMP2{Reference,_mm_macc_ss,fmaddss,SSE5} */ 
+/** \IMP5{Reference,_mm_macc_ss,fmaddss,SSE5} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ss_REF(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
 {
     ssp_m128 A,B,C;
@@ -58,6 +59,187 @@ SSP_FORCEINLINE __m128 ssp_macc_ss_REF(__m128 a, __m128 b, __m128 c)   // Assumi
     return A.f;
 }
 
+/** \IMP5{Reference,_mm_macc_sd,fmaddss,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_macc_sd_REF(__m128d a, __m128d b, __m128d c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = A.f64[0] * B.f64[0] + C.f64[0];   
+    return A.d;
+}
+
+
+//--------------------------------------
+// Negative Multiply Add
+//--------------------------------------
+
+/** \IMP5{Reference,_mm_nmacc_ps,fnmaddps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmacc_ps_REF(__m128 a, __m128 b, __m128 c)
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = -(A.f32[0] * B.f32[0]) + C.f32[0];
+    A.f32[1] = -(A.f32[1] * B.f32[1]) + C.f32[1];
+    A.f32[2] = -(A.f32[2] * B.f32[2]) + C.f32[2];
+    A.f32[3] = -(A.f32[3] * B.f32[3]) + C.f32[3];
+    return A.f;
+}
+
+/** \IMP5{Reference,_mm_nmacc_pd,fnmaddpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmacc_pd_REF(__m128d a, __m128d b, __m128d c)
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = -(A.f64[0] * B.f64[0]) + C.f64[0];
+    A.f64[1] = -(A.f64[1] * B.f64[1]) + C.f64[1]; 
+    return A.d;
+}
+
+/** \IMP5{Reference,_mm_nmacc_ss,fnmaddss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmacc_ss_REF(__m128 a, __m128 b, __m128 c)
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = -(A.f32[0] * B.f32[0]) + C.f32[0];   
+    return A.f;
+}
+
+/** \IMP{Reference,_mm_nmacc_sd,fnmaddsd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmacc_sd_REF(__m128d a, __m128d b, __m128d c)
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = -(A.f64[0] * B.f64[0]) + C.f64[0];   
+    return A.d;
+}
+
+
+//--------------------------------------
+// Multiply Subtract
+//--------------------------------------
+
+/** \IMP5{Reference,_mm_msub_ps,fmsubps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_msub_ps_REF( __m128 a, __m128 b, __m128 c )
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = A.f32[0] * B.f32[0] - C.f32[0];
+    A.f32[1] = A.f32[1] * B.f32[1] - C.f32[1];
+    A.f32[2] = A.f32[2] * B.f32[2] - C.f32[2];
+    A.f32[3] = A.f32[3] * B.f32[3] - C.f32[3];
+    return A.f;
+}
+
+/** \IMP5{Reference,_mm_msub_pd,fmsubpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_msub_pd_REF( __m128d a, __m128d b, __m128d c )
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = A.f64[0] * B.f64[0] - C.f64[0];
+    A.f64[1] = A.f64[1] * B.f64[1] - C.f64[1]; 
+    return A.d;
+}
+
+/** \IMP5{Reference,_mm_msub_ss,fmsubss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_msub_ss_REF(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = A.f32[0] * B.f32[0] - C.f32[0];   
+    return A.f;
+}
+
+/** \IMP5{Reference,_mm_msub_sd,fmsubss,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_msub_sd_REF(__m128d a, __m128d b, __m128d c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = A.f64[0] * B.f64[0] - C.f64[0];   
+    return A.d;
+}
+
+//--------------------------------------
+// Negative Multiply Subtract
+//--------------------------------------
+
+/** \IMP5{Reference,_mm_nmsub_ps,fnmsubps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmsub_ps_REF(__m128 a, __m128 b, __m128 c)
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = -(A.f32[0] * B.f32[0]) - C.f32[0];
+    A.f32[1] = -(A.f32[1] * B.f32[1]) - C.f32[1];
+    A.f32[2] = -(A.f32[2] * B.f32[2]) - C.f32[2];
+    A.f32[3] = -(A.f32[3] * B.f32[3]) - C.f32[3];
+    return A.f;
+}
+
+/** \IMP5{Reference,_mm_nmsub_pd,fnmsubpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmsub_pd_REF(__m128d a, __m128d b, __m128d c)
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = -(A.f64[0] * B.f64[0]) - C.f64[0];
+    A.f64[1] = -(A.f64[1] * B.f64[1]) - C.f64[1]; 
+    return A.d;
+}
+
+/** \IMP5{Reference,_mm_nmsub_ss,fnmsubss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmsub_ss_REF(__m128 a, __m128 b, __m128 c)
+{
+    ssp_m128 A,B,C;
+    A.f = a;
+    B.f = b;
+    C.f = c;
+
+    A.f32[0] = -(A.f32[0] * B.f32[0]) - C.f32[0];   
+    return A.f;
+}
+
+/** \IMP{Reference,_mm_nmsub_sd,fnmsubsd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmsub_sd_REF(__m128d a, __m128d b, __m128d c)
+{
+    ssp_m128 A,B,C;
+    A.d = a;
+    B.d = b;
+    C.d = c;
+
+    A.f64[0] = -(A.f64[0] * B.f64[0]) - C.f64[0];   
+    return A.d;
+}
 
 
 

@@ -11,13 +11,11 @@
 #include "../convert/SSEPlus_convert_SSE2.h"
 #include "../arithmetic/SSEPlus_arithmetic_SSE2.h"
 
-/** @defgroup SSE2 SSE2 Optimized
- *  @{
- *  @name Emulated Instructions
- *  @{ */
+//
+// Multiply Add
+//
 
-
-/** \IMP2{SSE2,_mm_macc_ps,fmaddps,SSE5} */ 
+/** \IMP5{SSE2,_mm_macc_ps,fmaddps,SSE5} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ps_SSE2( __m128 a, __m128 b, __m128 c )
 {
     a = _mm_mul_ps( a, b );
@@ -25,7 +23,7 @@ SSP_FORCEINLINE __m128 ssp_macc_ps_SSE2( __m128 a, __m128 b, __m128 c )
     return a;
 }
 
-/** \IMP2{SSE2,_mm_macc_pd,fmaddps,SSE5} */ 
+/** \IMP5{SSE2,_mm_macc_pd,fmaddpd,SSE5} */ 
 SSP_FORCEINLINE __m128d ssp_macc_pd_SSE2(__m128d a, __m128d b, __m128d c)
 {
     a = _mm_mul_pd( a, b );
@@ -33,15 +31,185 @@ SSP_FORCEINLINE __m128d ssp_macc_pd_SSE2(__m128d a, __m128d b, __m128d c)
     return a;
 }
 
-/** \IMP2{SSE2,_mm_macc_ss,fmaddss,SSE5} */ 
+/** \IMP5{SSE2,_mm_macc_ss,fmaddss,SSE5} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
 {
-    b = ssp_macc_ps_SSE2( a, b, c );
-                                                        // TODO: benchmark vs logical_bitwise_choose
-    b = _mm_shuffle_ps( a, b, _MM_SHUFFLE(0,0,1,0) );   // b: B0 B0 A1 A0
-    b = _mm_shuffle_ps( b, a, _MM_SHUFFLE(3,2,1,2) );   // b: A3 A2 A1 B0
-    return b;
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0 );
+
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    B.f = ssp_macc_ps_SSE2( A.f, B.f, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.f;
 }
+
+/** \IMP5{SSE2,_mm_macc_sd,fmaddsd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_macc_sd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0, 0 );
+
+    ssp_m128 A,B;
+    A.d = a;
+    B.d = b;
+    B.d = ssp_macc_pd_SSE2( A.d, B.d, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.d;
+}
+
+//
+// Negative Multiply Add
+//
+
+/** \IMP5{SSE2,_mm_nmacc_ps,fnmaddps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmacc_ps_SSE2( __m128 a, __m128 b, __m128 c )
+{
+    const static __m128 neg1 = SSP_CONST_SET_32F( -1.0f, -1.0f, -1.0f, -1.0f );
+
+    a = _mm_mul_ps( a, b    );
+    a = _mm_mul_ps( a, neg1 );
+    a = _mm_add_ps( a, c    );
+    return a;
+}
+
+/** \IMP5{SSE2,_mm_nmacc_pd,fnmaddpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmacc_pd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    const static __m128d neg1 = SSP_CONST_SET_64F( -1.0, -1.0 );
+
+    a = _mm_mul_pd( a, b    );
+    a = _mm_mul_pd( a, neg1 );
+    a = _mm_add_pd( a, c    );
+    return a;
+}
+
+/** \IMP5{SSE2,_mm_nmacc_ss,fnmaddss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmacc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0 );
+
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    B.f = ssp_nmacc_ps_SSE2( A.f, B.f, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.f;
+}
+
+/** \IMP5{SSE2,_mm_nmacc_sd,fnmaddsd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmacc_sd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0, 0 );
+
+    ssp_m128 A,B;
+    A.d = a;
+    B.d = b;
+    B.d = ssp_nmacc_pd_SSE2( A.d, B.d, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.d;
+}
+
+//
+// Multiply Subtract
+//
+
+/** \IMP5{SSE2,_mm_msub_ps,fmsubps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_msub_ps_SSE2(__m128 a, __m128 b, __m128 c)
+{
+    a = _mm_mul_ps( a, b );
+    a = _mm_sub_ps( a, c );
+    return a;
+}
+
+/** \IMP5{SSE2,_mm_msub_pd,fmsubpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_msub_pd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    a = _mm_mul_pd( a, b );
+    a = _mm_sub_pd( a, c );
+    return a;
+}
+
+/** \IMP5{SSE2,_mm_msub_ss,fmsubss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_msub_ss_SSE2(__m128 a, __m128 b, __m128 c)
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0 );
+
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    B.f = ssp_msub_ps_SSE2( A.f, B.f, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.f;
+}
+
+/** \IMP5{SSE2,_mm_msub_sd,fmsubsd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_msub_sd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0, 0 );
+
+    ssp_m128 A,B;
+    A.d = a;
+    B.d = b;
+    B.d = ssp_msub_pd_SSE2( A.d, B.d, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.d;
+}
+
+//
+// Negative Multiply Subtract
+//
+
+/** \IMP5{SSE2,_mm_nmsub_ps,fnmsubps,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmsub_ps_SSE2(__m128 a, __m128 b, __m128 c)
+{
+    const static __m128 neg1 = SSP_CONST_SET_32F( -1.0f, -1.0f, -1.0f, -1.0f );
+
+    a = _mm_mul_ps( a, b    );
+    a = _mm_mul_ps( a, neg1 );
+    a = _mm_sub_ps( a, c    );
+    return a;
+}
+
+/** \IMP5{SSE2,_mm_nmsub_pd,fnmsubpd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmsub_pd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    const static __m128d neg1 = SSP_CONST_SET_64F( -1.0, -1.0 );
+
+    a = _mm_mul_pd( a, b    );
+    a = _mm_mul_pd( a, neg1 );
+    a = _mm_sub_pd( a, c    );
+    return a;
+}
+
+/** \IMP5{SSE2,_mm_nmsub_ss,fnmsubss,SSE5} */ 
+SSP_FORCEINLINE __m128 ssp_nmsub_ss_SSE2(__m128 a, __m128 b, __m128 c)
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0 );
+
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    B.f = ssp_nmsub_ps_SSE2( A.f, B.f, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.f;
+}
+
+/** \IMP5{SSE2,_mm_nmsub_sd,fnmsubsd,SSE5} */ 
+SSP_FORCEINLINE __m128d ssp_nmsub_sd_SSE2(__m128d a, __m128d b, __m128d c)
+{
+    const static __m128i mask = SSP_CONST_SET_32I( SSP_ALL_SET_32I, SSP_ALL_SET_32I, 0, 0 );
+
+    ssp_m128 A,B;
+    A.d = a;
+    B.d = b;
+    B.d = ssp_nmsub_pd_SSE2( A.d, B.d, c );
+    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    return B.d;
+}
+
+//
+// Abs
+//
 
 
 /** \IMP{SSE2,_mm_abs_epi8,SSSE3} */

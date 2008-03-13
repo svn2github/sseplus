@@ -66,6 +66,7 @@ SSP_FORCEINLINE __m128i ssp_logical_bitwise_choose_SSE2( __m128i a, __m128i b, _
     return a; 
 }
 
+
 //SSP_FORCEINLINE
 //__m128i ssp_generate_mask_imm8_to_epi16_SSE2( int mask )
 //{

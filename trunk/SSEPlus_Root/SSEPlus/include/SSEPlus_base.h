@@ -77,8 +77,8 @@ ssp_u16 MAX_U16 = 65535;
 //---------------------------------------
 // Floating point precision requirements
 //---------------------------------------
-const static float  SSP_F32_ALLOWANCE =  0.0000000001f;
-const static double SSP_F64_ALLOWANCE =  0.0000000001;
+const static float  SSP_F32_ALLOWANCE =  0.0001f;
+const static double SSP_F64_ALLOWANCE =  0.0001;
 
 
 //---------------------------------------

@@ -56,6 +56,10 @@
 // Microsoft Visual Studio Initialization
 //---------------------------------------
 
+#define SSP_ALL_SET_32I 0xFFFFFFFF
+#define SSP_ALL_SET_64I 0xFFFFFFFFFFFFFFFF
+
+
 #if defined(SSP_MSVC)
 //#undef SSP_MSVC	
 

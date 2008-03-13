@@ -3914,9 +3914,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_macc_epi32_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_macc_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_macc_pd}</td><td>SSE5</td>  <td>\link ssp_macc_pd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_pd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3924,9 +3924,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_macc_pd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_macc_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_macc_ps}</td><td>SSE5</td>  <td>\link ssp_macc_ps_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_ps_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3934,9 +3934,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_macc_ps_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_macc_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_macc_sd}</td><td>SSE5</td>  <td>\link ssp_macc_sd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_sd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3944,9 +3944,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_macc_sd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_macc_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_macc_ss}</td><td>SSE5</td>  <td>\link ssp_macc_ss_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_ss_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4484,9 +4484,9 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<tr><td>\MSDN{_mm_msub_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_msub_pd}</td><td>SSE5</td>  <td>\link ssp_msub_pd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_pd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4494,9 +4494,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_msub_pd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_msub_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_msub_ps}</td><td>SSE5</td>  <td>\link ssp_msub_ps_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_ps_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4504,9 +4504,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_msub_ps_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_msub_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_msub_sd}</td><td>SSE5</td>  <td>\link ssp_msub_sd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_sd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4514,9 +4514,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_msub_sd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_msub_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_msub_ss}</td><td>SSE5</td>  <td>\link ssp_msub_ss_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_ss_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4634,9 +4634,9 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<tr><td>\MSDN{_mm_nmacc_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmacc_pd}</td><td>SSE5</td>  <td>\link ssp_nmacc_pd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_pd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4644,9 +4644,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmacc_pd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmacc_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmacc_ps}</td><td>SSE5</td>  <td>\link ssp_nmacc_ps_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_ps_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4654,9 +4654,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmacc_ps_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmacc_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmacc_sd}</td><td>SSE5</td>  <td>\link ssp_nmacc_sd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_sd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4664,9 +4664,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmacc_sd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmacc_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmacc_ss}</td><td>SSE5</td>  <td>\link ssp_nmacc_ss_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_ss_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4674,9 +4674,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmacc_ss_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmsub_pd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmsub_pd}</td><td>SSE5</td>  <td>\link ssp_nmsub_pd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_pd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4684,9 +4684,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmsub_pd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmsub_ps}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmsub_ps}</td><td>SSE5</td>  <td>\link ssp_nmsub_ps_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_ps_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4694,9 +4694,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmsub_ps_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmsub_sd}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmsub_sd}</td><td>SSE5</td>  <td>\link ssp_nmsub_sd_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_sd_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4704,9 +4704,9 @@
   <td>&nbsp;</td>
   <td>\link ssp_nmsub_sd_SSE5() SSE5\endlink</td>
 </tr>
-<tr><td>\MSDN{_mm_nmsub_ss}</td><td>SSE5</td>  <td>&nbsp;</td>
+<tr><td>\MSDN{_mm_nmsub_ss}</td><td>SSE5</td>  <td>\link ssp_nmsub_ss_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_ss_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
