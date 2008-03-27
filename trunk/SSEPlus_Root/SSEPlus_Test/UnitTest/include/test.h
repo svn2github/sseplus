@@ -430,6 +430,39 @@ namespace p
 
         return elapsed;   
     }
+
+    template< enumPrintFormat epf, void(*fn)(__m128i*,__m128i*,__m128i*,__m128i*) >
+    double Test( __m128i* a_in, __m128i* a_exp, __m128i* b_in, __m128i* b_exp, __m128i* c_in, __m128i* c_exp, __m128i* d_in, __m128i* d_exp )
+    {
+        __m128i a_bak = *a_in; 
+        __m128i b_bak = *b_in;
+        __m128i c_bak = *c_in;
+        __m128i d_bak = *d_in;
+
+        fn( a_in,b_in,c_in,d_in );
+
+        bool equal  = Equal<epf>( a_in, a_exp );
+             equal &= Equal<epf>( b_in, b_exp );
+             equal &= Equal<epf>( c_in, c_exp );
+             equal &= Equal<epf>( d_in, d_exp );
+
+        if( !equal ) 
+            return -1.0;
+
+        Timer t;    
+        for( int i=0; i<LOOP_COUNT; ++i )
+            fn( a_in, b_in, c_in, d_in );    
+        double elapsed = t.Elapsed();
+
+        NO_OPT( a_in );
+
+        *a_in = a_bak;
+        *b_in = b_bak;
+        *c_in = c_bak;
+        *d_in = d_bak;
+
+        return elapsed;   
+    }
 };
 
 #ifdef SSP_MSVC
@@ -786,6 +819,44 @@ void Test( const CSVLine & csv, const char *name, T1 a_exp, T2 b_exp, T3 c_exp,
     
     Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
+
+//====================================
+
+template< 
+    typename T1, typename T2, typename T3, typename T4,
+    bool do_REF   ,void(*fn_ref    )(T1,T2,T3,T4), 
+    bool do_SSE2  ,void(*fn_sse2   )(T1,T2,T3,T4), 
+    bool do_SSE3  ,void(*fn_sse3   )(T1,T2,T3,T4), 
+	bool do_SSSE3 ,void(*fn_ssse3  )(T1,T2,T3,T4), 
+    bool do_SSE4a ,void(*fn_sse4a  )(T1,T2,T3,T4), 
+	bool do_SSE4_1,void(*fn_sse4_1 )(T1,T2,T3,T4), 
+    bool do_SSE4_2,void(*fn_sse4_2 )(T1,T2,T3,T4), 
+    bool do_SSE5  ,void(*fn_sse5   )(T1,T2,T3,T4), 
+    enumPrintFormat epf 
+>
+void Test( const CSVLine & csv, const char *name, T1 a_exp, T2 b_exp, T3 c_exp, T4 d_exp,
+                                                  T1 a_in , T2 b_in , T3 c_in , T4 d_in  )
+{
+    unsigned int cycles=0;
+    PrintName( name, csv.source );
+
+    bool enable[ SSP_SSE_COUNT ];
+    double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of TRY macro
+
+    Setup_Paths( enable, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
+
+    if( enable[SSP_REF   ] ){ TRY( tmp=p::Test<epf,fn_ref    >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_REF   ]=tmp; } 
+    if( enable[SSP_SSE2  ] ){ TRY( tmp=p::Test<epf,fn_sse2   >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSE2  ]=tmp; } 
+    if( enable[SSP_SSE3  ] ){ TRY( tmp=p::Test<epf,fn_sse3   >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSE3  ]=tmp; } 
+	if( enable[SSP_SSSE3 ] ){ TRY( tmp=p::Test<epf,fn_ssse3  >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSSE3 ]=tmp; } 
+    if( enable[SSP_SSE4a ] ){ TRY( tmp=p::Test<epf,fn_sse4a  >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSE4a ]=tmp; } 
+    if( enable[SSP_SSE4_1] ){ TRY( tmp=p::Test<epf,fn_sse4_1 >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSE4_1]=tmp; } 
+    if( enable[SSP_SSE4_2] ){ TRY( tmp=p::Test<epf,fn_sse4_2 >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSE4_2]=tmp; } 
+    if( enable[SSP_SSE5  ] ){ TRY( tmp=p::Test<epf,fn_sse5   >( a_in,a_exp,b_in,b_exp,c_in,c_exp,d_in,d_exp ) ); res[SSP_SSE5  ]=tmp; } 
+    
+    Cleanup( res, p::errorList, csv, do_REF, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
+}
+
 
 
 
