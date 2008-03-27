@@ -360,5 +360,7 @@ int       ssp_popcnt_u64_SSE2       ( ssp_u64 a );
 #include "emulation/SSEPlus_emulation_SSE2.h" 
 #include "arithmetic/SSEPlus_arithmetic_SSE2.h"
 #include "logical/SSEPlus_logical_SSE2.h"
+#include "memory/SSEPlus_memory_SSE2.h"
+#include "convert/SSEPlus_convert_SSE2.h"
 
 #endif // __SSEPLUS_SSE2_H__

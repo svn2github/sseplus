@@ -12,27 +12,27 @@
 // 3 - SSE3     4 - SSSE3
 // 5 - SSE4a    6 - SSE4.1
 // 7 - SSE4.2   8 - SSE5
-//                                           1:REF        2:SSE2       3:SSE3       4:SSSE3      5:SSE4a      6:SSE4.1     7:SSE4.2     8:SSE5     
-#define TEST_1(     f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_2(     f,t,...)Test<__VA_ARGS__,0,f##_SSE2,  1,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  enum_##t >( csv[#f], #f, 
-#define TEST_3(     f,t,...)Test<__VA_ARGS__,0,f##_SSE3,  0,f##_SSE3,  1,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  enum_##t >( csv[#f], #f, 
-#define TEST_4(     f,t,...)Test<__VA_ARGS__,0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 1,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, enum_##t >( csv[#f], #f,
-#define TEST_5(     f,t,...)Test<__VA_ARGS__,0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 1,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, enum_##t >( csv[#f], #f, 
-#define TEST_6(     f,t,...)Test<__VA_ARGS__,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,1,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,enum_##t >( csv[#f], #f, 
-#define TEST_7(     f,t,...)Test<__VA_ARGS__,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,1,f##_SSE4_2,0,f##_SSE4_2,enum_##t >( csv[#f], #f, 
-#define TEST_8(     f,t,...)Test<__VA_ARGS__,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,1,f##_SSE5  ,enum_##t >( csv[#f], #f, 
+//                                         1:REF        2:SSE2       3:SSE3       4:SSSE3      5:SSE4a      6:SSE4.1     7:SSE4.2     8:SSE5     
+#define TEST_1(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_2(   f,t,...)Test<__VA_ARGS__,0,f##_SSE2,  1,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  enum_##t >( csv[#f], #f, 
+#define TEST_3(   f,t,...)Test<__VA_ARGS__,0,f##_SSE3,  0,f##_SSE3,  1,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  0,f##_SSE3,  enum_##t >( csv[#f], #f, 
+#define TEST_4(   f,t,...)Test<__VA_ARGS__,0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 1,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, 0,f##_SSSE3, enum_##t >( csv[#f], #f,
+#define TEST_5(   f,t,...)Test<__VA_ARGS__,0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 1,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, 0,f##_SSE4A, enum_##t >( csv[#f], #f, 
+#define TEST_6(   f,t,...)Test<__VA_ARGS__,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,1,f##_SSE4_1,0,f##_SSE4_1,0,f##_SSE4_1,enum_##t >( csv[#f], #f, 
+#define TEST_7(   f,t,...)Test<__VA_ARGS__,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,0,f##_SSE4_2,1,f##_SSE4_2,0,f##_SSE4_2,enum_##t >( csv[#f], #f, 
+#define TEST_8(   f,t,...)Test<__VA_ARGS__,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,0,f##_SSE5  ,1,f##_SSE5  ,enum_##t >( csv[#f], #f, 
 
-#define TEST_12(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_13(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   1,f##_SSE3,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_14(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSSE3, 0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_15(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF  , 1,f##_SSE4A, 0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_16(    f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_123(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_124(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   1,f##_SSSE3, 0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_125(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   1,f##_SSE4A, 0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_126(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
-#define TEST_128(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE5,  enum_##t >( csv[#f], #f, 
-#define TEST_1236(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_12(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_13(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   1,f##_SSE3,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_14(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSSE3, 0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_15(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF  , 1,f##_SSE4A, 0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_16(  f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_123( f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_124( f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   1,f##_SSSE3, 0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_125( f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   1,f##_SSE4A, 0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_126( f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
+#define TEST_128( f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   1,f##_SSE5,  enum_##t >( csv[#f], #f, 
+#define TEST_1236(f,t,...)Test<__VA_ARGS__,1,f##_REF,   1,f##_SSE2,  1,f##_SSE3,  0,f##_REF,   0,f##_REF,   1,f##_SSE4_1,0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
 
 // This code allows the unit test project to compile when the compiler doesn't support higher level SSE instructions
 #ifndef SSP_COMPILER_SUPPORTS_SSSE3
@@ -848,6 +848,45 @@ void SSP_Tests( CSVTable & csv )
         vU32( 0x00000000, 0xFFFFFFFF, 0x00000000, 0xFFFFFFFF ),
         0x5 );
 
+    TEST_12( ssp_memory_load1_epu8, ssp_u8, __m128i, unsigned char )
+        vU8( 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3 ),
+        3 );
+
+    TEST_12( ssp_convert_reverse_transpose, ssp_u32, __m128i*, __m128i*, __m128i* )        
+        &vU32( 3, 2, 1, 0 ),        
+        &vU32( 7, 6, 5, 4 ),        
+        &vU32( 11,10,9, 8 ),
+
+        &vU32( 9 , 6, 3, 0 ),
+        &vU32( 10, 7, 4, 1 ),
+        &vU32( 11, 8, 5, 2 ) );
+
+    TEST_12( ssp_convert_3c_3p_epi8, ssp_u8, __m128i*, __m128i*, __m128i* )
+        &vU8( 151,141,131,121,111,101, 91, 81, 71, 61, 51, 41, 31, 21, 11,  1 ),
+        &vU8( 152,142,132,122,112,102, 92, 82, 72, 62, 52, 42, 32, 22, 12,  2 ),
+        &vU8( 153,143,133,123,113,103, 93, 83, 73, 63, 53, 43, 33, 23, 13,  3 ),
+
+        &vU8(  51, 43, 42, 41, 33, 32, 31, 23, 22, 21, 13, 12, 11,  3,  2,  1 ),        
+        &vU8( 102,101, 93, 92, 91, 83, 82, 81, 73, 72, 71, 63, 62, 61, 53, 52 ),        
+        &vU8( 153,152,151,143,142,141,133,132,131,123,122,121,113,112,111,103 ) );
+
+    TEST_2( ssp_convert_3p_3c_epi8_a, ssp_u8, __m128i*, __m128i*, __m128i* )        
+        &vU8(  51, 43, 42, 41, 33, 32, 31, 23, 22, 21, 13, 12, 11,  3,  2,  1 ),        
+        &vU8( 102,101, 93, 92, 91, 83, 82, 81, 73, 72, 71, 63, 62, 61, 53, 52 ),        
+        &vU8( 153,152,151,143,142,141,133,132,131,123,122,121,113,112,111,103 ),
+
+        &vU8( 151,141,131,121,111,101, 91, 81, 71, 61, 51, 41, 31, 21, 11,  1 ),
+        &vU8( 152,142,132,122,112,102, 92, 82, 72, 62, 52, 42, 32, 22, 12,  2 ),
+        &vU8( 153,143,133,123,113,103, 93, 83, 73, 63, 53, 43, 33, 23, 13,  3 ) );
+
+    TEST_12( ssp_convert_3p_3c_epi8, ssp_u8, __m128i*, __m128i*, __m128i* )        
+        &vU8(  51, 43, 42, 41, 33, 32, 31, 23, 22, 21, 13, 12, 11,  3,  2,  1 ),        
+        &vU8( 102,101, 93, 92, 91, 83, 82, 81, 73, 72, 71, 63, 62, 61, 53, 52 ),        
+        &vU8( 153,152,151,143,142,141,133,132,131,123,122,121,113,112,111,103 ),
+
+        &vU8( 151,141,131,121,111,101, 91, 81, 71, 61, 51, 41, 31, 21, 11,  1 ),
+        &vU8( 152,142,132,122,112,102, 92, 82, 72, 62, 52, 42, 32, 22, 12,  2 ),
+        &vU8( 153,143,133,123,113,103, 93, 83, 73, 63, 53, 43, 33, 23, 13,  3 ) );      
 }
 
 
