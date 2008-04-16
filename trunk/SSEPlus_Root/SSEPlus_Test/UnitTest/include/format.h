@@ -11,6 +11,36 @@
 #include <sstream>
 #include <cstring>
 
+
+struct obj_m128i
+{
+	__m128i dat;
+
+	obj_m128i( ssp_u32 v3, ssp_u32 v2, ssp_u32 v1, ssp_u32 v0 )
+	{
+		dat = _mm_set_epi32( v3,v2,v1,v0 );
+	}
+
+	obj_m128i( ssp_u8 v15, ssp_u8 v14, ssp_u8 v13, ssp_u8 v12, 
+               ssp_u8 v11, ssp_u8 v10, ssp_u8 v9,  ssp_u8 v8,
+               ssp_u8 v7,  ssp_u8 v6,  ssp_u8 v5,  ssp_u8 v4,
+               ssp_u8 v3,  ssp_u8 v2,  ssp_u8 v1,  ssp_u8 v0 )
+	{
+		dat = _mm_set_epi8( v15,v14,v13,v12,v11,v10,v9,v8,v7,v6,v5,v4,v3,v2,v1,v0 );
+	}
+
+	obj_m128i( ssp_u16 v7,  ssp_u16 v6,  ssp_u16 v5,  ssp_u16 v4,
+               ssp_u16 v3,  ssp_u16 v2,  ssp_u16 v1,  ssp_u16 v0 )
+	{
+		dat = _mm_set_epi16( v7,v6,v5,v4,v3,v2,v1,v0 );
+	}
+
+	__m128i * Address(){ return &dat; }
+	__m128i   Value  (){ return  dat; }
+};
+
+
+
 //
 // Vector Initialization
 //

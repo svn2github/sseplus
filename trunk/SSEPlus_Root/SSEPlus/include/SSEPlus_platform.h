@@ -32,6 +32,7 @@
 #define SSP_INCLUDE_FILE_SSE5           "SSEPlus_NoSSE5.h"  // SSE5
 #define SSP_INCLUDE_FILE_SSE4_1_SSE5    <smmintrin.h>       // Functions common to SSE4.1 and SSE5
 
+#include <intrin.h> // CPUID
 
 //---------------------------------------
 // GCC

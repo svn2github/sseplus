@@ -105,7 +105,8 @@ namespace p
         V.f = *((__m128*)&value    );   
         E.f = *((__m128*)&expected ); 
 
-        for( unsigned int i=0; i<sizeof(T)/sizeof(float); ++i )
+		unsigned int elements = sizeof(T)/sizeof(float);
+        for( unsigned int i=0; i<elements; ++i )
         {
             if( V.f32[i] > 0 )
             {
@@ -129,7 +130,8 @@ namespace p
         V.d = *((__m128d*)&value    );   
         E.d = *((__m128d*)&expected ); 
 
-        for( unsigned int i=0; i<sizeof(T)/sizeof(double); ++i )
+		unsigned int elements = sizeof(T)/sizeof(double);
+        for( unsigned int i=0; i<elements; ++i )
         {
             if( V.f64[i] > 0 )
             {
