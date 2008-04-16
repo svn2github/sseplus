@@ -9,7 +9,6 @@
 #define __SSEPLUS_CPUID_H__
 
 #include "SSEPlus_base.h"
-#include <intrin.h> // __cpuid
 
 typedef enum 
 {

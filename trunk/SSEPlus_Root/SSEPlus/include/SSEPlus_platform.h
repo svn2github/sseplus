@@ -8,6 +8,11 @@
 #ifndef __SSEPLUS_PLATFORM_H__
 #define __SSEPLUS_PLATFORM_H__
 
+//TODO: Detect 32/64
+
+
+
+
 //---------------------------------------
 // Microsoft Visual Studio
 //---------------------------------------
@@ -49,8 +54,35 @@
 #define SSP_INCLUDE_FILE_SSE4a          <ammintrin.h>           // All intrinsics, including SSE4a
 #define SSP_INCLUDE_FILE_SSE5           <bmmintrin.h>           // SSE5
 #define SSP_INCLUDE_FILE_SSE4_1_SSE5    <mmintrin-common.h>     // Functions common to SSE4.1 and SSE5
-#endif
 
+// CPUID
+#if defined( SYS64 )
+    #define __cpuid(CPUInfo, InfoType)    __asm__ __volatile__("    pushq %%rbx;                      \
+                                                                xorq %%rax, %%rax;                    \
+                                                                movl %%esi, %%eax;                    \
+                                                                cpuid;                                \
+                                                                movl %%eax, 0x0(%%rdi);               \
+                                                                movl %%ebx, 0x4(%%rdi);               \
+                                                                movl %%ecx, 0x8(%%rdi);               \
+                                                                movl %%edx, 0xc(%%rdi);               \
+                                                                popq %%rbx;"                          \
+                                                                : : "D" (CPUInfo), "S" (InfoType)     \
+                                                                : "%rax", "%rcx", "%rdx" )
+
+#elif defined( SYS32 )
+    #define __cpuid(CPUInfo, InfoType)    __asm__ __volatile__("    pushl %%ebx;                      \
+                                                                xorl %%eax, %%eax;                    \
+                                                                movl %%esi, %%eax;                    \
+                                                                cpuid;                                \
+                                                                movl %%eax, 0x0(%%edi);               \
+                                                                movl %%ebx, 0x4(%%edi);               \
+                                                                movl %%ecx, 0x8(%%edi);               \
+                                                                movl %%edx, 0xc(%%edi);               \
+                                                                popl %%ebx;"                          \
+                                                                : : "D" (CPUInfo), "S" (InfoType)     \
+                                                                : "%eax", "%ecx", "%edx" )
+#endif
+#endif 
 
 //---------------------------------------
 // Microsoft Visual Studio Initialization

@@ -323,12 +323,16 @@ __m128i   ssp_mul_epi32_SSE2        ( __m128i a,    __m128i b );
 __m128i   ssp_mullo_epi32_SSE2      ( __m128i a,    __m128i b );    
 __m128i   ssp_packus_epi32_SSE2     ( __m128i val1, __m128i val2 );    
 __m128d   ssp_round_pd_SSE2         ( __m128d val, int iRoundMode );    
+
+SSP_FORCEINLINE
 __m128    ssp_round_ps_SSE2         ( __m128  val, int iRoundMode );    
 __m128d   ssp_round_sd_SSE2         ( __m128d dst, __m128d val, int iRoundMode );    
 __m128    ssp_round_ss_SSE2         ( __m128  dst, __m128  val, int iRoundMode );    
 __m128i   ssp_stream_load_si128_SSE2( __m128i* v1 );    
 int       ssp_testc_si128_SSE2      ( __m128i mask, __m128i val );    
-int       ssp_testnzc_si128_SSE2    ( __m128i mask, __m128i s2  );    
+int       ssp_testnzc_si128_SSE2    ( __m128i mask, __m128i s2  ); 
+
+SSP_FORCEINLINE
 int       ssp_testz_si128_SSE2      ( __m128i mask, __m128i val );  
 
 //============================================
