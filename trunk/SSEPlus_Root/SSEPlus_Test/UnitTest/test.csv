@@ -81,7 +81,7 @@ ssp_sign_epi16,S3,3,,1
 ssp_sign_epi32,S3,12,,1
 ssp_sign_epi8,S3,12,,1
 ssp_arithmetic_hadd4_dup_ps       ,ssp,18,12,
-ssp_logical_bitwise_choose    ,ssp,4,,
+ssp_logical_bitwise_select,ssp,4,,
 ssp_logical_cmpgt_epu16       ,ssp,9,,
 ssp_logical_cmpgt_epu32       ,ssp,9,,
 ssp_logical_cmplt_epu16       ,ssp,9,,
