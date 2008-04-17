@@ -6374,9 +6374,149 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr>
-<tr><td>ssp_logical_bitwise_choose</td><td>SSP</td>  <td>&nbsp;</td>
+<tr><td>ssp_convert_3c_3p_epi16</td><td>SSP</td>  <td>\link ssp_convert_3c_3p_epi16_REF() REF\endlink</td>
   <td>&nbsp;</td>
-  <td>\link ssp_logical_bitwise_choose_SSE2() SSE2\endlink</td>
+  <td>\link ssp_convert_3c_3p_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_3c_3p_epi32</td><td>SSP</td>  <td>\link ssp_convert_3c_3p_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3c_3p_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_3c_3p_epi8</td><td>SSP</td>  <td>\link ssp_convert_3c_3p_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3c_3p_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_3p_3c_epi16</td><td>SSP</td>  <td>\link ssp_convert_3p_3c_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3p_3c_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_3p_3c_epi32</td><td>SSP</td>  <td>\link ssp_convert_3p_3c_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3p_3c_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_3p_3c_epi8</td><td>SSP</td>  <td>\link ssp_convert_3p_3c_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3p_3c_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4c_4p_epi16</td><td>SSP</td>  <td>\link ssp_convert_4c_4p_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4c_4p_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4c_4p_epi32</td><td>SSP</td>  <td>\link ssp_convert_4c_4p_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4c_4p_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4c_4p_epi8</td><td>SSP</td>  <td>\link ssp_convert_4c_4p_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4c_4p_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4c_4p_epi8</td><td>SSP</td>  <td>\link ssp_convert_4c_4p_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4c_4p_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4p_4c_epi16</td><td>SSP</td>  <td>\link ssp_convert_4p_4c_epi16_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4p_4c_epi16_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4p_4c_epi32</td><td>SSP</td>  <td>\link ssp_convert_4p_4c_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4p_4c_epi32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_4p_4c_epi8</td><td>SSP</td>  <td>\link ssp_convert_4p_4c_epi8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_4p_4c_epi8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_convert_reverse_transpose</td><td>SSP</td>  <td>\link ssp_convert_reverse_transpose_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_reverse_transpose_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_logical_bitwise_select</td><td>SSP</td>  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_bitwise_select_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6417,6 +6557,26 @@
 <tr><td>ssp_logical_cmplt_epu32</td><td>SSP</td>  <td>\link ssp_logical_cmplt_epu32_REF() REF\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_logical_cmplt_epu32_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_memory_load1_epu8</td><td>SSP</td>  <td>\link ssp_memory_load1_epu8_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_memory_load1_epu8_SSE2() SSE2\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr><td>ssp_movmask_imm8_to_epi32</td><td>SSP</td>  <td>\link ssp_movmask_imm8_to_epi32_REF() REF\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_movmask_imm8_to_epi32_SSE2() SSE2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>

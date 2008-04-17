@@ -53,9 +53,7 @@
 	@{
 		@defgroup emulated_REF    Reference
 		@defgroup emulated_SSE2   SSE2	
-		@defgroup emulated_SSE3   SSE3		
-		@defgroup emulated_SSSE3  SSSE3	
-		@defgroup emulated_SSE4A  SSE4A
+		@defgroup emulated_SSE3   SSE3			
 		@name
 	@}
 	@defgroup G_supplimental_instructions Supplimental 

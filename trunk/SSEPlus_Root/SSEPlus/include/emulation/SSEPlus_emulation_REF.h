@@ -117,7 +117,7 @@ SSP_FORCEINLINE __m128 ssp_nmacc_ss_REF(__m128 a, __m128 b, __m128 c)
     return A.f;
 }
 
-/** \IMP{Reference,_mm_nmacc_sd,fnmaddsd,SSE5} */ 
+/** \IMP5{Reference,_mm_nmacc_sd,fnmaddsd,SSE5} */ 
 SSP_FORCEINLINE __m128d ssp_nmacc_sd_REF(__m128d a, __m128d b, __m128d c)
 {
     ssp_m128 A,B,C;
@@ -230,7 +230,7 @@ SSP_FORCEINLINE __m128 ssp_nmsub_ss_REF(__m128 a, __m128 b, __m128 c)
     return A.f;
 }
 
-/** \IMP{Reference,_mm_nmsub_sd,fnmsubsd,SSE5} */ 
+/** \IMP5{Reference,_mm_nmsub_sd,fnmsubsd,SSE5} */ 
 SSP_FORCEINLINE __m128d ssp_nmsub_sd_REF(__m128d a, __m128d b, __m128d c)
 {
     ssp_m128 A,B,C;
