@@ -478,7 +478,7 @@
 #define ssp_arithmetic_hadd4_dup_ps ssp_arithmetic_hadd4_dup_ps_SSE2
 
 // Logical
-#define ssp_logical_bitwise_choose  ssp_logical_bitwise_choose_SSE2
+#define ssp_logical_bitwise_select  ssp_logical_bitwise_select_SSE2
 #define ssp_logical_cmpgt_epu32     ssp_logical_cmpgt_epu32_SSE2
 #define ssp_logical_cmplt_epu32     ssp_logical_cmplt_epu32_SSE2
 #define ssp_logical_cmplt_epu16     ssp_logical_cmplt_epu16_SSE2

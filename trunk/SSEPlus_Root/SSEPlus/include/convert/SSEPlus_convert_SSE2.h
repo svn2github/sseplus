@@ -7,9 +7,11 @@
 
 #include "../native/SSEPlus_native_SSE2.h"
 
-/** @defgroup SSE2 SSE2 Optimized
- *  @{
- *  @name Convert Operations */
+/** @addtogroup supplimental_SSE2   
+ *  @{ 
+ *  @name Convert Operations
+ */
+
 
 /** \IMP{SSE2,ssp_convert_odd_even_epi16_SSE2,custom} */
 SSP_FORCEINLINE
@@ -408,7 +410,8 @@ void ssp_convert_4p_4c_epi32_SSE2(__m128i *r,__m128i *g,__m128i *b,__m128i *a)
 }
 
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_CONVERT_SSE2_H__

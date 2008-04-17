@@ -834,7 +834,7 @@ void SSP_Tests( CSVTable & csv )
 
 
 
-    TEST_2( ssp_logical_bitwise_choose, ssp_u32, __m128i, __m128i, __m128i, __m128i)  
+    TEST_2( ssp_logical_bitwise_select, ssp_u32, __m128i, __m128i, __m128i, __m128i)  
         vU32(3,3,1,5), 
         vU32(3,2,1,0),
         vU32(2,3,4,5),
@@ -997,7 +997,7 @@ void SSP_Tests( CSVTable & csv )
 
 int main(int argc, char *argv[])
 {
-    CSVTable csv( "test.csv" );
+    CSVTable csv( "test_input.csv" );
 
     PrintHeader();
     SSE3_Tests( csv );

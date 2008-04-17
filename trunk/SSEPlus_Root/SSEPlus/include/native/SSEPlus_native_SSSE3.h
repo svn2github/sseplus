@@ -9,10 +9,10 @@
 #include <tmmintrin.h> // SSSE3
 
 
-/** @defgroup SSSE3 SSSE3 Optimized
- *  @{
- *  @name Native Instructions
- *  @{ */
+/** @addtogroup native_SSSE3   
+ *  @{ 
+ *  @name Native SSSE3 Operations
+ */
 
 /** \IMP{SSSE3 Native,_mm_abs_epi16,SSSE3} */
 SSP_FORCEINLINE __m128i ssp_abs_epi16_SSSE3 (__m128i a)
@@ -183,7 +183,8 @@ SSP_FORCEINLINE __m64 ssp_sign_pi8_SSSE3 (__m64 a, __m64 b)
     return _mm_sign_pi8(a, b);
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_NATIVE_SSSE3_H__

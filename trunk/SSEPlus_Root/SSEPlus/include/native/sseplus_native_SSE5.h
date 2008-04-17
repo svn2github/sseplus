@@ -10,10 +10,10 @@
 #include SSP_INCLUDE_FILE_SSE5
 #include SSP_INCLUDE_FILE_SSE4_1_SSE5
 
-/** @defgroup SSE5 SSE5 Optimized
- * @{
- * @name Native Instructions
- * @{ */
+/** @addtogroup native_SSE5   
+ *  @{ 
+ *  @name Native SSE5 Operations
+ */
 
 /** \IMP{SSE5 Native,_mm_macc_ps,SSE5} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ps_SSE5(__m128 a, __m128 b, __m128 c)
@@ -1246,7 +1246,8 @@ SSP_FORCEINLINE __m128 ssp_round_ss_SSE5(__m128 dst, __m128  a, int iRoundMode)
 }
 
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_NATIVE_SSE5_H__

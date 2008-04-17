@@ -8,9 +8,10 @@
 #include "../SSEPlus_base.h"
 #include <xmmintrin.h>  // SSE
 
-/** @defgroup SSE SSE Optimized
- *  @{
- *  @name Native Instructions */
+/** @addtogroup native_SSE   
+ *  @{ 
+ *  @name Native SSE Operations
+ */
 
 
 /*
@@ -797,8 +798,8 @@ SSP_FORCEINLINE __m128 ssp_cvtpi32x2_ps_SSE( __m64 a, __m64 b )
 #define ssp_load1_ps_SSE        ssp_load_ps1_SSE        
 #define ssp_store1_ps_SSE       ssp_store_ps1_SSE 
 
-//@}
-
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_NATIVE_SSE_H__

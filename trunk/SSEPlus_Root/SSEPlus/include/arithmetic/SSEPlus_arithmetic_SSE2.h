@@ -8,9 +8,10 @@
 #include "../native/SSEPlus_native_SSE2.h"
 #include "../emulation/SSEPlus_emulation_SSE2.h"
 
-/** @defgroup SSE2 SSE2 Optimized
- *  @{
- *  @name Arithmetic Operations */
+/** @addtogroup supplimental_SSE2
+ *  @{ 
+ *  @name Arithmetic Operations
+ */
 
 SSP_FORCEINLINE
 __m128 ssp_arithmetic_hadd4_dup_ps_SSE2( __m128 a )      // [18 cycles]                 // Sum all 4 values
@@ -100,7 +101,8 @@ __m128 ssp_round_ps_neg_zero_SSE2( __m128  a, int iRoundMode )
     return A.f;
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_ARITHMETIC_SSE2_H__

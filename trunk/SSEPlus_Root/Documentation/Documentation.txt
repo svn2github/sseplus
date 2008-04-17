@@ -35,6 +35,47 @@
 </table>
 
 
+@defgroup G_instructions Instructions
+@{
+	@defgroup G_native_instructions Native 
+	@{
+		@defgroup native_SSE    SSE	
+		@defgroup native_SSE2   SSE2	
+		@defgroup native_SSE3   SSE3		
+		@defgroup native_SSSE3  SSSE3	
+		@defgroup native_SSE4A  SSE4A	
+		@defgroup native_SSE4_1 SSE4.1	
+		@defgroup native_SSE4_2 SSE4.2	
+		@defgroup native_SSE5   SSE5
+		@name
+	@}	
+	@defgroup G_emulated_instructions Emulated 
+	@{
+		@defgroup emulated_REF    Reference
+		@defgroup emulated_SSE2   SSE2	
+		@defgroup emulated_SSE3   SSE3		
+		@defgroup emulated_SSSE3  SSSE3	
+		@defgroup emulated_SSE4A  SSE4A
+		@name
+	@}
+	@defgroup G_supplimental_instructions Supplimental 
+	@{
+		@defgroup supplimental_REF   Reference
+		@defgroup supplimental_SSE2  SSE2
+		@defgroup supplimental_SSE3  SSE3		
+		@name
+	@}
+@}
+
+@defgroup G_utilities Utilities 
+@{
+	@defgroup CPUID CPUID	
+	@name
+@}
+
+
+
+
 
 \page fnTable Function Table
 The Function Table contains an alphabetic listing of all functions provided by SSEPlus.\n\n

@@ -8,10 +8,11 @@
 #include "../SSEPlus_base.h"
 #include <smmintrin.h> // SSE4.1
 
-/** @defgroup SSE41 SSE4.1 Optimized
- *  @{
- *  @name Native Instructions
- *  @{ */
+/** @addtogroup native_SSE4_1   
+ *  @{ 
+ *  @name Native SSE4.1 Operations
+ */
+
 
 /** \IMP{SSE4.1 Native,_mm_ceil_pd,SSE4.1} */ 
 SSP_FORCEINLINE __m128d ssp_ceil_pd_SSE4_1(__m128d a)
@@ -374,7 +375,8 @@ SSP_FORCEINLINE ssp_s64 ssp_extract_epi64_SSE4_1(__m128i src, const int ndx)
 }
 #endif
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_NATIVE_SSE4_1_H__

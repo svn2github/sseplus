@@ -8,9 +8,10 @@
 #include "../SSEPlus_base.h"
 
 
-/** @defgroup Reference Reference
- *  @{
- *  @name Logical Operations */
+/** @addtogroup supplimental_REF   
+ *  @{ 
+ *  @name Logical Operations
+ */
 
 SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu16_REF( __m128i a, __m128i b )
 {
@@ -75,8 +76,9 @@ SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_REF( __m128i a, __m128i b )
 }
 
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 
 #endif // __SSEPLUS_LOGICAL_REF_H__

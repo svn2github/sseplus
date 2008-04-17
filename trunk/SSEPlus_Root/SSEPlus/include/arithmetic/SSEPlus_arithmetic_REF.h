@@ -6,9 +6,13 @@
 #define __SSEPLUS_ARITHMETIC_REF_H__
 
 
-/** @defgroup Reference Reference 
- *  @{
- *  @name Arithmetic Operations{ */
+/** @addtogroup supplimental_REF   
+ *  @{ 
+ *  @name Arithmetic Operations
+ */
+
+
+/** \IMP{Reference,_mm_insert_epi32,SSE4.1} */
 
 SSP_FORCEINLINE __m128 ssp_arithmetic_hadd4_dup_ps_REF( __m128 a )      // Sum all 4 values
 {

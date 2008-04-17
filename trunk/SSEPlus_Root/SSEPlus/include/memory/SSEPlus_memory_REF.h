@@ -7,10 +7,10 @@
 
 #include "../SSEPlus_base.h"
 
-/** @defgroup REF Reference 
- *  @{
- *  @name Memory Functions */
-
+/** @addtogroup supplimental_REF   
+ *  @{ 
+ *  @name Memory Operations
+ */
 
 __m128i ssp_memory_load1_epu8_REF( unsigned char a )
 {
@@ -29,6 +29,8 @@ __m128i ssp_memory_load1_epu8_REF( unsigned char a )
 }
 
 
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_MEMORY_SSE2_H__

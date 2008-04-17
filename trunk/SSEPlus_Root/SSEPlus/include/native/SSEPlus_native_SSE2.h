@@ -8,9 +8,10 @@
 #include "../SSEPlus_base.h"
 #include <emmintrin.h>  // SSE2
 
-/** @defgroup SSE2 SSE2 Optimized
- *  @{
- *  @name Native Instructions */
+/** @addtogroup native_SSE2  
+ *  @{ 
+ *  @name Native SSE2 Operations
+ */
 
 
 /** \IMP{SSE2 Native,_mm_add_epi16,SSE2} */ 

@@ -478,7 +478,7 @@
 #undef ssp_arithmetic_hadd4_dup_ps
 
 // Logical
-#undef ssp_logical_bitwise_choose 
+#undef ssp_logical_bitwise_select 
 #undef ssp_logical_cmpgt_epu32    
 #undef ssp_logical_cmplt_epu32    
 #undef ssp_logical_cmplt_epu16    

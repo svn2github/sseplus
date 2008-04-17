@@ -8,10 +8,10 @@
 #include "../SSEPlus_base.h"
 #include <nmmintrin.h>  // SSE4.2
 
-/** @defgroup SSE42 SSE4.2 Optimized
- *  @{
- *  @name Native Instructions
- *  @{ */
+/** @addtogroup native_SSE4_2   
+ *  @{ 
+ *  @name Native SSE4.2 Operations
+ */
 
 /** \IMP{SSE4.2 Native,_mm_cmpestra,SSE4.2} */ 
 SSP_FORCEINLINE int ssp_cmpestra_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
@@ -160,7 +160,8 @@ SSP_FORCEINLINE int ssp_popcnt_u64_SSE4_2 ( ssp_u64 a )
 }
 #endif 
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_NATIVE_SSE4_2_H__

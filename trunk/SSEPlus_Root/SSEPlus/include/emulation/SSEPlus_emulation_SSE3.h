@@ -9,9 +9,10 @@
 #include "../native/SSEPlus_native_SSE3.h"
 #include "../arithmetic/SSEPlus_arithmetic_SSE3.h"
 
-/** @defgroup SSE3 SSE3 Optimized
- *  @{
- *  @name Emulated Instructions */
+/** @addtogroup emulated_SSE3   
+ *  @{ 
+ *  @name SSE[4A,...,5] implemented in SSE3
+ */
 
 /** \IMP{SSE3,_mm_dp_ps,SSE4.1} */ 
 SSP_FORCEINLINE
@@ -40,7 +41,8 @@ __m128 ssp_dp_ps_SSE3( __m128 a, __m128 b, const int mask )
     return a;
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_EMULATION_SSE3_H__

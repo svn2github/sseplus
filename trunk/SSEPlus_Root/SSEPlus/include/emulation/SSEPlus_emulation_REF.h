@@ -11,9 +11,10 @@
 #include <math.h>
 
 
-/** @defgroup Reference Reference
- *  @{
- *  @name Emulated Instructions{ */
+/** @addtogroup emulated_REF   
+ *  @{ 
+ *  @name SSE[3,4A,...,5] implemented in reference
+ */
 
 //--------------------------------------
 // Multiply Add
@@ -2493,7 +2494,8 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
     return cnt;
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSP_EMULATION_REF_H__

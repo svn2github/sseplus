@@ -7,9 +7,10 @@
 
 #include "../native/SSEPlus_native_SSE2.h"
 
-/** @defgroup SSE2 SSE2 Optimized
- *  @{
- *  @name Logical Operations */
+/** @addtogroup supplimental_SSE2
+ *  @{ 
+ *  @name Logical Operations
+ */
 
 
 SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu16_SSE2( __m128i a, __m128i b )
@@ -58,7 +59,7 @@ SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_SSE2( __m128i a, __m128i b )
 
 
 
-SSP_FORCEINLINE __m128i ssp_logical_bitwise_choose_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 
+SSP_FORCEINLINE __m128i ssp_logical_bitwise_select_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 
 {
     a = _mm_and_si128   ( a,    mask );                                 // clear a where mask = 0
     b = _mm_andnot_si128( mask, b    );                                 // clear b where mask = 1
@@ -114,7 +115,8 @@ __m128i ssp_logical_cmpgte_epi8( __m128i a, __m128i b )
 }
 
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_LOGICAL_SSE2_H__

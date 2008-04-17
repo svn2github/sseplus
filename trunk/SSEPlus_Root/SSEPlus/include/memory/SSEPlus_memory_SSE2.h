@@ -8,9 +8,11 @@
 #include "../SSEPlus_base.h"
 #include <emmintrin.h>  // SSE2
 
-/** @defgroup SSE2 SSE2 Optimized
- *  @{
- *  @name Memory Functions */
+/** @addtogroup supplimental_SSE2
+ *  @{ 
+ *  @name Memory Operations
+ */
+
 
 
 __m128i ssp_memory_load1_epu8_SSE2( unsigned char a )
@@ -30,6 +32,8 @@ __m128i ssp_memory_load1_epu8_SSE2( unsigned char a )
 }
 
 
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_MEMORY_SSE2_H__

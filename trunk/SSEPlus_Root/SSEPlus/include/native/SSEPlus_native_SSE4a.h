@@ -8,10 +8,10 @@
 #include "../SSEPlus_base.h"
 #include SSP_INCLUDE_FILE_SSE4a
 
-
-/** @defgroup SSE4A SSE4A Optimized
- *  @{
- *  @name Native Instructions */
+/** @addtogroup native_SSE4A  
+ *  @{ 
+ *  @name Native SSE4A Operations{
+ */
 
 /** \IMP{SSE4a Native,_mm_extract_si64,SSE4a} */ 
 SSP_FORCEINLINE __m128i ssp_extract_si64_SSE4A( __m128i a ,__m128i b )
@@ -86,7 +86,9 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_SSE4A( ssp_u64 val )
 }
 #endif
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
+
 
 #endif // __SSEPLUS_NATIVE_SSE4A_H__

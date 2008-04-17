@@ -6,9 +6,10 @@
 #define __SSEPLUS_CONVERT_REF_H__
 
 
-/** @defgroup REF Reference
- *  @{
- *  @name Convert Operations */
+/** @addtogroup supplimental_REF   
+ *  @{ 
+ *  @name Convert Operations
+ */
 
 
 //a: 9  6 3 0    3  2  1 0               
@@ -555,7 +556,10 @@ void ssp_convert_4p_4c_epi32_REF(__m128i *r,__m128i *g,__m128i *b,__m128i *a)
 	*a = rgba4.i;
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
+
+
 
 #endif // __SSEPLUS_CONVERT_REF_H__

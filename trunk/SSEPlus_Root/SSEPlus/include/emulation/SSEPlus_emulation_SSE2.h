@@ -11,6 +11,13 @@
 #include "../convert/SSEPlus_convert_SSE2.h"
 #include "../arithmetic/SSEPlus_arithmetic_SSE2.h"
 
+
+/** @addtogroup emulated_SSE2   
+ *  @{ 
+ *  @name SSE[3,4A,...,5] implemented in SSE2
+ */
+
+
 //
 // Multiply Add
 //
@@ -40,7 +47,7 @@ SSP_FORCEINLINE __m128 ssp_macc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assum
     A.f = a;
     B.f = b;
     B.f = ssp_macc_ps_SSE2( A.f, B.f, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.f;
 }
 
@@ -53,7 +60,7 @@ SSP_FORCEINLINE __m128d ssp_macc_sd_SSE2(__m128d a, __m128d b, __m128d c)
     A.d = a;
     B.d = b;
     B.d = ssp_macc_pd_SSE2( A.d, B.d, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.d;
 }
 
@@ -92,7 +99,7 @@ SSP_FORCEINLINE __m128 ssp_nmacc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assu
     A.f = a;
     B.f = b;
     B.f = ssp_nmacc_ps_SSE2( A.f, B.f, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.f;
 }
 
@@ -105,7 +112,7 @@ SSP_FORCEINLINE __m128d ssp_nmacc_sd_SSE2(__m128d a, __m128d b, __m128d c)
     A.d = a;
     B.d = b;
     B.d = ssp_nmacc_pd_SSE2( A.d, B.d, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.d;
 }
 
@@ -138,7 +145,7 @@ SSP_FORCEINLINE __m128 ssp_msub_ss_SSE2(__m128 a, __m128 b, __m128 c)
     A.f = a;
     B.f = b;
     B.f = ssp_msub_ps_SSE2( A.f, B.f, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.f;
 }
 
@@ -151,7 +158,7 @@ SSP_FORCEINLINE __m128d ssp_msub_sd_SSE2(__m128d a, __m128d b, __m128d c)
     A.d = a;
     B.d = b;
     B.d = ssp_msub_pd_SSE2( A.d, B.d, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.d;
 }
 
@@ -190,7 +197,7 @@ SSP_FORCEINLINE __m128 ssp_nmsub_ss_SSE2(__m128 a, __m128 b, __m128 c)
     A.f = a;
     B.f = b;
     B.f = ssp_nmsub_ps_SSE2( A.f, B.f, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.f;
 }
 
@@ -203,7 +210,7 @@ SSP_FORCEINLINE __m128d ssp_nmsub_sd_SSE2(__m128d a, __m128d b, __m128d c)
     A.d = a;
     B.d = b;
     B.d = ssp_nmsub_pd_SSE2( A.d, B.d, c );
-    B.i = ssp_logical_bitwise_choose_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
+    B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.d;
 }
 
@@ -310,7 +317,7 @@ __m128  ssp_blend_ps_SSE2( __m128  a, __m128  b, const int mask )               
     A.f = a;
     B.f = b;
     screen.i = ssp_movmask_imm8_to_epi32_SSE2( mask );
-    screen.i = ssp_logical_bitwise_choose_SSE2( B.i, A.i, screen.i );
+    screen.i = ssp_logical_bitwise_select_SSE2( B.i, A.i, screen.i );
     return screen.f;
 }
 
@@ -545,7 +552,7 @@ SSP_FORCEINLINE
 __m128i ssp_min_epi8_SSE2( __m128i a, __m128i b )
 {
     __m128i mask  = _mm_cmplt_epi8( a, b );                             // FFFFFFFF where a < b
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -554,7 +561,7 @@ SSP_FORCEINLINE
 __m128i ssp_max_epi8_SSE2( __m128i a, __m128i b )
 {
     __m128i mask  = _mm_cmpgt_epi8( a, b );                             // FFFFFFFF where a > b
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -563,7 +570,7 @@ SSP_FORCEINLINE
 __m128i ssp_min_epu16_SSE2( __m128i a, __m128i b )
 {
     __m128i mask = ssp_logical_cmplt_epu16_SSE2( a, b );
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -572,7 +579,7 @@ SSP_FORCEINLINE
 __m128i ssp_max_epu16_SSE2( __m128i a, __m128i b )
 {
     __m128i mask = ssp_logical_cmpgt_epu16_SSE2( a, b );
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -581,7 +588,7 @@ SSP_FORCEINLINE
 __m128i ssp_min_epi32_SSE2( __m128i a, __m128i b )
 {
     __m128i mask  = _mm_cmplt_epi32( a, b );                            // FFFFFFFF where a < b
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -590,7 +597,7 @@ SSP_FORCEINLINE
 __m128i ssp_max_epi32_SSE2( __m128i a, __m128i b )
 {
     __m128i mask  = _mm_cmpgt_epi32( a, b );                            // FFFFFFFF where a > b
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -599,7 +606,7 @@ SSP_FORCEINLINE
 __m128i ssp_min_epu32_SSE2 ( __m128i a, __m128i b )
 {
     __m128i mask = ssp_logical_cmplt_epu32_SSE2( a, b );
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -608,7 +615,7 @@ SSP_FORCEINLINE
 __m128i ssp_max_epu32_SSE2 ( __m128i a, __m128i b )
 {
    __m128i mask = ssp_logical_cmpgt_epu32_SSE2( a, b );
-    a = ssp_logical_bitwise_choose_SSE2( a, b, mask );
+    a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
 
@@ -1300,7 +1307,7 @@ SSP_FORCEINLINE __m128i ssp_inserti_si64_SSE2( __m128i a, __m128i b, int len, in
     m = _mm_slli_epi64( m,    ndx     );    // put the mask into the proper position
     b = _mm_slli_epi64( b,    ndx     );    // put the insert bits into the proper position
 
-    a = ssp_logical_bitwise_choose_SSE2( b, a, m );
+    a = ssp_logical_bitwise_select_SSE2( b, a, m );
     return a;
 }
 
@@ -1585,8 +1592,9 @@ SSP_FORCEINLINE __m128d ssp_movedup_pd_SSE2(__m128d a)
     return _mm_set_pd( A.f64[0], A.f64[0] );
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 
 #endif // __SSEPLUS_EMULATION_SSE2_H__

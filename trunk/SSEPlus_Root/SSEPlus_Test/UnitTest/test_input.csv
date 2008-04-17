@@ -80,13 +80,6 @@ ssp_shuffle_epi8,S3,63,,3
 ssp_sign_epi16,S3,3,,1
 ssp_sign_epi32,S3,12,,1
 ssp_sign_epi8,S3,12,,1
-ssp_arithmetic_hadd4_dup_ps       ,ssp,18,12,
-ssp_logical_bitwise_select,ssp,4,,
-ssp_logical_cmpgt_epu16       ,ssp,9,,
-ssp_logical_cmpgt_epu32       ,ssp,9,,
-ssp_logical_cmplt_epu16       ,ssp,9,,
-ssp_logical_cmplt_epu32       ,ssp,9,,
-ssp_movmask_imm8_to_epi32,ssp,,,
 ssp_extract_si64,4A,6,,
 ssp_extracti_si64,4A,4,,
 ssp_insert_si64,4A,6,,
@@ -94,24 +87,46 @@ ssp_inserti_si64,4A,6,,
 ssp_stream_sd,4A,,,
 ssp_stream_ss,4A,,,
 ssp_lzcnt16,4A,,,
-ssp_lzcnt,4A,
-ssp_lzcnt64,4A,
-ssp_popcnt16,4A,
-ssp_popcnt,4A,
-ssp_popcnt64,4A,
-ssp_macc_ps                   ,5,8
-ssp_macc_pd                   ,5,11
-ssp_macc_ss                   ,5,16
-ssp_macc_sd                   ,5,16
-ssp_nmacc_ps                  ,5,12
-ssp_nmacc_pd                  ,5,12
-ssp_nmacc_ss                  ,5,20
-ssp_nmacc_sd                  ,5,20
-ssp_msub_ps                   ,5,8
-ssp_msub_pd                   ,5,8
-ssp_msub_ss                   ,5,16
-ssp_msub_sd                   ,5,16
-ssp_nmsub_ps                  ,5,12
-ssp_nmsub_pd                  ,5,12
-ssp_nmsub_ss                  ,5,20
-ssp_nmsub_sd                  ,5,20
+ssp_lzcnt,4A,,,
+ssp_lzcnt64,4A,,,
+ssp_popcnt16,4A,,,
+ssp_popcnt,4A,,,
+ssp_popcnt64,4A,,,
+ssp_macc_ps                   ,5,8,,
+ssp_macc_pd                   ,5,11,,
+ssp_macc_ss                   ,5,16,
+ssp_macc_sd                   ,5,16,
+ssp_nmacc_ps                  ,5,12,
+ssp_nmacc_pd                  ,5,12,
+ssp_nmacc_ss                  ,5,20,
+ssp_nmacc_sd                  ,5,20,
+ssp_msub_ps                   ,5,8,
+ssp_msub_pd                   ,5,8,
+ssp_msub_ss                   ,5,16,
+ssp_msub_sd                   ,5,16,
+ssp_nmsub_ps                  ,5,12,
+ssp_nmsub_pd                  ,5,12,
+ssp_nmsub_ss                  ,5,20,
+ssp_nmsub_sd                  ,5,20,
+ssp_arithmetic_hadd4_dup_ps       ,ssp,18,12
+ssp_logical_bitwise_select,ssp,4,
+ssp_logical_cmpgt_epu16       ,ssp,9
+ssp_logical_cmpgt_epu32       ,ssp,9
+ssp_logical_cmplt_epu16       ,ssp,9
+ssp_logical_cmplt_epu32       ,ssp,9
+ssp_movmask_imm8_to_epi32,ssp,
+ssp_memory_load1_epu8         ,ssp,
+ssp_convert_reverse_transpose ,ssp,29
+ssp_convert_3c_3p_epi8        ,ssp,53
+ssp_convert_3p_3c_epi8        ,ssp,53
+ssp_convert_3c_3p_epi16       ,ssp,40
+ssp_convert_3p_3c_epi16       ,ssp,95
+ssp_convert_3c_3p_epi32       ,ssp,30
+ssp_convert_3p_3c_epi32       ,ssp,50
+ssp_convert_4c_4p_epi8        ,ssp,70
+ssp_convert_4p_4c_epi8        ,ssp,39
+ssp_convert_4c_4p_epi8        ,ssp,70
+ssp_convert_4p_4c_epi16       ,ssp,39
+ssp_convert_4c_4p_epi16       ,ssp,55
+ssp_convert_4p_4c_epi32       ,ssp,40
+ssp_convert_4c_4p_epi32       ,ssp,39

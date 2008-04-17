@@ -75,6 +75,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "convert", "convert", "{E19A
 		SSEPlus\include\convert\SSEPlus_convert_SSE2.h = SSEPlus\include\convert\SSEPlus_convert_SSE2.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "memory", "memory", "{282C2FFE-8CCD-4F8B-A733-93865A48E6CF}"
+	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\memory\SSEPlus_memory_REF.h = SSEPlus\include\memory\SSEPlus_memory_REF.h
+		SSEPlus\include\memory\SSEPlus_memory_SSE2.h = SSEPlus\include\memory\SSEPlus_memory_SSE2.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -111,5 +117,6 @@ Global
 		{0EB3243B-2182-4D58-ABBA-00A03A5F0E4C} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
 		{658F37DE-BEA3-4A6F-B0FC-A3716FC266C9} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
 		{E19A9A88-501A-4F98-BD8C-EEE093D7CB40} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
+		{282C2FFE-8CCD-4F8B-A733-93865A48E6CF} = {57367AD4-4041-4B94-881E-DCF97ED721F6}
 	EndGlobalSection
 EndGlobal

@@ -10,6 +10,11 @@
 
 #include "SSEPlus_base.h"
 
+/** @addtogroup CPUID   
+ *  @{ 
+ *  @name CPUID Operations
+ */
+
 typedef enum 
 {
     SSP_REF,
@@ -69,6 +74,10 @@ int ssp_is_supported( ssp_cpu_feature index )
     ssp_cpuid cpu = ssp_get_cpuid();
     return cpu.feature[ index ];
 }
+
+/** @} 
+ *  @}
+ */
 
 
 #endif //__SSEPLUS_CPUID_H__

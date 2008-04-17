@@ -291,6 +291,5 @@
 #define SSP_CONST_SETZERO_64F() \
     SSP_CONST_SET1_64F( 0 )
 
-
 #endif // SSP_GNUC
 #endif // __SSEPLUS_PLATFORM_H__

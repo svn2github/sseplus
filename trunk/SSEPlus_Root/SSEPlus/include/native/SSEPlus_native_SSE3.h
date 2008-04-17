@@ -9,9 +9,10 @@
 #include SSP_INCLUDE_FILE_SSE3
 
 
-/** @defgroup SSE3 SSE3 Optimized
- *  @{
- *  @name Native Instructions */
+/** @addtogroup native_SSE3   
+ *  @{ 
+ *  @name Native SSE3 Operations
+ */
 
 /** \IMP{SSE3 Native,_mm_addsub_ps,SSE3} */ 
 SSP_FORCEINLINE __m128 ssp_addsub_ps_SSE3(__m128 a, __m128 b)                              

@@ -5,10 +5,10 @@
 #ifndef __SSEPLUS_NUMBER_REF_H__
 #define __SSEPLUS_NUMBER_REF_H__
 
-/** @defgroup Reference Reference
- *  @{
- *  @name Number Operations */
-
+/** @addtogroup supplimental_REF   
+ *  @{ 
+ *  @name Number Operations{
+ */
 
 SSP_FORCEINLINE int ssp_number_isValidNumber_F32_REF( ssp_s32* val )//TODO: move into utility collection
 {
@@ -63,7 +63,8 @@ SSP_FORCEINLINE ssp_f64 ssp_number_changeSNanToQNaN_F64_REF( ssp_s64* val )//TOD
     return *retVal;
 }
 
-//@}
-//@}
+/** @} 
+ *  @}
+ */
 
 #endif // __SSEPLUS_NUMBER_REF_H__
