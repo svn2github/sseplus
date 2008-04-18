@@ -23,6 +23,10 @@
 	  <td>\htmlonly <a href=../../SSEPlus.pdf><b>SSEPlus.pdf</b></a> \endhtmlonly</td>
 	  <td>Introduction to the project</td>
 	</tr>	
+	<tr>
+	  <td>\htmlonly <a href=http://sourceforge.net/project/showfiles.php?group_id=217626><b>Download</b></a> \endhtmlonly</td>
+	  <td>Latest version is 0.2.26</td>
+	</tr>
 	</table>
 	
 	This project is currently under construction. Thank you for your patience! 
