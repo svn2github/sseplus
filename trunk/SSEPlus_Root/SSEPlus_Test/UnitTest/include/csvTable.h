@@ -20,7 +20,7 @@ typedef std::map   < std::string, std::string > StringMap;
 struct CSVLine
 {
     std::string source;
-    unsigned int SSE2, SSE3, SSSE3, SSE4a, SSE4_1, SSE4_2, SSE5;
+    double SSE2, SSE3, SSSE3, SSE4a, SSE4_1, SSE4_2, SSE5;
     bool used;
 
     CSVLine():SSE2(0),SSE3(0),SSSE3(0),SSE4a(0),SSE4_1(0),SSE4_2(0),SSE5(0){}
@@ -28,13 +28,13 @@ struct CSVLine
     CSVLine( StringMap & line )
     {
         source = line[ "Source" ];
-        SSE2   = atoi( line[ "SSE2" ].c_str() );
-        SSE3   = atoi( line[ "SSE3" ].c_str() );
-        SSSE3  = atoi( line[ "SSSE3"].c_str() );
-        SSE4a  = atoi( line[ "SSE4A"].c_str() );
-        SSE4_1 = atoi( line[ "SSE41"].c_str() );
-        SSE4_2 = atoi( line[ "SSE42"].c_str() );
-        SSE5   = atoi( line[ "SSE5" ].c_str() );
+        SSE2   = atof( line[ "SSE2" ].c_str() );
+        SSE3   = atof( line[ "SSE3" ].c_str() );
+        SSSE3  = atof( line[ "SSSE3"].c_str() );
+        SSE4a  = atof( line[ "SSE4A"].c_str() );
+        SSE4_1 = atof( line[ "SSE41"].c_str() );
+        SSE4_2 = atof( line[ "SSE42"].c_str() );
+        SSE5   = atof( line[ "SSE5" ].c_str() );
         used   = false;
     }
 

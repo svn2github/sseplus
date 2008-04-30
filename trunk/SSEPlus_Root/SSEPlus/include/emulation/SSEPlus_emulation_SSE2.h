@@ -619,6 +619,47 @@ __m128i ssp_max_epu32_SSE2 ( __m128i a, __m128i b )
     return a;
 }
 
+
+//__m128i _mm_mulhrs_epi16( __m128i a,  __m128i b);
+/** \IMP{SSE2,_mm_mulhrs_epi16, SSSE3} */
+SSP_FORCEINLINE __m128i ssp_mulhrs_epi16_SSE2( __m128i a, __m128i b )
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+	A.s16[0] = (ssp_s16) ((A.s16[0] * B.s16[0] + 0x4000) >> 15);
+	A.s16[1] = (ssp_s16) ((A.s16[1] * B.s16[1] + 0x4000) >> 15);
+	A.s16[2] = (ssp_s16) ((A.s16[2] * B.s16[2] + 0x4000) >> 15);
+	A.s16[3] = (ssp_s16) ((A.s16[3] * B.s16[3] + 0x4000) >> 15);
+	A.s16[4] = (ssp_s16) ((A.s16[4] * B.s16[4] + 0x4000) >> 15);
+	A.s16[5] = (ssp_s16) ((A.s16[5] * B.s16[5] + 0x4000) >> 15);
+	A.s16[6] = (ssp_s16) ((A.s16[6] * B.s16[6] + 0x4000) >> 15);
+	A.s16[7] = (ssp_s16) ((A.s16[7] * B.s16[7] + 0x4000) >> 15);
+
+	//	__m128i union initializes with bytes: (DWORD) 0x00004000, 0x00004000, 0x00004000, 0x00004000
+//static __m128i pmulhrswRound = { 0x00, 0x40, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00 };
+
+
+	//__asm movdqa	tmp1, dst	\
+	//__asm movdqa	tmp2, src	\
+	//__asm pmullw	dst, tmp2	\
+	//__asm pmulhw	tmp1, tmp2	\
+	//__asm movdqa	tmp2, dst	\
+	//__asm punpcklwd	dst, tmp1	\
+	//__asm punpckhwd	tmp2, tmp1	\
+	//__asm paddd		dst, pmulhrswRound	\
+	//__asm paddd		tmp2, pmulhrswRound	\
+	//__asm psrad		dst, 15	\
+	//__asm psrad		tmp2, 15	\
+	//__asm packssdw	dst, tmp2	\
+
+
+
+
+    return A.i;
+}
+
 /** \IMP{SSE2,_mm_maddubs_epi16, SSSE3} 
 
 in:  2 registers x 16 x 8 bit values (a is unsigned, b is signed)
