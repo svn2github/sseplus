@@ -1,0 +1,651 @@
+Function,Assembly,Source,REF,SSE,SSE2,SSE3,SSSE3,SSE4A,SSE4.1,SSE4.2,SSE5
+ssp_abs_epi16,pabsw,S3,X,,7,,1.6,,,,
+ssp_abs_epi32,pabsd,S3,X,,7,,1.6,,,,
+ssp_abs_epi8,pabsb,S3,X,,7,,1.6,,,,
+ssp_add_epi16,paddw,2,,,X,,,,,,
+ssp_add_epi32,paddd,2,,,X,,,,,,
+ssp_add_epi64,paddq,2,,,X,,,,,,
+ssp_add_epi8,paddb,2,,,X,,,,,,
+ssp_add_pd,addpd,2,,,X,,,,,,
+ssp_add_ps ,addps,,,X,,,,,,,
+ssp_add_sd,addsd,2,,,X,,,,,,
+ssp_add_si64,paddq,2,,,X,,,,,,
+ssp_add_ss ,addss,,,X,,,,,,,
+ssp_adds_epi16,paddsw,2,,,X,,,,,,
+ssp_adds_epi8,paddsb,2,,,X,,,,,,
+ssp_adds_epu16,paddusw,2,,,X,,,,,,
+ssp_adds_epu8,paddusb,2,,,X,,,,
+ssp_addsub_pd,addsubpd,3,X,,6,4,,,
+ssp_addsub_ps,addsubps,3,X,,6,4,,,
+ssp_alignr_epi8,palignr,S3,X,,4,,3.2,,
+ssp_and_pd,amdpd,2,,,X,,,,
+ssp_and_ps ,andps,,,X,,,,,
+ssp_and_si128,pand,2,,,X,,,,
+ssp_andnot_pd,amdnpd,2,,,X,,,,
+ssp_andnot_ps ,andnps,,,X,,,,,
+ssp_andnot_si128,pandn,2,,,X,,,,
+ssp_avg_epu16,pavgw,2,,,X,,,,
+ssp_avg_epu8,pavgb,2,,,X,,,,
+ssp_avg_pu16,pavgw,,,X,,,,,
+ssp_avg_pu8,pavgb,,,X,,,,,
+ssp_blend_epi16,pblendw,4.1,X,,6,,,,3.2
+ssp_blend_pd,blendpd,4.1,X,,8,,,,3.2
+ssp_blend_ps,blendps,4.1,X,,6,,,,3.2,,
+ssp_blendv_epi8,pblendvb,4.1,X,,6,,,,4.8,,
+ssp_blendv_pd,blendvpd,4.1,X,,8,,,,4.8,,
+ssp_blendv_ps,blendvps,4.1,X,,8,,,,4.8,,
+ssp_castpd_ps,(comp),2,,,X,,,,,,
+ssp_castpd_si128,(comp),2,,,X,,,,,,
+ssp_castps_pd,(comp),2,,,X,,,,,,
+ssp_castps_si128,(comp),2,,,X,,,,,,
+ssp_castsi128_pd,(comp),2,,,X,,,,,,
+ssp_castsi128_ps,(comp),2,,,X,,,,,,
+ssp_ceil_pd,roundpd,4.1,X,,38,,,,4.8,,
+ssp_ceil_ps,roundps,4.1,X,,32,,,,4.8,,
+ssp_ceil_sd,roundsd,4.1,X,,35,,,,4.8,,
+ssp_ceil_ss,roundss,4.1,X,,40,,,,4.8,,
+ssp_clflush,clflush,2,,,X,,,,,,
+ssp_cmov_si128,pcmov,5,,,,,,,,,X
+ssp_cmpeq_epi16,pcmpeqw,2,,,X,,,,,
+ssp_cmpeq_epi32,pcmpeqd,2,,,X,,,,,
+ssp_cmpeq_epi64,pcmpeqq,4.1,X,,6,,,,3.2,
+ssp_cmpeq_epi8,pcmpeqb,2,,,X,,,,,
+ssp_cmpeq_pd,cmpeqpd,2,,,X,,,,,
+ssp_cmpeq_ps ,cmpeqps,,,X,,,,,,
+ssp_cmpeq_sd,cmpeqsd,2,,,X,,,,,
+ssp_cmpeq_ss ,cmpeqss,,,X,,,,,,
+ssp_cmpestra,pcmpestri,4.2,,,,,,,,X
+ssp_cmpestrc,pcmpestr,4.2,,,,,,,,X
+ssp_cmpestri,pcmpestri,4.2,,,,,,,,X
+ssp_cmpestrm,pcmpestrm,4.2,,,,,,,,X
+ssp_cmpestro,pcmpestri,4.2,,,,,,,,X
+ssp_cmpestrs,pcmpestri,4.2,,,,,,,,X
+ssp_cmpestrz,pcmpestri,4.2,,,,,,,,X
+ssp_cmpge_pd,cmplepd,2,,,X,,,,,
+ssp_cmpge_ps ,cmpleps,,,X,,,,,,
+ssp_cmpge_sd,cmplesd,2,,,X,,,,,
+ssp_cmpge_ss ,cmpless,,,X,,,,,,
+ssp_cmpgt_epi16,pcmpgtw,2,,,X,,,,,
+ssp_cmpgt_epi32,pcmpgtd,2,,,X,,,,,
+ssp_cmpgt_epi64,pcmpgtq,4.2,,,,,,,,X
+ssp_cmpgt_epi8,pcmpgtb,2,,,X,,,,,
+ssp_cmpgt_pd,cmpltpd,2,,,X,,,,,
+ssp_cmpgt_ps ,cmpltps,,,X,,,,,,
+ssp_cmpgt_sd,cmpltsd,2,,,X,,,,,
+ssp_cmpgt_ss ,cmpltss,,,X,,,,,,
+ssp_cmpistra,pcmpistri,4.2,,,,,,,,X
+ssp_cmpistrc,pcmpistri,4.2,,,,,,,,X
+ssp_cmpistri,pcmpistri,4.2,,,,,,,,X
+ssp_cmpistrm,pcmpistri,4.2,,,,,,,,X
+ssp_cmpistro,pcmpistri,4.2,,,,,,,,X
+ssp_cmpistrs,pcmpistri,4.2,,,,,,,,X
+ssp_cmpistrz,pcmpistri,4.2,,,,,,,,X
+ssp_cmple_pd,cmplepd,2,,,X,,,,,
+ssp_cmple_ps ,cmpleps,,,X,,,,,,
+ssp_cmple_sd,cmplesd,2,,,X,,,,,
+ssp_cmple_ss ,cmpless,,,X,,,,,,
+ssp_cmplt_epi16,pcmpgtwr,2,,,X,,,,,
+ssp_cmplt_epi32,pcmpgtdr,2,,,X,,,,,
+ssp_cmplt_epi8,pcmpgtbr,2,,,X,,,,,
+ssp_cmplt_pd,cmpltpd,2,,,X,,,,,
+ssp_cmplt_ps ,cmpltps,,,X,,,,,,
+ssp_cmplt_sd,cmpltsd,2,,,X,,,,,
+ssp_cmplt_ss ,cmpltss,,,X,,,,,,
+ssp_cmpneq_pd,cmpneqpd,2,,,X,,,,,
+ssp_cmpneq_ps ,cmpneqps,,,X,,,,,,
+ssp_cmpneq_sd,cmpneqsd,2,,,X,,,,,
+ssp_cmpneq_ss ,cmpneqss,,,X,
+ssp_cmpnge_pd,cmpnlepd,2,,,X
+ssp_cmpnge_ps ,cmpnleps,,,X,
+ssp_cmpnge_sd,cmpnlesd,2,,,X
+ssp_cmpnge_ss ,cmpnless,,,X,
+ssp_cmpngt_pd,cmpnltpd,2,,,X
+ssp_cmpngt_ps ,cmpnltps,,,X,
+ssp_cmpngt_sd,cmpnltsd,2,,,X
+ssp_cmpngt_ss ,cmpnltss,,,X,
+ssp_cmpnle_pd,cmpnlepd,2,,,X
+ssp_cmpnle_ps ,cmpnleps,,,X,
+ssp_cmpnle_sd,cmpnlesd,2,,,X
+ssp_cmpnle_ss ,cmpnless,,,X,
+ssp_cmpnlt_pd,cmpnltpd,2,,,X
+ssp_cmpnlt_ps ,cmpnltps,,,X,
+ssp_cmpnlt_sd,cmpnltsd,2,,,X
+ssp_cmpnlt_ss ,cmpnltss,,,X,,,,,,,
+ssp_cmpord_pd,cmpordpd,2,,,X,,,,,,
+ssp_cmpord_ps ,cmpordps,,,X,,,,,,,
+ssp_cmpord_sd,cmpordsd,2,,,X,,,,,,
+ssp_cmpord_ss ,cmpordss,,,X,,,,,,,
+ssp_cmpunord_pd,cmpunordpd,2,,,X,,,,,,
+ssp_cmpunord_ps ,cmpunordps,,,X,,,,,,,
+ssp_cmpunord_sd,cmpunordsd,2,,,X,,,,,,
+ssp_cmpunord_ss ,cmpunordss,,,X,,,,,,,
+ssp_comeq_epi16,pcomw,5,,,,,,,,,X
+ssp_comeq_epi32,pcomd,5,,,,,,,,,X
+ssp_comeq_epi64,pcomq,5,,,,,,,,,X
+ssp_comeq_epi8,pcomb,5,,,,,,,,,X
+ssp_comeq_epu16,pcomuw,5,,,,,,,,,X
+ssp_comeq_epu32,pcomud,5,,,,,,,,,X
+ssp_comeq_epu64,pcomuq,5,,,,,,,,,X
+ssp_comeq_epu8,pcomub,5,,,,,,,,,X
+ssp_comeq_pd,compd,5,,,,,,,,,X
+ssp_comeq_ps,comps,5,,,,,,,,,X
+ssp_comeq_sd,comsd,5,,,,,,,,,X
+ssp_comeq_ss,comss,5,,,,,,,,,X
+ssp_comfalse_epi16,pcomw,5,,,,,,,,,X
+ssp_comfalse_epi32,pcomd,5,,,,,,,,,X
+ssp_comfalse_epi64,pcomq,5,,,,,,,,,X
+ssp_comfalse_epi8,pcomb,5,,,,,,,,,X
+ssp_comfalse_epu16,pcomuw,5,,,,,,,,,X
+ssp_comfalse_epu32,pcomud,5,,,,,,,,,X
+ssp_comfalse_epu64,pcomuq,5,,,,,,,,,X
+ssp_comfalse_epu8,pcomub,5,,,,,,,,,X
+ssp_comfalse_pd,compd,5,,,,,,,,,X
+ssp_comfalse_ps,comps,5,,,,,,,,,X
+ssp_comfalse_sd,comsd,5,,,,,,,,,X
+ssp_comfalse_ss,comss,5,,,,,,,,,X
+ssp_comge_epi16,pcomw,5,,,,,,,,,X
+ssp_comge_epi32,pcomd,5,,,,,,,,,X
+ssp_comge_epi64,pcomq,5,,,,,,,,,X
+ssp_comge_epi8,pcomb,5,,,,,,,,,X
+ssp_comge_epu16,pcomuw,5,,,,,,,,,X
+ssp_comge_epu32,pcomud,5,,,,,,,,,X
+ssp_comge_epu64,pcomuq,5,,,,,,,,,X
+ssp_comge_epu8,pcomub,5,,,,,,,,,X
+ssp_comge_pd,compd,5,,,,,,,,,X
+ssp_comge_ps,comps,5,,,,,,,,,X
+ssp_comge_sd,comsd,5,,,,,,,,,X
+ssp_comge_ss,comss,5,,,,,,,,,X
+ssp_comgt_epi16,pcomw,5,,,,,,,,,X
+ssp_comgt_epi32,pcomd,5,,,,,,,,,X
+ssp_comgt_epi64,pcomq,5,,,,,,,,,X
+ssp_comgt_epi8,pcomb,5,,,,,,,,,X
+ssp_comgt_epu16,pcomuw,5,,,,,,,,,X
+ssp_comgt_epu32,pcomud,5,,,,,,,,,X
+ssp_comgt_epu64,pcomuq,5,,,,,,,,,X
+ssp_comgt_epu8,pcomub,5,,,,,,,,,X
+ssp_comgt_pd,compd,5,,,,,,,,,X
+ssp_comgt_ps,comps,5,,,,,,,,,X
+ssp_comgt_sd,comsd,5,,,,,,,,,X
+ssp_comgt_ss,comss,5,,,,,,,,,X
+ssp_comieq_sd,comisd,2,,,X,,,,,,
+ssp_comieq_ss ,comiss,,,X,,,,,,,
+ssp_comige_sd,comisd,2,,,X,,,,,,
+ssp_comige_ss ,comiss,,,X,,,,,,,
+ssp_comigt_sd,comisd,2,,,X,,,,,,
+ssp_comigt_ss ,comiss,,,X,,,,,,,
+ssp_comile_sd,comisd,2,,,X,,,,,,
+ssp_comile_ss ,comiss,,,X,,,,,,,
+ssp_comilt_sd,comisd,2,,,X,,,,,,
+ssp_comilt_ss ,comiss,,,X,,,,,,,
+ssp_comineq_sd,comisd,2,,,X,,,,,,
+ssp_comineq_ss ,comiss,,,X,,,,,,,
+ssp_comle_epi16,pcomw,5,,,,,,,,,X
+ssp_comle_epi32,pcomd,5,,,,,,,,,X
+ssp_comle_epi64,pcomq,5,,,,,,,,,X
+ssp_comle_epi8,pcomb,5,,,,,,,,,X
+ssp_comle_epu16,pcomuw,5,,,,,,,,,X
+ssp_comle_epu32,pcomud,5,,,,,,,,,X
+ssp_comle_epu64,pcomuq,5,,,,,,,,,X
+ssp_comle_epu8,pcomub,5,,,,,,,,,X
+ssp_comle_pd,compd,5,,,,,,,,,X
+ssp_comle_ps,comps,5,,,,,,,,,X
+ssp_comle_sd,comsd,5,,,,,,,,,X
+ssp_comle_ss,comss,5,,,,,,,,,X
+ssp_comlt_epi16,pcomw,5,,,,,,,,,X
+ssp_comlt_epi32,pcomd,5,,,,,,,,,X
+ssp_comlt_epi64,pcomq,5,,,,,,,,,X
+ssp_comlt_epi8,pcomb,5,,,,,,,,,X
+ssp_comlt_epu16,pcomuw,5,,,,,,,,,X
+ssp_comlt_epu32,pcomud,5,,,,,,,,,X
+ssp_comlt_epu64,pcomuq,5,,,,,,,,,X
+ssp_comlt_epu8,pcomub,5,,,,,,,,,X
+ssp_comlt_pd,compd,5,,,,,,,,,X
+ssp_comlt_ps,comps,5,,,,,,,,,X
+ssp_comlt_sd,comsd,5,,,,,,,,,X
+ssp_comlt_ss,comss,5,,,,,,,,,X
+ssp_comneq_epi16,pcomw,5,,,,,,,,,X
+ssp_comneq_epi32,pcomd,5,,,,,,,,,X
+ssp_comneq_epi64,pcomq,5,,,,,,,,,X
+ssp_comneq_epi8,pcomb,5,,,,,,,,,X
+ssp_comneq_epu16,pcomuw,5,,,,,,,,,X
+ssp_comneq_epu32,pcomud,5,,,,,,,,,X
+ssp_comneq_epu64,pcomuq,5,,,,,,,,,X
+ssp_comneq_epu8,pcomub,5,,,,,,,,,X
+ssp_comneq_pd,compd,5,,,,,,,,,X
+ssp_comneq_ps,comps,5,,,,,,,,,X
+ssp_comneq_sd,comsd,5,,,,,,,,,X
+ssp_comneq_ss,comss,5,,,,,,,,,X
+ssp_comnge_pd,compd,5,,,,,,,,,X
+ssp_comnge_ps,comps,5,,,,,,,,,X
+ssp_comnge_sd,comsd,5,,,,,,,,,X
+ssp_comnge_ss,comss,5,,,,,,,,,X
+ssp_comngt_pd,compd,5,,,,,,,,,X
+ssp_comngt_ps,comps,5,,,,,,,,,X
+ssp_comngt_sd,comsd,5,,,,,,,,,X
+ssp_comngt_ss,comss,5,,,,,,,,,X
+ssp_comnle_pd,compd,5,,,,,,,,,X
+ssp_comnle_ps,comps,5,,,,,,,,,X
+ssp_comnle_sd,comsd,5,,,,,,,,,X
+ssp_comnle_ss,comss,5,,,,,,,,,X
+ssp_comnlt_pd,compd,5,,,,,,,,,X
+ssp_comnlt_ps,comps,5,,,,,,,,,X
+ssp_comnlt_sd,comsd,5,,,,,,,,,X
+ssp_comnlt_ss,comss,5,,,,,,,,,X
+ssp_comoneq_pd,compd,5,,,,,,,,,X
+ssp_comoneq_ps,comps,5,,,,,,,,,X
+ssp_comoneq_sd,comsd,5,,,,,,,,,X
+ssp_comoneq_ss,comss,5,,,,,,,,,X
+ssp_comord_pd,compd,5,,,,,,,,,X
+ssp_comord_ps,comps,5,,,,,,,,,X
+ssp_comord_sd,comsd,5,,,,,,,,,X
+ssp_comord_ss,comss,5,,,,,,,,,X
+ssp_comtrue_epi16,pcomw,5,,,,,,,,,X
+ssp_comtrue_epi32,pcomd,5,,,,,,,,,X
+ssp_comtrue_epi64,pcomq,5,,,,,,,,,X
+ssp_comtrue_epi8,pcomb,5,,,,,,,,,X
+ssp_comtrue_epu16,pcomw,5,,,,,,,,,X
+ssp_comtrue_epu32,pcomd,5,,,,,,,,,X
+ssp_comtrue_epu64,pcomq,5,,,,,,,,,X
+ssp_comtrue_epu8,pcomb,5,,,,,,,,,X
+ssp_comtrue_pd,pcompd,5,,,,,,,,,X
+ssp_comtrue_ps,pcomps,5,,,,,,,,,X
+ssp_comtrue_sd,pcomsd,5,,,,,,,,,X
+ssp_comtrue_ss,pcomss,5,,,,,,,,,X
+ssp_comueq_pd,pcompd,5,,,,,,,,,X
+ssp_comueq_ps,pcomps,5,,,,,,,,,X
+ssp_comueq_sd,pcomsd,5,,,,,,,,,X
+ssp_comueq_ss,pcomss,5,,,,,,,,,X
+ssp_comunord_pd,pcompd,5,,,,,,,,,X
+ssp_comunord_ps,pcomps,5,,,,,,,,,X
+ssp_comunord_sd,pcomsd,5,,,,,,,,,X
+ssp_comunord_ss,pcomss,5,,,,,,,,,X
+ssp_crc32_u16,crc32,4.2,,,,,,,,X,
+ssp_crc32_u32,crc32,4.2,,,,,,,,X,
+ssp_crc32_u64,crc32,4.2,,,,,,,,X,
+ssp_crc32_u8,crc32,4.2,,,,,,,,X,
+ssp_cvt_si2ss ,cvtsi2ss,,,X,,,,,,,
+ssp_cvt_ss2si,cvtss2si,,,X,,,,,,,
+ssp_cvtepi16_epi32,pmovsxwd,4.1,X,,10,,,,3.2,,
+ssp_cvtepi16_epi64,pmovsxwq,4.1,X,,12,,,,3.2,,
+ssp_cvtepi32_epi64,pmovsxdq,4.1,X,,10,,,,3.2,,
+ssp_cvtepi32_pd,cvtdq2pd,2,,,X,,,,,,
+ssp_cvtepi32_ps,cvtdq2ps,2,,,X,,,,,,
+ssp_cvtepi8_epi16,pmovsxbw,4.1,X,,10,,,,3.2
+ssp_cvtepi8_epi32,pmovsxbd,4.1,X,,12,,,,3.2
+ssp_cvtepi8_epi64,pmovsxbq,4.1,X,,14,,,,3.2
+ssp_cvtepu16_epi32,pmovzxwd,4.1,X,,2,,,,3.2
+ssp_cvtepu16_epi64,pmovzxwq,4.1,X,,4,,,,3.2
+ssp_cvtepu32_epi64,pmovzxdq,4.1,X,,2,,,,3.2
+ssp_cvtepu8_epi16,pmovzxbw,4.1,X,,2,,,,3.2
+ssp_cvtepu8_epi32,pmovzxbd,4.1,X,,4,,,,3.2
+ssp_cvtepu8_epi64,pmovzxbq,4.1,X,,6,,,,3.2
+ssp_cvtpd_epi32,cvtpd2dq,2,,,X,,,,
+ssp_cvtpd_ps,cvtpd2ps,2,,,X,,,,
+ssp_cvtps_epi32,cvtps2dq,2,,,X,,,,
+ssp_cvtps_pd,cvtps2pd,2,,,X,,,,
+ssp_cvtsd_f64,(comp),2,,,X,,,,
+ssp_cvtsd_si32,cvttsd2si,2,,,X,,,,
+ssp_cvtsd_si64,cvtsd2si,2,,,X,,,,
+ssp_cvtsd_ss,cvtsd2ss,2,,,X
+ssp_cvtsi128_si32,movd,2,,,X
+ssp_cvtsi128_si64,movq,2,,,X
+ssp_cvtsi32_sd,cvtsi2sd,2,,,X
+ssp_cvtsi32_si128,movd,2,,,X
+ssp_cvtsi32_ss,cvtsi2ss,,,X,
+ssp_cvtsi64_sd,cvtsi2sd,2,,,X
+ssp_cvtsi64_si128,movq,2,,,X
+ssp_cvtsi64_ss ,cvtsi2ss,,,X,
+ssp_cvtss_f32 ,cvtss2si,,,X,
+ssp_cvtss_sd,cvtss2sd,2,,,X
+ssp_cvtss_si32,cvtss2si,,,X,
+ssp_cvtss_si64 ,cvtss2si,,,X,
+ssp_cvtt_ss2si ,cvttss2si,,,X,
+ssp_cvttpd_epi32,cvttpd2dq,2,,,X
+ssp_cvttps_epi32,cvttps2dq,2,,,X
+ssp_cvttsd_si32,cvttsd2si,2,,,X,,,,
+ssp_cvttsd_si64,cvttsd2si,2,,,X,,,,
+ssp_cvttss_si32,cvttss2si,,,X,,,,,
+ssp_cvttss_si64 ,cvttss2si,,,X,,,,,
+ssp_div_pd,divpd,2,,,X,,,,
+ssp_div_ps ,divps,,,X,,,,,
+ssp_div_sd,divsd,2,,,X,,,,
+ssp_div_ss ,divss,,,X,,,,,
+ssp_dp_pd,dppd,4.1,X,,24,,,,9
+ssp_dp_ps,dpps,4.1,X,,28,22,,,11
+ssp_extract_epi16,pextrw,2,,,X,,,,
+ssp_extract_epi32,pextrd,4.1,X,,2,,,,1
+ssp_extract_epi64,pextrq,4.1,X,,14,,,,
+ssp_extract_epi8,pextrb,4.1,X,,2,,,,1
+ssp_extract_ps,extractps,4.1,X,,,,,,1
+ssp_extract_si64,extrq,4a,X,,,,,X,
+ssp_extracti_si64,extrq,4a,X,,,,,X,,,
+ssp_floor_pd,roundpd,4.1,X,,38,,,,3,,
+ssp_floor_ps,roundps,4.1,X,,32,,,,3,,
+ssp_floor_sd,roundsd,4.1,X,,35,,,,3,,
+ssp_floor_ss,roundss,4.1,X,,40,,,,3,,
+ssp_frcz_pd ,frczpd,5,,,,,,,,,X
+ssp_frcz_ps ,frczps,5,,,,,,,,,X
+ssp_frcz_sd ,frczsd,5,,,,,,,,,X
+ssp_frcz_ss ,frczss,5,,,,,,,,,X
+ssp_getcsr ,stmxcsr,,,X,,,,,,,
+ssp_hadd_epi16,phaddw,S3,X,,9,,5,,,,
+ssp_hadd_epi32,phaddd,S3,X,,8,,5.1,,,,
+ssp_hadd_pd,haddpd,3,X,,9,4,,,,,
+ssp_hadd_ps,haddps,3,X,,8,4,,,,,
+ssp_haddd_epi16,phaddwd,5,,,,,,,,,X
+ssp_haddd_epi8,phaddbd,5,,,,,,,,,X
+ssp_haddd_epu16,phadduwd,5,,,,,,,,,X
+ssp_haddd_epu8,phaddubd,5,,,,,,,,,X
+ssp_haddq_epi16,phaddwq,5,,,,,,,,,X
+ssp_haddq_epi32,phadddq,5,,,,,,,,,X
+ssp_haddq_epi8,phaddbq,5,,,,,,,,,X
+ssp_haddq_epu16,phadduwq,5,,,,,,,,,X
+ssp_haddq_epu32,phaddudq,5,,,,,,,,,X
+ssp_haddq_epu8,phaddubq,5,,,,,,,,,X
+ssp_hadds_epi16,phaddsw,S3,X,,12,,5.1,,,,
+ssp_haddw_epi8,phaddbw,5,,,,,,,,,X
+ssp_haddw_epu8,phaddubw,5,,,,,,,,,X
+ssp_hsub_epi16,phsubw,S3,X,,12,,5.1,,,,
+ssp_hsub_epi32,phsubd,S3,X,,10,,5,,,,
+ssp_hsub_pd,hsubpd,3,X,,8,4,,,,,
+ssp_hsub_ps,hsubps,3,X,,16,8,,,,,
+ssp_hsubd_epi16,phsubwd,5,,,,,,,,,X
+ssp_hsubq_epi32,phsubdq,5,,,,,,,,,X
+ssp_hsubs_epi16,phsubsw,S3,X,,12,,5,,,,
+ssp_hsubw_epi8,phsubbw,5,,,,,,,,,X
+ssp_insert_epi16,pinsrw,2,,,X,,,,,,
+ssp_insert_epi32,pinsrd,4.1,X,,7,,,,2,,
+ssp_insert_epi64,pinsrq,4.1,X,,,,,,X,,
+ssp_insert_epi8,pinsrb,4.1,X,,10,,,,2,,
+ssp_insert_ps,insertps,4.1,X,,,,,,2,,
+ssp_insert_si64,insertq,4a,,,,,,X,,,
+ssp_inserti_si64,insertq,4a,,,,,,X,,,
+ssp_lddqu_si128,lddqu,3,X,,,1,,,,,
+ssp_lfence,lfence,2,,,X,,,,,,
+ssp_load_pd,movapd,2,,,X,,,,,,
+ssp_load_ps ,movaps,,,X,,,,,,,
+ssp_load_ps1 ,(comp),,,X,,,,,,,
+ssp_load_sd,movsd,2,,,X,,,,,,
+ssp_load_si128,movdqa,2,,,X,,,,,,
+ssp_load_ss ,movss,,,X,,,,,,,
+ssp_load1_pd,movlpd,2,,,X,,,,,,
+ssp_load1_ps,(comp),,,X,,,,,,,
+ssp_loaddup_pd,movddup,3,X,,,1,,,,,
+ssp_loadh_pd,movhpd,2,,,X,,,,,,
+ssp_loadl_epi64,movq,2,,,X,,,,,,
+ssp_loadl_pd,(comp),2,,,X,,,,,,
+ssp_loadr_pd,(comp),2,,,X,,,,,,
+ssp_loadr_ps ,(comp),,,X,,,,,,,
+ssp_loadu_pd,movupd,2,,,X,,,,,,
+ssp_loadu_ps ,movups,,,X,,,,,,,
+ssp_loadu_si128,movdqu,2,,,X,,,,,,
+ssp_macc_epi16,pmacsww,5,,,,,,,,,X
+ssp_macc_epi32,pmacsdd,5,,,,,,,,,X
+ssp_macc_pd,fmaddpd,5,X,,X,,,,,,X
+ssp_macc_ps,fmaddps,5,X,,X,,,,,,X
+ssp_macc_sd,fmaddsd,5,X,,X,,,,,,X
+ssp_macc_ss,fmaddss,5,X,,X,,,,,,X
+ssp_maccd_epi16,pmacswd,5,,,,,,,,,X
+ssp_macchi_epi32,pmacssdqh,5,,,,,,,,,X
+ssp_macclo_epi32,pmacsdql,5,,,,,,,,,X
+ssp_maccs_epi16,pmacssww,5,,,,,,,,,X
+ssp_maccs_epi32,pmacssdd,5,,,,,,,,,X
+ssp_maccsd_epi16,pmacsswd,5,,,,,,,,,X
+ssp_maccshi_epi32,pmacssdqh,5,,,,,,,,,X
+ssp_maccslo_epi32,pmacssdql,5,,,,,,,,,X
+ssp_madd_epi16,pmaddwd,2,,,X,,,,,,
+ssp_maddd_epi16,pmadcswd,5,,,,,,,,,X
+ssp_maddsd_epi16,pmadcsswd,5,,,,,,,,,X
+ssp_maddubs_epi16,pmaddubsw,S3,X,,12,,4.8,,,,
+ssp_maskmove_si64,maskmovq,,,X,,,,,,,
+ssp_maskmoveu_si128,maskmovdqu,2,,,X,,,,
+ssp_max_epi16,pmaxsw,2,,,X,,,,
+ssp_max_epi32,pmaxsd,4.1,X,,9,,,,1
+ssp_max_epi8,pmaxsb,4.1,X,,9,,,,1
+ssp_max_epu16,pmaxuw,4.1,X,,13,,,,1
+ssp_max_epu32,pmaxud,4.1,X,,13,,,,1
+ssp_max_epu8,pmaxub,2,,,X,,,,
+ssp_max_pd,maxpd,2,,,X,,,,
+ssp_max_ps ,maxps,,,X,,,,,
+ssp_max_pu8,pmaxub,,,X,,,,,
+ssp_max_sd,maxsd,2,,,X,,,,
+ssp_max_ss ,maxss,,,X,,,,,
+ssp_mfence,mfence,2,,,X,,,,
+ssp_min_epi16,pminsw,2,,,X,,,,
+ssp_min_epi32,pminsd,4.1,X,,7,,,,1
+ssp_min_epi8,pminsb,4.1,X,,7,,,,1
+ssp_min_epu16,pminuw,4.1,X,,13,,,,1
+ssp_min_epu32,pminud,4.1,X,,13,,,,1
+ssp_min_epu8,pminub,2,,,X,,,,
+ssp_min_pd,minpd,2,,,X,,,,
+ssp_min_ps ,minps,,,X,,,,,
+ssp_min_pu8,pminub,,,X,,,,,
+ssp_min_sd,minsd,2,,,X,,,,
+ssp_min_ss ,minss,,,X,,,,,
+ssp_minpos_epu16,phminposuw,4.1,X,,,,,,5
+ssp_move_epi64,movq,2,,,X,,,,
+ssp_move_sd,movsd,2,,,X,,,,
+ssp_move_ss ,movss,,,X,,,,,
+ssp_movedup_pd,movddup,3,X,,,2,,,
+ssp_movehdup_ps,movshdup,3,X,,,2,,,
+ssp_movehl_ps ,movhlps,,,X,,,,,
+ssp_moveldup_ps,movsldup,3,X,,,2,,,
+ssp_movelh_ps ,movlhps,,,X,,,,,,,
+ssp_movemask_epi8,pmovmskb,2,,,X,,,,,,
+ssp_movemask_pd,movmskpd,2,,,X,,,,,,
+ssp_movemask_ps ,movmskps,,,X,,,,,,,
+ssp_movepi64_pi64,movdq2q,2,,,X,,,,,,
+ssp_movpi64_epi64,movq2dq,2,,,X,,,,,,
+ssp_mpsadbw_epu8,mpsadbw,4.1,X,,83,,,,7,,
+ssp_msub_pd,fmsubpd,5,X,,X,,,,,,X
+ssp_msub_ps,fmsubps,5,X,,X,,,,,,X
+ssp_msub_sd,fmsubsd,5,X,,X,,,,,,X
+ssp_msub_ss,fmsubss,5,X,,X,,,,,,X
+ssp_mul_epi32,pmuldq,4.1,X,,,,,,X,,
+ssp_mul_epu32,pmuludq,2,,,X,,,,,,
+ssp_mul_pd,mulpd,2,,,X,,,,,,
+ssp_mul_ps ,mulps,,,X,,,,,,,
+ssp_mul_sd,mulsd,2,,,X,,,,,,
+ssp_mul_ss ,mulss,,,X,,,,,,,
+ssp_mulhi_epi16,pmulhw,2,,,X,,,,,,
+ssp_mulhi_epu16,pmulhuw,2,,,X,,,,,,
+ssp_mulhrs_epi16,pmulhrsw,S3,X,,25,,4.8,,,,
+ssp_mullo_epi16,pmullw,2,,,X,,,,,,
+ssp_mullo_epi32,pmullud,4.1,X,,,,,,2,,
+ssp_nmacc_pd,fnmaddpd,5,X,,X,,,,,,X
+ssp_nmacc_ps,fnmaddps,5,X,,X,,,,,,X
+ssp_nmacc_sd,fnmaddsd,5,X,,X,,,,,,X
+ssp_nmacc_ss,fnmaddss,5,X,,X,,,,,,X
+ssp_nmsub_pd,fnmsubpd,5,X,,X,,,,,,X
+ssp_nmsub_ps,fnmsubps,5,X,,X,,,,,,X
+ssp_nmsub_sd,fnmsubsd,5,X,,X,,,,,,X
+ssp_nmsub_ss,fnmsubss,5,X,,X,,,,,,X
+ssp_or_pd,orpd,2,,,X,,,,,,
+ssp_or_ps ,orps,,,X,,,,,,,
+ssp_or_si128,por,2,,,X,,,,,,
+ssp_packs_epi16,packsswb,2,,,X,,,,,,
+ssp_packs_epi32,packssdw,2,,,X,,,,,,
+ssp_packus_epi16,packuswb,2,,,X,,,,,,
+ssp_packus_epi32,packusdw,4.1,X,,6,,,,2,,
+ssp_pause,,2,,,X,,,,,,
+ssp_perm_epi8,pperm,5,,,,,,,,,X
+ssp_perm_pd,permpd,5,,,,,,,,,X
+ssp_perm_ps,permps,5,,,,,,,,,X
+ssp_popcnt_u32,popcnt,4.2,,,,,,,,X,
+ssp_popcnt_u64,popcnt,4.2,,,,,,,,X,
+ssp_prefetch ,prefetch,,,X,,,,,,,
+ssp_rcp_ps ,rcpps,,,X,,,,,,,
+ssp_rcp_ss ,rcpss,,,X,,,,,,,
+ssp_rot_epi16,protw,5,,,,,,,,,X
+ssp_rot_epi32,protd,5,,,,,,,,,X
+ssp_rot_epi64,protq,5,,,,,,,,,X
+ssp_rot_epi8,protb,5,,,,,,,,,X
+ssp_roti_epi16,protw,5,,,,,,,,,X
+ssp_roti_epi32,protd,5,,,,,,,,,X
+ssp_roti_epi64,protq,5,,,,,,,,,X
+ssp_roti_epi8,protb,5,,,,,,,,,X
+ssp_round_pd,roundpd,4.1/5,X,,38,,,,6,,X
+ssp_round_ps,roundps,4.1/5,X,,34,,,,6,,X
+ssp_round_sd,roundsd,4.1/5,X,,,,,,6,,X
+ssp_round_ss,roundss,4.1/5,X,,37,,,,6,,X
+ssp_rsqrt_ps ,rsqrtps,,,X,,,,,,,
+ssp_rsqrt_ss ,rsqrtss,,,X,,,,,,,
+ssp_sad_epu8,psadbw,2,,,X,,,,,,
+ssp_set_epi16,(comp),2,,,X,,,,,,
+ssp_set_epi32,(comp),2,,,X,,,,,,
+ssp_set_epi64,(comp),2,,,X,,,,,,
+ssp_set_epi8,(comp),2,,,X
+ssp_set_pd,(comp),2,,,X
+ssp_set_ps ,(comp),,,X,
+ssp_set_ps1 ,(comp),,,X,
+ssp_set_sd,(comp),2,,,X
+ssp_set_ss ,(comp),,,X,
+ssp_set1_epi16,(comp),2,,,X
+ssp_set1_epi32,(comp),2,,,X
+ssp_set1_epi64,(comp),2,,,X
+ssp_set1_epi8,(comp),2,,,X
+ssp_set1_pd,(comp),2,,,X
+ssp_set1_ps,(comp),,,X,
+ssp_setcsr ,ldmxcsr,,,X,
+ssp_setr_epi16,(comp),2,,,X
+ssp_setr_epi32,(comp),2,,,X
+ssp_setr_epi8,(comp),2,,,X
+ssp_setr_pd,(comp),2,,,X,,,,,,
+ssp_setr_ps ,(comp),,,X,,,,,,,
+ssp_setzero_pd,xorpd,2,,,X,,,,,,
+ssp_setzero_ps ,(comp) ,,,X,,,,,,,
+ssp_setzero_si128,pxor,2,,,X,,,,,,
+ssp_sfence ,sfence,,,X,,,,,,,
+ssp_sha_epi16,pshaw,5,,,,,,,,,X
+ssp_sha_epi32,pshad,5,,,,,,,,,X
+ssp_sha_epi64,pshaq,5,,,,,,,,,X
+ssp_sha_epi8,pshab,5,,,,,,,,,X
+ssp_shl_epi16,pshaw,5,,,,,,,,,X
+ssp_shl_epi32,pshad,5,,,,,,,,,X
+ssp_shl_epi64,pshaq,5,,,,,,,,,X
+ssp_shl_epi8,pshab,5,,,,,,,,,X
+ssp_shuffle_epi32,pshufd,2,,,X,,,,,,
+ssp_shuffle_epi8,pshufb,S3,X,,63,,3.5,,,,
+ssp_shuffle_pd,shufpd,2,,,X,,
+ssp_shuffle_ps ,shufps,,,X,,,
+ssp_shufflehi_epi16,pshufhw,2,,,X,,
+ssp_shufflelo_epi16,pshuflw,2,,,X,,
+ssp_sign_epi16,psignw,S3,X,,3,,1.6
+ssp_sign_epi32,psignd,S3,X,,12,,1.6
+ssp_sign_epi8,psignb,S3,X,,12,,1.6
+ssp_sll_epi16,psllw,2,,,X,,
+ssp_sll_epi32,pslld,2,,,X,,
+ssp_sll_epi64,psllq,2,,,X,,
+ssp_slli_epi16,psllw,2,,,X,,
+ssp_slli_epi32,pslld,2,,,X,,
+ssp_slli_epi64,psllq,2,,,X,,
+ssp_slli_si128,pslldq,2,,,X,,
+ssp_sqrt_pd,sqrtpd,2,,,X,,
+ssp_sqrt_ps ,sqrtps,,,X,,,
+ssp_sqrt_sd,sqrtsd,2,,,X
+ssp_sqrt_ss ,sqrtss,,,X,
+ssp_sra_epi16,psraw,2,,,X
+ssp_sra_epi32,psrad,2,,,X
+ssp_srai_epi16,psraw,2,,,X
+ssp_srai_epi32,psrad,2,,,X
+ssp_srl_epi16,psrlw,2,,,X
+ssp_srl_epi32,psrld,2,,,X
+ssp_srl_epi64,psrlq,2,,,X
+ssp_srli_epi16,psrlw,2,,,X
+ssp_srli_epi32,psrld,2,,,X
+ssp_srli_epi64,psrlq,2,,,X
+ssp_srli_si128,psrldq,2,,,X
+ssp_store_pd,movapd,2,,,X
+ssp_store_ps ,movaps,,,X,
+ssp_store_ps1 ,(comp),,,X,
+ssp_store_sd,movsd,2,,,X,,,,
+ssp_store_si128,movdqa,2,,,X,,,,
+ssp_store_ss ,movss,,,X,,,,,
+ssp_store1_pd,(comp),2,,,X,,,,
+ssp_store1_ps,(comp),,,X,,,,,
+ssp_storeh_pd,movhpd,2,,,X,,,,
+ssp_storel_epi64,movq,2,,,X,,,,
+ssp_storel_pd,movlpd,2,,,X,,,,
+ssp_storer_pd,(comp),2,,,X,,,,
+ssp_storer_ps ,(comp),,,X,,,,,
+ssp_storeu_pd,movupd,2,,,X,,,,
+ssp_storeu_ps ,movups,,,X,,,,,
+ssp_storeu_si128,movdqu,2,,,X,,,,
+ssp_stream_load_si128,movntdqa,4.1,X,,,,,,X
+ssp_stream_pd,movlpd,2,,,X,,,,
+ssp_stream_ps ,movlps,,,X,,,,,
+ssp_stream_sd,movntsd,4a,,,,,,X
+ssp_stream_si128,movntdq,2,,,X,,,
+ssp_stream_si32,movnti,2,,,X,,,
+ssp_stream_ss,movntss,4a,,,,,,X
+ssp_sub_epi16,psubw,2,,,X,,,
+ssp_sub_epi32,psubd,2,,,X,,,
+ssp_sub_epi64,psubq,2,,,X,,,
+ssp_sub_epi8,psubb,2,,,X,,,
+ssp_sub_pd,subpd,2,,,X,,,
+ssp_sub_ps ,subps,,,X,,,,
+ssp_sub_sd,subsd,2,,,X,,,
+ssp_sub_ss ,subss,,,X,,,,
+ssp_subs_epi16,psubsw,2,,,X,,,
+ssp_subs_epi8,psubsb,2,,,X,,,
+ssp_subs_epu16,psubusw,2,,,X,,,
+ssp_subs_epu8,psubusb,2,,,X,,,
+ssp_testc_si128,ptest,4.1/5,X,,5,,,,1,,X
+ssp_testnzc_si128,ptest,4.1/5,X,,5,,,,1,,X
+ssp_testz_si128,ptest,4.1/5,X,,5,,,,1,,X
+ssp_ucomieq_sd,ucomisd,2,,,X,,,,,,
+ssp_ucomieq_ss ,ucomiss,,,X,,,,,,,
+ssp_ucomige_sd,ucomisd,2,,,X,,,,,,
+ssp_ucomige_ss ,ucomiss,,,X,,,,,,,
+ssp_ucomigt_sd,ucomisd,2,,,X,,,,,,
+ssp_ucomigt_ss ,ucomiss,,,X,,,,,,,
+ssp_ucomile_sd,ucomisd,2,,,X,,,,,,
+ssp_ucomile_ss ,ucomiss,,,X,,,,,,,
+ssp_ucomilt_sd,ucomisd,2,,,X,,,,,,
+ssp_ucomilt_ss ,ucomiss,,,X,,,,,,,
+ssp_ucomineq_sd,ucomisd,2,,,X,,,,,,
+ssp_ucomineq_ss ,ucomiss,,,X,,,,,,,
+ssp_unpackhi_epi16,punpckhwd,2,,,X,,,,,,
+ssp_unpackhi_epi32,punpckhdq,2,,,X,
+ssp_unpackhi_epi64,punpckhqdq,2,,,X,
+ssp_unpackhi_epi8,punpckhbw,2,,,X,
+ssp_unpackhi_pd,unpckhpd,2,,,X,
+ssp_unpackhi_ps ,unpckhps,,,X,,
+ssp_unpacklo_epi16,punpcklwd,2,,,X,
+ssp_unpacklo_epi32,punpckldq,2,,,X,
+ssp_unpacklo_epi64,punpcklqdq,2,,,X,
+ssp_unpacklo_epi8,punpcklbw,2,,,X,
+ssp_unpacklo_pd,unpcklpd,2,,,X,
+ssp_unpacklo_ps ,unpcklps,,,X,,
+ssp_xor_pd,xorpd,2,,,X,
+ssp_xor_ps ,xorps,,,X,,
+ssp_xor_si128,pxor,2,,,X,
+ssp_arithmetic_hadd4_dup_ps,(comp),SSP,X,,18,12
+ssp_arithmetic_hadd4_epi16,(comp),SSP,,,X,
+ssp_arithmetic_hadd4_epu16,(comp),SSP,X,,
+ssp_convert_3c_3p_epi16       ,(comp),SSP,X,,40
+ssp_convert_3c_3p_epi32       ,(comp),SSP,X,,30
+ssp_convert_3c_3p_epi8        ,(comp),SSP,X,,53
+ssp_convert_3p_3c_epi16       ,(comp),SSP,X,,95
+ssp_convert_3p_3c_epi32       ,(comp),SSP,X,,50
+ssp_convert_3p_3c_epi8        ,(comp),SSP,X,,53
+ssp_convert_4c_4p_epi16       ,(comp),SSP,X,,55
+ssp_convert_4c_4p_epi32       ,(comp),SSP,X,,39
+ssp_convert_4c_4p_epi8        ,(comp),SSP,X,,70
+ssp_convert_4c_4p_epi8        ,(comp),SSP,X,,70
+ssp_convert_4p_4c_epi16       ,(comp),SSP,X,,39
+ssp_convert_4p_4c_epi32       ,(comp),SSP,X,,40
+ssp_convert_4p_4c_epi8        ,(comp),SSP,X,,39
+ssp_convert_reverse_transpose ,(comp),SSP,X,,29
+ssp_logical_bitwise_select    ,(comp),SSP,,,4
+ssp_logical_cmpgt_epu16,(comp),SSP,X,,9
+ssp_logical_cmpgt_epu32,(comp),SSP,X,,9
+ssp_logical_cmplt_epu16,(comp),SSP,X,,9
+ssp_logical_cmplt_epu32,(comp),SSP,X,,9
+ssp_memory_load1_epu8         ,(comp),SSP,X,,X
+ssp_movmask_imm8_to_epi32     ,(comp),SSP,X,,X
+ssp_number_changeSNanToQNaN_F32,(comp),SSP,X,,
+ssp_number_changeSNanToQNaN_F64,(comp),SSP,X,,
+ssp_number_isValidNumber_F32,(comp),SSP,X,,
+ssp_number_isValidNumber_F64,(comp),SSP,X,,
+ssp_round_ps_neg_zero,(comp),SSP,,,X
