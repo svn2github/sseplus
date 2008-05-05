@@ -19,29 +19,40 @@ typedef std::map   < std::string, std::string > StringMap;
 
 struct CSVLine
 {
-    std::string source;
-    double SSE2, SSE3, SSSE3, SSE4a, SSE4_1, SSE4_2, SSE5;
-    bool used;
+    std::string function, assembly, source;
+    double REF, SSE2, SSE3, SSSE3, SSE4a, SSE4_1, SSE4_2, SSE5;
+    unsigned int useCount;
 
-    CSVLine():SSE2(0),SSE3(0),SSSE3(0),SSE4a(0),SSE4_1(0),SSE4_2(0),SSE5(0){}
+    CSVLine():REF(0),SSE2(0),SSE3(0),SSSE3(0),SSE4a(0),SSE4_1(0),SSE4_2(0),SSE5(0),useCount(0){}
 
     CSVLine( StringMap & line )
     {
-        source = line[ "Source" ];
-        SSE2   = atof( line[ "SSE2" ].c_str() );
-        SSE3   = atof( line[ "SSE3" ].c_str() );
-        SSSE3  = atof( line[ "SSSE3"].c_str() );
-        SSE4a  = atof( line[ "SSE4A"].c_str() );
-        SSE4_1 = atof( line[ "SSE41"].c_str() );
-        SSE4_2 = atof( line[ "SSE42"].c_str() );
-        SSE5   = atof( line[ "SSE5" ].c_str() );
-        used   = false;
+        function = line[ "Function" ];
+        assembly = line[ "Assembly"  ];
+        source   = line[ "Source"    ];
+        REF    = atof( line[ "REF"   ].c_str() );
+        SSE2   = atof( line[ "SSE2"  ].c_str() );
+        SSE3   = atof( line[ "SSE3"  ].c_str() );
+        SSSE3  = atof( line[ "SSSE3" ].c_str() );
+        SSE4a  = atof( line[ "SSE4A" ].c_str() );
+        SSE4_1 = atof( line[ "SSE4_1"].c_str() );
+        SSE4_2 = atof( line[ "SSE4_2"].c_str() );
+        SSE5   = atof( line[ "SSE5"  ].c_str() );
+        useCount = 0;
+    }
+
+    std::string A( double d ) const
+    {
+        std::ostringstream oss;        
+        if( 0==d ) oss << ",";
+        else       oss << "," << d;
+        return oss.str();            
     }
 
     std::string ToString() const
     {
         std::ostringstream oss;
-        oss << "[" << source << "]," << SSE2 << "," << SSE3 << "," << SSSE3 << "," << SSE4a << "," << SSE4_1 << "," << SSE4_2 << "," << SSE5;
+        oss << assembly << "," << source << A(REF) << A(SSE2) << A(SSE3) << A(SSSE3) << A(SSE4a) << A(SSE4_1) << A(SSE4_2) << A(SSE5);
         return oss.str();
     }
 };
@@ -108,7 +119,7 @@ public:
                     StringList row = ParseList( tmp );        // Read a row
                     
                     StringMap record = Combine( header, row );  
-                    map[ record["Name"] ] = CSVLine(record); 
+                    map[ record["Function"] ] = CSVLine(record); 
                 }
             }
         }        
@@ -117,7 +128,7 @@ public:
     const CSVLine & operator[]( const std::string & name )
     {   
         CSVLine & tmp = map[ name ];
-        tmp.used = true;
+        ++tmp.useCount;
         return tmp;
     }
 
@@ -127,7 +138,7 @@ public:
 
         for( LineMap::const_iterator it=map.begin(); it!=map.end(); ++it )
         {
-            if( !it->second.used )
+            if( !it->second.useCount )
             {
                 oss << std::left << std::setw(30) << it->first << "," << it->second.ToString() << std::endl;
             }

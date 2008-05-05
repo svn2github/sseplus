@@ -997,7 +997,16 @@ void SSP_Tests( CSVTable & csv )
 
 int main(int argc, char *argv[])
 {
-    CSVTable csv( "test_input.csv" );
+    std::string file = "default.csv";
+
+    if( argc >= 2 )
+        file = argv[1];
+
+    if( 3   == argc && 
+        !strcmp( "update", argv[2] ))
+        g_update = true;
+      
+    CSVTable csv( file.c_str() );
 
     PrintHeader();
     SSE3_Tests( csv );
@@ -1023,7 +1032,6 @@ int main(int argc, char *argv[])
     SSP_Tests( csv );
 
     std::cout << "\nUnused:\n";
-    std::cout << csv.UnusedEntriesString() << std::endl;
-
+    std::cout << csv.UnusedEntriesString() << std::endl;    
     return 0;
 }

@@ -4,12 +4,14 @@
 //
 #ifndef __FORMAT_H__
 #define __FORMAT_H__
-
 #include "../../../SSEPlus/include/SSEPlus_base.h"
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 #include <cstring>
+
+
+bool g_update = false;
 
 
 struct obj_m128i
@@ -395,6 +397,8 @@ std::string ToStr( T t )
 enum ENUM_COL_WIDTHS
 {
 	COL_WIDTH_NAME   = 30,
+    COL_WIDTH_ASSEMBLY = 10,
+    COL_WIDTH_SOURCE = 5,
     COL_WIDTH_CYCLES = 6,
     COL_WIDTH_BAR    = 1,
     COL_WIDTH_EXP    = 4,
@@ -403,8 +407,12 @@ enum ENUM_COL_WIDTHS
 
 void PrintHeader()
 {
-    std::cout <<        std::left << std::setw(COL_WIDTH_NAME )  << "NAME";
-    std::cout << "," << std::left << std::setw( 8             )  << "SRC"; 
+    std::cout <<        std::left << std::setw(COL_WIDTH_NAME )  << "Function";
+
+    if( g_update )
+        std::cout << "," << std::left << std::setw(COL_WIDTH_ASSEMBLY)  << "Assembly";
+
+    std::cout << "," << std::left << std::setw( COL_WIDTH_SOURCE )<< "SRC"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "   REF"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "  SSE2"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "  SSE3"; 
@@ -416,19 +424,34 @@ void PrintHeader()
     std::cout << "," << std::endl;   
 }
 
-void PrintName( const char * name, const std::string & source )
+void PrintName( const char * name, const std::string & assembly, const std::string & source )
 {
-    std::cout <<  std::left << std::setw(COL_WIDTH_NAME) << name << ",[" << std::setw(6) << source <<"]";
+    std::cout <<  std::left << std::setw(COL_WIDTH_NAME) << name   << ",";  
+
+    if( g_update )
+        std::cout << std::setw(COL_WIDTH_ASSEMBLY) << assembly   << ",";
+    
+    std::cout << std::setw(COL_WIDTH_SOURCE)      << source;
 }
 
 void PrintCell( const std::string &result, double expected )
 {
-	std::cout.setf( std::ios::fixed, std::ios::floatfield);
-    std::cout.setf( std::ios::showpoint);
-    std::cout << std::setprecision(1);  
-    std::cout << "," << std::setw(COL_WIDTH_CYCLES) << std::right << result;
+    std::string tmp = result;
 
-	if( expected )
+    if( g_update && result.empty() && expected > 0 )
+    {
+        std::ostringstream oss; 
+        oss << expected;
+        tmp = oss.str();
+    }
+
+
+    std::cout.setf( std::ios::fixed, std::ios::floatfield);
+    std::cout.setf( std::ios::showpoint);
+    std::cout << std::setprecision(1); 
+    std::cout << "," << std::setw(COL_WIDTH_CYCLES) << std::right << tmp;
+
+	if( expected && !g_update )
 		std::cout << "|" << std::setw(COL_WIDTH_EXP)    << std::right  << expected;
 	else
 		std::cout << std::setw( COL_WIDTH_EXP + COL_WIDTH_BAR) << " " ;  
@@ -441,27 +464,29 @@ void PrintSpace()
 
 void PrintException( double expectedCycles ) // Instruction threw exception
 {
-	PrintCell( "X", expectedCycles );
-}
+    PrintCell( g_update ? "" : "X" , expectedCycles );
+}    
 
 void PrintDisabled( double expectedCycles ) // No support on CPU
 {
-	PrintCell( "-", expectedCycles );
+	PrintCell( g_update ? "" : "-" , expectedCycles );
 }
 
 void PrintFail( double expectedCycles ) // Failed its test
 {
-	PrintCell( "F", expectedCycles );
+	PrintCell( g_update ? "" : "F" , expectedCycles );
 }
 
 void PrintResult( double expectedCycles, double elapsed )
 {
-	std::ostringstream oss;
+    if( g_update && expectedCycles>0 )
+         elapsed = std::min<double>( elapsed, expectedCycles );
 
+	std::ostringstream oss;
     oss.setf( std::ios::fixed, std::ios::floatfield);
     oss.setf( std::ios::showpoint);
     oss << std::setprecision(1);  
-	oss << std::right << std::setw(COL_WIDTH_CYCLES) << elapsed;
+	oss << std::right << std::setw(COL_WIDTH_CYCLES) << elapsed;   
 
     if( elapsed < expectedCycles+1)
         expectedCycles = 0;

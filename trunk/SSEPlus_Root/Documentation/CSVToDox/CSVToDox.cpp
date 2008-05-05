@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <sstream>
 
 typedef std::vector< std::string  > StringList;
 
@@ -53,6 +54,11 @@ size_t GetWidth( const char * filename )
     return width;
 }
 
+std::string TH( const std::string & str ){ return "\n  <th>" + str + "</th>";  }
+std::string TD( const std::string & str ){ return "\n  <td>" + str + "</td>";  }
+std::string TDa( const std::string & str ){ return "\n  <td class=\"a\">" + str + "</td>";  }
+
+
 void Convert( const char * filename )
 {
     size_t width = GetWidth( filename );
@@ -60,7 +66,7 @@ void Convert( const char * filename )
 
     std::cout << "/**" << std::endl;
     std::cout << "\\page fnTable Function Table" << std::endl;
-    std::cout << "<table>" << std::endl;
+    std::cout << "<table border=\"0\" cellspacing=\"1\" cellpadding=\"1\">";
     char buffer[5000];
 
     file.getline( buffer, sizeof(buffer) );  
@@ -72,16 +78,22 @@ void Convert( const char * filename )
         return;
     }
 
-    std::cout << "<tr>" << std::endl;
-    for( size_t i=0; i<header.size(); ++i )
-    {
-        std::cout << "  <th>" << header[i] << "</th>" << std::endl;
-    }
+   
 
-    std::cout << "</tr>" << std::endl;
-
-    while( !file.eof() )
+    for( unsigned int count=0; !file.eof(); ++count )
     {
+        // Header
+       if( 0 == count%20 )
+       {
+          std::cout << "\n<tr>";
+          for( size_t i=0; i<header.size(); ++i )
+          {
+              std::cout << TH( header[i] );
+          }
+          std::cout << "\n</tr>";
+       }
+
+
         file.getline( buffer, sizeof(buffer) );  
         StringList list = ParseList( buffer );
 
@@ -89,46 +101,52 @@ void Convert( const char * filename )
             break;
 
         if( 0 == list[0].size() )
-            continue;
-
-        std::string name;
-        if( 0 == list[0].find("_mm_") )         // find _mm_
-        {
-            name = list[0].substr(3);
-            std::cout<< "<tr><td>\\MSDN{"<< list[0]<< "}</td><td>" << list[1] <<"</td>";
-        }
-        else if( 0 == list[0].find("_m_") )     // find _m_
-        {
-            name = list[0].substr(2);
-            std::cout<< "<tr><td>"<< list[0]<< "</td><td>" << list[1] <<"</td>";
-        }
-        else if( 0 == list[0].find("ssp_") )         // find ssp_
-        {
-            name = list[0].substr(3);
-            std::cout<< "<tr><td>"<< list[0]<< "</td><td>" << list[1] <<"</td>";
-        }
-        else
+            continue;       
+       
+        if( 0 != list[0].find("ssp_") )   
         {           
             std::cout << "ERROR: Could not parse function name: " << list[0] << std::endl;
             break;
         }   
+        else
+        {  
+            std::string tmp = list[0];
+
+            if( "SSP" != list[2] ) // Native instruction
+            {
+               tmp = "\\MSDN{ _mm_" + list[0].substr(3) + "}";
+            }
+
+            std::cout<< "<tr>" << TDa(tmp) << TD( list[1]) << TD( "SSE" + list[2] );
+        }            
         
 
-        for( size_t i=2; i<width; ++i )
+        for( size_t i=3; i<width; ++i )
         {       
             if( i<list.size() && list[i].size() )   // Data present
             {
-                std::cout<< "  <td>\\link ssp" << name << "_" << header[i] << "() " << header[i] << "\\endlink</td>" << std::endl;
+               std::ostringstream oss;
+
+               oss << "\\link ssp" << list[i] << "_" << header[i] << "() ";// << header[i];
+                
+                if( list[i] != "X" ) 
+                   oss << list[i];
+                else 
+                   oss << "X";
+
+                oss << "\\endlink";
+
+                std::cout << TD( oss.str() );
             }      
             else 
             {
-                std::cout<< "  <td>&nbsp;</td>" << std::endl;
+                std::cout<< TD( "&nbsp;");
             }
         }
-        std::cout << "</tr>" << std::endl;          
+        std::cout << "\n</tr>";         
     }
-    std::cout << "</table>" << std::endl;  
-    std::cout << "*/";
+    std::cout << "\n</table>";  
+    std::cout << "\n*/";
 }
 
 int main( int argc, char ** argv )

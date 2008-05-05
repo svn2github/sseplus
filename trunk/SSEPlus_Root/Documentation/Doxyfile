@@ -1,4 +1,4 @@
-# Doxyfile 1.5.4
+# Doxyfile 1.5.5
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -37,9 +37,11 @@ SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 8
 ALIASES                = "IMP{3}=\htmlonly \1 implementation of <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=\2&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\2</b></a> [\3]. (Searches MSDN) \endhtmlonly         " \
                          "MSDN{1}=\htmlonly <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=_\1&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\1</b></a>\endhtmlonly       " \
-                         "IMP5{4}=\htmlonly \1 implementation of <b>\2</b>/<b>\3</b> [\4]. (SSE5 .pdf documentation <a href=http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/43479.pdf><b>here</b></a>) \endhtmlonly         "
+                         "SSE5{3}=\htmlonly \1 implementation of <b>\2</b>/<b>\3</b> [SSE5]. (SSE5 .pdf documentation <a href=http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/43479.pdf><b>here</b></a>) \endhtmlonly         "
 OPTIMIZE_OUTPUT_FOR_C  = YES
 OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
 BUILTIN_STL_SUPPORT    = NO
 CPP_CLI_SUPPORT        = NO
 SIP_SUPPORT            = NO
@@ -66,6 +68,7 @@ SHOW_INCLUDE_FILES     = YES
 INLINE_INFO            = YES
 SORT_MEMBER_DOCS       = YES
 SORT_BRIEF_DOCS        = NO
+SORT_GROUP_NAMES       = NO
 SORT_BY_SCOPE_NAME     = NO
 GENERATE_TODOLIST      = NO
 GENERATE_TESTLIST      = NO
@@ -161,6 +164,9 @@ HTML_FOOTER            =
 HTML_STYLESHEET        = 
 HTML_ALIGN_MEMBERS     = YES
 GENERATE_HTMLHELP      = NO
+GENERATE_DOCSET        = NO
+DOCSET_FEEDNAME        = "Doxygen generated docs"
+DOCSET_BUNDLE_ID       = org.doxygen.Project
 HTML_DYNAMIC_SECTIONS  = NO
 CHM_FILE               = 
 HHC_LOCATION           = 

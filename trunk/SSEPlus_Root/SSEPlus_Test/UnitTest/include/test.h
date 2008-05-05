@@ -617,7 +617,7 @@ template<
 >
 void Test( const CSVLine & csv, const char *name, TEXP exp, T1 a, T2 b )
 {
-    PrintName( name, csv.source );    
+    PrintName( name, csv.assembly, csv.source );    
     
     bool   enable[ SSP_SSE_COUNT ];
     double res   [ SSP_SSE_COUNT ], tmp;    // tmp indirection allows use of macro
@@ -655,8 +655,11 @@ template<
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
+    if( g_update && csv.useCount>1) 
+        return;
+
     unsigned int cycles=0;
-    PrintName( name, csv.source );
+    PrintName( name, csv.assembly, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
     double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
@@ -691,8 +694,11 @@ template<
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
+     if( g_update && csv.useCount>1) 
+        return;
+
     unsigned int cycles=0;
-    PrintName( name, csv.source );
+    PrintName( name, csv.assembly, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
     double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
@@ -727,8 +733,11 @@ template<
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
+     if( g_update && csv.useCount>1) 
+        return;
+
     unsigned int cycles=0;
-    PrintName( name, csv.source );
+    PrintName( name, csv.assembly, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
     double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
@@ -763,8 +772,11 @@ template<
 >
 void Test( const CSVLine & csv, const char *name, TR exp, T1 a, T2 b, T3 c, T4 d, __m128i expMask=_mm_set1_epi32(0xFFFFFFFF) )
 {
+     if( g_update && csv.useCount>1) 
+        return;
+
     unsigned int cycles=0;
-    PrintName( name, csv.source );
+    PrintName( name, csv.assembly, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
     double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of macro
@@ -802,8 +814,11 @@ template<
 void Test( const CSVLine & csv, const char *name, T1 a_exp, T2 b_exp, T3 c_exp,
                                                   T1 a_in , T2 b_in , T3 c_in  )
 {
+     if( g_update && csv.useCount>1) 
+        return;
+
     unsigned int cycles=0;
-    PrintName( name, csv.source );
+    PrintName( name, csv.assembly, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
     double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of TRY macro
@@ -839,8 +854,11 @@ template<
 void Test( const CSVLine & csv, const char *name, T1 a_exp, T2 b_exp, T3 c_exp, T4 d_exp,
                                                   T1 a_in , T2 b_in , T3 c_in , T4 d_in  )
 {
+     if( g_update && csv.useCount>1) 
+        return;
+
     unsigned int cycles=0;
-    PrintName( name, csv.source );
+    PrintName( name, csv.assembly, csv.source );
 
     bool enable[ SSP_SSE_COUNT ];
     double res [ SSP_SSE_COUNT ], tmp;  // tmp indirection allows use of TRY macro
