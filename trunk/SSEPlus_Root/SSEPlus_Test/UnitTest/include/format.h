@@ -398,7 +398,7 @@ enum ENUM_COL_WIDTHS
 {
 	COL_WIDTH_NAME   = 30,
     COL_WIDTH_ASSEMBLY = 10,
-    COL_WIDTH_SOURCE = 5,
+    COL_WIDTH_SOURCE = 6,
     COL_WIDTH_CYCLES = 6,
     COL_WIDTH_BAR    = 1,
     COL_WIDTH_EXP    = 4,
@@ -412,14 +412,15 @@ void PrintHeader()
     if( g_update )
         std::cout << "," << std::left << std::setw(COL_WIDTH_ASSEMBLY)  << "Assembly";
 
-    std::cout << "," << std::left << std::setw( COL_WIDTH_SOURCE )<< "SRC"; 
+    std::cout << "," << std::left << std::setw( COL_WIDTH_SOURCE )<< "Source"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "   REF"; 
+    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "   SSE"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "  SSE2"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "  SSE3"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << " SSSE3"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << " SSE4A"; 
-    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "SSE4.1"; 
-    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "SSE4.2"; 
+    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "SSE4_1"; 
+    std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "SSE4_2"; 
     std::cout << "," << std::setw(COL_WIDTH_TOTAL)  << "  SSE5"; 
     std::cout << "," << std::endl;   
 }
@@ -444,7 +445,6 @@ void PrintCell( const std::string &result, double expected )
         oss << expected;
         tmp = oss.str();
     }
-
 
     std::cout.setf( std::ios::fixed, std::ios::floatfield);
     std::cout.setf( std::ios::showpoint);

@@ -37,7 +37,8 @@ SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 8
 ALIASES                = "IMP{3}=\htmlonly \1 implementation of <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=\2&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\2</b></a> [\3]. (Searches MSDN) \endhtmlonly         " \
                          "MSDN{1}=\htmlonly <a href=\"http://search.msdn.microsoft.com/Default.aspx?query=_\1&brand=msdn&locale=en-us&refinement=00&lang=en-us/Default.aspx\"><b>\1</b></a>\endhtmlonly       " \
-                         "SSE5{3}=\htmlonly \1 implementation of <b>\2</b>/<b>\3</b> [SSE5]. (SSE5 .pdf documentation <a href=http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/43479.pdf><b>here</b></a>) \endhtmlonly         "
+                         "SSE5{3}=\htmlonly \1 implementation of <b>\2</b>/<b>\3</b> [SSE5]. (SSE5 .pdf documentation <a href=http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/43479.pdf><b>here</b></a>) \endhtmlonly         " \
+                         "SSE45{3}=\htmlonly \1 implementation of <b>\2</b>/<b>\3</b> [SSE4&5]. (SSE5 .pdf documentation <a href=http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/43479.pdf><b>here</b></a>) \endhtmlonly         "
 OPTIMIZE_OUTPUT_FOR_C  = YES
 OPTIMIZE_OUTPUT_JAVA   = NO
 OPTIMIZE_FOR_FORTRAN   = NO

@@ -114,10 +114,10 @@ void Convert( const char * filename )
 
             if( "SSP" != list[2] ) // Native instruction
             {
-               tmp = "\\MSDN{ _mm_" + list[0].substr(3) + "}";
+               tmp = "\\MSDN{_mm" + list[0].substr(3) + "}";
             }
 
-            std::cout<< "<tr>" << TDa(tmp) << TD( list[1]) << TD( "SSE" + list[2] );
+            std::cout<< "<tr>" << TDa(tmp) << TD( list[1]) << TD( list[2] );
         }            
         
 
@@ -127,12 +127,10 @@ void Convert( const char * filename )
             {
                std::ostringstream oss;
 
-               oss << "\\link ssp" << list[i] << "_" << header[i] << "() ";// << header[i];
+               oss << "\\link " << list[0] << "_" << header[i] << "() ";// << header[i];
                 
-                if( list[i] != "X" ) 
-                   oss << list[i];
-                else 
-                   oss << "X";
+                if( "-1" == list[i] )  oss << "X";
+                else                   oss << list[i];
 
                 oss << "\\endlink";
 

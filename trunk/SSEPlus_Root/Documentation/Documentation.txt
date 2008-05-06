@@ -12,7 +12,7 @@
 	  <td>Downloads, forums, SVN access, and more</td>
 	</tr>
 	<tr>
-	  <td>\htmlonly <a href=../Function_Table.html><b>Function Table</b></a> \endhtmlonly</td>
+	  <td>\htmlonly <a href=../html/fntable.html><b>Function Table</b></a> \endhtmlonly</td>
 	  <td>Alphabetical list of functions</td>
 	</tr>
 	<tr>
@@ -78,10 +78,6 @@
 \page fnTable Function Table
 \htmlonly 
 <style type="text/css">
-BODY {margin-left: 0px}
-BODY {margin-top: 0px}
-BODY {margin-right: 0px}
-BODY {margin-bottom: 0px}
 TH{ background:#AAAAAA }
 TH{ font-size: 11 }
 TH{ color:black }
@@ -91,4 +87,8 @@ td{ text-align:center }
 td.a{ text-align:left }
 </style>
 \endhtmlonly
+<ul>
+<li>Numbers are processor cycles
+<li>'X' entries have not yet been benchmarked
+</ul>
  */

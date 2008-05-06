@@ -20,24 +20,35 @@ typedef std::map   < std::string, std::string > StringMap;
 struct CSVLine
 {
     std::string function, assembly, source;
-    double REF, SSE2, SSE3, SSSE3, SSE4a, SSE4_1, SSE4_2, SSE5;
+    double REF, SSE, SSE2, SSE3, SSSE3, SSE4a, SSE4_1, SSE4_2, SSE5;
     unsigned int useCount;
 
     CSVLine():REF(0),SSE2(0),SSE3(0),SSSE3(0),SSE4a(0),SSE4_1(0),SSE4_2(0),SSE5(0),useCount(0){}
+
+    double GetValue( const std::string & str )
+    {
+        double tmp = atof( str.c_str() );        
+
+        if( 0==tmp && !str.empty() )
+            tmp = -1.0;       
+
+        return tmp;
+    }
 
     CSVLine( StringMap & line )
     {
         function = line[ "Function" ];
         assembly = line[ "Assembly"  ];
         source   = line[ "Source"    ];
-        REF    = atof( line[ "REF"   ].c_str() );
-        SSE2   = atof( line[ "SSE2"  ].c_str() );
-        SSE3   = atof( line[ "SSE3"  ].c_str() );
-        SSSE3  = atof( line[ "SSSE3" ].c_str() );
-        SSE4a  = atof( line[ "SSE4A" ].c_str() );
-        SSE4_1 = atof( line[ "SSE4_1"].c_str() );
-        SSE4_2 = atof( line[ "SSE4_2"].c_str() );
-        SSE5   = atof( line[ "SSE5"  ].c_str() );
+        REF    = GetValue( line[ "REF"   ].c_str() );
+        SSE    = GetValue( line[ "SSE"   ].c_str() );
+        SSE2   = GetValue( line[ "SSE2"  ].c_str() );
+        SSE3   = GetValue( line[ "SSE3"  ].c_str() );
+        SSSE3  = GetValue( line[ "SSSE3" ].c_str() );
+        SSE4a  = GetValue( line[ "SSE4A" ].c_str() );
+        SSE4_1 = GetValue( line[ "SSE4_1"].c_str() );
+        SSE4_2 = GetValue( line[ "SSE4_2"].c_str() );
+        SSE5   = GetValue( line[ "SSE5"  ].c_str() );
         useCount = 0;
     }
 
@@ -52,7 +63,7 @@ struct CSVLine
     std::string ToString() const
     {
         std::ostringstream oss;
-        oss << assembly << "," << source << A(REF) << A(SSE2) << A(SSE3) << A(SSSE3) << A(SSE4a) << A(SSE4_1) << A(SSE4_2) << A(SSE5);
+        oss << assembly << "," << source << A(REF) << A(SSE) << A(SSE2) << A(SSE3) << A(SSSE3) << A(SSE4a) << A(SSE4_1) << A(SSE4_2) << A(SSE5);
         return oss.str();
     }
 };
