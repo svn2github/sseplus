@@ -47,7 +47,7 @@ ssp_cpuid ssp_get_cpuid()
     }
 
     __cpuid( data, 0 );  
-    maxInfoType = data[0];
+    maxInfoType = data[0] + 0x80000000;
 
     __cpuid( data, 1 );      
 
@@ -60,10 +60,10 @@ ssp_cpuid ssp_get_cpuid()
 
     if( maxInfoType >= 0x80000001 )
     {
-        __cpuid( data, 0x80000001 );   
+        __cpuid( data, 0x80000001 );        
         
-        cpu.feature[ SSP_SSE4a ] = (data[2] & 0x20  ) || 0;  // ECX: bit 6
-        cpu.feature[ SSP_SSE5  ] = (data[2] & 0x400 ) || 0;  // ECX: bit 11    
+        cpu.feature[ SSP_SSE4a ] = (data[2] & 0x40  ) || 0;  // ECX: bit 6
+        cpu.feature[ SSP_SSE5  ] = (data[2] & 0x800 ) || 0;  // ECX: bit 11    
     }
    
     return cpu;    

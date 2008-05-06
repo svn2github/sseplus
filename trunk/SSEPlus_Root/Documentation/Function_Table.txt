@@ -8603,7 +8603,7 @@
   <td class="a">ssp_arithmetic_hadd4_epi16</td>
   <td>(comp)</td>
   <td>SSP</td>
-  <td>\link ssp_arithmetic_hadd4_epi16_REF() X\endlink</td>
+  <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>\link ssp_arithmetic_hadd4_epi16_SSE2() X\endlink</td>
   <td>&nbsp;</td>
@@ -8681,7 +8681,7 @@
   <td class="a">ssp_round_ps_neg_zero</td>
   <td>(comp)</td>
   <td>SSP</td>
-  <td>\link ssp_round_ps_neg_zero_REF() X\endlink</td>
+  <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_ps_neg_zero_SSE2() X\endlink</td>
   <td>&nbsp;</td>
