@@ -5,6 +5,8 @@
 #ifndef __SSEPLUS_NUMBER_REF_H__
 #define __SSEPLUS_NUMBER_REF_H__
 
+#include <math.h>
+
 /** @addtogroup supplimental_REF   
  *  @{ 
  *  @name Number Operations{

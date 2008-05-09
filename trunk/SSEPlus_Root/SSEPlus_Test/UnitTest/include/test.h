@@ -101,6 +101,9 @@ namespace p
     template< typename T >
     bool Equal_f32( T value, T expected ) // Floating point compare
     {
+        if( !memcmp(&value, &expected, sizeof(T)) )
+            return true;        
+
         ssp_m128 V, E;
         V.f = *((__m128*)&value    );   
         E.f = *((__m128*)&expected ); 
@@ -118,7 +121,10 @@ namespace p
                 if( (V.f32[i] > E.f32[i] * (1.0f-SSP_F32_ALLOWANCE)) 
                  || (V.f32[i] < E.f32[i] * (1.0f+SSP_F32_ALLOWANCE)) ) return false;
 
-            }       
+            } 
+
+            if(  V.f32[i] != V.f32[i] ) return false; //NAN
+            if(  E.f32[i] != E.f32[i] ) return false; //NAN
         }
         return true;
     }

@@ -10,11 +10,241 @@
 #include "../arithmetic/SSEPlus_arithmetic_REF.h"
 #include <math.h>
 
-
 /** @addtogroup emulated_REF   
  *  @{ 
  *  @name SSE[3,4A,...,5] implemented in reference
  */
+
+//
+// COM*(equal)*
+//
+
+/** \SSE5{Reference,_mm_comeq_ps, comps } 
+*   See \link comps
+*/
+SSP_FORCEINLINE __m128 ssp_comeq_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]==B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]==B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]==B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]==B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comneq_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comneq_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]!=B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]!=B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]!=B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]!=B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comoneq_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comoneq_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b; 
+    A.u32[0] = (A.f32[0]<B.f32[0]) || (A.f32[0]>B.f32[0])  ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]<B.f32[1]) || (A.f32[1]>B.f32[1])  ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]<B.f32[2]) || (A.f32[2]>B.f32[2])  ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]<B.f32[3]) || (A.f32[3]>B.f32[3])  ? 0xFFFFFFFF : 0;
+    return A.f;   
+}
+
+/** \SSE5{Reference,_mm_comueq_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comueq_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;             
+    A.u32[0] = (A.f32[0]<B.f32[0]) || (A.f32[0]>B.f32[0]) ? 0 : 0xFFFFFFFF;
+    A.u32[1] = (A.f32[1]<B.f32[1]) || (A.f32[1]>B.f32[1]) ? 0 : 0xFFFFFFFF;
+    A.u32[2] = (A.f32[2]<B.f32[2]) || (A.f32[2]>B.f32[2]) ? 0 : 0xFFFFFFFF;
+    A.u32[3] = (A.f32[3]<B.f32[3]) || (A.f32[3]>B.f32[3]) ? 0 : 0xFFFFFFFF;
+    return A.f;
+}
+
+
+//
+// COM*(less)*
+//
+
+/** \SSE5{Reference,_mm_comlt_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comlt_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]<B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]<B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]<B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]<B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+/** \SSE5{Reference,_mm_comle_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comle_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]<=B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]<=B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]<=B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]<=B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comnlt_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comnlt_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]>=B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]>=B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]>=B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]>=B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+/** \SSE5{Reference,_mm_comnle_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comnle_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]<=B.f32[0]) ? 0 : 0xFFFFFFFF;
+    A.u32[1] = (A.f32[1]<=B.f32[1]) ? 0 : 0xFFFFFFFF;
+    A.u32[2] = (A.f32[2]<=B.f32[2]) ? 0 : 0xFFFFFFFF;
+    A.u32[3] = (A.f32[3]<=B.f32[3]) ? 0 : 0xFFFFFFFF;
+    return A.f;
+}
+
+//
+// COM*(greater)*
+//
+
+/** \SSE5{Reference,_mm_comge_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comge_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]<B.f32[0]) ? 0 : 0xFFFFFFFF;
+    A.u32[1] = (A.f32[1]<B.f32[1]) ? 0 : 0xFFFFFFFF;
+    A.u32[2] = (A.f32[2]<B.f32[2]) ? 0 : 0xFFFFFFFF;
+    A.u32[3] = (A.f32[3]<B.f32[3]) ? 0 : 0xFFFFFFFF;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comgt_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comgt_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]>B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]>B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]>B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]>B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comngt_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comngt_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]>B.f32[0]) ? 0 : 0xFFFFFFFF;
+    A.u32[1] = (A.f32[1]>B.f32[1]) ? 0 : 0xFFFFFFFF;
+    A.u32[2] = (A.f32[2]>B.f32[2]) ? 0 : 0xFFFFFFFF;
+    A.u32[3] = (A.f32[3]>B.f32[3]) ? 0 : 0xFFFFFFFF;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comnge_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comnge_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]>=B.f32[0]) ? 0 : 0xFFFFFFFF;
+    A.u32[1] = (A.f32[1]>=B.f32[1]) ? 0 : 0xFFFFFFFF;
+    A.u32[2] = (A.f32[2]>=B.f32[2]) ? 0 : 0xFFFFFFFF;
+    A.u32[3] = (A.f32[3]>=B.f32[3]) ? 0 : 0xFFFFFFFF;
+    return A.f;
+}
+
+
+//
+// COM*(ordered)*
+//
+
+/** \SSE5{Reference,_mm_comord_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comord_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b; // NAN(A)              || NAN(B)         
+    A.u32[0] = (A.f32[0]!=A.f32[0]) || (B.f32[0]!=B.f32[0]) ? 0 : 0xFFFFFFFF;
+    A.u32[1] = (A.f32[1]!=A.f32[1]) || (B.f32[1]!=B.f32[1]) ? 0 : 0xFFFFFFFF;
+    A.u32[2] = (A.f32[2]!=A.f32[2]) || (B.f32[2]!=B.f32[2]) ? 0 : 0xFFFFFFFF;
+    A.u32[3] = (A.f32[3]!=A.f32[3]) || (B.f32[3]!=B.f32[3]) ? 0 : 0xFFFFFFFF;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comunord_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comunord_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b; // NAN(A)              || NAN(B)         
+    A.u32[0] = (A.f32[0]!=A.f32[0]) || (B.f32[0]!=B.f32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.f32[1]!=A.f32[1]) || (B.f32[1]!=B.f32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.f32[2]!=A.f32[2]) || (B.f32[2]!=B.f32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.f32[3]!=A.f32[3]) || (B.f32[3]!=B.f32[3]) ? 0xFFFFFFFF : 0;
+    return A.f;
+}
+
+//
+// COM*(TRUE/FALSE)*
+//
+
+/** \SSE5{Reference,_mm_comtrue_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comtrue_ps_REF(__m128 a, __m128 b)
+{   
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = 0xFFFFFFFF;
+    A.u32[1] = 0xFFFFFFFF;
+    A.u32[2] = 0xFFFFFFFF;
+    A.u32[3] = 0xFFFFFFFF;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comfalse_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comfalse_ps_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = 0;
+    A.u32[1] = 0;
+    A.u32[2] = 0;
+    A.u32[3] = 0;
+    return A.f;
+}
+
 
 //--------------------------------------
 // Multiply Add
@@ -309,7 +539,7 @@ SSP_FORCEINLINE __m128d ssp_blend_pd_REF        ( __m128d a, __m128d b, const in
 }
 
 /** \IMP{Reference,_mm_blend_ps, SSE4.1} */
-SSP_FORCEINLINE __m128  ssp_blend_ps_REF        ( __m128  a, __m128  b, const int mask )
+SSP_FORCEINLINE __m128 ssp_blend_ps_REF        ( __m128 a, __m128 b, const int mask )
 {
     ssp_m128 A, B;
     A.f = a;
@@ -363,7 +593,7 @@ SSP_FORCEINLINE __m128d ssp_blendv_pd_REF       ( __m128d a, __m128d b, __m128d 
 }
 
 /** \IMP{Reference,_mm_blendv_epi8, SSE4.1} */
-SSP_FORCEINLINE __m128  ssp_blendv_ps_REF       ( __m128  a, __m128  b, __m128 mask )     
+SSP_FORCEINLINE __m128 ssp_blendv_ps_REF       ( __m128 a, __m128 b, __m128 mask )     
 {
     ssp_m128 A, B, Mask;
     A.f = a;
@@ -1504,7 +1734,7 @@ SSP_FORCEINLINE __m128d ssp_ceil_sd_REF( __m128d a, __m128d b)
 }
 
 /** \IMP{Reference,_mm_ceil_ss, SSE4.1} */
-SSP_FORCEINLINE __m128 ssp_ceil_ss_REF( __m128  a, __m128  b)                               
+SSP_FORCEINLINE __m128 ssp_ceil_ss_REF( __m128 a, __m128 b)                               
 {
     ssp_m128 A,B;
     A.f = a;
@@ -1550,7 +1780,7 @@ SSP_FORCEINLINE __m128d ssp_floor_sd_REF( __m128d a, __m128d b )
 }
 
 /** \IMP{Reference,_mm_floor_ss, SSE4.1} */
-SSP_FORCEINLINE __m128  ssp_floor_ss_REF( __m128  a, __m128  b )                            
+SSP_FORCEINLINE __m128 ssp_floor_ss_REF( __m128 a, __m128 b )                            
 {
     ssp_m128 A,B;
     A.f = a;
@@ -1615,7 +1845,7 @@ SSP_FORCEINLINE __m128d ssp_round_pd_REF( __m128d val, int iRoundMode )
 }
 
 /** \IMP{Reference,_mm_round_ps, SSE4.1 and SSE5} */
-SSP_FORCEINLINE __m128  ssp_round_ps_REF( __m128  val, int iRoundMode )                     
+SSP_FORCEINLINE __m128 ssp_round_ps_REF( __m128 val, int iRoundMode )                     
 {
     ssp_s32 *valPtr;
     ssp_m128 Val;
@@ -1780,7 +2010,7 @@ SSP_FORCEINLINE __m128d ssp_round_sd_REF( __m128d dst, __m128d val, int iRoundMo
 }
 
 /** \IMP{Reference,_mm_round_ss, SSE4.1 and SSE5} */
-SSP_FORCEINLINE __m128  ssp_round_ss_REF( __m128  dst, __m128  val, int iRoundMode )        //_mm_round_ss
+SSP_FORCEINLINE __m128 ssp_round_ss_REF( __m128 dst, __m128 val, int iRoundMode )        //_mm_round_ss
 {
     ssp_s32 *valPtr;
     ssp_m128 Dst, Val;

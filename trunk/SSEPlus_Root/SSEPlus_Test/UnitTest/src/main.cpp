@@ -814,7 +814,95 @@ void SSE5_Tests( CSVTable & csv )
         vS16( -100, -100, -25, 0, 25, 25, 100, 100 ), 
         vS16(    1,   -1,   1, 1,  1, -1,   2,  -2 ));
 
+    // Comparison
+    {
+        int   tmp    = 0xFFFFFFFF;
+        float allF = *(float*)&tmp;
 
+        tmp = 0x7F800001;
+        float nan = *(float*)&tmp;
+    
+
+        TEST_0( ssp_comeq_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,      0,    0,  0  ),
+            vF32( -1.123f, 1.123f, 0.0f, nan ),
+            vF32( -1.123f, 1.124f, nan , nan ));
+
+        TEST_0( ssp_comlt_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0, allF,    0,      0  ),
+            vF32( -1.123f, 1.123f, 1.0f,  nan  ),
+            vF32( -1.123f, 1.124f,  nan,  1.0f ));
+
+        TEST_0( ssp_comle_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,   allF,    0,   0 ),
+            vF32( -1.123f, 1.123f, 0.0f, nan ),
+            vF32( -1.123f, 1.124f,  nan, nan ));
+
+        TEST_0( ssp_comunord_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0,   allF, allF, allF ),
+            vF32( -1.123f,    nan, 0.0f,  nan ),
+            vF32( -1.123f, 1.123f,  nan,  nan ));
+        
+        TEST_0( ssp_comneq_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0,   allF,   allF, allF ),
+            vF32( -1.123f, 1.121f,    nan, 1.0f ),
+            vF32( -1.123f, 1.123f, 1.123f, nan  ));
+
+        TEST_0( ssp_comge_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    0, allF, allF, allF ),
+            vF32( 1.1f, 1.2f,  nan, 1.0f ),
+            vF32( 1.2f, 1.1f, 1.1f,  nan ));
+
+        TEST_0( ssp_comnle_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0,   allF,   allF,   allF ),
+            vF32( -1.123f, 1.123f,    nan, 1.123f ),
+            vF32( -1.123f, 1.121f, 1.123f,    nan ));
+
+        TEST_0( ssp_comord_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,      0,   0,   0 ),
+            vF32( -1.123f,    nan,   0, nan ),
+            vF32( -1.123f, 1.123f, nan, nan ));
+
+        TEST_0( ssp_comueq_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,      0, allF,    allF ),
+            vF32( -1.123f, 1.121f, 0.0f,     nan ),
+            vF32( -1.123f, 1.123f,  nan, -1.122f ));
+
+        TEST_0( ssp_comnge_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0,   allF, allF, allF ),
+            vF32( -1.123f, 1.123f,    0,  nan ),
+            vF32( -1.123f, 1.124f,  nan,    0 ));       
+
+         TEST_0( ssp_comngt_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,      0, allF, allF ),
+            vF32( -1.123f, 1.124f, 0.0f,  nan ),
+            vF32( -1.123f, 1.123f,  nan, 1.0f ));
+
+         TEST_0( ssp_comfalse_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0,    0,   0, 0   ),
+            vF32( -1.123f, 1.0f,   0, nan ),
+            vF32( -1.123f, 1.1f, nan, 0   ));
+
+         TEST_0( ssp_comoneq_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(       0, allF,    0,    0 ),
+            vF32( -1.123f, 1.0f, 1.0f,  nan ),
+            vF32( -1.123f, 1.1f,  nan, 1.0f ));       
+
+        TEST_0( ssp_comnlt_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32( allF,   allF,    0,    0 ),
+            vF32( 1.1f, 1.121f, 1.0f,  nan ),
+            vF32( 1.0f, 1.121f,  nan, 1.0f )); 
+
+        TEST_0( ssp_comgt_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,      0,    0,    0 ),
+            vF32( -1.121f, 1.121f, 1.0f,  nan ),
+            vF32( -1.123f, 1.123f,  nan, 1.0f )); 
+
+        TEST_0( ssp_comtrue_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF, allF,allF, allF ),
+            vF32( -1.123f, 1.0f,   0, nan  ),
+            vF32( -1.123f, 1.1f, nan,   0  ));
+    }
 }
 
 void SSP_Tests( CSVTable & csv )

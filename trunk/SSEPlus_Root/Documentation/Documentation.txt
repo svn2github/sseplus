@@ -91,4 +91,7 @@ td.a{ text-align:left }
 <li>Numbers are processor cycles
 <li>'X' entries have not yet been benchmarked
 </ul>
+
+\page comps SSE5 Instruction Comps
+\image html "comps.png"
  */
