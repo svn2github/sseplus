@@ -245,10 +245,75 @@ SSP_FORCEINLINE __m128 ssp_comfalse_ps_REF(__m128 a, __m128 b)
     return A.f;
 }
 
+//--------------------------------------
+// Horizontal Add and Sub
+//--------------------------------------
+/** \SSE5{Reference,_mm_haddd_epi16, phaddwd  } */
+SSP_FORCEINLINE __m128i ssp_haddd_epi16_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s32[0] = A.s16[0] + A.s16[1];
+	B.s32[1] = A.s16[2] + A.s16[3];
+	B.s32[2] = A.s16[4] + A.s16[5];
+	B.s32[3] = A.s16[6] + A.s16[7];
+
+	return B.i;
+}
+/** \SSE5{Reference,_mm_haddd_epi8, phaddbd  } */
+SSP_FORCEINLINE __m128i ssp_haddd_epi8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s32[0] = A.s8[ 0] + A.s8[ 1] + A.s8[ 2] + A.s8[ 3];
+	B.s32[1] = A.s8[ 4] + A.s8[ 5] + A.s8[ 6] + A.s8[ 7];
+	B.s32[2] = A.s8[ 8] + A.s8[ 9] + A.s8[10] + A.s8[11];
+	B.s32[3] = A.s8[12] + A.s8[13] + A.s8[14] + A.s8[15];
+
+	return B.i;
+}
 
 //--------------------------------------
 // Multiply Add
 //--------------------------------------
+
+/** \SSE5{Reference,_mm_macc_epi16, pmacsww } */ 
+SSP_FORCEINLINE __m128i ssp_macc_epi16_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A,B,C;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    A.s16[0] = A.s16[0] * B.s16[0] + C.s16[0];
+    A.s16[1] = A.s16[1] * B.s16[1] + C.s16[1];
+    A.s16[2] = A.s16[2] * B.s16[2] + C.s16[2];
+    A.s16[3] = A.s16[3] * B.s16[3] + C.s16[3];
+    A.s16[4] = A.s16[4] * B.s16[4] + C.s16[4];
+    A.s16[5] = A.s16[5] * B.s16[5] + C.s16[5];
+    A.s16[6] = A.s16[6] * B.s16[6] + C.s16[6];
+    A.s16[7] = A.s16[7] * B.s16[7] + C.s16[7];
+
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_macc_epi32, pmacsdd } */ 
+SSP_FORCEINLINE __m128i ssp_macc_epi32_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A,B,C;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    A.s32[0] = A.s32[0] * B.s32[0] + C.s32[0];
+    A.s32[1] = A.s32[1] * B.s32[1] + C.s32[1];
+    A.s32[2] = A.s32[2] * B.s32[2] + C.s32[2];
+    A.s32[3] = A.s32[3] * B.s32[3] + C.s32[3];
+
+    return A.i;
+}
 
 /** \SSE5{Reference,_mm_macc_ps,fmaddps } */ 
 SSP_FORCEINLINE __m128 ssp_macc_ps_REF( __m128 a, __m128 b, __m128 c )
@@ -302,6 +367,213 @@ SSP_FORCEINLINE __m128d ssp_macc_sd_REF(__m128d a, __m128d b, __m128d c)   // As
     return A.d;
 }
 
+/** \SSE5{Reference,_mm_maccd_epi16, pmacswd } */ 
+SSP_FORCEINLINE __m128i ssp_maccd_epi16_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    D.s32[0] = A.s16[0] * B.s16[0] + C.s32[0];
+    D.s32[1] = A.s16[2] * B.s16[2] + C.s32[1];
+    D.s32[2] = A.s16[4] * B.s16[4] + C.s32[2];
+    D.s32[3] = A.s16[6] * B.s16[6] + C.s32[3];
+
+    return D.i;
+}
+
+/** \SSE5{Reference,_mm_macchi_epi32, pmacsdqh } */ 
+SSP_FORCEINLINE __m128i ssp_macchi_epi32_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    D.s64[0] = A.s32[1] * B.s32[1] + C.s64[0];
+    D.s64[1] = A.s32[3] * B.s32[3] + C.s64[1];
+
+    return D.i;
+}
+
+/** \SSE5{Reference,_mm_macclo_epi32, pmacsdql } */ 
+SSP_FORCEINLINE __m128i ssp_macclo_epi32_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    D.s64[0] = A.s32[0] * B.s32[0] + C.s64[0];
+    D.s64[1] = A.s32[2] * B.s32[2] + C.s64[1];
+
+    return D.i;
+}
+
+#define SSP_SATURATION(a, pos_limit, neg_limit) (a>pos_limit) ? pos_limit : ((a<neg_limit)?neg_limit:a)
+
+/** \SSE5{Reference,_mm_maccs_epi16, pmacssww } */ 
+SSP_FORCEINLINE __m128i ssp_maccs_epi16_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C;
+	int temp;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+	temp = A.s16[0] * B.s16[0] + C.s16[0];
+	A.s16[0] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[1] * B.s16[1] + C.s16[1];
+    A.s16[1] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[2] * B.s16[2] + C.s16[2];
+    A.s16[2] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[3] * B.s16[3] + C.s16[3];
+    A.s16[3] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[4] * B.s16[4] + C.s16[4];
+    A.s16[4] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[5] * B.s16[5] + C.s16[5];
+    A.s16[5] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[6] * B.s16[6] + C.s16[6];
+    A.s16[6] = SSP_SATURATION(temp, 32767, -32768);
+	temp = A.s16[7] * B.s16[7] + C.s16[7];
+    A.s16[7] = SSP_SATURATION(temp, 32767, -32768);
+
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_maccs_epi32, pmacssdd } */ 
+SSP_FORCEINLINE __m128i ssp_maccs_epi32_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C;
+	long long temp;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+	temp = (long long)A.s32[0] * B.s32[0] + C.s32[0];
+	A.s32[0] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = (long long)A.s32[1] * B.s32[1] + C.s32[1];
+    A.s32[1] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = (long long)A.s32[2] * B.s32[2] + C.s32[2];
+    A.s32[2] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = (long long)A.s32[3] * B.s32[3] + C.s32[3];
+    A.s32[3] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_maccsd_epi16, pmacsswd } */ 
+SSP_FORCEINLINE __m128i ssp_maccsd_epi16_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+	long long temp;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+	//should be able to compare data to see whether overflow/underflow
+	temp = A.s16[0] * B.s16[0] + (long long)C.s32[0];
+    D.s32[0] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = A.s16[2] * B.s16[2] + (long long)C.s32[1];
+    D.s32[1] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = A.s16[4] * B.s16[4] + (long long)C.s32[2];
+    D.s32[2] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = A.s16[6] * B.s16[6] + (long long)C.s32[3];
+    D.s32[3] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+
+    return D.i;
+}
+
+/** \SSE5{Reference,_mm_maccshi_epi32, pmacssdqh } */ 
+SSP_FORCEINLINE __m128i ssp_maccshi_epi32_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+	long long temp;
+	unsigned long long signT, signC;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+	temp = (long long)A.s32[1] * B.s32[1];
+	signT = temp & 0x8000000000000000LL;
+	signC = C.s64[0] & 0x8000000000000000LL;
+	temp += C.s64[0];
+	D.s64[0] = (signT==signC) ? ((signT >0) ? ((temp > C.s64[0]) ? 0x8000000000000000LL : temp) 
+		: ((temp < C.s64[0])? 0x7FFFFFFFFFFFFFFFLL : temp)) : temp;
+	temp = (long long)A.s32[3] * B.s32[3];
+	signT = temp & 0x8000000000000000LL;
+	signC = C.s64[1] & 0x8000000000000000LL;
+	temp += C.s64[1];
+	D.s64[1] = (signT==signC) ? ((signT >0) ? ((temp > C.s64[1]) ? 0x8000000000000000LL : temp) 
+		: ((temp < C.s64[1])? 0x7FFFFFFFFFFFFFFFLL : temp)) : temp;
+
+    return D.i;
+}
+
+/** \SSE5{Reference,_mm_maccslo_epi32, pmacssdql } */ 
+SSP_FORCEINLINE __m128i ssp_maccslo_epi32_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+	long long temp;
+	unsigned long long signT, signC;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+	temp = (long long)A.s32[0] * B.s32[0];
+	signT = temp & 0x8000000000000000LL;
+	signC = C.s64[0] & 0x8000000000000000LL;
+	temp += C.s64[0];
+	D.s64[0] = (signT==signC) ? ((signT >0) ? ((temp > C.s64[0]) ? 0x8000000000000000LL : temp) 
+		: ((temp < C.s64[0])? 0x7FFFFFFFFFFFFFFFLL : temp)) : temp;
+	temp = (long long)A.s32[2] * B.s32[2];
+	signT = temp & 0x8000000000000000LL;
+	signC = C.s64[1] & 0x8000000000000000LL;
+	temp += C.s64[1];
+	D.s64[1] = (signT==signC) ? ((signT >0) ? ((temp > C.s64[1]) ? 0x8000000000000000LL : temp) 
+		: ((temp < C.s64[1])? 0x7FFFFFFFFFFFFFFFLL : temp)) : temp;
+
+    return D.i;
+}
+
+/** \SSE5{Reference,_mm_maddd_epi16, pmadcswd } */ 
+SSP_FORCEINLINE __m128i ssp_maddd_epi16_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    D.s32[0] = A.s16[0] * B.s16[0] + A.s16[1] * B.s16[1] + C.s32[0];
+    D.s32[1] = A.s16[2] * B.s16[2] + A.s16[3] * B.s16[3] + C.s32[1];
+    D.s32[2] = A.s16[4] * B.s16[4] + A.s16[5] * B.s16[5] + C.s32[2];
+    D.s32[3] = A.s16[6] * B.s16[6] + A.s16[7] * B.s16[7] + C.s32[3];
+
+    return D.i;
+}
+
+/** \SSE5{Reference,_mm_maddsd_epi16, pmadcsswd } */ 
+SSP_FORCEINLINE __m128i ssp_maddsd_epi16_REF( __m128i a, __m128i b, __m128i c )
+{
+    ssp_m128 A, B, C, D;
+	long long temp;
+
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+	temp = A.s16[0] * B.s16[0] + A.s16[1] * B.s16[1] + (long long)C.s32[0];
+    D.s32[0] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));
+	temp = A.s16[2] * B.s16[2] + A.s16[3] * B.s16[3] + (long long)C.s32[1];
+    D.s32[1] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));;
+	temp = A.s16[4] * B.s16[4] + A.s16[5] * B.s16[5] + (long long)C.s32[2];
+    D.s32[2] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));;
+	temp = A.s16[6] * B.s16[6] + A.s16[7] * B.s16[7] + (long long)C.s32[3];
+    D.s32[3] = (ssp_s32)(SSP_SATURATION(temp, 2147483647LL, -2147483648LL));;
+
+    return D.i;
+}
 
 //--------------------------------------
 // Negative Multiply Add
@@ -673,8 +945,6 @@ SSP_FORCEINLINE __m128 ssp_dp_ps_REF( __m128 a, __m128 b, const int mask )
     return A.f;
 }
 
-#define SSP_SATURATION(a, pos_limit, neg_limit) (a>0) ? ((a>pos_limit)?pos_limit:a) : ((a<neg_limit)?neg_limit:a)
-
 /** \IMP{Reference,_mm_maddubs_epi16, SSSE3} */
 SSP_FORCEINLINE __m128i ssp_maddubs_epi16_REF( __m128i a,  __m128i b)
 {
@@ -718,7 +988,7 @@ SSP_FORCEINLINE __m128i ssp_maddubs_epi16_REF( __m128i a,  __m128i b)
 SSP_FORCEINLINE __m64 ssp_maddubs_pi16_REF( __m64 a,  __m64 b)
 {
     ssp_m64 A, B, C;
-	int tmp[8];
+	int tmp[4];
     A.m64 = a;
     B.m64 = b;
 

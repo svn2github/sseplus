@@ -21,6 +21,77 @@
 //
 // Multiply Add
 //
+/** \SSE5{SSE2,_mm_macc_epi16, pmacsww } */ 
+SSP_FORCEINLINE __m128i ssp_macc_epi16_SSE2( __m128i a, __m128i b, __m128i c )
+{
+    a = _mm_mullo_epi16( a, b );
+    a = _mm_add_epi16( a, c );
+    return a;
+}
+
+/** \SSE5{SSE2,_mm_macc_epi32, pmacsdd } */ 
+SSP_FORCEINLINE __m128i ssp_macc_epi32_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	//from Framewave CBL
+	__m128i a1, b1, c1, d, x, y, LO;
+	__m128i dstlo, dsthi, dst1;
+
+	a1 = _mm_srai_epi32(a,16);
+	b1 = _mm_slli_epi32(a,16);
+	b1 = _mm_srli_epi32(b1,16);
+
+	c1 = _mm_srai_epi32(b,16);
+	d = _mm_slli_epi32(b,16);
+	d = _mm_srli_epi32(d,16);
+
+	dstlo =  _mm_mullo_epi16(b1,d);
+	dsthi =  _mm_mulhi_epu16(b1,d);
+
+	dst1 =_mm_unpacklo_epi16(dstlo,dsthi); 
+	dsthi =_mm_unpackhi_epi16(dstlo,dsthi); 
+
+	dstlo =_mm_unpacklo_epi32(dst1,dsthi); 
+	dsthi =_mm_unpackhi_epi32(dst1,dsthi); 
+	
+	LO = _mm_unpacklo_epi32(dstlo,dsthi);
+
+	dstlo =  _mm_mullo_epi16(a1,d);
+	dsthi =  _mm_mulhi_epi16(a1,d);
+
+	dst1 =_mm_unpacklo_epi16(dstlo,dsthi); 
+	dsthi =_mm_unpackhi_epi16(dstlo,dsthi); 
+
+	dstlo =_mm_unpacklo_epi32(dst1,dsthi); 
+	dsthi =_mm_unpackhi_epi32(dst1,dsthi); 
+	
+	x = _mm_unpacklo_epi32(dstlo,dsthi);
+
+	dstlo =  _mm_mullo_epi16(c1,b1);
+	dsthi =  _mm_mulhi_epu16(c1,b1);
+
+	dst1 =_mm_unpacklo_epi16(dstlo,dsthi); 
+	dsthi =_mm_unpackhi_epi16(dstlo,dsthi); 
+
+	dstlo =_mm_unpacklo_epi32(dst1,dsthi); 
+	dsthi =_mm_unpackhi_epi32(dst1,dsthi); 
+	
+	y = _mm_unpacklo_epi32(dstlo,dsthi);
+
+	x = _mm_add_epi32(x,y);
+
+	y = _mm_srli_epi32(LO,16);
+
+	y = _mm_add_epi32(y,x);
+	
+	y = _mm_slli_epi32(y,16);
+
+	LO = _mm_slli_epi32(LO,16);
+	LO = _mm_srli_epi32(LO,16);
+
+	LO = _mm_or_si128(LO,y);
+
+	return _mm_add_epi32(LO,c);
+}
 
 /** \SSE5{SSE2,_mm_macc_pd,fmaddpd} */ 
 SSP_FORCEINLINE __m128d ssp_macc_pd_SSE2(__m128d a, __m128d b, __m128d c)
