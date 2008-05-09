@@ -1592,6 +1592,138 @@ SSP_FORCEINLINE __m128d ssp_movedup_pd_SSE2(__m128d a)
     return _mm_set_pd( A.f64[0], A.f64[0] );
 }
 
+//--------------------------------------
+// Packed Shift Logical (bytes, words, dwords, qwords)
+//--------------------------------------
+
+/** \SSE5{SSE2,ssp_shl_epi16,pshlw } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi16_SSE2(__m128i a, __m128i b)
+{
+    __m128i v1, v2, mask, mask2, b1, b2;
+    b1 = ssp_abs_epi8_SSE2( b );
+    mask = _mm_set_epi16( 0, 0, 0, 0, 0, 0, 0, -1 );
+    mask2 = _mm_srli_epi16( mask, 12 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_and_si128( _mm_srl_epi16( a, b2), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi16( a, _mm_and_si128( b2, mask2 ) ), mask ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+
+    mask = _mm_setzero_si128();
+    mask = _mm_cmpgt_epi8( mask, b ); // set mask to 0xFF for all negative shift counts in b
+    mask2 = _mm_slli_epi16( mask, 8 );
+    mask = _mm_or_si128( mask, mask2 );
+    v1 = _mm_and_si128( v1, mask );
+    mask = _mm_andnot_si128( mask, v2 );
+    v1 = _mm_or_si128( v1, mask );
+    return v1;
+}
+
+/** \SSE5{SSE2,ssp_sha_epi16,pshaw } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi16_SSE2(__m128i a, __m128i b)
+{
+    __m128i v1, v2, mask, mask2, b1, b2;
+    b1 = ssp_abs_epi8_SSE2( b );
+    mask = _mm_set_epi16( 0, 0, 0, 0, 0, 0, 0, -1 );
+    mask2 = _mm_srli_epi16( mask, 12 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_and_si128( _mm_sra_epi16( a, b2), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi16( a, _mm_and_si128( b2, mask2 ) ), mask ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 2 );
+    b1 = _mm_srli_si128( b1, 2 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ) ); // positive shift
+
+    mask = _mm_setzero_si128();
+    mask = _mm_cmpgt_epi8( mask, b ); // set mask to 0xFF for all negative shift counts in b
+    mask2 = _mm_slli_epi16( mask, 8 );
+    mask = _mm_or_si128( mask, mask2 );
+    v1 = _mm_and_si128( v1, mask );
+    mask = _mm_andnot_si128( mask, v2 );
+    v1 = _mm_or_si128( v1, mask );
+    return v1;
+}
+
 /** @} 
  *  @}
  */

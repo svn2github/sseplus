@@ -2494,6 +2494,59 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
     return cnt;
 }
 
+//--------------------------------------
+// Packed Shift Logical (bytes, words, dwords, qwords)
+//--------------------------------------
+
+/** \SSE5{Reference,ssp_shl_epi16,pshlw } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi16_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 8; n++ )
+    {
+      if( B.s8[n*2] < 0 )
+      {
+        unsigned int count = (-B.s8[n*2]) % 16;
+        A.u16[n] = A.u16[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*2] % 16;
+        A.u16[n] = A.u16[n] << count;
+      }
+    }
+    return A.i;
+}
+
+/** \SSE5{Reference,ssp_sha_epi16,pshaw } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi16_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 8; n++ )
+    {
+      if( B.s8[n*2] < 0 )
+      {
+        unsigned int count = (-B.s8[n*2]) % 16;
+        A.s16[n] = A.s16[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*2] % 16;
+        A.s16[n] = A.s16[n] << count;
+      }
+    }
+
+    return A.i;
+}
+
 /** @} 
  *  @}
  */
