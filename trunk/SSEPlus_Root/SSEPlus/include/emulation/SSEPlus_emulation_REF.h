@@ -2998,6 +2998,55 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
 // Packed Shift Logical (bytes, words, dwords, qwords)
 //--------------------------------------
 
+/** \SSE5{Reference,ssp_shl_epi8,pshlb } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi8_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 16; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s8[n]) % 8;
+        A.u8[n] = A.u8[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n] % 8;
+        A.u8[n] = A.u8[n] << count;
+      }
+    }
+    return A.i;
+}
+
+/** \SSE5{Reference,ssp_sha_epi8,pshab } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi8_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 16; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s8[n]) % 8;
+        A.s8[n] = A.s8[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n] % 8;
+        A.s8[n] = A.s8[n] << count;
+      }
+    }
+
+    return A.i;
+}
+
 /** \SSE5{Reference,ssp_shl_epi16,pshlw } */ 
 SSP_FORCEINLINE __m128i ssp_shl_epi16_REF(__m128i a, __m128i b)
 {
@@ -3041,6 +3090,104 @@ SSP_FORCEINLINE __m128i ssp_sha_epi16_REF(__m128i a, __m128i b)
       {
         unsigned int count = B.s8[n*2] % 16;
         A.s16[n] = A.s16[n] << count;
+      }
+    }
+
+    return A.i;
+}
+
+/** \SSE5{Reference,ssp_shl_epi32,pshld } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi32_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 4; n++ )
+    {
+      if( B.s8[n*4] < 0 )
+      {
+        unsigned int count = (-B.s8[n*4]) % 32;
+        A.u32[n] = A.u32[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*4] % 32;
+        A.u32[n] = A.u32[n] << count;
+      }
+    }
+    return A.i;
+}
+
+/** \SSE5{Reference,ssp_sha_epi32,pshad } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi32_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 4; n++ )
+    {
+      if( B.s8[n*4] < 0 )
+      {
+        unsigned int count = (-B.s8[n*4]) % 32;
+        A.s32[n] = A.s32[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*4] % 32;
+        A.s32[n] = A.s32[n] << count;
+      }
+    }
+
+    return A.i;
+}
+
+/** \SSE5{Reference,ssp_shl_epi64,pshld } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi64_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 2; n++ )
+    {
+      if( B.s8[n*8] < 0 )
+      {
+        unsigned int count = (-B.s8[n*8]) % 64;
+        A.u64[n] = A.u64[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*8] % 64;
+        A.u64[n] = A.u64[n] << count;
+      }
+    }
+    return A.i;
+}
+
+/** \SSE5{Reference,ssp_sha_epi64,pshad } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi64_REF(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 2; n++ )
+    {
+      if( B.s8[n*8] < 0 )
+      {
+        unsigned int count = (-B.s8[n*8]) % 64;
+        A.s64[n] = A.s64[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*8] % 64;
+        A.s64[n] = A.s64[n] << count;
       }
     }
 

@@ -1667,17 +1667,66 @@ SSP_FORCEINLINE __m128d ssp_movedup_pd_SSE2(__m128d a)
 // Packed Shift Logical (bytes, words, dwords, qwords)
 //--------------------------------------
 
+/** \SSE5{SSE2,ssp_shl_epi8,pshlb } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi8_SSE2(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 16; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s8[n]) % 8;
+        A.u8[n] = A.u8[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n] % 8;
+        A.u8[n] = A.u8[n] << count;
+      }
+    }
+    return A.i;
+}
+
+/** \SSE5{SSE2,ssp_sha_epi8,pshab } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi8_SSE2(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 16; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s8[n]) % 8;
+        A.s8[n] = A.s8[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n] % 8;
+        A.s8[n] = A.s8[n] << count;
+      }
+    }
+
+    return A.i;
+}
+
 /** \SSE5{SSE2,ssp_shl_epi16,pshlw } */ 
 SSP_FORCEINLINE __m128i ssp_shl_epi16_SSE2(__m128i a, __m128i b)
 {
     __m128i v1, v2, mask, mask2, b1, b2;
     b1 = ssp_abs_epi8_SSE2( b );
     mask = _mm_set_epi16( 0, 0, 0, 0, 0, 0, 0, -1 );
-    mask2 = _mm_srli_epi16( mask, 12 );
+    mask2 = _mm_srli_epi16( mask, 12 ); // the shfit count is a 4 bit value
 
     b2 = _mm_and_si128( b1, mask2 );
-    v1 = _mm_and_si128( _mm_srl_epi16( a, b2), mask ); // negative shift
-    v2 = _mm_and_si128( _mm_sll_epi16( a, _mm_and_si128( b2, mask2 ) ), mask ); // positive shift
+    v1 = _mm_and_si128( _mm_srl_epi16( a, b2 ), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ); // positive shift
     mask = _mm_slli_si128( mask, 2 );
     b1 = _mm_srli_si128( b1, 2 );
 
@@ -1737,11 +1786,11 @@ SSP_FORCEINLINE __m128i ssp_sha_epi16_SSE2(__m128i a, __m128i b)
     __m128i v1, v2, mask, mask2, b1, b2;
     b1 = ssp_abs_epi8_SSE2( b );
     mask = _mm_set_epi16( 0, 0, 0, 0, 0, 0, 0, -1 );
-    mask2 = _mm_srli_epi16( mask, 12 );
+    mask2 = _mm_srli_epi16( mask, 12 ); // the shfit count is a 4 bit value
 
     b2 = _mm_and_si128( b1, mask2 );
-    v1 = _mm_and_si128( _mm_sra_epi16( a, b2), mask ); // negative shift
-    v2 = _mm_and_si128( _mm_sll_epi16( a, _mm_and_si128( b2, mask2 ) ), mask ); // positive shift
+    v1 = _mm_and_si128( _mm_sra_epi16( a, b2 ), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi16( a, b2 ), mask ); // positive shift
     mask = _mm_slli_si128( mask, 2 );
     b1 = _mm_srli_si128( b1, 2 );
 
@@ -1793,6 +1842,141 @@ SSP_FORCEINLINE __m128i ssp_sha_epi16_SSE2(__m128i a, __m128i b)
     mask = _mm_andnot_si128( mask, v2 );
     v1 = _mm_or_si128( v1, mask );
     return v1;
+}
+
+/** \SSE5{SSE2,ssp_shl_epi32,pshld } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi32_SSE2(__m128i a, __m128i b)
+{
+    __m128i v1, v2, mask, mask2, b1, b2;
+    b1 = ssp_abs_epi8_SSE2( b );
+    mask = _mm_set_epi32( 0, 0, 0, -1 );
+    mask2 = _mm_srli_epi32( mask, 27 ); // the shfit count is a 5 bit value
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_and_si128( _mm_srl_epi32( a, b2 ), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ); // positive shift
+    mask = _mm_slli_si128( mask, 4 );
+    b1 = _mm_srli_si128( b1, 4 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi32( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 4 );
+    b1 = _mm_srli_si128( b1, 4 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi32( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 4 );
+    b1 = _mm_srli_si128( b1, 4 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi32( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ) ); // positive shift
+
+    mask = _mm_setzero_si128();
+    mask = _mm_cmpgt_epi8( mask, b ); // set mask to 0xFF for all negative shift counts in b
+    mask = _mm_slli_epi32( mask, 24 );
+    mask = _mm_srai_epi32( mask, 24 );
+    v1 = _mm_and_si128( v1, mask );
+    mask = _mm_andnot_si128( mask, v2 );
+    v1 = _mm_or_si128( v1, mask );
+    return v1;
+}
+
+/** \SSE5{SSE2,ssp_sha_epi32,pshad } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi32_SSE2(__m128i a, __m128i b)
+{
+    __m128i v1, v2, mask, mask2, b1, b2;
+    b1 = ssp_abs_epi8_SSE2( b );
+    mask = _mm_set_epi32( 0, 0, 0, -1 );
+    mask2 = _mm_srli_epi32( mask, 27 ); // the shfit count is a 5 bit value
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_and_si128( _mm_sra_epi32( a, b2 ), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ); // positive shift
+    mask = _mm_slli_si128( mask, 4 );
+    b1 = _mm_srli_si128( b1, 4 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi32( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 4 );
+    b1 = _mm_srli_si128( b1, 4 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi32( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ) ); // positive shift
+    mask = _mm_slli_si128( mask, 4 );
+    b1 = _mm_srli_si128( b1, 4 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_sra_epi32( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi32( a, b2 ), mask ) ); // positive shift
+
+    mask = _mm_setzero_si128();
+    mask = _mm_cmpgt_epi8( mask, b ); // set mask to 0xFF for all negative shift counts in b
+    mask = _mm_slli_epi32( mask, 24 );
+    mask = _mm_srai_epi32( mask, 24 );
+    v1 = _mm_and_si128( v1, mask );
+    mask = _mm_andnot_si128( mask, v2 );
+    v1 = _mm_or_si128( v1, mask );
+    return v1;
+}
+
+/** \SSE5{SSE2,ssp_shl_epi64,pshlq } */ 
+SSP_FORCEINLINE __m128i ssp_shl_epi64_SSE2(__m128i a, __m128i b)
+{
+    __m128i v1, v2, mask, mask2, b1, b2;
+    b1 = ssp_abs_epi8_SSE2( b );
+    mask = _mm_set_epi32( 0, 0, -1, -1 );
+    mask2 = _mm_srli_epi64( mask, 58 ); // the shfit count is a 6 bit value
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_and_si128( _mm_srl_epi64( a, b2 ), mask ); // negative shift
+    v2 = _mm_and_si128( _mm_sll_epi64( a, b2 ), mask ); // positive shift
+    mask = _mm_slli_si128( mask, 8 );
+    b1 = _mm_srli_si128( b1, 8 );
+
+    b2 = _mm_and_si128( b1, mask2 );
+    v1 = _mm_or_si128( v1, _mm_and_si128( _mm_srl_epi64( a, b2 ), mask ) ); // negative shift
+    v2 = _mm_or_si128( v2, _mm_and_si128( _mm_sll_epi64( a, b2 ), mask ) ); // positive shift
+
+    mask = _mm_setzero_si128();
+    mask = _mm_cmpgt_epi8( mask, b ); // set mask to 0xFF for all negative shift counts in b
+    mask = _mm_slli_epi16( mask, 8 );
+    mask = _mm_srai_epi16( mask, 8 );
+    mask = _mm_shufflelo_epi16( mask, _MM_SHUFFLE(0,0,0,0) );
+    mask = _mm_shufflehi_epi16( mask, _MM_SHUFFLE(0,0,0,0) );
+    v1 = _mm_and_si128( v1, mask );
+    mask = _mm_andnot_si128( mask, v2 );
+    v1 = _mm_or_si128( v1, mask );
+    return v1;
+}
+
+/** \SSE5{SSE2,ssp_sha_epi64,pshaq } */ 
+SSP_FORCEINLINE __m128i ssp_sha_epi64_SSE2(__m128i a, __m128i b)
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 2; n++ )
+    {
+      if( B.s8[n*8] < 0 )
+      {
+        unsigned int count = (-B.s8[n*8]) % 64;
+        A.s64[n] = A.s64[n] >> count;
+      }
+      else
+      {
+        unsigned int count = B.s8[n*8] % 64;
+        A.s64[n] = A.s64[n] << count;
+      }
+    }
+
+    return A.i;
 }
 
 /** @} 
