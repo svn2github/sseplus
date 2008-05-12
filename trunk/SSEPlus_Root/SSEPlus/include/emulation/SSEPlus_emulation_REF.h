@@ -261,6 +261,7 @@ SSP_FORCEINLINE __m128i ssp_haddd_epi16_REF(__m128i a)
 
 	return B.i;
 }
+
 /** \SSE5{Reference,_mm_haddd_epi8, phaddbd  } */
 SSP_FORCEINLINE __m128i ssp_haddd_epi8_REF(__m128i a)
 {
@@ -271,6 +272,186 @@ SSP_FORCEINLINE __m128i ssp_haddd_epi8_REF(__m128i a)
 	B.s32[1] = A.s8[ 4] + A.s8[ 5] + A.s8[ 6] + A.s8[ 7];
 	B.s32[2] = A.s8[ 8] + A.s8[ 9] + A.s8[10] + A.s8[11];
 	B.s32[3] = A.s8[12] + A.s8[13] + A.s8[14] + A.s8[15];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddd_epu16, phadduwd  } */
+SSP_FORCEINLINE __m128i ssp_haddd_epu16_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.u32[0] = A.u16[0] + A.u16[1];
+	B.u32[1] = A.u16[2] + A.u16[3];
+	B.u32[2] = A.u16[4] + A.u16[5];
+	B.u32[3] = A.u16[6] + A.u16[7];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddd_epu8, phaddubd  } */
+SSP_FORCEINLINE __m128i ssp_haddd_epu8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.u32[0] = A.u8[ 0] + A.u8[ 1] + A.u8[ 2] + A.u8[ 3];
+	B.u32[1] = A.u8[ 4] + A.u8[ 5] + A.u8[ 6] + A.u8[ 7];
+	B.u32[2] = A.u8[ 8] + A.u8[ 9] + A.u8[10] + A.u8[11];
+	B.u32[3] = A.u8[12] + A.u8[13] + A.u8[14] + A.u8[15];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddq_epi16, phaddwq  } */
+SSP_FORCEINLINE __m128i ssp_haddq_epi16_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s64[0] = A.s16[0] + A.s16[1] + A.s16[2] + A.s16[3];
+	B.s64[1] = A.s16[4] + A.s16[5] + A.s16[6] + A.s16[7];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddq_epi32, phadddq  } */
+SSP_FORCEINLINE __m128i ssp_haddq_epi32_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s64[0] = A.s32[0] + (long long)A.s32[1];
+	B.s64[1] = A.s32[2] + (long long)A.s32[3];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddq_epi8, phaddbq  } */
+SSP_FORCEINLINE __m128i ssp_haddq_epi8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s64[0] = A.s8[0] + A.s8[1] + A.s8[2] + A.s8[3] + A.s8[4] + A.s8[5] + A.s8[6] + A.s8[7];
+	B.s64[1] = A.s8[8] + A.s8[9] + A.s8[10] + A.s8[11] + A.s8[12] + A.s8[13] + A.s8[14] + A.s8[15];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddq_epu16, phadduwq  } */
+SSP_FORCEINLINE __m128i ssp_haddq_epu16_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.u64[0] = A.u16[0] + A.u16[1] + A.u16[2] + A.u16[3];
+	B.u64[1] = A.u16[4] + A.u16[5] + A.u16[6] + A.u16[7];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddq_epu32, phaddudq  } */
+SSP_FORCEINLINE __m128i ssp_haddq_epu32_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.u64[0] = A.u32[0] + (long long)A.u32[1];
+	B.u64[1] = A.u32[2] + (long long)A.u32[3];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddq_epu8, phaddubq  } */
+SSP_FORCEINLINE __m128i ssp_haddq_epu8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.u64[0] = A.u8[0] + A.u8[1] + A.u8[2] + A.u8[3] + A.u8[4] + A.u8[5] + A.u8[6] + A.u8[7];
+	B.u64[1] = A.u8[8] + A.u8[9] + A.u8[10] + A.u8[11] + A.u8[12] + A.u8[13] + A.u8[14] + A.u8[15];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddw_epi8, phaddbw  } */
+SSP_FORCEINLINE __m128i ssp_haddw_epi8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s16[0] = A.s8[0] + A.s8[1];
+	B.s16[1] = A.s8[2] + A.s8[3];
+	B.s16[2] = A.s8[4] + A.s8[5];
+	B.s16[3] = A.s8[6] + A.s8[7];
+	B.s16[4] = A.s8[8] + A.s8[9];
+	B.s16[5] = A.s8[10] + A.s8[11];
+	B.s16[6] = A.s8[12] + A.s8[13];
+	B.s16[7] = A.s8[14] + A.s8[15];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_haddw_epu8, phaddubw  } */
+SSP_FORCEINLINE __m128i ssp_haddw_epu8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.u16[0] = A.u8[0] + A.u8[1];
+	B.u16[1] = A.u8[2] + A.u8[3];
+	B.u16[2] = A.u8[4] + A.u8[5];
+	B.u16[3] = A.u8[6] + A.u8[7];
+	B.u16[4] = A.u8[8] + A.u8[9];
+	B.u16[5] = A.u8[10] + A.u8[11];
+	B.u16[6] = A.u8[12] + A.u8[13];
+	B.u16[7] = A.u8[14] + A.u8[15];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_hsubd_epi16, phsubwd  } */
+SSP_FORCEINLINE __m128i ssp_hsubd_epi16_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s32[0] = A.s16[1] - A.s16[0];
+	B.s32[1] = A.s16[3] - A.s16[2];
+	B.s32[2] = A.s16[5] - A.s16[4];
+	B.s32[3] = A.s16[7] - A.s16[6];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_hsubq_epi32, phsubdq  } */
+SSP_FORCEINLINE __m128i ssp_hsubq_epi32_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s64[0] = (long long)A.s32[1] - A.s32[0];
+	B.s64[1] = (long long)A.s32[3] - A.s32[2];
+
+	return B.i;
+}
+
+/** \SSE5{Reference,_mm_hsubw_epi8, phsubbw  } */
+SSP_FORCEINLINE __m128i ssp_hsubw_epi8_REF(__m128i a)
+{
+	ssp_m128 A, B;
+	A.i = a;
+
+	B.s16[0] = A.s8[1] - A.s8[0];
+	B.s16[1] = A.s8[3] - A.s8[2];
+	B.s16[2] = A.s8[5] - A.s8[4];
+	B.s16[3] = A.s8[7] - A.s8[6];
+	B.s16[4] = A.s8[9] - A.s8[8];
+	B.s16[5] = A.s8[11] - A.s8[10];
+	B.s16[6] = A.s8[13] - A.s8[12];
+	B.s16[7] = A.s8[15] - A.s8[14];
 
 	return B.i;
 }
