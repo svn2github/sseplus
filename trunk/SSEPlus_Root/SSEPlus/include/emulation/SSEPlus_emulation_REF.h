@@ -3176,6 +3176,268 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
 }
 
 //--------------------------------------
+// Packed rotates
+//--------------------------------------
+
+///** \SSE5{Reference,_mm_perm_epi8, pperm } */
+//SSP_FORCEINLINE __m128i ssp_perm_epi8_REF(__m128i a, __m128i b, __m128i c)
+//{
+//    return _mm_perm_epi8 (a, b, c);
+//}
+///** \SSE5{Reference,_mm_perm_ps,		 permps } */
+//SSP_FORCEINLINE __m128 ssp_perm_ps_REF(__m128 a, __m128 b, __m128i c)
+//{
+//    return _mm_perm_ps (a, b, c);
+//}
+///** \SSE5{Reference,_mm_perm_pd,		 permpd } */
+//SSP_FORCEINLINE __m128d ssp_perm_pd_REF(__m128d a, __m128d b, __m128i c)
+//{
+//    return _mm_perm_pd (a, b, c);
+//}
+
+/** \SSE5{Reference,_mm_rot_epi8,		 protb } */
+SSP_FORCEINLINE __m128i ssp_rot_epi8_REF(__m128i a, __m128i b  )
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 16; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s8[n]) % 8;
+        unsigned int carry_count = (8 - count) % 8;
+        ssp_u8 carry = A.u8[n] << carry_count;
+        A.u8[n] = A.u8[n] >> count;
+        A.u8[n] = A.u8[n] | carry;
+      }
+      else
+      {
+        unsigned int count = B.s8[n] % 8;
+        unsigned int carry_count = (8 - count) % 8;
+        ssp_u8 carry = A.u8[n] >> carry_count;
+        A.u8[n] = A.u8[n] << count;
+        A.u8[n] = A.u8[n] | carry;
+      }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_rot_epi16,	 protw } */
+SSP_FORCEINLINE __m128i ssp_rot_epi16_REF(__m128i a, __m128i b  )
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 8; n++ )
+    {
+      if( B.s16[n] < 0 )
+      {
+        unsigned int count = (-B.s16[n]) % 16;
+        unsigned int carry_count = (16 - count) % 16;
+        ssp_u16 carry = A.u16[n] << carry_count;
+        A.u16[n] = A.u16[n] >> count;
+        A.u16[n] = A.u16[n] | carry;
+      }
+      else
+      {
+        unsigned int count = B.s16[n] % 8;
+        unsigned int carry_count = (16 - count) % 16;
+        ssp_u16 carry = A.u16[n] >> carry_count;
+        A.u16[n] = A.u16[n] << count;
+        A.u16[n] = A.u16[n] | carry;
+      }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_rot_epi32,	 protd } */
+SSP_FORCEINLINE __m128i ssp_rot_epi32_REF(__m128i a, __m128i b  )
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 4; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s32[n]) % 32;
+        unsigned int carry_count = (32 - count) % 32;
+        ssp_u32 carry = A.u32[n] << carry_count;
+        A.u32[n] = A.u32[n] >> count;
+        A.u32[n] = A.u32[n] | carry;
+      }
+      else
+      {
+        unsigned int count = B.s32[n] % 32;
+        unsigned int carry_count = (32 - count) % 32;
+        ssp_u32 carry = A.u32[n] >> carry_count;
+        A.u32[n] = A.u32[n] << count;
+        A.u32[n] = A.u32[n] | carry;
+      }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_rot_epi64,	 protq } */
+SSP_FORCEINLINE __m128i ssp_rot_epi64_REF(__m128i a, __m128i b  )
+{
+    int n;
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+
+    for( n = 0; n < 2; n++ )
+    {
+      if( B.s8[n] < 0 )
+      {
+        unsigned int count = (-B.s64[n]) % 64;
+        unsigned int carry_count = (64 - count) % 64;
+        ssp_u64 carry = A.u64[n] << carry_count;
+        A.u64[n] = A.u64[n] >> count;
+        A.u64[n] = A.u64[n] | carry;
+      }
+      else
+      {
+        unsigned int count = B.s64[n] % 64;
+        unsigned int carry_count = (64 - count) % 64;
+        ssp_u64 carry = A.u64[n] >> carry_count;
+        A.u64[n] = A.u64[n] << count;
+        A.u64[n] = A.u64[n] | carry;
+      }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_roti_epi8, protb } */
+SSP_FORCEINLINE __m128i ssp_roti_epi8_REF(__m128i a, const int b)
+{
+    int n;
+    ssp_m128 A;
+    A.i = a;
+
+    if( b < 0 )
+    {
+        unsigned int count = (-b) % 8;
+        unsigned int carry_count = (8 - count) % 8;
+        for( n = 0; n < 16; n++ )
+        {
+            ssp_u8 carry = A.u8[n] << carry_count;
+            A.u8[n] = A.u8[n] >> count;
+            A.u8[n] = A.u8[n] | carry;
+        }
+    }
+    else
+    {
+        unsigned int count = b % 8;
+        unsigned int carry_count = (8 - count) % 8;
+        for( n = 0; n < 16; n++ )
+        {
+            ssp_u8 carry = A.u8[n] >> carry_count;
+            A.u8[n] = A.u8[n] << count;
+            A.u8[n] = A.u8[n] | carry;
+        }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_roti_epi16, protw } */
+SSP_FORCEINLINE __m128i ssp_roti_epi16_REF(__m128i a, const int b)
+{
+    int n;
+    ssp_m128 A;
+    A.i = a;
+
+    if( b < 0 )
+    {
+        unsigned int count = (-b) % 16;
+        unsigned int carry_count = (16 - count) % 16;
+        for( n = 0; n < 8; n++ )
+        {
+            ssp_u16 carry = A.u16[n] << carry_count;
+            A.u16[n] = A.u16[n] >> count;
+            A.u16[n] = A.u16[n] | carry;
+        }
+    }
+    else
+    {
+        unsigned int count = b % 16;
+        unsigned int carry_count = (16 - count) % 16;
+        for( n = 0; n < 8; n++ )
+        {
+            ssp_u16 carry = A.u16[n] >> carry_count;
+            A.u16[n] = A.u16[n] << count;
+            A.u16[n] = A.u16[n] | carry;
+        }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_roti_epi32, protd } */
+SSP_FORCEINLINE __m128i ssp_roti_epi32_REF(__m128i a, const int b)
+{
+    int n;
+    ssp_m128 A;
+    A.i = a;
+
+    if( b < 0 )
+    {
+        unsigned int count = (-b) % 32;
+        unsigned int carry_count = (32 - count) % 32;
+        for( n = 0; n < 4; n++ )
+        {
+            ssp_u32 carry = A.u32[n] << carry_count;
+            A.u32[n] = A.u32[n] >> count;
+            A.u32[n] = A.u32[n] | carry;
+        }
+    }
+    else
+    {
+        unsigned int count = b % 32;
+        unsigned int carry_count = (32 - count) % 32;
+        for( n = 0; n < 4; n++ )
+        {
+            ssp_u32 carry = A.u32[n] >> carry_count;
+            A.u32[n] = A.u32[n] << count;
+            A.u32[n] = A.u32[n] | carry;
+        }
+    }
+    return A.i;
+}
+/** \SSE5{Reference,_mm_roti_epi64, protq } */
+SSP_FORCEINLINE __m128i ssp_roti_epi64_REF(__m128i a, const int b)
+{
+    int n;
+    ssp_m128 A;
+    A.i = a;
+
+    if( b < 0 )
+    {
+        unsigned int count = (-b) % 64;
+        unsigned int carry_count = (64 - count) % 64;
+        for( n = 0; n < 2; n++ )
+        {
+            ssp_u64 carry = A.u64[n] << carry_count;
+            A.u64[n] = A.u64[n] >> count;
+            A.u64[n] = A.u64[n] | carry;
+        }
+    }
+    else
+    {
+        unsigned int count = b % 64;
+        unsigned int carry_count = (64 - count) % 64;
+        for( n = 0; n < 2; n++ )
+        {
+            ssp_u64 carry = A.u64[n] >> carry_count;
+            A.u64[n] = A.u64[n] << count;
+            A.u64[n] = A.u64[n] | carry;
+        }
+    }
+    return A.i;
+}
+
+
+//--------------------------------------
 // Packed Shift Logical (bytes, words, dwords, qwords)
 //--------------------------------------
 
