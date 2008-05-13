@@ -703,6 +703,23 @@ void SSE4_1_Tests( CSVTable & csv )
 
 void SSE5_Tests( CSVTable & csv )
 {
+	//Extract fraction
+	TEST_0(ssp_frcz_pd, ssp_f64, __m128d, __m128d)
+		vF64(0.123456789, -0.123456789),
+		vF64(10.123456789, -10.123456789));
+
+	TEST_0(ssp_frcz_ps, ssp_f32, __m128, __m128)
+		vF32(0.123456f, -0.123456f, 0.789f, -0.789f),
+		vF32(10.123456f, -10.123456f, 11.789f, -12.789f));
+
+	TEST_0(ssp_frcz_sd, ssp_f64, __m128d, __m128d)
+		vF64(10.123456789, -0.123456789),
+		vF64(10.123456789, -10.123456789));
+
+	TEST_0(ssp_frcz_ss, ssp_f32, __m128, __m128)
+		vF32(10.123456f, -10.123456f, 11.789f, -0.789f),
+		vF32(10.123456f, -10.123456f, 11.789f, -12.789f));
+
 	//Horizontal Add/Sub
 	TEST_0(ssp_haddd_epi16, ssp_s32, __m128i, __m128i)
 		vS32(300, -700, 32768, -32769),

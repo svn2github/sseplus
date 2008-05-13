@@ -246,6 +246,72 @@ SSP_FORCEINLINE __m128 ssp_comfalse_ps_REF(__m128 a, __m128 b)
 }
 
 //--------------------------------------
+// Extract Fraction
+//--------------------------------------
+/** \SSE5{Reference,_mm_frcz_pd_REF, frczpd  } */
+SSP_FORCEINLINE __m128d ssp_frcz_pd_REF(__m128d a)
+{
+	ssp_m128 A;
+	long long temp;
+
+	A.d = a;
+
+	temp = (long long) A.f64[0];
+	A.f64[0] -= temp;
+	temp = (long long) A.f64[1];
+	A.f64[1] -= temp;
+
+	return A.d;
+}
+
+/** \SSE5{Reference,_mm_frcz_ps_REF, frczps  } */
+SSP_FORCEINLINE __m128 ssp_frcz_ps_REF(__m128 a)
+{
+	ssp_m128 A;
+	int temp;
+	A.f = a;
+
+	temp = (int) A.f32[0];
+	A.f32[0] -= temp;
+	temp = (int) A.f32[1];
+	A.f32[1] -= temp;
+	temp = (int) A.f32[2];
+	A.f32[2] -= temp;
+	temp = (int) A.f32[3];
+	A.f32[3] -= temp;
+
+	return A.f;
+}
+
+/** \SSE5{Reference,_mm_frcz_sd_REF, frczsd  } */
+SSP_FORCEINLINE __m128d ssp_frcz_sd_REF(__m128d a)
+{
+	ssp_m128 A;
+	long long temp;
+
+	A.d = a;
+
+	temp = (long long) A.f64[0];
+	A.f64[0] -= temp;
+
+	return A.d;
+}
+
+/** \SSE5{Reference,_mm_frcz_ss_REF, frczss  } */
+SSP_FORCEINLINE __m128 ssp_frcz_ss_REF(__m128 a)
+{
+	ssp_m128 A;
+	int temp;
+	A.f = a;
+
+	temp = (int) A.f32[0];
+	A.f32[0] -= temp;
+
+	return A.f;
+}
+
+
+//--------------------------------------
 // Horizontal Add and Sub
 //--------------------------------------
 /** \SSE5{Reference,_mm_haddd_epi16, phaddwd  } */
