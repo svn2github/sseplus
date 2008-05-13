@@ -3294,7 +3294,7 @@ SSP_FORCEINLINE __m128i ssp_rot_epi64_REF(__m128i a, __m128i b  )
     {
       if( B.s8[n] < 0 )
       {
-        unsigned int count = (-B.s64[n]) % 64;
+        unsigned int count = (unsigned int)((-B.s64[n]) % 64);
         unsigned int carry_count = (64 - count) % 64;
         ssp_u64 carry = A.u64[n] << carry_count;
         A.u64[n] = A.u64[n] >> count;
@@ -3302,7 +3302,7 @@ SSP_FORCEINLINE __m128i ssp_rot_epi64_REF(__m128i a, __m128i b  )
       }
       else
       {
-        unsigned int count = B.s64[n] % 64;
+        unsigned int count = (unsigned int)(B.s64[n] % 64);
         unsigned int carry_count = (64 - count) % 64;
         ssp_u64 carry = A.u64[n] >> carry_count;
         A.u64[n] = A.u64[n] << count;
