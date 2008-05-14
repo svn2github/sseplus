@@ -75,6 +75,35 @@ SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_REF( __m128i a, __m128i b )
     return A.i;
 }
 
+/**
+  r_:= a_ << b; (logical left shift)
+*/
+SSP_FORCEINLINE __m128i ssp_slli_epi8_REF(__m128i a, const int b)
+{
+    int n;
+    ssp_m128 A;
+    A.i = a;
+    for( n = 0; n < 16; n++ )
+    {
+        A.u8[n] = A.u8[n] << b;
+    }
+    return A.i;
+}
+
+/**
+  r_:= a_ >> b; (logical right shift)
+*/
+SSP_FORCEINLINE __m128i ssp_srli_epi8_REF(__m128i a, const int b)
+{                                            //  a = VfVeVdVcVbVaV9V8V7V6V5V4V3V2V1V0
+    int n;
+    ssp_m128 A;
+    A.i = a;
+    for( n = 0; n < 16; n++ )
+    {
+        A.u8[n] = A.u8[n] >> b;
+    }
+    return A.i;
+}
 
 /** @} 
  *  @}

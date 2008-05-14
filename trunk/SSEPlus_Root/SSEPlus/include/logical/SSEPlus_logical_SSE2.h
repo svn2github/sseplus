@@ -115,6 +115,32 @@ __m128i ssp_logical_cmpgte_epi8( __m128i a, __m128i b )
 }
 
 
+/**
+  r_:= a_ << b; (logical left shift)
+*/
+SSP_FORCEINLINE __m128i ssp_slli_epi8_SSE2(__m128i a, const int b)
+{                                            //  a = VfVeVdVcVbVaV9V8V7V6V5V4V3V2V1V0
+    __m128i t1 = _mm_srli_epi16( a, 8 );     // t1 =   Vf  Vd  Vb  V9  V7  V5  V3  V1
+    __m128i t2 = _mm_slli_epi16( a, b + 8 ); // t2 = Re  Rc  Ra  R8  R6  R4  R2  R0
+    t1 = _mm_slli_epi16( t1, b + 8 );        // t1 = Rf  Rd  Rb  R9  R7  R5  R3  R1
+    t2 = _mm_srli_epi16( t1, 8 );            // t2 =   Re  Rc  Ra  R8  R6  R4  R2  R0
+    t1 = _mm_or_si128( t1, t2 );             // t1 = RfReRdRcRbRaR9R8R7R6R5R4R3R2R1R0
+    return t1;
+}
+
+/**
+  r_:= a_ >> b; (logical right shift)
+*/
+SSP_FORCEINLINE __m128i ssp_srli_epi8_SSE2(__m128i a, const int b)
+{                                            //  a = VfVeVdVcVbVaV9V8V7V6V5V4V3V2V1V0
+    __m128i t1 = _mm_slli_epi16( a, 8 );     // t1 = Ve  Vc  Va  V8  V6  V4  V2  V0
+    __m128i t2 = _mm_srli_epi16( a, b + 8 ); // t2 =   Rf  Rd  Rb  R9  R7  R5  R3  R1
+    t1 = _mm_srli_epi16( t1, b + 8 );        // t1 =   Re  Rc  Ra  R8  R6  R4  R2  R0
+    t2 = _mm_slli_epi16( t1, 8 );            // t2 = Rf  Rd  Rb  R9  R7  R5  R3  R1
+    t1 = _mm_or_si128( t1, t2 );             // t1 = RfReRdRcRbRaR9R8R7R6R5R4R3R2R1R0
+    return t1;
+}
+
 /** @} 
  *  @}
  */
