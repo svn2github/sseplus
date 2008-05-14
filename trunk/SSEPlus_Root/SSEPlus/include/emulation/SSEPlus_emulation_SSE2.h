@@ -1813,94 +1813,76 @@ SSP_FORCEINLINE __m128i ssp_roti_epi8_SSE2(__m128i a, const int b)
 /** \SSE5{SSE2,_mm_roti_epi16, protw } */
 SSP_FORCEINLINE __m128i ssp_roti_epi16_SSE2(__m128i a, const int b)
 {
-    int n;
     ssp_m128 A;
     A.i = a;
 
     if( b < 0 )
     {
-        unsigned int count = (-b) % 16;
-        unsigned int carry_count = (16 - count) % 16;
-        for( n = 0; n < 8; n++ )
-        {
-            ssp_u16 carry = A.u16[n] << carry_count;
-            A.u16[n] = A.u16[n] >> count;
-            A.u16[n] = A.u16[n] | carry;
-        }
+        const unsigned int count = (-b) % 16;
+        const unsigned int carry_count = (16 - count) % 16;
+        __m128i t = _mm_slli_epi16( A.i, carry_count );
+        A.i = _mm_srli_epi16( A.i, count );
+        A.i = _mm_or_si128( A.i, t );
     }
     else
     {
-        unsigned int count = b % 16;
-        unsigned int carry_count = (16 - count) % 16;
-        for( n = 0; n < 8; n++ )
-        {
-            ssp_u16 carry = A.u16[n] >> carry_count;
-            A.u16[n] = A.u16[n] << count;
-            A.u16[n] = A.u16[n] | carry;
-        }
+        const unsigned int count = b % 16;
+        const unsigned int carry_count = (16 - count) % 16;
+        __m128i t = _mm_srli_epi16( A.i, carry_count );
+        A.i = _mm_slli_epi16( A.i, count );
+        A.i = _mm_or_si128( A.i, t );
     }
+
     return A.i;
 }
 /** \SSE5{SSE2,_mm_roti_epi32, protd } */
 SSP_FORCEINLINE __m128i ssp_roti_epi32_SSE2(__m128i a, const int b)
 {
-    int n;
     ssp_m128 A;
     A.i = a;
 
     if( b < 0 )
     {
-        unsigned int count = (-b) % 32;
-        unsigned int carry_count = (32 - count) % 32;
-        for( n = 0; n < 4; n++ )
-        {
-            ssp_u32 carry = A.u32[n] << carry_count;
-            A.u32[n] = A.u32[n] >> count;
-            A.u32[n] = A.u32[n] | carry;
-        }
+        const unsigned int count = (-b) % 32;
+        const unsigned int carry_count = (32 - count) % 32;
+        __m128i t = _mm_slli_epi32( A.i, carry_count );
+        A.i = _mm_srli_epi32( A.i, count );
+        A.i = _mm_or_si128( A.i, t );
     }
     else
     {
-        unsigned int count = b % 32;
-        unsigned int carry_count = (32 - count) % 32;
-        for( n = 0; n < 4; n++ )
-        {
-            ssp_u32 carry = A.u32[n] >> carry_count;
-            A.u32[n] = A.u32[n] << count;
-            A.u32[n] = A.u32[n] | carry;
-        }
+        const unsigned int count = b % 32;
+        const unsigned int carry_count = (32 - count) % 32;
+        __m128i t = _mm_srli_epi32( A.i, carry_count );
+        A.i = _mm_slli_epi32( A.i, count );
+        A.i = _mm_or_si128( A.i, t );
     }
+
     return A.i;
 }
 /** \SSE5{SSE2,_mm_roti_epi64, protq } */
 SSP_FORCEINLINE __m128i ssp_roti_epi64_SSE2(__m128i a, const int b)
 {
-    int n;
     ssp_m128 A;
     A.i = a;
 
     if( b < 0 )
     {
-        unsigned int count = (-b) % 64;
-        unsigned int carry_count = (64 - count) % 64;
-        for( n = 0; n < 2; n++ )
-        {
-            ssp_u64 carry = A.u64[n] << carry_count;
-            A.u64[n] = A.u64[n] >> count;
-            A.u64[n] = A.u64[n] | carry;
-        }
+        const unsigned int count = (-b) % 64;
+        const unsigned int carry_count = (64 - count) % 64;
+        __m128i t = _mm_slli_epi64( A.i, carry_count );
+        A.i = _mm_srli_epi64( A.i, count );
+        A.i = _mm_or_si128( A.i, t );
     }
     else
     {
-        unsigned int count = b % 64;
-        unsigned int carry_count = (64 - count) % 64;
-        for( n = 0; n < 2; n++ )
-        {
-            ssp_u64 carry = A.u64[n] >> carry_count;
-            A.u64[n] = A.u64[n] << count;
-            A.u64[n] = A.u64[n] | carry;
-        }
+        const unsigned int count = b % 64;
+        const unsigned int carry_count = (64 - count) % 64;
+        __m128i t = _mm_srli_epi64( A.i, carry_count );
+        A.i = _mm_slli_epi64( A.i, count );
+        A.i = _mm_or_si128( A.i, t );
     }
+
     return A.i;
 }
 
