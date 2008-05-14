@@ -132,6 +132,9 @@ namespace p
     template< typename T >
     bool Equal_f64( T value, T expected ) // Floating point compare
     {
+        if( !memcmp(&value, &expected, sizeof(T)) )
+            return true;     
+
         ssp_m128 V, E;
         V.d = *((__m128d*)&value    );   
         E.d = *((__m128d*)&expected ); 
@@ -149,7 +152,10 @@ namespace p
                 if( (V.f64[i] > E.f64[i] * (1.0-SSP_F64_ALLOWANCE)) 
                  || (V.f64[i] < E.f64[i] * (1.0+SSP_F64_ALLOWANCE)) ) return false;
 
-            }          
+            }    
+			
+			if(  V.f64[i] != V.f64[i] ) return false; //NAN
+            if(  E.f64[i] != E.f64[i] ) return false; //NAN
         }
         return true;
     }

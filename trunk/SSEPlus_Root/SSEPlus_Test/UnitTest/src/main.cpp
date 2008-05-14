@@ -1069,6 +1069,136 @@ void SSE5_Tests( CSVTable & csv )
         vS64(    1,   -1 ));
 
     // Comparison
+    TEST_0( ssp_comeq_epi16, ssp_u16, __m128i, __m128i, __m128i )
+            vU16( 0xFFFF, 0, 0xFFFF, 0, 0, 0, 0, 0),
+            vS16( -1234, 1111, 0, 124, 125, -124, -125, 100 ),
+            vS16( -1234, 2222, 0, 0,   123, -123, -100, -100 ));
+
+	TEST_0( ssp_comeq_epi32, ssp_u32, __m128i, __m128i, __m128i )
+            vU32( 0xFFFFFFFF, 0, 0xFFFFFFFF, 0),
+            vS32( -12345, 11, 0, 124678),
+            vS32( -12345, 22, 0,     0));
+
+	TEST_0( ssp_comeq_epi64, ssp_u64, __m128i, __m128i, __m128i )
+            vU64( 0xFFFFFFFFFFFFFFFF, 0),
+            vS64( -1234578901ll, 11),
+            vS64( -1234578901ll, 22));
+
+    TEST_0( ssp_comeq_epi8, ssp_u8, __m128i, __m128i, __m128i )
+            vU8( 0xFF, 0, 0xFF, 0, 0, 0, 0, 0, 0xFF, 0, 0xFF, 0, 0, 0, 0, 0),
+            vS8( -1, 11, 0, 124, 125, -124, -125,  100, 11, -11, 10, -124, -125, 124, 125, -100 ),
+            vS8( -1, 22, 0,   0, 123, -123, -100, -100, 11, -22, 10,    0, -123, 123, 100,  100 ));
+
+    TEST_0( ssp_comeq_epu16, ssp_u16, __m128i, __m128i, __m128i )
+            vU16( 0xFFFF, 0, 0xFFFF, 0, 0, 0, 0, 0xFFFF),
+            vU16( 1234, 1111, 0, 124, 125, 124, 125, 100 ),
+            vU16( 1234, 2222, 0, 0,   123, 123, 100, 100 ));
+
+	TEST_0( ssp_comeq_epu32, ssp_u32, __m128i, __m128i, __m128i )
+            vU32( 0xFFFFFFFF, 0, 0xFFFFFFFF, 0),
+            vU32( 12345, 11, 0, 124678),
+            vU32( 12345, 22, 0,     0));
+
+	TEST_0( ssp_comeq_epu64, ssp_u64, __m128i, __m128i, __m128i )
+            vU64( 0xFFFFFFFFFFFFFFFF, 0),
+            vU64( 1234578901ll, 11),
+            vU64( 1234578901ll, 22));
+
+    TEST_0( ssp_comeq_epu8, ssp_u8, __m128i, __m128i, __m128i )
+            vU8( 0xFF, 0, 0xFF, 0, 0, 0, 0, 0xFF, 0xFF, 0, 0xFF, 0, 0, 0, 0, 0xFF),
+            vU8( 1, 11, 0, 124, 125, 124, 125, 100, 11, 11, 10, 124, 125, 124, 125, 100 ),
+            vU8( 1, 22, 0,   0, 123, 123, 100, 100, 11, 22, 10,   0, 123, 123, 100, 100 ));
+
+	//for double precision comparison
+	{
+        long long   tmp    = 0xFFFFFFFFFFFFFFFF;
+        double allD = *(double*)&tmp;
+
+        tmp = 0x7FF8000100000000;
+        double nan = *(double*)&tmp;
+
+        TEST_0( ssp_comeq_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(    allD,  0  ),
+            vF64( -1.123456789,  nan ),
+            vF64( -1.123456789,  nan ));
+
+        TEST_0( ssp_comlt_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       0,    0 ),
+            vF64( -1.1234567, nan  ),
+            vF64( -1.1234567, 1.0  ));
+
+        TEST_0( ssp_comle_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(   allD,   0 ),
+            vF64( -1.12345678, nan ),
+            vF64( -1.12345678, nan ));
+
+        TEST_0( ssp_comunord_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       0,   allD ),
+            vF64( -1.123456,  nan ),
+            vF64( -1.123789, 1.123 ));
+        
+        TEST_0( ssp_comneq_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       0,   allD ),
+            vF64( -1.123456789, nan),
+            vF64( -1.123456789, 1.123456789));
+
+        TEST_0( ssp_comge_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(    0,      allD ),
+            vF64( 1.123456,  1.0123 ),
+            vF64( 1.223456,  nan ));
+
+        TEST_0( ssp_comnle_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       0,     allD ),
+            vF64( -1.123456,  1.123123 ),
+            vF64( -1.123456,    nan ));
+
+        TEST_0( ssp_comord_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(    allD,      0 ),
+            vF64( -1.1234567, nan ),
+            vF64( -1.1234567, nan ));
+
+        TEST_0( ssp_comueq_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(      allD,   allD ),
+            vF64( -1.123456,    nan ),
+            vF64( -1.123456, -1.122 ));
+
+        TEST_0( ssp_comnge_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       0,   allD ),
+            vF64( -1.123456, nan ),
+            vF64( -1.123456,   0 ));       
+
+         TEST_0( ssp_comngt_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(   allD,  allD ),
+            vF64( -1.123456, 1.0 ),
+            vF64( -1.123456, 1.0 ));
+
+         TEST_0( ssp_comfalse_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       0,   0   ),
+            vF64( -11.1234,  nan ),
+            vF64( -1.12356,  0   ));
+
+         TEST_0( ssp_comoneq_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(allD,    0),
+            vF64(1.02345678, 1.0),
+            vF64(1.12345678, nan));       
+
+        TEST_0( ssp_comnlt_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64( allD,       0 ),
+            vF64( 1.1234567, nan ),
+            vF64( 1.0234567, 1.0 )); 
+
+        TEST_0( ssp_comgt_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(    allD,      0 ),
+            vF64( -1.121456,  nan ),
+            vF64( -1.123456,  1.0 )); 
+
+        TEST_0( ssp_comtrue_pd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64(       allD,  allD ),
+            vF64( -1.12378901, nan  ),
+            vF64( -1.12345678,   0  ));
+    }
+
+	//for single precision comparison
     {
         int   tmp    = 0xFFFFFFFF;
         float allF = *(float*)&tmp;
