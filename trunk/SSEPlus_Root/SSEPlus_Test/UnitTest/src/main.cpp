@@ -1109,6 +1109,86 @@ void SSE5_Tests( CSVTable & csv )
             vU8( 1, 11, 0, 124, 125, 124, 125, 100, 11, 11, 10, 124, 125, 124, 125, 100 ),
             vU8( 1, 22, 0,   0, 123, 123, 100, 100, 11, 22, 10,   0, 123, 123, 100, 100 ));
 
+	TEST_02( ssp_comfalse_epi16, ssp_u16, __m128i, __m128i, __m128i )
+            vU16( 0, 0, 0, 0, 0, 0, 0, 0),
+            vS16( -1234, 1111, 0, 124, 125, -124, -125, 100 ),
+            vS16( -1234, 2222, 0, 0,   123, -123, -100, -100 ));
+
+	TEST_02( ssp_comfalse_epi32, ssp_u32, __m128i, __m128i, __m128i )
+            vU32( 0, 0, 0, 0),
+            vS32( -12345, 11, 0, 124678),
+            vS32( -12345, 22, 0,     0));
+
+	TEST_02( ssp_comfalse_epi64, ssp_u64, __m128i, __m128i, __m128i )
+            vU64( 0, 0),
+            vS64( -1234578901ll, 11),
+            vS64( -1234578901ll, 22));
+
+    TEST_02( ssp_comfalse_epi8, ssp_u8, __m128i, __m128i, __m128i )
+            vU8( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            vS8( -1, 11, 0, 124, 125, -124, -125,  100, 11, -11, 10, -124, -125, 124, 125, -100 ),
+            vS8( -1, 22, 0,   0, 123, -123, -100, -100, 11, -22, 10,    0, -123, 123, 100,  100 ));
+
+    TEST_02( ssp_comfalse_epu16, ssp_u16, __m128i, __m128i, __m128i )
+            vU16( 0, 0, 0, 0, 0, 0, 0, 0),
+            vU16( 1234, 1111, 0, 124, 125, 124, 125, 100 ),
+            vU16( 1234, 2222, 0, 0,   123, 123, 100, 100 ));
+
+	TEST_02( ssp_comfalse_epu32, ssp_u32, __m128i, __m128i, __m128i )
+            vU32( 0, 0, 0, 0),
+            vU32( 12345, 11, 0, 124678),
+            vU32( 12345, 22, 0,     0));
+
+	TEST_02( ssp_comfalse_epu64, ssp_u64, __m128i, __m128i, __m128i )
+            vU64( 0, 0),
+            vU64( 1234578901ll, 11),
+            vU64( 1234578901ll, 22));
+
+    TEST_02( ssp_comfalse_epu8, ssp_u8, __m128i, __m128i, __m128i )
+            vU8( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            vU8( 1, 11, 0, 124, 125, 124, 125, 100, 11, 11, 10, 124, 125, 124, 125, 100 ),
+            vU8( 1, 22, 0,   0, 123, 123, 100, 100, 11, 22, 10,   0, 123, 123, 100, 100 ));
+
+	TEST_02( ssp_comtrue_epi16, ssp_u16, __m128i, __m128i, __m128i )
+            vU16( 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff),
+            vS16( -1234, 1111, 0, 124, 125, -124, -125, 100 ),
+            vS16( -1234, 2222, 0, 0,   123, -123, -100, -100 ));
+
+	TEST_02( ssp_comtrue_epi32, ssp_u32, __m128i, __m128i, __m128i )
+            vU32( 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff),
+            vS32( -12345, 11, 0, 124678),
+            vS32( -12345, 22, 0,     0));
+
+	TEST_02( ssp_comtrue_epi64, ssp_u64, __m128i, __m128i, __m128i )
+            vU64( 0xffffffffffffffff, 0xffffffffffffffff),
+            vS64( -1234578901ll, 11),
+            vS64( -1234578901ll, 22));
+
+    TEST_02( ssp_comtrue_epi8, ssp_u8, __m128i, __m128i, __m128i )
+            vU8( 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff),
+            vS8( -1, 11, 0, 124, 125, -124, -125,  100, 11, -11, 10, -124, -125, 124, 125, -100 ),
+            vS8( -1, 22, 0,   0, 123, -123, -100, -100, 11, -22, 10,    0, -123, 123, 100,  100 ));
+
+    TEST_02( ssp_comtrue_epu16, ssp_u16, __m128i, __m128i, __m128i )
+            vU16( 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff),
+            vU16( 1234, 1111, 0, 124, 125, 124, 125, 100 ),
+            vU16( 1234, 2222, 0, 0,   123, 123, 100, 100 ));
+
+	TEST_02( ssp_comtrue_epu32, ssp_u32, __m128i, __m128i, __m128i )
+            vU32( 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff),
+            vU32( 12345, 11, 0, 124678),
+            vU32( 12345, 22, 0,     0));
+
+	TEST_02( ssp_comtrue_epu64, ssp_u64, __m128i, __m128i, __m128i )
+            vU64( 0xffffffffffffffff, 0xffffffffffffffff),
+            vU64( 1234578901ll, 11),
+            vU64( 1234578901ll, 22));
+
+    TEST_02( ssp_comtrue_epu8, ssp_u8, __m128i, __m128i, __m128i )
+            vU8( 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff),
+            vU8( 1, 11, 0, 124, 125, 124, 125, 100, 11, 11, 10, 124, 125, 124, 125, 100 ),
+            vU8( 1, 22, 0,   0, 123, 123, 100, 100, 11, 22, 10,   0, 123, 123, 100, 100 ));
+
 	//for double precision comparison
 	{
         long long   tmp    = 0xFFFFFFFFFFFFFFFF;
@@ -1121,6 +1201,11 @@ void SSE5_Tests( CSVTable & csv )
             vF64(    allD,  0  ),
             vF64( -1.123456789,  nan ),
             vF64( -1.123456789,  nan ));
+        
+		TEST_0( ssp_comeq_sd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64( 0.12345,   allD  ),
+            vF64( 0.12345, -1.123456789),
+            vF64( nan,     -1.123456789));
 
         TEST_0( ssp_comlt_pd, ssp_f64, __m128d, __m128d, __m128d )
             vF64(       0,    0 ),
@@ -1172,8 +1257,13 @@ void SSE5_Tests( CSVTable & csv )
             vF64( -1.123456, 1.0 ),
             vF64( -1.123456, 1.0 ));
 
-         TEST_0( ssp_comfalse_pd, ssp_f64, __m128d, __m128d, __m128d )
+         TEST_02( ssp_comfalse_pd, ssp_f64, __m128d, __m128d, __m128d )
             vF64(       0,   0   ),
+            vF64( -11.1234,  nan ),
+            vF64( -1.12356,  0   ));
+
+		 TEST_02( ssp_comfalse_sd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64( -11.1234,   0   ),
             vF64( -11.1234,  nan ),
             vF64( -1.12356,  0   ));
 
@@ -1192,8 +1282,13 @@ void SSE5_Tests( CSVTable & csv )
             vF64( -1.121456,  nan ),
             vF64( -1.123456,  1.0 )); 
 
-        TEST_0( ssp_comtrue_pd, ssp_f64, __m128d, __m128d, __m128d )
+        TEST_02( ssp_comtrue_pd, ssp_f64, __m128d, __m128d, __m128d )
             vF64(       allD,  allD ),
+            vF64( -1.12378901, nan  ),
+            vF64( -1.12345678,   0  ));
+
+        TEST_02( ssp_comtrue_sd, ssp_f64, __m128d, __m128d, __m128d )
+            vF64( -1.12378901, allD ),
             vF64( -1.12378901, nan  ),
             vF64( -1.12345678,   0  ));
     }
@@ -1211,6 +1306,11 @@ void SSE5_Tests( CSVTable & csv )
             vF32(    allF,      0,    0,  0  ),
             vF32( -1.123f, 1.123f, 0.0f, nan ),
             vF32( -1.123f, 1.124f, nan , nan ));
+ 
+		TEST_0( ssp_comeq_ss, ssp_f32, __m128, __m128, __m128 )
+            vF32( -1.123f, 1.123f, 0.0f,  allF  ),
+            vF32( -1.123f, 1.123f, 0.0f, -1.123f ),
+            vF32( -1.123f, 1.124f, nan , -1.123f ));
 
         TEST_0( ssp_comlt_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(       0, allF,    0,      0  ),
@@ -1262,9 +1362,14 @@ void SSE5_Tests( CSVTable & csv )
             vF32( -1.123f, 1.124f, 0.0f,  nan ),
             vF32( -1.123f, 1.123f,  nan, 1.0f ));
 
-         TEST_0( ssp_comfalse_ps, ssp_f32, __m128, __m128, __m128 )
+         TEST_02( ssp_comfalse_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(       0,    0,   0, 0   ),
             vF32( -1.123f, 1.0f,   0, nan ),
+            vF32( -1.123f, 1.1f, nan, 0   ));
+
+		 TEST_02( ssp_comfalse_ss, ssp_f32, __m128, __m128, __m128 )
+            vF32( -1.123f, 1.0f,  nan, 0   ),
+            vF32( -1.123f, 1.0f,  nan, 100.1f ),
             vF32( -1.123f, 1.1f, nan, 0   ));
 
          TEST_0( ssp_comoneq_ps, ssp_f32, __m128, __m128, __m128 )
@@ -1282,8 +1387,13 @@ void SSE5_Tests( CSVTable & csv )
             vF32( -1.121f, 1.121f, 1.0f,  nan ),
             vF32( -1.123f, 1.123f,  nan, 1.0f )); 
 
-        TEST_0( ssp_comtrue_ps, ssp_f32, __m128, __m128, __m128 )
+        TEST_02( ssp_comtrue_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(    allF, allF,allF, allF ),
+            vF32( -1.123f, 1.0f,   0, nan  ),
+            vF32( -1.123f, 1.1f, nan,   0  ));
+
+        TEST_02( ssp_comtrue_ss, ssp_f32, __m128, __m128, __m128 )
+            vF32( -1.123f, 1.0f,   0, allF ),
             vF32( -1.123f, 1.0f,   0, nan  ),
             vF32( -1.123f, 1.1f, nan,   0  ));
     }

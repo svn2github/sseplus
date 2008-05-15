@@ -193,6 +193,28 @@ SSP_FORCEINLINE __m128 ssp_comeq_ps_REF(__m128 a, __m128 b)
     return A.f;
 }
 
+/** \SSE5{Reference,_mm_comeq_sd, comsd }*/
+SSP_FORCEINLINE __m128d ssp_comeq_sd_REF(__m128d a, __m128d b)
+{
+    ssp_m128 A,B;
+    A.d = a;
+    B.d = b;
+    A.u64[0] = (A.f64[0]==B.f64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
+
+    return A.d;
+}
+
+/** \SSE5{Reference,_mm_comeq_ss, comss } */
+SSP_FORCEINLINE __m128 ssp_comeq_ss_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A,B;
+    A.f = a;
+    B.f = b;
+    A.u32[0] = (A.f32[0]==B.f32[0]) ? 0xFFFFFFFF : 0;
+
+    return A.f;
+}
+
 /** \SSE5{Reference,_mm_comneq_pd, compd } */
 SSP_FORCEINLINE __m128d ssp_comneq_pd_REF(__m128d a, __m128d b)
 {
@@ -541,27 +563,191 @@ SSP_FORCEINLINE __m128 ssp_comunord_ps_REF(__m128 a, __m128 b)
 //
 // COM*(TRUE/FALSE)*
 //
+/** \SSE5{Reference,_mm_comtrue_epi16, pcomw } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epi16_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+
+    A.u16[0] = 0xffff;
+    A.u16[1] = 0xffff;
+    A.u16[2] = 0xffff;
+    A.u16[3] = 0xffff;
+    A.u16[4] = 0xffff;
+    A.u16[5] = 0xffff;
+    A.u16[6] = 0xffff;
+    A.u16[7] = 0xffff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epi32, pcomd } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epi32_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+
+    A.u32[0] = 0xffffffff;
+    A.u32[1] = 0xffffffff;
+    A.u32[2] = 0xffffffff;
+    A.u32[3] = 0xffffffff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epi64, pcomq } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epi64_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u64[0] = 0xffffffffffffffff;
+    A.u64[1] = 0xffffffffffffffff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epi8, pcomb } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epi8_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u8[0] = 0xff;
+    A.u8[1] = 0xff;
+    A.u8[2] = 0xff;
+    A.u8[3] = 0xff;
+    A.u8[4] = 0xff;
+    A.u8[5] = 0xff;
+    A.u8[6] = 0xff;
+    A.u8[7] = 0xff; 
+	A.u8[8] = 0xff;
+    A.u8[9] = 0xff;
+    A.u8[10] = 0xff;
+    A.u8[11] = 0xff;
+    A.u8[12] = 0xff;
+    A.u8[13] = 0xff;
+    A.u8[14] = 0xff;
+    A.u8[15] = 0xff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epu16, pcomw } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epu16_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+
+    A.u16[0] = 0xffff;
+    A.u16[1] = 0xffff;
+    A.u16[2] = 0xffff;
+    A.u16[3] = 0xffff;
+    A.u16[4] = 0xffff;
+    A.u16[5] = 0xffff;
+    A.u16[6] = 0xffff;
+    A.u16[7] = 0xffff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epu32, pcomd } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epu32_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+
+    A.u32[0] = 0xffffffff;
+    A.u32[1] = 0xffffffff;
+    A.u32[2] = 0xffffffff;
+    A.u32[3] = 0xffffffff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epu64, pcomq } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epu64_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u64[0] = 0xffffffffffffffff;
+    A.u64[1] = 0xffffffffffffffff;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comtrue_epu8, pcomb } */
+SSP_FORCEINLINE __m128i ssp_comtrue_epu8_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u8[0] = 0xff;
+    A.u8[1] = 0xff;
+    A.u8[2] = 0xff;
+    A.u8[3] = 0xff;
+    A.u8[4] = 0xff;
+    A.u8[5] = 0xff;
+    A.u8[6] = 0xff;
+    A.u8[7] = 0xff; 
+	A.u8[8] = 0xff;
+    A.u8[9] = 0xff;
+    A.u8[10] = 0xff;
+    A.u8[11] = 0xff;
+    A.u8[12] = 0xff;
+    A.u8[13] = 0xff;
+    A.u8[14] = 0xff;
+    A.u8[15] = 0xff;
+
+	return A.i;
+}
+
 /** \SSE5{Reference,_mm_comtrue_pd, compd } */
 SSP_FORCEINLINE __m128d ssp_comtrue_pd_REF(__m128d a, __m128d b)
 {   
-    ssp_m128 A,B;
+    ssp_m128 A;
     A.d = a;
-    B.d = b;
+
     A.u64[0] = 0xFFFFFFFFFFFFFFFF;
     A.u64[1] = 0xFFFFFFFFFFFFFFFF;
-    return A.d;
+
+	return A.d;
 }
 
 /** \SSE5{Reference,_mm_comtrue_ps, comps } */
 SSP_FORCEINLINE __m128 ssp_comtrue_ps_REF(__m128 a, __m128 b)
 {   
-    ssp_m128 A,B;
+    ssp_m128 A;
     A.f = a;
-    B.f = b;
+
     A.u32[0] = 0xFFFFFFFF;
     A.u32[1] = 0xFFFFFFFF;
     A.u32[2] = 0xFFFFFFFF;
     A.u32[3] = 0xFFFFFFFF;
+
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comtrue_sd, comsd } */
+SSP_FORCEINLINE __m128d ssp_comtrue_sd_REF(__m128d a, __m128d b)
+{   
+    ssp_m128 A;
+    A.d = a;
+
+    A.u64[0] = 0xFFFFFFFFFFFFFFFF;
+
+    return A.d;
+}
+
+/** \SSE5{Reference,_mm_comtrue_ss, comss } */
+SSP_FORCEINLINE __m128 ssp_comtrue_ss_REF(__m128 a, __m128 b)
+{   
+    ssp_m128 A;
+    A.f = a;
+
+    A.u32[0] = 0xFFFFFFFF;
+
     return A.f;
 }
 
@@ -586,6 +772,168 @@ SSP_FORCEINLINE __m128 ssp_comfalse_ps_REF(__m128 a, __m128 b)
     A.u32[1] = 0;
     A.u32[2] = 0;
     A.u32[3] = 0;
+    return A.f;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epi16, pcomw } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epi16_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+
+    A.u16[0] = 0;
+    A.u16[1] = 0;
+    A.u16[2] = 0;
+    A.u16[3] = 0;
+    A.u16[4] = 0;
+    A.u16[5] = 0;
+    A.u16[6] = 0;
+    A.u16[7] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epi32, pcomd } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epi32_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+
+    A.u32[0] = 0;
+    A.u32[1] = 0;
+    A.u32[2] = 0;
+    A.u32[3] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epi64, pcomq } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epi64_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u64[0] = 0;
+    A.u64[1] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epi8, pcomb } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epi8_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u8[0] = 0;
+    A.u8[1] = 0;
+    A.u8[2] = 0;
+    A.u8[3] = 0;
+    A.u8[4] = 0;
+    A.u8[5] = 0;
+    A.u8[6] = 0;
+    A.u8[7] = 0; 
+	A.u8[8] = 0;
+    A.u8[9] = 0;
+    A.u8[10] = 0;
+    A.u8[11] = 0;
+    A.u8[12] = 0;
+    A.u8[13] = 0;
+    A.u8[14] = 0;
+    A.u8[15] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epu16, pcomuw } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epu16_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u16[0] = 0;
+    A.u16[1] = 0;
+    A.u16[2] = 0;
+    A.u16[3] = 0;
+    A.u16[4] = 0;
+    A.u16[5] = 0;
+    A.u16[6] = 0;
+    A.u16[7] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epu32, pcomud } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epu32_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u32[0] = 0;
+    A.u32[1] = 0;
+    A.u32[2] = 0;
+    A.u32[3] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epu64, pcomuq } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epu64_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u64[0] = 0;
+    A.u64[1] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_epu8, pcomub } */
+SSP_FORCEINLINE __m128i ssp_comfalse_epu8_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A;
+    A.i = a;
+    
+    A.u8[0] = 0;
+    A.u8[1] = 0;
+    A.u8[2] = 0;
+    A.u8[3] = 0;
+    A.u8[4] = 0;
+    A.u8[5] = 0;
+    A.u8[6] = 0;
+    A.u8[7] = 0; 
+	A.u8[8] = 0;
+    A.u8[9] = 0;
+    A.u8[10] = 0;
+    A.u8[11] = 0;
+    A.u8[12] = 0;
+    A.u8[13] = 0;
+    A.u8[14] = 0;
+    A.u8[15] = 0;
+
+	return A.i;
+}
+
+/** \SSE5{Reference,_mm_comfalse_sd, comsd } */
+SSP_FORCEINLINE __m128d ssp_comfalse_sd_REF(__m128d a, __m128d b)
+{
+    ssp_m128 A;
+    A.d = a;
+
+    A.u64[0] = 0;
+
+    return A.d;
+}
+
+/** \SSE5{Reference,_mm_comfalse_ss, comss } */
+SSP_FORCEINLINE __m128 ssp_comfalse_ss_REF(__m128 a, __m128 b)
+{
+    ssp_m128 A;
+    A.f = a;
+
+    A.u32[0] = 0;
+
     return A.f;
 }
 
