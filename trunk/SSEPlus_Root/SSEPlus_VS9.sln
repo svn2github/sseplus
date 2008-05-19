@@ -50,6 +50,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "native", "native", "{BAE065
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "emulation", "emulation", "{0EB3243B-2182-4D58-ABBA-00A03A5F0E4C}"
 	ProjectSection(SolutionItems) = preProject
+		SSEPlus\include\emulation\SSEPlus_emulation_comps_REF.h = SSEPlus\include\emulation\SSEPlus_emulation_comps_REF.h
+		SSEPlus\include\emulation\SSEPlus_emulation_comps_SSE2.h = SSEPlus\include\emulation\SSEPlus_emulation_comps_SSE2.h
 		SSEPlus\include\emulation\SSEPlus_emulation_REF.h = SSEPlus\include\emulation\SSEPlus_emulation_REF.h
 		SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h
 		SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h

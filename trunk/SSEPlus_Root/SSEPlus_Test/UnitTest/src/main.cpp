@@ -8,10 +8,11 @@
 #include "../../../SSEPlus/include/SSEPlus.h"
 
 // Decoder Table
-// 1 - REF      2 - SSE2
-// 3 - SSE3     4 - SSSE3
-// 5 - SSE4a    6 - SSE4.1
-// 7 - SSE4.2   8 - SSE5
+// 0 - REF      1 - SSE
+// 2 - SSE2     3 - SSE3     
+// 4 - SSSE3    5 - SSE4a    
+// 6 - SSE4.1   7 - SSE4.2
+// 8 - SSE5
 //                                         0:REF        1:SSE        2:SSE2       3:SSE3       4:SSSE3      5:SSE4a      6:SSE4.1     7:SSE4.2     8:SSE5     
 #define TEST_0(   f,t,...)Test<__VA_ARGS__,1,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   0,f##_REF,   enum_##t >( csv[#f], #f, 
 #define TEST_1(   f,t,...)Test<__VA_ARGS__,0,f##_SSE,   1,f##_SSE,   0,f##_SSE ,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  0,f##_SSE2,  enum_##t >( csv[#f], #f, 
@@ -1397,7 +1398,7 @@ void SSE5_Tests( CSVTable & csv )
         tmp = 0x7FF8000100000000;
         double nan = *(double*)&tmp;
 
-        TEST_0( ssp_comeq_pd, ssp_f64, __m128d, __m128d, __m128d )
+        TEST_02( ssp_comeq_pd, ssp_f64, __m128d, __m128d, __m128d )
             vF64(    allD,  0  ),
             vF64( -1.123456789,  nan ),
             vF64( -1.123456789,  nan ));
@@ -1437,7 +1438,7 @@ void SSE5_Tests( CSVTable & csv )
             vF64( -1.123456,  nan ),
             vF64( -1.123789, 1.123 ));
          
-        TEST_0( ssp_comneq_pd, ssp_f64, __m128d, __m128d, __m128d )
+        TEST_02( ssp_comneq_pd, ssp_f64, __m128d, __m128d, __m128d )
             vF64(       0,   allD ),
             vF64( -1.123456789, nan),
             vF64( -1.123456789, 1.123456789));
@@ -1565,19 +1566,21 @@ void SSE5_Tests( CSVTable & csv )
 
         tmp = 0x7F800001;
         float nan = *(float*)&tmp;
-    
 
-        TEST_0( ssp_comeq_ps, ssp_f32, __m128, __m128, __m128 )
-            vF32(    allF,      0,    0,  0  ),
-            vF32( -1.123f, 1.123f, 0.0f, nan ),
-            vF32( -1.123f, 1.124f, nan , nan ));
+        tmp = tmp = 0x7F800000;
+        float inf = *(float*)&tmp;    
+
+        TEST_02( ssp_comeq_ps, ssp_f32, __m128, __m128, __m128 )
+            vF32(    allF,      0,   0, allF ),
+            vF32( -1.123f, 1.123f, nan, inf  ),
+            vF32( -1.123f, 1.124f, nan, inf  ));
  
 		TEST_0( ssp_comeq_ss, ssp_f32, __m128, __m128, __m128 )
             vF32( -1.123f, 1.123f, 0.0f,  allF  ),
             vF32( -1.123f, 1.123f, 0.0f, -1.123f ),
             vF32( -1.123f, 1.124f, nan , -1.123f ));
 
-        TEST_0( ssp_comlt_ps, ssp_f32, __m128, __m128, __m128 )
+        TEST_02( ssp_comlt_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(       0, allF,    0,      0  ),
             vF32( -1.123f, 1.123f, 1.0f,  nan  ),
             vF32( -1.123f, 1.124f,  nan,  1.0f ));
@@ -1607,7 +1610,7 @@ void SSE5_Tests( CSVTable & csv )
             vF32( -1.123f,    nan, 0.0f,  nan ),
             vF32( -1.123f, 1.123f,  nan,  nan ));
         
-        TEST_0( ssp_comneq_ps, ssp_f32, __m128, __m128, __m128 )
+        TEST_02( ssp_comneq_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(       0,   allF,   allF, allF ),
             vF32( -1.123f, 1.121f,    nan, 1.0f ),
             vF32( -1.123f, 1.123f, 1.123f, nan  ));
@@ -1647,7 +1650,7 @@ void SSE5_Tests( CSVTable & csv )
             vF32( -1.123f,    nan,   0, nan ),
             vF32( -1.123f, 1.123f, nan, nan ));
 
-        TEST_0( ssp_comueq_ps, ssp_f32, __m128, __m128, __m128 )
+        TEST_02( ssp_comueq_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(    allF,      0, allF,    allF ),
             vF32( -1.123f, 1.121f, 0.0f,     nan ),
             vF32( -1.123f, 1.123f,  nan, -1.122f ));
@@ -1687,7 +1690,7 @@ void SSE5_Tests( CSVTable & csv )
             vF32( -1.123f, 1.0f,  nan, 100.1f ),
             vF32( -1.123f, 1.1f, nan, 0   ));
 
-         TEST_0( ssp_comoneq_ps, ssp_f32, __m128, __m128, __m128 )
+         TEST_02( ssp_comoneq_ps, ssp_f32, __m128, __m128, __m128 )
             vF32(       0, allF,    0,    0 ),
             vF32( -1.123f, 1.0f, 1.0f,  nan ),
             vF32( -1.123f, 1.1f,  nan, 1.0f ));       
@@ -1952,7 +1955,7 @@ int main(int argc, char *argv[])
     PrintHeader();
     SSP_Tests( csv );
 
-    std::cout << "\nUnused:\n";
+    std::cout << "\nUntested:\n";
     std::cout << csv.UnusedEntriesString() << std::endl;    
     return 0;
 }
