@@ -790,10 +790,10 @@ void SSE5_Tests( CSVTable & csv )
         vS16(200,  300, -400, -32700,  32700,  -100,    100, 10000));
 
 	TEST_028( ssp_macc_epi32, ssp_s32, __m128i, __m128i, __m128i, __m128i )
-        vS32(300,    94967596,   -94967696, -2005065404),
-        vS32(1,            -2,           2,          -3), 
-        vS32(100,  2100000000,  2100000000,  2100000000),
-        vS32(200,         300,        -400,      -32700));
+        vS32( -189934392,    94967596,   -94967696, -2005065404),
+        vS32(         -4,          -2,           2,          -3), 
+        vS32(-2100000000,  2100000000,  2100000000,  2100000000),
+        vS32(        200,         300,        -400,      -32700));
 
     TEST_028( ssp_macc_ps, ssp_f32, __m128, __m128, __m128, __m128 )
         vF32( 24.75f,-0.09f,0.0f, 14.19f ),
@@ -825,17 +825,17 @@ void SSE5_Tests( CSVTable & csv )
         vS16(100,  200,  300,    400,   -400, 32767, -32768, 30000),
         vS32(200,  300, -400, -32700));
 
-	TEST_0( ssp_macchi_epi32, ssp_s64, __m128i, __m128i, __m128i, __m128i )
-        vS64(200,  900),
-        vS32(0,    -1,     2,     -3), 
-        vS32(100,  200,  300,    400),
-        vS64(200,  300));
+	TEST_028( ssp_macchi_epi32, ssp_s64, __m128i, __m128i, __m128i, __m128i )
+        vS64(2200,  -300),
+        vS32( -20,   -1,    2,     -3), 
+        vS32(-100,  200, -300,   -400),
+        vS64( 200,        300));
 
-	TEST_0( ssp_macclo_epi32, ssp_s64, __m128i, __m128i, __m128i, __m128i )
-        vS64(0,  -900),
-        vS32(0,    -1,     2,     -3), 
-        vS32(100,  200,  300,    400),
-        vS64(200,  300));
+	TEST_028( ssp_macclo_epi32, ssp_s64, __m128i, __m128i, __m128i, __m128i )
+        vS64(-500,  1500),
+        vS32(0,    -1,     2,    -3), 
+        vS32(100,  200,  300,  -400),
+        vS64(-300,  300));
 
 	TEST_0( ssp_maccs_epi16, ssp_s16, __m128i, __m128i, __m128i, __m128i )
         vS16(200,  100,  200, -32768,  32767, 32767, -32768, -32768),
@@ -1150,82 +1150,82 @@ void SSE5_Tests( CSVTable & csv )
             vU8( 1,   11, 0, 124, 125, 124, 125, 100,   12,   11, 10, 124, 125, 123, 100, 101 ),
             vU8( 1,   22, 0,   0, 125, 124, 125, 100,   11,   22, 10,   0, 125, 123, 100, 100 ));
 
-	TEST_02( ssp_comfalse_epi16, ssp_u16, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comfalse_epi16, ssp_u16, __m128i, __m128i, __m128i )
             vU16( 0, 0, 0, 0, 0, 0, 0, 0),
             vS16( -1234, 1111, 0, 124, 125, -124, -125, 100 ),
             vS16( -1234, 2222, 0, 0,   123, -123, -100, -100 ));
 
-	TEST_02( ssp_comfalse_epi32, ssp_u32, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comfalse_epi32, ssp_u32, __m128i, __m128i, __m128i )
             vU32( 0, 0, 0, 0),
             vS32( -12345, 11, 0, 124678),
             vS32( -12345, 22, 0,     0));
 
-	TEST_02( ssp_comfalse_epi64, ssp_u64, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comfalse_epi64, ssp_u64, __m128i, __m128i, __m128i )
             vU64( 0, 0),
             vS64( -1234578901ll, 11),
             vS64( -1234578901ll, 22));
 
-    TEST_02( ssp_comfalse_epi8, ssp_u8, __m128i, __m128i, __m128i )
+    TEST_028( ssp_comfalse_epi8, ssp_u8, __m128i, __m128i, __m128i )
             vU8( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
             vS8( -1, 11, 0, 124, 125, -124, -125,  100, 11, -11, 10, -124, -125, 124, 125, -100 ),
             vS8( -1, 22, 0,   0, 123, -123, -100, -100, 11, -22, 10,    0, -123, 123, 100,  100 ));
 
-    TEST_02( ssp_comfalse_epu16, ssp_u16, __m128i, __m128i, __m128i )
+    TEST_028( ssp_comfalse_epu16, ssp_u16, __m128i, __m128i, __m128i )
             vU16( 0, 0, 0, 0, 0, 0, 0, 0),
             vU16( 1234, 1111, 0, 124, 125, 124, 125, 100 ),
             vU16( 1234, 2222, 0, 0,   123, 123, 100, 100 ));
 
-	TEST_02( ssp_comfalse_epu32, ssp_u32, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comfalse_epu32, ssp_u32, __m128i, __m128i, __m128i )
             vU32( 0, 0, 0, 0),
             vU32( 12345, 11, 0, 124678),
             vU32( 12345, 22, 0,     0));
 
-	TEST_02( ssp_comfalse_epu64, ssp_u64, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comfalse_epu64, ssp_u64, __m128i, __m128i, __m128i )
             vU64( 0, 0),
             vU64( 1234578901ll, 11),
             vU64( 1234578901ll, 22));
 
-    TEST_02( ssp_comfalse_epu8, ssp_u8, __m128i, __m128i, __m128i )
+    TEST_028( ssp_comfalse_epu8, ssp_u8, __m128i, __m128i, __m128i )
             vU8( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
             vU8( 1, 11, 0, 124, 125, 124, 125, 100, 11, 11, 10, 124, 125, 124, 125, 100 ),
             vU8( 1, 22, 0,   0, 123, 123, 100, 100, 11, 22, 10,   0, 123, 123, 100, 100 ));
 
-	TEST_02( ssp_comtrue_epi16, ssp_u16, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comtrue_epi16, ssp_u16, __m128i, __m128i, __m128i )
             vU16( 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff),
             vS16( -1234, 1111, 0, 124, 125, -124, -125, 100 ),
             vS16( -1234, 2222, 0, 0,   123, -123, -100, -100 ));
 
-	TEST_02( ssp_comtrue_epi32, ssp_u32, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comtrue_epi32, ssp_u32, __m128i, __m128i, __m128i )
             vU32( 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff),
             vS32( -12345, 11, 0, 124678),
             vS32( -12345, 22, 0,     0));
 
-	TEST_02( ssp_comtrue_epi64, ssp_u64, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comtrue_epi64, ssp_u64, __m128i, __m128i, __m128i )
             vU64( 0xffffffffffffffff, 0xffffffffffffffff),
             vS64( -1234578901ll, 11),
             vS64( -1234578901ll, 22));
 
-    TEST_02( ssp_comtrue_epi8, ssp_u8, __m128i, __m128i, __m128i )
+    TEST_028( ssp_comtrue_epi8, ssp_u8, __m128i, __m128i, __m128i )
             vU8( 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff),
             vS8( -1, 11, 0, 124, 125, -124, -125,  100, 11, -11, 10, -124, -125, 124, 125, -100 ),
             vS8( -1, 22, 0,   0, 123, -123, -100, -100, 11, -22, 10,    0, -123, 123, 100,  100 ));
 
-    TEST_02( ssp_comtrue_epu16, ssp_u16, __m128i, __m128i, __m128i )
+    TEST_028( ssp_comtrue_epu16, ssp_u16, __m128i, __m128i, __m128i )
             vU16( 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff),
             vU16( 1234, 1111, 0, 124, 125, 124, 125, 100 ),
             vU16( 1234, 2222, 0, 0,   123, 123, 100, 100 ));
 
-	TEST_02( ssp_comtrue_epu32, ssp_u32, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comtrue_epu32, ssp_u32, __m128i, __m128i, __m128i )
             vU32( 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff),
             vU32( 12345, 11, 0, 124678),
             vU32( 12345, 22, 0,     0));
 
-	TEST_02( ssp_comtrue_epu64, ssp_u64, __m128i, __m128i, __m128i )
+	TEST_028( ssp_comtrue_epu64, ssp_u64, __m128i, __m128i, __m128i )
             vU64( 0xffffffffffffffff, 0xffffffffffffffff),
             vU64( 1234578901ll, 11),
             vU64( 1234578901ll, 22));
 
-    TEST_02( ssp_comtrue_epu8, ssp_u8, __m128i, __m128i, __m128i )
+    TEST_028( ssp_comtrue_epu8, ssp_u8, __m128i, __m128i, __m128i )
             vU8( 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff),
             vU8( 1, 11, 0, 124, 125, 124, 125, 100, 11, 11, 10, 124, 125, 124, 125, 100 ),
             vU8( 1, 22, 0,   0, 123, 123, 100, 100, 11, 22, 10,   0, 123, 123, 100, 100 ));

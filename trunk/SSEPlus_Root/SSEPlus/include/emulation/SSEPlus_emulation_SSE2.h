@@ -113,6 +113,71 @@ SSP_FORCEINLINE __m128i ssp_maccd_epi16_SSE2( __m128i a, __m128i b, __m128i c )
 	//return _mm_add_epi32(ab_lo, c);
 }
 
+/** \SSE5{SSE2,_mm_macchi_epi32, pmacsdqh } */ 
+SSP_FORCEINLINE __m128i ssp_macchi_epi32_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	__m128i mask, mask_A, mask_B, mask_C, ab;
+
+	a = _mm_srli_epi64(a, 32);
+	b = _mm_srli_epi64(b, 32);
+	mask   = _mm_set_epi32(0x7FFFFFFF, 0, 0x7FFFFFFF, 0);
+
+	//abs(A)
+	mask_A = _mm_cmplt_epi32( a, mask);     //FFF...F when a < 0
+	a      = _mm_xor_si128 ( a, mask_A );   //Invert  when a < 0
+	mask_C = _mm_srli_epi32( mask_A, 31 );	// 1      when a < 0
+	a      = _mm_add_epi32( a, mask_C );    //Add 1   when a < 0
+
+	//abs(B)
+	mask_B = _mm_cmplt_epi32( b, mask);     //FFF...F when b < 0
+	b      = _mm_xor_si128 ( b, mask_B );   //Invert  when b < 0
+	mask_C = _mm_srli_epi32( mask_B, 31 );	// 1      when b < 0
+	b      = _mm_add_epi32( b, mask_C );    //Add 1   when b < 0
+
+	ab     = _mm_mul_epu32(a, b);
+
+	//correct negative cases
+	mask_A = _mm_xor_si128(mask_A, mask_B);
+	mask_C = _mm_srli_epi32(mask_A, 31 );
+	mask_B = _mm_slli_epi64(mask_A, 32);
+	mask   = _mm_add_epi32(mask_A, mask_B);
+	a      = _mm_xor_si128(ab, mask);
+	a      = _mm_add_epi64(a, mask_C);
+
+	return _mm_add_epi64(a, c);
+}
+
+/** \SSE5{SSE2,_mm_macclo_epi32, pmacsdql } */ 
+SSP_FORCEINLINE __m128i ssp_macclo_epi32_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	__m128i mask, mask_A, mask_B, mask_C, ab;
+
+	mask   = _mm_set_epi32(0x7FFFFFFF, 0, 0x7FFFFFFF, 0);
+	//abs(A)
+	mask_A = _mm_cmplt_epi32( a, mask);     //FFF...F when a < 0
+	a      = _mm_xor_si128 ( a, mask_A );   //Invert  when a < 0
+	mask_C = _mm_srli_epi32( mask_A, 31 );	// 1      when a < 0
+	a      = _mm_add_epi32( a, mask_C );    //Add 1   when a < 0
+
+	//abs(B)
+	mask_B = _mm_cmplt_epi32( b, mask);     //FFF...F when b < 0
+	b      = _mm_xor_si128 ( b, mask_B );   //Invert  when b < 0
+	mask_C = _mm_srli_epi32( mask_B, 31 );	// 1      when b < 0
+	b      = _mm_add_epi32( b, mask_C );    //Add 1   when b < 0
+
+	ab     = _mm_mul_epu32(a, b);
+
+	//correct negative cases
+	mask_A = _mm_xor_si128(mask_A, mask_B);
+	mask_C = _mm_srli_epi32(mask_A, 31 );
+	mask_B = _mm_slli_epi64(mask_A, 32);
+	mask   = _mm_add_epi32(mask_A, mask_B);
+	a      = _mm_xor_si128(ab, mask);
+	a      = _mm_add_epi64(a, mask_C);
+
+	return _mm_add_epi64(a, c);
+}
+
 //
 // Negative Multiply Add
 //
