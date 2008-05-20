@@ -12,51 +12,30 @@
  *  @name Logical Operations
  */
 
-
-SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu16_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128i ssp_logical_invert_si128_SSE2( __m128i a )
 {
-    __m128i signMask, mask;
-
-    mask     = _mm_cmplt_epi16( a, b );              // FFFF where a < b (signed)
-    signMask = _mm_xor_si128  ( a, b );              // Signbit is 1 where signs differ 
-    signMask = _mm_srai_epi16 ( signMask, 15 );      // fill all fields with sign bit     
-    mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
-    return mask;
+    const static __m128i mask = SSP_CONST_SET_32I( 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF );
+    a = _mm_xor_si128( a, mask );
+    return a;
 }
 
-SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu16_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128d ssp_logical_invert_sd_SSE2( __m128d a )
 {
-    __m128i signMask, mask;
-
-    mask     = _mm_cmpgt_epi16( a, b );              // FFFF where a > b (signed)
-    signMask = _mm_xor_si128  ( a, b );              // Signbit is 1 where signs differ 
-    signMask = _mm_srai_epi16 ( signMask, 15 );      // fill all fields with sign bit     
-    mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
-    return mask;
+    const static __m128i mask = SSP_CONST_SET_32I( 0xFFFFFFFF, 0xFFFFFFFF, 0, 0 );
+    ssp_m128 A;
+    A.d    = a;
+    A.i = _mm_xor_si128( A.i, mask );
+    return A.d;
 }
 
-SSP_FORCEINLINE __m128i ssp_logical_cmplt_epu32_SSE2( __m128i a, __m128i b )
+SSP_FORCEINLINE __m128 ssp_logical_invert_ss_SSE2( __m128 a )
 {
-    __m128i signMask, mask;
-
-    mask     = _mm_cmplt_epi32( a, b );              // FFFF where a < b (signed)
-    signMask = _mm_xor_si128  ( a, b );              // Signbit is 1 where signs differ 
-    signMask = _mm_srai_epi32 ( signMask, 31 );      // fill all fields with sign bit     
-    mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
-    return mask;
+    const static __m128i mask = SSP_CONST_SET_32I( 0xFFFFFFFF, 0, 0, 0 );
+    ssp_m128 A;
+    A.f    = a;
+    A.i = _mm_xor_si128( A.i, mask );
+    return A.f;
 }
-
-SSP_FORCEINLINE __m128i ssp_logical_cmpgt_epu32_SSE2( __m128i a, __m128i b )
-{
-    __m128i signMask, mask;
-
-    mask     = _mm_cmpgt_epi32( a, b );              // FFFF where a < b (signed)
-    signMask = _mm_xor_si128  ( a, b );              // Signbit is 1 where signs differ 
-    signMask = _mm_srai_epi32 ( signMask, 31 );      // fill all fields with sign bit     
-    mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
-    return mask;
-}
-
 
 
 SSP_FORCEINLINE __m128i ssp_logical_bitwise_select_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 

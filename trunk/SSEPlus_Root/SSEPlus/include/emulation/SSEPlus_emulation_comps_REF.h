@@ -13,7 +13,7 @@
  */
 
 //----------------------------------------
-// COMEQ (COMPS condition 0)
+// COMEQ (Condition 0)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comeq_epi16, pcomw } */
@@ -63,17 +63,17 @@ SSP_FORCEINLINE __m128i ssp_comeq_epi8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0]  = (A.s8[ 0]==B.s8[ 0]) ? 0xFF : 0;
-    A.u8[1]  = (A.s8[ 1]==B.s8[ 1]) ? 0xFF : 0;
-    A.u8[2]  = (A.s8[ 2]==B.s8[ 2]) ? 0xFF : 0;
-    A.u8[3]  = (A.s8[ 3]==B.s8[ 3]) ? 0xFF : 0;
-    A.u8[4]  = (A.s8[ 4]==B.s8[ 4]) ? 0xFF : 0;
-    A.u8[5]  = (A.s8[ 5]==B.s8[ 5]) ? 0xFF : 0;
-    A.u8[6]  = (A.s8[ 6]==B.s8[ 6]) ? 0xFF : 0;
-    A.u8[7]  = (A.s8[ 7]==B.s8[ 7]) ? 0xFF : 0; 
-	A.u8[8]  = (A.s8[ 8]==B.s8[ 8]) ? 0xFF : 0;
-    A.u8[9]  = (A.s8[ 9]==B.s8[ 9]) ? 0xFF : 0;
-    A.u8[10] = (A.s8[10]==B.s8[10]) ? 0xFF : 0;
+    A.u8[ 0] = (A.s8[ 0]==B.s8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.s8[ 1]==B.s8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.s8[ 2]==B.s8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.s8[ 3]==B.s8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.s8[ 4]==B.s8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.s8[ 5]==B.s8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.s8[ 6]==B.s8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.s8[ 7]==B.s8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.s8[ 8]==B.s8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.s8[ 9]==B.s8[ 9]) ? 0xFF : 0;
+    A.u8[10]= (A.s8[10]==B.s8[10]) ? 0xFF : 0;
     A.u8[11] = (A.s8[11]==B.s8[11]) ? 0xFF : 0;
     A.u8[12] = (A.s8[12]==B.s8[12]) ? 0xFF : 0;
     A.u8[13] = (A.s8[13]==B.s8[13]) ? 0xFF : 0;
@@ -129,16 +129,16 @@ SSP_FORCEINLINE __m128i ssp_comeq_epu8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.u8[0]==B.u8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.u8[1]==B.u8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.u8[2]==B.u8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.u8[3]==B.u8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.u8[4]==B.u8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.u8[5]==B.u8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.u8[6]==B.u8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.u8[7]==B.u8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.u8[8]==B.u8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.u8[9]==B.u8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.u8[ 0]==B.u8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.u8[ 1]==B.u8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.u8[ 2]==B.u8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.u8[ 3]==B.u8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.u8[ 4]==B.u8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.u8[ 5]==B.u8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.u8[ 6]==B.u8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.u8[ 7]==B.u8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.u8[ 8]==B.u8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.u8[ 9]==B.u8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.u8[10]==B.u8[10]) ? 0xFF : 0;
     A.u8[11] = (A.u8[11]==B.u8[11]) ? 0xFF : 0;
     A.u8[12] = (A.u8[12]==B.u8[12]) ? 0xFF : 0;
@@ -193,7 +193,7 @@ SSP_FORCEINLINE __m128 ssp_comeq_ss_REF(__m128 a, __m128 b)
 }
 
 //----------------------------------------
-// COMLT (COMPS condition 1)
+// COMLT (Condition 1)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comlt_epi16, pcomw } */
@@ -243,16 +243,16 @@ SSP_FORCEINLINE __m128i ssp_comlt_epi8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.s8[0]<B.s8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.s8[1]<B.s8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.s8[2]<B.s8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.s8[3]<B.s8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.s8[4]<B.s8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.s8[5]<B.s8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.s8[6]<B.s8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.s8[7]<B.s8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.s8[8]<B.s8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.s8[9]<B.s8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.s8[ 0]<B.s8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.s8[ 1]<B.s8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.s8[ 2]<B.s8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.s8[ 3]<B.s8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.s8[ 4]<B.s8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.s8[ 5]<B.s8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.s8[ 6]<B.s8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.s8[ 7]<B.s8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.s8[ 8]<B.s8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.s8[ 9]<B.s8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.s8[10]<B.s8[10]) ? 0xFF : 0;
     A.u8[11] = (A.s8[11]<B.s8[11]) ? 0xFF : 0;
     A.u8[12] = (A.s8[12]<B.s8[12]) ? 0xFF : 0;
@@ -309,16 +309,16 @@ SSP_FORCEINLINE __m128i ssp_comlt_epu8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.u8[0]<B.u8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.u8[1]<B.u8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.u8[2]<B.u8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.u8[3]<B.u8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.u8[4]<B.u8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.u8[5]<B.u8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.u8[6]<B.u8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.u8[7]<B.u8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.u8[8]<B.u8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.u8[9]<B.u8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.u8[ 0]<B.u8[0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.u8[ 1]<B.u8[1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.u8[ 2]<B.u8[2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.u8[ 3]<B.u8[3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.u8[ 4]<B.u8[4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.u8[ 5]<B.u8[5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.u8[ 6]<B.u8[6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.u8[ 7]<B.u8[7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.u8[ 8]<B.u8[8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.u8[ 9]<B.u8[9]) ? 0xFF : 0;
     A.u8[10] = (A.u8[10]<B.u8[10]) ? 0xFF : 0;
     A.u8[11] = (A.u8[11]<B.u8[11]) ? 0xFF : 0;
     A.u8[12] = (A.u8[12]<B.u8[12]) ? 0xFF : 0;
@@ -373,7 +373,7 @@ SSP_FORCEINLINE __m128 ssp_comlt_ss_REF(__m128 a, __m128 b)
 }
 
 //----------------------------------------
-// COMLE (COMPS condition 2)
+// COMLE (Condition 2)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comle_epi16, pcomw } */
@@ -423,16 +423,16 @@ SSP_FORCEINLINE __m128i ssp_comle_epi8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.s8[0]<=B.s8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.s8[1]<=B.s8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.s8[2]<=B.s8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.s8[3]<=B.s8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.s8[4]<=B.s8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.s8[5]<=B.s8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.s8[6]<=B.s8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.s8[7]<=B.s8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.s8[8]<=B.s8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.s8[9]<=B.s8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.s8[ 0]<=B.s8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.s8[ 1]<=B.s8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.s8[ 2]<=B.s8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.s8[ 3]<=B.s8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.s8[ 4]<=B.s8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.s8[ 5]<=B.s8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.s8[ 6]<=B.s8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.s8[ 7]<=B.s8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.s8[ 8]<=B.s8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.s8[ 9]<=B.s8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.s8[10]<=B.s8[10]) ? 0xFF : 0;
     A.u8[11] = (A.s8[11]<=B.s8[11]) ? 0xFF : 0;
     A.u8[12] = (A.s8[12]<=B.s8[12]) ? 0xFF : 0;
@@ -489,16 +489,16 @@ SSP_FORCEINLINE __m128i ssp_comle_epu8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.u8[0]<=B.u8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.u8[1]<=B.u8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.u8[2]<=B.u8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.u8[3]<=B.u8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.u8[4]<=B.u8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.u8[5]<=B.u8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.u8[6]<=B.u8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.u8[7]<=B.u8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.u8[8]<=B.u8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.u8[9]<=B.u8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.u8[ 0]<=B.u8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.u8[ 1]<=B.u8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.u8[ 2]<=B.u8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.u8[ 3]<=B.u8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.u8[ 4]<=B.u8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.u8[ 5]<=B.u8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.u8[ 6]<=B.u8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.u8[ 7]<=B.u8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.u8[ 8]<=B.u8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.u8[ 9]<=B.u8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.u8[10]<=B.u8[10]) ? 0xFF : 0;
     A.u8[11] = (A.u8[11]<=B.u8[11]) ? 0xFF : 0;
     A.u8[12] = (A.u8[12]<=B.u8[12]) ? 0xFF : 0;
@@ -555,7 +555,7 @@ SSP_FORCEINLINE __m128 ssp_comle_ss_REF(__m128 a, __m128 b)
 }
 
 //----------------------------------------
-// COMUNORD (COMPS condition 3)
+// COMUNORD (Condition 3)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comunord_pd, compd } */
@@ -604,7 +604,7 @@ SSP_FORCEINLINE __m128 ssp_comunord_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMNEQ (COMPS condition 4)
+// COMNEQ (Condition 4)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comneq_epi16, pcomw } */
@@ -654,16 +654,16 @@ SSP_FORCEINLINE __m128i ssp_comneq_epi8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.s8[0]!=B.s8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.s8[1]!=B.s8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.s8[2]!=B.s8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.s8[3]!=B.s8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.s8[4]!=B.s8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.s8[5]!=B.s8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.s8[6]!=B.s8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.s8[7]!=B.s8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.s8[8]!=B.s8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.s8[9]!=B.s8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.s8[ 0]!=B.s8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.s8[ 1]!=B.s8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.s8[ 2]!=B.s8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.s8[ 3]!=B.s8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.s8[ 4]!=B.s8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.s8[ 5]!=B.s8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.s8[ 6]!=B.s8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.s8[ 7]!=B.s8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.s8[ 8]!=B.s8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.s8[ 9]!=B.s8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.s8[10]!=B.s8[10]) ? 0xFF : 0;
     A.u8[11] = (A.s8[11]!=B.s8[11]) ? 0xFF : 0;
     A.u8[12] = (A.s8[12]!=B.s8[12]) ? 0xFF : 0;
@@ -720,16 +720,16 @@ SSP_FORCEINLINE __m128i ssp_comneq_epu8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.u8[0]!=B.u8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.u8[1]!=B.u8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.u8[2]!=B.u8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.u8[3]!=B.u8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.u8[4]!=B.u8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.u8[5]!=B.u8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.u8[6]!=B.u8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.u8[7]!=B.u8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.u8[8]!=B.u8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.u8[9]!=B.u8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.u8[ 0]!=B.u8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.u8[ 1]!=B.u8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.u8[ 2]!=B.u8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.u8[ 3]!=B.u8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.u8[ 4]!=B.u8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.u8[ 5]!=B.u8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.u8[ 6]!=B.u8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.u8[ 7]!=B.u8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.u8[ 8]!=B.u8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.u8[ 9]!=B.u8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.u8[10]!=B.u8[10]) ? 0xFF : 0;
     A.u8[11] = (A.u8[11]!=B.u8[11]) ? 0xFF : 0;
     A.u8[12] = (A.u8[12]!=B.u8[12]) ? 0xFF : 0;
@@ -785,155 +785,26 @@ SSP_FORCEINLINE __m128 ssp_comneq_ss_REF(__m128 a, __m128 b)
     return A.f;
 }
 
+
 //----------------------------------------
-// COMGE (COMPS condition 5)
+// COMNLT (Condition 5)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comge_epi16, pcomw } */
-SSP_FORCEINLINE __m128i ssp_comge_epi16_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u16[0] = (A.s16[0]>=B.s16[0]) ? 0xFFFF : 0;
-    A.u16[1] = (A.s16[1]>=B.s16[1]) ? 0xFFFF : 0;
-    A.u16[2] = (A.s16[2]>=B.s16[2]) ? 0xFFFF : 0;
-    A.u16[3] = (A.s16[3]>=B.s16[3]) ? 0xFFFF : 0;
-    A.u16[4] = (A.s16[4]>=B.s16[4]) ? 0xFFFF : 0;
-    A.u16[5] = (A.s16[5]>=B.s16[5]) ? 0xFFFF : 0;
-    A.u16[6] = (A.s16[6]>=B.s16[6]) ? 0xFFFF : 0;
-    A.u16[7] = (A.s16[7]>=B.s16[7]) ? 0xFFFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epi32, pcomd } */
-SSP_FORCEINLINE __m128i ssp_comge_epi32_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u32[0] = (A.s32[0]>=B.s32[0]) ? 0xFFFFFFFF : 0;
-    A.u32[1] = (A.s32[1]>=B.s32[1]) ? 0xFFFFFFFF : 0;
-    A.u32[2] = (A.s32[2]>=B.s32[2]) ? 0xFFFFFFFF : 0;
-    A.u32[3] = (A.s32[3]>=B.s32[3]) ? 0xFFFFFFFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epi64, pcomq } */
-SSP_FORCEINLINE __m128i ssp_comge_epi64_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.s64[0]>=B.s64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.s64[1]>=B.s64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epi8, pcomb } */
-SSP_FORCEINLINE __m128i ssp_comge_epi8_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u8[0] = (A.s8[0]>=B.s8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.s8[1]>=B.s8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.s8[2]>=B.s8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.s8[3]>=B.s8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.s8[4]>=B.s8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.s8[5]>=B.s8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.s8[6]>=B.s8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.s8[7]>=B.s8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.s8[8]>=B.s8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.s8[9]>=B.s8[9]) ? 0xFF : 0;
-    A.u8[10] = (A.s8[10]>=B.s8[10]) ? 0xFF : 0;
-    A.u8[11] = (A.s8[11]>=B.s8[11]) ? 0xFF : 0;
-    A.u8[12] = (A.s8[12]>=B.s8[12]) ? 0xFF : 0;
-    A.u8[13] = (A.s8[13]>=B.s8[13]) ? 0xFF : 0;
-    A.u8[14] = (A.s8[14]>=B.s8[14]) ? 0xFF : 0;
-    A.u8[15] = (A.s8[15]>=B.s8[15]) ? 0xFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epu16, pcomuw } */
-SSP_FORCEINLINE __m128i ssp_comge_epu16_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u16[0] = (A.u16[0]>=B.u16[0]) ? 0xFFFF : 0;
-    A.u16[1] = (A.u16[1]>=B.u16[1]) ? 0xFFFF : 0;
-    A.u16[2] = (A.u16[2]>=B.u16[2]) ? 0xFFFF : 0;
-    A.u16[3] = (A.u16[3]>=B.u16[3]) ? 0xFFFF : 0;
-    A.u16[4] = (A.u16[4]>=B.u16[4]) ? 0xFFFF : 0;
-    A.u16[5] = (A.u16[5]>=B.u16[5]) ? 0xFFFF : 0;
-    A.u16[6] = (A.u16[6]>=B.u16[6]) ? 0xFFFF : 0;
-    A.u16[7] = (A.u16[7]>=B.u16[7]) ? 0xFFFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epu32, pcomud } */
-SSP_FORCEINLINE __m128i ssp_comge_epu32_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u32[0] = (A.u32[0]>=B.u32[0]) ? 0xFFFFFFFF : 0;
-    A.u32[1] = (A.u32[1]>=B.u32[1]) ? 0xFFFFFFFF : 0;
-    A.u32[2] = (A.u32[2]>=B.u32[2]) ? 0xFFFFFFFF : 0;
-    A.u32[3] = (A.u32[3]>=B.u32[3]) ? 0xFFFFFFFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epu64, pcomuq } */
-SSP_FORCEINLINE __m128i ssp_comge_epu64_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.u64[0]>=B.u64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.u64[1]>=B.u64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_epu8, pcomub } */
-SSP_FORCEINLINE __m128i ssp_comge_epu8_REF(__m128i a, __m128i b)
-{
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u8[0] = (A.u8[0]>=B.u8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.u8[1]>=B.u8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.u8[2]>=B.u8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.u8[3]>=B.u8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.u8[4]>=B.u8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.u8[5]>=B.u8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.u8[6]>=B.u8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.u8[7]>=B.u8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.u8[8]>=B.u8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.u8[9]>=B.u8[9]) ? 0xFF : 0;
-    A.u8[10] = (A.u8[10]>=B.u8[10]) ? 0xFF : 0;
-    A.u8[11] = (A.u8[11]>=B.u8[11]) ? 0xFF : 0;
-    A.u8[12] = (A.u8[12]>=B.u8[12]) ? 0xFF : 0;
-    A.u8[13] = (A.u8[13]>=B.u8[13]) ? 0xFF : 0;
-    A.u8[14] = (A.u8[14]>=B.u8[14]) ? 0xFF : 0;
-    A.u8[15] = (A.u8[15]>=B.u8[15]) ? 0xFF : 0;
-    return A.i;
-}
-
-/** \SSE5{Reference,_mm_comge_pd, compd } */
-SSP_FORCEINLINE __m128d ssp_comge_pd_REF(__m128d a, __m128d b)
+/** \SSE5{Reference,_mm_comnlt_pd, compd } */
+SSP_FORCEINLINE __m128d ssp_comnlt_pd_REF(__m128d a, __m128d b)
 {
     ssp_m128 A,B;
     A.d = a;
     B.d = b;
-	A.u64[0] = (A.f64[0]<B.f64[0]) ? 0 : 0xFFFFFFFFFFFFFFFF;
+ 
+    A.u64[0] = (A.f64[0]<B.f64[0]) ? 0 : 0xFFFFFFFFFFFFFFFF;
     A.u64[1] = (A.f64[1]<B.f64[1]) ? 0 : 0xFFFFFFFFFFFFFFFF;
+ 
     return A.d;
 }
 
-/** \SSE5{Reference,_mm_comge_ps, comps } */
-SSP_FORCEINLINE __m128 ssp_comge_ps_REF(__m128 a, __m128 b)
+/** \SSE5{Reference,_mm_comnlt_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comnlt_ps_REF(__m128 a, __m128 b)
 {
     ssp_m128 A,B;
     A.f = a;
@@ -945,31 +816,31 @@ SSP_FORCEINLINE __m128 ssp_comge_ps_REF(__m128 a, __m128 b)
     return A.f;
 }
 
-/** \SSE5{Reference,_mm_comge_sd, comsd } */
-SSP_FORCEINLINE __m128d ssp_comge_sd_REF(__m128d a, __m128d b)
+/** \SSE5{Reference,_mm_comnlt_sd, comsd } */
+SSP_FORCEINLINE __m128d ssp_comnlt_sd_REF(__m128d a, __m128d b)
 {
     ssp_m128 A,B;
     A.d = a;
     B.d = b;
-	A.u64[0] = (A.f64[0]<B.f64[0]) ? 0 : 0xFFFFFFFFFFFFFFFF;
+ 
+    A.u64[0] = (A.f64[0]<B.f64[0]) ? 0 : 0xFFFFFFFFFFFFFFFF;
+ 
     return A.d;
 }
 
-/** \SSE5{Reference,_mm_comge_ss, comss } */
-SSP_FORCEINLINE __m128 ssp_comge_ss_REF(__m128 a, __m128 b)
+/** \SSE5{Reference,_mm_comnlt_ss, comss } */
+SSP_FORCEINLINE __m128 ssp_comnlt_ss_REF(__m128 a, __m128 b)
 {
     ssp_m128 A,B;
     A.f = a;
     B.f = b;
- 
-	A.u32[0] = (A.f32[0]<B.f32[0]) ? 0 : 0xFFFFFFFF;
- 
+    A.u32[0] = (A.f32[0]<B.f32[0]) ? 0 : 0xFFFFFFFF;
     return A.f;
 }
 
 
 //----------------------------------------
-// COMNLE (COMPS condition 6)
+// COMNLE (Condition 6)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comnle_pd, compd } */
@@ -1020,7 +891,7 @@ SSP_FORCEINLINE __m128 ssp_comnle_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMORD (COMPS condition 7)
+// COMORD (Condition 7)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comord_pd, compd } */
@@ -1069,7 +940,7 @@ SSP_FORCEINLINE __m128 ssp_comord_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMUEQ (COMPS condition 8)
+// COMUEQ (Condition 8)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comueq_pd, compd } */
@@ -1118,7 +989,7 @@ SSP_FORCEINLINE __m128 ssp_comueq_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMNGE (COMPS condition 9)
+// COMNGE (Condition 9)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comnge_pd, compd } */
@@ -1167,7 +1038,7 @@ SSP_FORCEINLINE __m128 ssp_comnge_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMNGT (COMPS condition 10)
+// COMNGT (Condition 10)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comngt_pd, compd } */
@@ -1216,7 +1087,7 @@ SSP_FORCEINLINE __m128 ssp_comngt_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMFALSE (COMPS condition 11)
+// COMFALSE (Condition 11)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comfalse_epi16, pcomw } */
@@ -1302,7 +1173,7 @@ SSP_FORCEINLINE __m128 ssp_comfalse_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMONEQ (COMPS condition 12)
+// COMONEQ (Condition 12)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comoneq_pd, compd } */
@@ -1349,25 +1220,156 @@ SSP_FORCEINLINE __m128 ssp_comoneq_ss_REF(__m128 a, __m128 b)
     return A.f;   
 }
 
+
 //----------------------------------------
-// COMNLT (COMPS condition 13)
+// COMGE (Condition 13)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comnlt_pd, compd } */
-SSP_FORCEINLINE __m128d ssp_comnlt_pd_REF(__m128d a, __m128d b)
+/** \SSE5{Reference,_mm_comge_epi16, pcomw } */
+SSP_FORCEINLINE __m128i ssp_comge_epi16_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u16[0] = (A.s16[0]>=B.s16[0]) ? 0xFFFF : 0;
+    A.u16[1] = (A.s16[1]>=B.s16[1]) ? 0xFFFF : 0;
+    A.u16[2] = (A.s16[2]>=B.s16[2]) ? 0xFFFF : 0;
+    A.u16[3] = (A.s16[3]>=B.s16[3]) ? 0xFFFF : 0;
+    A.u16[4] = (A.s16[4]>=B.s16[4]) ? 0xFFFF : 0;
+    A.u16[5] = (A.s16[5]>=B.s16[5]) ? 0xFFFF : 0;
+    A.u16[6] = (A.s16[6]>=B.s16[6]) ? 0xFFFF : 0;
+    A.u16[7] = (A.s16[7]>=B.s16[7]) ? 0xFFFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epi32, pcomd } */
+SSP_FORCEINLINE __m128i ssp_comge_epi32_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u32[0] = (A.s32[0]>=B.s32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.s32[1]>=B.s32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.s32[2]>=B.s32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.s32[3]>=B.s32[3]) ? 0xFFFFFFFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epi64, pcomq } */
+SSP_FORCEINLINE __m128i ssp_comge_epi64_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u64[0] = (A.s64[0]>=B.s64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
+    A.u64[1] = (A.s64[1]>=B.s64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epi8, pcomb } */
+SSP_FORCEINLINE __m128i ssp_comge_epi8_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u8[ 0] = (A.s8[ 0]>=B.s8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.s8[ 1]>=B.s8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.s8[ 2]>=B.s8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.s8[ 3]>=B.s8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.s8[ 4]>=B.s8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.s8[ 5]>=B.s8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.s8[ 6]>=B.s8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.s8[ 7]>=B.s8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.s8[ 8]>=B.s8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.s8[ 9]>=B.s8[ 9]) ? 0xFF : 0;
+    A.u8[10] = (A.s8[10]>=B.s8[10]) ? 0xFF : 0;
+    A.u8[11] = (A.s8[11]>=B.s8[11]) ? 0xFF : 0;
+    A.u8[12] = (A.s8[12]>=B.s8[12]) ? 0xFF : 0;
+    A.u8[13] = (A.s8[13]>=B.s8[13]) ? 0xFF : 0;
+    A.u8[14] = (A.s8[14]>=B.s8[14]) ? 0xFF : 0;
+    A.u8[15] = (A.s8[15]>=B.s8[15]) ? 0xFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epu16, pcomuw } */
+SSP_FORCEINLINE __m128i ssp_comge_epu16_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u16[0] = (A.u16[0]>=B.u16[0]) ? 0xFFFF : 0;
+    A.u16[1] = (A.u16[1]>=B.u16[1]) ? 0xFFFF : 0;
+    A.u16[2] = (A.u16[2]>=B.u16[2]) ? 0xFFFF : 0;
+    A.u16[3] = (A.u16[3]>=B.u16[3]) ? 0xFFFF : 0;
+    A.u16[4] = (A.u16[4]>=B.u16[4]) ? 0xFFFF : 0;
+    A.u16[5] = (A.u16[5]>=B.u16[5]) ? 0xFFFF : 0;
+    A.u16[6] = (A.u16[6]>=B.u16[6]) ? 0xFFFF : 0;
+    A.u16[7] = (A.u16[7]>=B.u16[7]) ? 0xFFFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epu32, pcomud } */
+SSP_FORCEINLINE __m128i ssp_comge_epu32_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u32[0] = (A.u32[0]>=B.u32[0]) ? 0xFFFFFFFF : 0;
+    A.u32[1] = (A.u32[1]>=B.u32[1]) ? 0xFFFFFFFF : 0;
+    A.u32[2] = (A.u32[2]>=B.u32[2]) ? 0xFFFFFFFF : 0;
+    A.u32[3] = (A.u32[3]>=B.u32[3]) ? 0xFFFFFFFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epu64, pcomuq } */
+SSP_FORCEINLINE __m128i ssp_comge_epu64_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u64[0] = (A.u64[0]>=B.u64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
+    A.u64[1] = (A.u64[1]>=B.u64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_epu8, pcomub } */
+SSP_FORCEINLINE __m128i ssp_comge_epu8_REF(__m128i a, __m128i b)
+{
+    ssp_m128 A,B;
+    A.i = a;
+    B.i = b;
+    A.u8[ 0] = (A.u8[ 0]>=B.u8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.u8[ 1]>=B.u8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.u8[ 2]>=B.u8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.u8[ 3]>=B.u8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.u8[ 4]>=B.u8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.u8[ 5]>=B.u8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.u8[ 6]>=B.u8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.u8[ 7]>=B.u8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.u8[ 8]>=B.u8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.u8[ 9]>=B.u8[ 9]) ? 0xFF : 0;
+    A.u8[10] = (A.u8[10]>=B.u8[10]) ? 0xFF : 0;
+    A.u8[11] = (A.u8[11]>=B.u8[11]) ? 0xFF : 0;
+    A.u8[12] = (A.u8[12]>=B.u8[12]) ? 0xFF : 0;
+    A.u8[13] = (A.u8[13]>=B.u8[13]) ? 0xFF : 0;
+    A.u8[14] = (A.u8[14]>=B.u8[14]) ? 0xFF : 0;
+    A.u8[15] = (A.u8[15]>=B.u8[15]) ? 0xFF : 0;
+    return A.i;
+}
+
+/** \SSE5{Reference,_mm_comge_pd, compd } */
+SSP_FORCEINLINE __m128d ssp_comge_pd_REF(__m128d a, __m128d b)
 {
     ssp_m128 A,B;
     A.d = a;
     B.d = b;
- 
-	A.u64[0] = (A.f64[0]>=B.f64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
+    A.u64[0] = (A.f64[0]>=B.f64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
     A.u64[1] = (A.f64[1]>=B.f64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
- 
     return A.d;
 }
 
-/** \SSE5{Reference,_mm_comnlt_ps, comps } */
-SSP_FORCEINLINE __m128 ssp_comnlt_ps_REF(__m128 a, __m128 b)
+/** \SSE5{Reference,_mm_comge_ps, comps } */
+SSP_FORCEINLINE __m128 ssp_comge_ps_REF(__m128 a, __m128 b)
 {
     ssp_m128 A,B;
     A.f = a;
@@ -1379,31 +1381,30 @@ SSP_FORCEINLINE __m128 ssp_comnlt_ps_REF(__m128 a, __m128 b)
     return A.f;
 }
 
-/** \SSE5{Reference,_mm_comnlt_sd, comsd } */
-SSP_FORCEINLINE __m128d ssp_comnlt_sd_REF(__m128d a, __m128d b)
+/** \SSE5{Reference,_mm_comge_sd, comsd } */
+SSP_FORCEINLINE __m128d ssp_comge_sd_REF(__m128d a, __m128d b)
 {
     ssp_m128 A,B;
     A.d = a;
     B.d = b;
- 
-	A.u64[0] = (A.f64[0]>=B.f64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
- 
+    A.u64[0] = (A.f64[0]>=B.f64[0]) ? 0xFFFFFFFFFFFFFFFF : 0 ;
     return A.d;
 }
 
-/** \SSE5{Reference,_mm_comnlt_ss, comss } */
-SSP_FORCEINLINE __m128 ssp_comnlt_ss_REF(__m128 a, __m128 b)
+/** \SSE5{Reference,_mm_comge_ss, comss } */
+SSP_FORCEINLINE __m128 ssp_comge_ss_REF(__m128 a, __m128 b)
 {
     ssp_m128 A,B;
     A.f = a;
-    B.f = b;
-    A.u32[0] = (A.f32[0]>=B.f32[0]) ? 0xFFFFFFFF : 0;
+    B.f = b; 
+    A.u32[0] = (A.f32[0]>=B.f32[0]) ? 0xFFFFFFFF : 0; 
     return A.f;
 }
 
 
+
 //----------------------------------------
-// COMGT (COMPS condition 14)
+// COMGT (Condition 14)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comgt_epi16, pcomw } */
@@ -1453,16 +1454,16 @@ SSP_FORCEINLINE __m128i ssp_comgt_epi8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.s8[0]>B.s8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.s8[1]>B.s8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.s8[2]>B.s8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.s8[3]>B.s8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.s8[4]>B.s8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.s8[5]>B.s8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.s8[6]>B.s8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.s8[7]>B.s8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.s8[8]>B.s8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.s8[9]>B.s8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.s8[ 0]>B.s8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.s8[ 1]>B.s8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.s8[ 2]>B.s8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.s8[ 3]>B.s8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.s8[ 4]>B.s8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.s8[ 5]>B.s8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.s8[ 6]>B.s8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.s8[ 7]>B.s8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.s8[ 8]>B.s8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.s8[ 9]>B.s8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.s8[10]>B.s8[10]) ? 0xFF : 0;
     A.u8[11] = (A.s8[11]>B.s8[11]) ? 0xFF : 0;
     A.u8[12] = (A.s8[12]>B.s8[12]) ? 0xFF : 0;
@@ -1519,16 +1520,16 @@ SSP_FORCEINLINE __m128i ssp_comgt_epu8_REF(__m128i a, __m128i b)
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
-    A.u8[0] = (A.u8[0]>B.u8[0]) ? 0xFF : 0;
-    A.u8[1] = (A.u8[1]>B.u8[1]) ? 0xFF : 0;
-    A.u8[2] = (A.u8[2]>B.u8[2]) ? 0xFF : 0;
-    A.u8[3] = (A.u8[3]>B.u8[3]) ? 0xFF : 0;
-    A.u8[4] = (A.u8[4]>B.u8[4]) ? 0xFF : 0;
-    A.u8[5] = (A.u8[5]>B.u8[5]) ? 0xFF : 0;
-    A.u8[6] = (A.u8[6]>B.u8[6]) ? 0xFF : 0;
-    A.u8[7] = (A.u8[7]>B.u8[7]) ? 0xFF : 0; 
-	A.u8[8] = (A.u8[8]>B.u8[8]) ? 0xFF : 0;
-    A.u8[9] = (A.u8[9]>B.u8[9]) ? 0xFF : 0;
+    A.u8[ 0] = (A.u8[ 0]>B.u8[ 0]) ? 0xFF : 0;
+    A.u8[ 1] = (A.u8[ 1]>B.u8[ 1]) ? 0xFF : 0;
+    A.u8[ 2] = (A.u8[ 2]>B.u8[ 2]) ? 0xFF : 0;
+    A.u8[ 3] = (A.u8[ 3]>B.u8[ 3]) ? 0xFF : 0;
+    A.u8[ 4] = (A.u8[ 4]>B.u8[ 4]) ? 0xFF : 0;
+    A.u8[ 5] = (A.u8[ 5]>B.u8[ 5]) ? 0xFF : 0;
+    A.u8[ 6] = (A.u8[ 6]>B.u8[ 6]) ? 0xFF : 0;
+    A.u8[ 7] = (A.u8[ 7]>B.u8[ 7]) ? 0xFF : 0; 
+	A.u8[ 8] = (A.u8[ 8]>B.u8[ 8]) ? 0xFF : 0;
+    A.u8[ 9] = (A.u8[ 9]>B.u8[ 9]) ? 0xFF : 0;
     A.u8[10] = (A.u8[10]>B.u8[10]) ? 0xFF : 0;
     A.u8[11] = (A.u8[11]>B.u8[11]) ? 0xFF : 0;
     A.u8[12] = (A.u8[12]>B.u8[12]) ? 0xFF : 0;
@@ -1585,7 +1586,7 @@ SSP_FORCEINLINE __m128 ssp_comgt_ss_REF(__m128 a, __m128 b)
 
 
 //----------------------------------------
-// COMTRUE (COMPS condition 15)
+// COMTRUE (Condition 15)
 //----------------------------------------
 
 /** \SSE5{Reference,_mm_comtrue_epi16, pcomw } */
@@ -1672,9 +1673,6 @@ SSP_FORCEINLINE __m128 ssp_comtrue_ss_REF(__m128 a, __m128 b)
     A.u32[0] = 0xFFFFFFFF;
     return A.f;
 }
-
-
-
 
 /** @} 
  *  @}

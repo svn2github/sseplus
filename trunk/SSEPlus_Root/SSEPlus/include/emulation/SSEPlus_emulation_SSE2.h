@@ -497,12 +497,7 @@ SSP_FORCEINLINE __m128  ssp_blendv_ps_SSE2( __m128  a, __m128  b, __m128 mask )
 SSP_FORCEINLINE
 __m128i ssp_cmpeq_epi64_SSE2( __m128i a, __m128i b )
 {
-    const static __m128i const_mask = SSP_CONST_SET_32I( 0xFFFFFFFF, 0xFFFFFFFE, 0xFFFFFFFF, 0xFFFFFFFE );
-
-    a = _mm_cmpeq_epi32( a, b );
-    a = _mm_slli_epi64 ( a, 1 );
-    a = _mm_cmpeq_epi32( a, const_mask ); // Values only equal if shifting by 1 results in FFFFFFFF FFFFFFFE
-    return a;
+    return ssp_comeq_epi64_SSE2( a, b );
 }
 
 
@@ -683,7 +678,7 @@ __m128i ssp_max_epi8_SSE2( __m128i a, __m128i b )
 SSP_FORCEINLINE
 __m128i ssp_min_epu16_SSE2( __m128i a, __m128i b )
 {
-    __m128i mask = ssp_logical_cmplt_epu16_SSE2( a, b );
+    __m128i mask = ssp_comlt_epu16_SSE2( a, b );
     a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
@@ -692,7 +687,7 @@ __m128i ssp_min_epu16_SSE2( __m128i a, __m128i b )
 SSP_FORCEINLINE
 __m128i ssp_max_epu16_SSE2( __m128i a, __m128i b )
 {
-    __m128i mask = ssp_logical_cmpgt_epu16_SSE2( a, b );
+    __m128i mask = ssp_comgt_epu16_SSE2( a, b );
     a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
@@ -719,7 +714,7 @@ __m128i ssp_max_epi32_SSE2( __m128i a, __m128i b )
 SSP_FORCEINLINE
 __m128i ssp_min_epu32_SSE2 ( __m128i a, __m128i b )
 {
-    __m128i mask = ssp_logical_cmplt_epu32_SSE2( a, b );
+    __m128i mask = ssp_comlt_epu32_SSE2( a, b );
     a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
@@ -728,7 +723,7 @@ __m128i ssp_min_epu32_SSE2 ( __m128i a, __m128i b )
 SSP_FORCEINLINE
 __m128i ssp_max_epu32_SSE2 ( __m128i a, __m128i b )
 {
-   __m128i mask = ssp_logical_cmpgt_epu32_SSE2( a, b );
+   __m128i mask = ssp_comgt_epu32_SSE2( a, b );
     a = ssp_logical_bitwise_select_SSE2( a, b, mask );
     return a;
 }
