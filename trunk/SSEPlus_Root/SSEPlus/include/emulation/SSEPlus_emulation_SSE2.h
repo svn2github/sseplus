@@ -32,65 +32,19 @@ SSP_FORCEINLINE __m128i ssp_macc_epi16_SSE2( __m128i a, __m128i b, __m128i c )
 /** \SSE5{SSE2,_mm_macc_epi32, pmacsdd } */ 
 SSP_FORCEINLINE __m128i ssp_macc_epi32_SSE2( __m128i a, __m128i b, __m128i c )
 {
-	//from Framewave CBL
-	__m128i a1, b1, c1, d, x, y, LO;
-	__m128i dstlo, dsthi, dst1;
+	__m128i ab02, ab13, mask;
 
-	a1 = _mm_srai_epi32(a,16);
-	b1 = _mm_slli_epi32(a,16);
-	b1 = _mm_srli_epi32(b1,16);
+	mask = _mm_set_epi32(0, 0xFFFFFFFF, 0, 0xFFFFFFFF);
+	ab02 = _mm_mul_epu32(a, b);
+	ab02 = _mm_and_si128(ab02, mask);
+	a    = _mm_srli_epi64(a, 32);
+	b    = _mm_srli_epi64(b, 32);
+	ab13 = _mm_mul_epu32(a, b);
+	ab13 = _mm_slli_epi64(ab13, 32);
 
-	c1 = _mm_srai_epi32(b,16);
-	d = _mm_slli_epi32(b,16);
-	d = _mm_srli_epi32(d,16);
+	a    = _mm_add_epi32(ab02, ab13);
 
-	dstlo =  _mm_mullo_epi16(b1,d);
-	dsthi =  _mm_mulhi_epu16(b1,d);
-
-	dst1 =_mm_unpacklo_epi16(dstlo,dsthi); 
-	dsthi =_mm_unpackhi_epi16(dstlo,dsthi); 
-
-	dstlo =_mm_unpacklo_epi32(dst1,dsthi); 
-	dsthi =_mm_unpackhi_epi32(dst1,dsthi); 
-	
-	LO = _mm_unpacklo_epi32(dstlo,dsthi);
-
-	dstlo =  _mm_mullo_epi16(a1,d);
-	dsthi =  _mm_mulhi_epi16(a1,d);
-
-	dst1 =_mm_unpacklo_epi16(dstlo,dsthi); 
-	dsthi =_mm_unpackhi_epi16(dstlo,dsthi); 
-
-	dstlo =_mm_unpacklo_epi32(dst1,dsthi); 
-	dsthi =_mm_unpackhi_epi32(dst1,dsthi); 
-	
-	x = _mm_unpacklo_epi32(dstlo,dsthi);
-
-	dstlo =  _mm_mullo_epi16(c1,b1);
-	dsthi =  _mm_mulhi_epu16(c1,b1);
-
-	dst1 =_mm_unpacklo_epi16(dstlo,dsthi); 
-	dsthi =_mm_unpackhi_epi16(dstlo,dsthi); 
-
-	dstlo =_mm_unpacklo_epi32(dst1,dsthi); 
-	dsthi =_mm_unpackhi_epi32(dst1,dsthi); 
-	
-	y = _mm_unpacklo_epi32(dstlo,dsthi);
-
-	x = _mm_add_epi32(x,y);
-
-	y = _mm_srli_epi32(LO,16);
-
-	y = _mm_add_epi32(y,x);
-	
-	y = _mm_slli_epi32(y,16);
-
-	LO = _mm_slli_epi32(LO,16);
-	LO = _mm_srli_epi32(LO,16);
-
-	LO = _mm_or_si128(LO,y);
-
-	return _mm_add_epi32(LO,c);
+	return _mm_add_epi32(a, c);
 }
 
 /** \SSE5{SSE2,_mm_macc_pd,fmaddpd} */ 
@@ -100,6 +54,7 @@ SSP_FORCEINLINE __m128d ssp_macc_pd_SSE2(__m128d a, __m128d b, __m128d c)
     a = _mm_add_pd( a, c );
     return a;
 }
+
 /** \SSE5{SSE2,_mm_macc_ps,fmaddps} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ps_SSE2( __m128 a, __m128 b, __m128 c )
 {
@@ -107,6 +62,7 @@ SSP_FORCEINLINE __m128 ssp_macc_ps_SSE2( __m128 a, __m128 b, __m128 c )
     a = _mm_add_ps( a, c );
     return a;
 }
+
 /** \SSE5{SSE2,_mm_macc_sd,fmaddsd} */ 
 SSP_FORCEINLINE __m128d ssp_macc_sd_SSE2(__m128d a, __m128d b, __m128d c)
 {
@@ -119,6 +75,7 @@ SSP_FORCEINLINE __m128d ssp_macc_sd_SSE2(__m128d a, __m128d b, __m128d c)
     B.i = ssp_logical_bitwise_select_SSE2( A.i, B.i, mask ); // This was faster than using 2 shuffles
     return B.d;
 }
+
 /** \SSE5{SSE2,_mm_macc_ss,fmaddss} */ 
 SSP_FORCEINLINE __m128 ssp_macc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assuming SSE5 *_ss semantics are similar to _mm_add_ss. TODO: confirm
 {
@@ -132,7 +89,29 @@ SSP_FORCEINLINE __m128 ssp_macc_ss_SSE2(__m128 a, __m128 b, __m128 c)   // Assum
     return B.f;
 }
 
+/** \SSE5{SSE2,_mm_maccd_epi16, pmacswd } */ 
+SSP_FORCEINLINE __m128i ssp_maccd_epi16_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	__m128i ab_lo, ab_hi;
+	__m128i mask = _mm_set1_epi32(0xFFFF);
 
+    ab_lo = _mm_mullo_epi16(a, b);
+	ab_hi = _mm_mulhi_epi16(a, b);
+
+	ab_lo = _mm_and_si128(ab_lo, mask);
+	ab_hi = _mm_and_si128(ab_hi, mask);
+	ab_hi = _mm_slli_epi32(ab_hi, 16);
+	a = _mm_add_epi32( ab_lo, ab_hi );
+	return _mm_add_epi32 (a, c);
+
+	////another method ported from Framewave CBL
+	//b     = _mm_unpacklo_epi16(ab_lo, ab_hi);
+	//ab_hi = _mm_unpackhi_epi16(ab_lo, ab_hi);
+	//ab_lo = _mm_unpacklo_epi32(b,     ab_hi);
+	//ab_hi = _mm_unpackhi_epi32(b,     ab_hi);
+	//ab_lo = _mm_unpacklo_epi32(ab_lo, ab_hi);
+	//return _mm_add_epi32(ab_lo, c);
+}
 
 //
 // Negative Multiply Add
