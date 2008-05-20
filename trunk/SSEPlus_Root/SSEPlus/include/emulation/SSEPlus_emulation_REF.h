@@ -3014,7 +3014,7 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
 }
 
 //--------------------------------------
-// Packed rotates
+// Packed permute
 //--------------------------------------
 
 ///** \SSE5{Reference,_mm_perm_epi8, pperm } */
@@ -3032,6 +3032,10 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
 //{
 //    return _mm_perm_pd (a, b, c);
 //}
+
+//--------------------------------------
+// Packed rotates
+//--------------------------------------
 
 /** \SSE5{Reference,_mm_rot_epi8,		 protb } */
 SSP_FORCEINLINE __m128i ssp_rot_epi8_REF(__m128i a, __m128i b  )
@@ -3101,7 +3105,7 @@ SSP_FORCEINLINE __m128i ssp_rot_epi32_REF(__m128i a, __m128i b  )
 
     for( n = 0; n < 4; n++ )
     {
-      if( B.s8[n] < 0 )
+      if( B.s32[n] < 0 )
       {
         unsigned int count = (-B.s32[n]) % 32;
         unsigned int carry_count = (32 - count) % 32;
@@ -3130,7 +3134,7 @@ SSP_FORCEINLINE __m128i ssp_rot_epi64_REF(__m128i a, __m128i b  )
 
     for( n = 0; n < 2; n++ )
     {
-      if( B.s8[n] < 0 )
+      if( B.s64[n] < 0 )
       {
         unsigned int count = (unsigned int)((-B.s64[n]) % 64);
         unsigned int carry_count = (64 - count) % 64;
