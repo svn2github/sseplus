@@ -554,54 +554,54 @@ void Cleanup( double res[ SSP_SSE_COUNT ], std::string &errorList, const CSVLine
                   bool do_REF,   bool do_SSE,    bool do_SSE2,   bool do_SSE3,   bool do_SSSE3, 
                   bool do_SSE4a, bool do_SSE4_1, bool do_SSE4_2, bool do_SSE5 )
 {
-    if     ( !do_REF                       ){ PrintSpace();                              }   
+    if     ( !do_REF                       ){ PrintSpace    ( csv.REF                  );} 
     else if( -1 == res[SSP_REF]            ){ PrintFail     ( csv.REF                  );}
     else if( -2 == res[SSP_REF]            ){ PrintException( csv.REF                  );}
     else                                    { PrintResult   ( csv.REF, res[SSP_REF]    );}  
 
-    if     ( !do_SSE                       ){ PrintSpace();                              }
+    if     ( !do_SSE                       ){ PrintSpace    (csv.SSE                   );} 
     else if( !ssp_is_supported(SSP_SSE    )){ PrintDisabled (csv.SSE                   );} 
     else if( -1 == res[SSP_SSE ]           ){ PrintFail     (csv.SSE                   );}
     else if( -2 == res[SSP_SSE ]           ){ PrintException(csv.SSE                   );}
     else                                    { PrintResult   (csv.SSE ,res[SSP_SSE ]    );}  
 
-    if     ( !do_SSE2                      ){ PrintSpace();                              }
+    if     ( !do_SSE2                      ){ PrintSpace    (csv.SSE2                  );} 
     else if( !ssp_is_supported(SSP_SSE2   )){ PrintDisabled (csv.SSE2                  );} 
     else if( -1 == res[SSP_SSE2]           ){ PrintFail     (csv.SSE2                  );}
     else if( -2 == res[SSP_SSE2]           ){ PrintException(csv.SSE2                  );}
     else                                    { PrintResult   (csv.SSE2,res[SSP_SSE2]    );}  
 
-    if     ( !do_SSE3                      ){ PrintSpace();                              }
+    if     ( !do_SSE3                      ){ PrintSpace    (csv.SSE3                  );} 
     else if( !ssp_is_supported(SSP_SSE3   )){ PrintDisabled (csv.SSE3                  );} 
     else if( -1 == res[SSP_SSE3]           ){ PrintFail     (csv.SSE3                  );}
     else if( -2 == res[SSP_SSE3]           ){ PrintException(csv.SSE3                  );}
     else                                    { PrintResult   (csv.SSE3,res[SSP_SSE3]    );}  
 
-    if     ( !do_SSSE3                     ){ PrintSpace();                              }
+    if     ( !do_SSSE3                     ){ PrintSpace    (csv.SSSE3                 );} 
     else if( !ssp_is_supported(SSP_SSSE3  )){ PrintDisabled (csv.SSSE3                 );} 
     else if( -1 == res[SSP_SSSE3]          ){ PrintFail     (csv.SSSE3                 );}
     else if( -2 == res[SSP_SSSE3]          ){ PrintException(csv.SSSE3                 );}
     else                                    { PrintResult   (csv.SSSE3,res[SSP_SSSE3]  );}  
 
-    if     ( !do_SSE4a                     ){ PrintSpace();                              }
+    if     ( !do_SSE4a                     ){ PrintSpace    (csv.SSE4a                 );} 
     else if( !ssp_is_supported(SSP_SSE4a  )){ PrintDisabled (csv.SSE4a                 );} 
     else if( -1 == res[SSP_SSE4a]          ){ PrintFail     (csv.SSE4a                 );}
     else if( -2 == res[SSP_SSE4a]          ){ PrintException(csv.SSE4a                 );}
     else                                    { PrintResult   (csv.SSE4a,res[SSP_SSE4a]  );}   
 
-    if     ( !do_SSE4_1                    ){ PrintSpace();                              }
+    if     ( !do_SSE4_1                    ){ PrintSpace    (csv.SSE4_1                );} 
     else if( !ssp_is_supported(SSP_SSE4_1 )){ PrintDisabled (csv.SSE4_1                );} 
     else if( -1 == res[SSP_SSE4_1]         ){ PrintFail     (csv.SSE4_1                );}
     else if( -2 == res[SSP_SSE4_1]         ){ PrintException(csv.SSE4_1                );}
     else                                    { PrintResult   (csv.SSE4_1,res[SSP_SSE4_1]);} 
 
-    if     ( !do_SSE4_2                    ){ PrintSpace();                              }
+    if     ( !do_SSE4_2                    ){ PrintSpace    (csv.SSE4_2               );} 
     else if( !ssp_is_supported(SSP_SSE4_2 )){ PrintDisabled (csv.SSE4_2                );} 
     else if( -1 == res[SSP_SSE4_2]         ){ PrintFail     (csv.SSE4_2                );}
     else if( -2 == res[SSP_SSE4_2]         ){ PrintException(csv.SSE4_2                );}
     else                                    { PrintResult   (csv.SSE4_2,res[SSP_SSE4_2]);} 
 
-    if     ( !do_SSE5                      ){ PrintSpace();                              }
+    if     ( !do_SSE5                      ){ PrintSpace    (csv.SSE5                  );} 
     else if( !ssp_is_supported(SSP_SSE5   )){ PrintDisabled (csv.SSE5                  );} 
     else if( -1 == res[SSP_SSE5]           ){ PrintFail     (csv.SSE5                  );}
     else if( -2 == res[SSP_SSE5]           ){ PrintException(csv.SSE5                  );}
@@ -909,10 +909,6 @@ void Test( const CSVLine & csv, const char *name, T1 a_exp, T2 b_exp, T3 c_exp, 
     
     Cleanup( res, p::errorList, csv, do_REF, do_SSE, do_SSE2, do_SSE3, do_SSSE3, do_SSE4a, do_SSE4_1, do_SSE4_2, do_SSE5 );    
 }
-
-
-
-
 
 //====================================
 

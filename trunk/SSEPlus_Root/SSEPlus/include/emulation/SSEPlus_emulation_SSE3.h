@@ -14,7 +14,7 @@
  *  @name SSE[4A,...,5] implemented in SSE3
  */
 
-/** \IMP{SSE3,_mm_dp_ps,SSE4.1} */ 
+/** \SSE4_1{SSE3,_mm_dp_ps} */ 
 SSP_FORCEINLINE
 __m128 ssp_dp_ps_SSE3( __m128 a, __m128 b, const int mask )                 
 {

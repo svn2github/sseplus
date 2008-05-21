@@ -392,7 +392,7 @@ SSP_FORCEINLINE __m128d ssp_nmsub_sd_SSE2(__m128d a, __m128d b, __m128d c)
 //
 
 
-/** \IMP{SSE2,_mm_abs_epi8,SSSE3} */
+/** \SSSE3{SSE2,_mm_abs_epi8} */
 SSP_FORCEINLINE
 __m128i ssp_abs_epi8_SSE2 (__m128i a)
 {
@@ -404,7 +404,7 @@ __m128i ssp_abs_epi8_SSE2 (__m128i a)
     return a;
 }
 
-/** \IMP{SSE2,_mm_abs_epi16,SSSE3} */
+/** \SSSE3{SSE2,_mm_abs_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_abs_epi16_SSE2 (__m128i a)
 {
@@ -415,7 +415,7 @@ __m128i ssp_abs_epi16_SSE2 (__m128i a)
     return a;
 }
 
-/** \IMP{SSE2,_mm_abs_epi32,SSSE3} */
+/** \SSSE3{SSE2,_mm_abs_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_abs_epi32_SSE2 (__m128i a)
 {
@@ -427,7 +427,7 @@ __m128i ssp_abs_epi32_SSE2 (__m128i a)
 }
 
 
-/** \IMP{SSE2,_mm_addsub_ps,SSE3} */
+/** \SSE3{SSE2,_mm_addsub_ps} */
 SSP_FORCEINLINE
 __m128 ssp_addsub_ps_SSE2(__m128 a, __m128 b)
 {
@@ -438,7 +438,7 @@ __m128 ssp_addsub_ps_SSE2(__m128 a, __m128 b)
     return a;
 }
 
-/** \IMP{SSE2,_mm_addsub_ps,SSE3} */
+/** \SSE3{SSE2,_mm_addsub_ps} */
 SSP_FORCEINLINE
 __m128d ssp_addsub_pd_SSE2(__m128d a, __m128d b)
 {
@@ -453,7 +453,7 @@ __m128d ssp_addsub_pd_SSE2(__m128d a, __m128d b)
 // Blend
 //
 
-/** \IMP{SSE2,_mm_blend_epi16,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_blend_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_blend_epi16_SSE2( __m128i a, __m128i b, const int mask )
 {
@@ -469,7 +469,7 @@ __m128i ssp_blend_epi16_SSE2( __m128i a, __m128i b, const int mask )
     return a;
 }
 
-/** \IMP{SSE2,_mm_blend_pd,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_blend_pd} */
 SSP_FORCEINLINE
 __m128d ssp_blend_pd_SSE2(  __m128d a, __m128d b, const int mask )
 {
@@ -482,7 +482,7 @@ __m128d ssp_blend_pd_SSE2(  __m128d a, __m128d b, const int mask )
     return a;
 }
 
-/** \IMP{SSE2,_mm_blend_ps,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_blend_ps} */
 SSP_FORCEINLINE
 __m128  ssp_blend_ps_SSE2( __m128  a, __m128  b, const int mask )               // _mm_blend_ps [SSE4.1]
 {
@@ -494,7 +494,7 @@ __m128  ssp_blend_ps_SSE2( __m128  a, __m128  b, const int mask )               
     return screen.f;
 }
 
-/** \IMP{SSE2,_mm_blendv_epi8,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_blendv_epi8} */
 SSP_FORCEINLINE
 __m128i ssp_blendv_epi8_SSE2( __m128i a, __m128i b, __m128i mask )
 {
@@ -517,7 +517,7 @@ __m128i ssp_blendv_epi8_SSE2( __m128i a, __m128i b, __m128i mask )
     return a;
 }
 
-/** \IMP{SSE2,_mm_blendv_pd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_blendv_pd} */
 SSP_FORCEINLINE __m128d ssp_blendv_pd_SSE2( __m128d a, __m128d b, __m128d mask )
 {
     ssp_m128 A, B, Mask;
@@ -533,7 +533,7 @@ SSP_FORCEINLINE __m128d ssp_blendv_pd_SSE2( __m128d a, __m128d b, __m128d mask )
     A.i = _mm_or_si128( A.i, B.i );
     return A.d;
 }
-/** \IMP{SSE2,_mm_blendv_epi8, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_blendv_epi8} */
 SSP_FORCEINLINE __m128  ssp_blendv_ps_SSE2( __m128  a, __m128  b, __m128 mask )     
 {
     ssp_m128 A, B, Mask;
@@ -552,7 +552,7 @@ SSP_FORCEINLINE __m128  ssp_blendv_ps_SSE2( __m128  a, __m128  b, __m128 mask )
 // Compare
 //
 
-/** \IMP{SSE2,_mm_cmpeq_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cmpeq_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cmpeq_epi64_SSE2( __m128i a, __m128i b )
 {
@@ -564,7 +564,7 @@ __m128i ssp_cmpeq_epi64_SSE2( __m128i a, __m128i b )
 // Horizontal Operations
 //
 
-/** \IMP{SSE2,_mm_hadd_epi16,SSE3} */
+/** \SSE3{SSE2,_mm_hadd_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_hadd_epi16_SSE2( __m128i a, __m128i b )
 {
@@ -573,7 +573,7 @@ __m128i ssp_hadd_epi16_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_hadds_epi16, SSSE3} */
+/** \SSSE3{SSE2,_mm_hadds_epi16} */
 SSP_FORCEINLINE __m128i ssp_hadds_epi16_SSE2 ( __m128i a, __m128i b )                     
 {
     ssp_convert_odd_even_epi16_SSE2( &a, &b );
@@ -582,7 +582,7 @@ SSP_FORCEINLINE __m128i ssp_hadds_epi16_SSE2 ( __m128i a, __m128i b )
 }
 
 
-/** \IMP{SSE2,_mm_hsub_epi16,SSE3} */
+/** \SSE3{SSE2,_mm_hsub_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_hsub_epi16_SSE2 ( __m128i a, __m128i b )
 {
@@ -591,7 +591,7 @@ __m128i ssp_hsub_epi16_SSE2 ( __m128i a, __m128i b )
     return a;  
 }
 
-/** \IMP{SSE2,_mm_hsub_epi16,SSE3} */
+/** \SSE3{SSE2,_mm_hsub_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_hsubs_epi16_SSE2 ( __m128i a, __m128i b )
 {
@@ -602,7 +602,7 @@ __m128i ssp_hsubs_epi16_SSE2 ( __m128i a, __m128i b )
 
 
 
-/** \IMP{SSE2,_mm_hadd_epi32, SSSE3} */
+/** \SSSE3{SSE2,_mm_hadd_epi32} */
 SSP_FORCEINLINE __m128i ssp_hadd_epi32_SSE2( __m128i a, __m128i b )                        
 {
    ssp_convert_odd_even_epi32_SSE2( &a, &b );
@@ -610,7 +610,7 @@ SSP_FORCEINLINE __m128i ssp_hadd_epi32_SSE2( __m128i a, __m128i b )
    return a; 
 }
 
-/** \IMP{SSE2,_mm_hsub_epi32, SSSE3} */
+/** \SSSE3{SSE2,_mm_hsub_epi32} */
 SSP_FORCEINLINE __m128i ssp_hsub_epi32_SSE2 ( __m128i a, __m128i b )                        
 {
    ssp_convert_odd_even_epi32_SSE2( &a, &b );
@@ -619,7 +619,7 @@ SSP_FORCEINLINE __m128i ssp_hsub_epi32_SSE2 ( __m128i a, __m128i b )
 }
 
 
-/** \IMP{SSE2,_mm_hadd_ps,SSE3} */
+/** \SSE3{SSE2,_mm_hadd_ps} */
 SSP_FORCEINLINE
 __m128 ssp_hadd_ps_SSE2(__m128 a, __m128 b)
 {
@@ -628,7 +628,7 @@ __m128 ssp_hadd_ps_SSE2(__m128 a, __m128 b)
     return a;
 }
 
-/** \IMP{SSE2,_mm_hsub_ps,SSE3} */
+/** \SSE3{SSE2,_mm_hsub_ps} */
 SSP_FORCEINLINE
 __m128 ssp_hsub_ps_SSE2(__m128 a, __m128 b)
 {
@@ -638,7 +638,7 @@ __m128 ssp_hsub_ps_SSE2(__m128 a, __m128 b)
 }
 
 
-/** \IMP{SSE2,_mm_hadd_pd,SSE3} */
+/** \SSE3{SSE2,_mm_hadd_pd} */
 SSP_FORCEINLINE
 __m128d ssp_hadd_pd_SSE2(__m128d a, __m128d b)
 {
@@ -653,7 +653,7 @@ __m128d ssp_hadd_pd_SSE2(__m128d a, __m128d b)
     return A.d;
 }
 
-/** \IMP{SSE2,_mm_hsub_pd,SSE3} */
+/** \SSE3{SSE2,_mm_hsub_pd} */
 SSP_FORCEINLINE
 __m128d ssp_hsub_pd_SSE2(__m128d a, __m128d b)
 {
@@ -670,7 +670,7 @@ __m128d ssp_hsub_pd_SSE2(__m128d a, __m128d b)
 
 
 //__m128i _mm_mulhrs_epi16( __m128i a,  __m128i b);
-/** \IMP{SSE2,_mm_mulhrs_epi16, SSSE3} */
+/** \SSSE3{SSE2,_mm_mulhrs_epi16} */
 SSP_FORCEINLINE __m128i ssp_mulhrs_epi16_SSE2( __m128i a, __m128i b )
 {
     const static __m128i VAL = SSP_CONST_SET_32I( 0x4000, 0x4000, 0x4000, 0x4000 );
@@ -693,7 +693,7 @@ SSP_FORCEINLINE __m128i ssp_mulhrs_epi16_SSE2( __m128i a, __m128i b )
 }
 
 
-/** \IMP{SSE2,_mm_insert_epi32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_insert_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_insert_epi32_SSE2( __m128i a, int b, const int ndx )            // TODO: Verify behavior on Intel Hardware
 {
@@ -715,7 +715,7 @@ __m128i ssp_insert_epi32_SSE2( __m128i a, int b, const int ndx )            // T
 // Min / Max
 //
 
-/** \IMP{SSE2,_mm_min_epi8, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_min_epi8} */
 SSP_FORCEINLINE
 __m128i ssp_min_epi8_SSE2( __m128i a, __m128i b )
 {
@@ -724,7 +724,7 @@ __m128i ssp_min_epi8_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_max_epi8, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_max_epi8} */
 SSP_FORCEINLINE
 __m128i ssp_max_epi8_SSE2( __m128i a, __m128i b )
 {
@@ -733,7 +733,7 @@ __m128i ssp_max_epi8_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_min_epu16, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_min_epu16} */
 SSP_FORCEINLINE
 __m128i ssp_min_epu16_SSE2( __m128i a, __m128i b )
 {
@@ -742,7 +742,7 @@ __m128i ssp_min_epu16_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_max_epu16, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_max_epu16} */
 SSP_FORCEINLINE
 __m128i ssp_max_epu16_SSE2( __m128i a, __m128i b )
 {
@@ -751,7 +751,7 @@ __m128i ssp_max_epu16_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_min_epi32, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_min_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_min_epi32_SSE2( __m128i a, __m128i b )
 {
@@ -760,7 +760,7 @@ __m128i ssp_min_epi32_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_max_epi32, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_max_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_max_epi32_SSE2( __m128i a, __m128i b )
 {
@@ -769,7 +769,7 @@ __m128i ssp_max_epi32_SSE2( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_min_epu32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_min_epu32} */
 SSP_FORCEINLINE
 __m128i ssp_min_epu32_SSE2 ( __m128i a, __m128i b )
 {
@@ -778,7 +778,7 @@ __m128i ssp_min_epu32_SSE2 ( __m128i a, __m128i b )
     return a;
 }
 
-/** \IMP{SSE2,_mm_max_epu32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_max_epu32} */
 SSP_FORCEINLINE
 __m128i ssp_max_epu32_SSE2 ( __m128i a, __m128i b )
 {
@@ -788,7 +788,7 @@ __m128i ssp_max_epu32_SSE2 ( __m128i a, __m128i b )
 }
 
 
-/** \IMP{SSE2,_mm_maddubs_epi16, SSSE3} 
+/** \SSSE3{SSE2,_mm_maddubs_epi16} 
 
 in:  2 registers x 16 x 8 bit values (a is unsigned, b is signed)
 out: 1 register  x 8  x 16 bit values
@@ -817,7 +817,7 @@ SSP_FORCEINLINE __m128i ssp_maddubs_epi16_SSE2( __m128i a,  __m128i b)
 
 
 
-/** \IMP{SSE2,_mm_mpsadbw_epu8, SSE4.?} */
+/** \SSE4_1{SSE2,_mm_mpsadbw_epu8} */
 SSP_FORCEINLINE
 __m128i ssp_mpsadbw_epu8_SSE2 ( __m128i a, __m128i b, const int msk  ) // _mm_mpsadbw_epu8
 {
@@ -888,7 +888,7 @@ __m128i ssp_mpsadbw_epu8_SSE2 ( __m128i a, __m128i b, const int msk  ) // _mm_mp
 // Dot Product
 //---------------------------------------
 
-/** \IMP{SSE2,_mm_dp_pd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_dp_pd} */
 SSP_FORCEINLINE
 __m128d ssp_dp_pd_SSE2( __m128d a, __m128d b, const int mask )               // _mm_dp_pd [SSE4,  cycles]
 {
@@ -913,7 +913,7 @@ __m128d ssp_dp_pd_SSE2( __m128d a, __m128d b, const int mask )               // 
     return a;
 }
 
-/** \IMP{SSE2,_mm_dp_pd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_dp_pd} */
 SSP_FORCEINLINE
 __m128 ssp_dp_ps_SSE2( __m128 a, __m128 b, const int mask )                  // _mm_dp_ps() [SSE4, 28 cycles]
 {
@@ -940,7 +940,7 @@ __m128 ssp_dp_ps_SSE2( __m128 a, __m128 b, const int mask )                  // 
     return a;
 }
 
-/** \IMP{SSE2,_mm_round_ps, SSE4.1}\n
+/** \SSE4_1{SSE2,_mm_round_ps}\n
 \b NOTE_1: When rounding from negative numbers to zero, this function returns 0 and NOT -0. \n
 If this behavor is desired, use the slower function ssp_round_ps_neg_zero_SSE2(). \n
 \b NOTE_2: This functon should used only with input in the range (-2,147,483,648 -> 2,147,483,647) \n
@@ -1016,7 +1016,7 @@ __m128d ssp_round_pd_SSE2( __m128d  a, int iRoundMode )
     return A.d;
 }
 
-/** \IMP{SSE2,_mm_round_ss, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_round_ss} */
 SSP_FORCEINLINE
 __m128 ssp_round_ss_SSE2( __m128  a, __m128  b, int iRoundMode )
 {
@@ -1034,35 +1034,35 @@ __m128 ssp_round_ss_SSE2( __m128  a, __m128  b, int iRoundMode )
     return _mm_shuffle_ps(b, a, _MM_SHUFFLE(3,2,2,0)); 
 }
 
-/** \IMP{SSE2,_mm_ceil_ps, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_ceil_ps} */
 SSP_FORCEINLINE
 __m128 ssp_ceil_ps_SSE2( __m128 a )
 {
     return ssp_round_ps_SSE2( a, SSP_FROUND_TO_POS_INF );
 }
 
-/** \IMP{SSE2,_mm_floor_ps, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_floor_ps} */
 SSP_FORCEINLINE
 __m128 ssp_floor_ps_SSE2( __m128 a )
 {
     return ssp_round_ps_SSE2( a, SSP_FROUND_TO_NEG_INF );
 }
 
-/** \IMP{SSE2,_mm_floor_pd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_floor_pd} */
 SSP_FORCEINLINE
 __m128d ssp_floor_pd_SSE2( __m128d a )
 {
     return ssp_round_pd_SSE2( a, SSP_FROUND_TO_NEG_INF );
 }
 
-/** \IMP{SSE2,_mm_ceil_pd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_ceil_pd} */
 SSP_FORCEINLINE
 __m128d ssp_ceil_pd_SSE2( __m128d a )
 {
     return ssp_round_pd_SSE2( a, SSP_FROUND_TO_POS_INF );
 }
 
-/** \IMP{SSE2,_mm_ceil_sd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_ceil_sd} */
 SSP_FORCEINLINE __m128d ssp_floor_sd_SSE2( __m128d a, __m128d b)                              
 {
 	b = ssp_round_pd_SSE2(b, SSP_FROUND_TO_NEG_INF );
@@ -1070,7 +1070,7 @@ SSP_FORCEINLINE __m128d ssp_floor_sd_SSE2( __m128d a, __m128d b)
     return _mm_shuffle_pd(b, a, _MM_SHUFFLE2(1,0));
 }
 
-/** \IMP{SSE2,_mm_ceil_sd, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_ceil_sd} */
 SSP_FORCEINLINE __m128d ssp_ceil_sd_SSE2( __m128d a, __m128d b)                              
 {
 	b = ssp_round_pd_SSE2(b, SSP_FROUND_TO_POS_INF );
@@ -1078,7 +1078,7 @@ SSP_FORCEINLINE __m128d ssp_ceil_sd_SSE2( __m128d a, __m128d b)
     return _mm_shuffle_pd(b, a, _MM_SHUFFLE2(1,0));
 }
 
-/** \IMP{SSE2,_mm_floor_ss, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_floor_ss} */
 SSP_FORCEINLINE __m128 ssp_floor_ss_SSE2( __m128 a, __m128 b)                              
 {
 	b = ssp_round_ps_SSE2(b, SSP_FROUND_TO_NEG_INF );
@@ -1086,7 +1086,7 @@ SSP_FORCEINLINE __m128 ssp_floor_ss_SSE2( __m128 a, __m128 b)
     return _mm_shuffle_ps(b, a, _MM_SHUFFLE(3,2,2,0));
 }
 
-/** \IMP{SSE2,_mm_ceil_ss, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_ceil_ss} */
 SSP_FORCEINLINE __m128 ssp_ceil_ss_SSE2( __m128 a, __m128 b)                              
 {
 	b = ssp_round_ps_SSE2(b, SSP_FROUND_TO_POS_INF );
@@ -1119,7 +1119,7 @@ SSP_FORCEINLINE __m128 ssp_ceil_ss_SSE2( __m128 a, __m128 b)
 
 //type conversion
 
-/** \IMP{SSE2,_mm_cvtepi8_epi16,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepi8_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepi8_epi16_SSE2 ( __m128i a)
 {
@@ -1142,7 +1142,7 @@ __m128i ssp_cvtepi8_epi16_SSE2 ( __m128i a)
 	//return _mm_add_epi16(c, d);
 }
 
-/** \IMP{SSE2,_mm_cvtepi8_epi32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepi8_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepi8_epi32_SSE2 ( __m128i a)
 {
@@ -1157,7 +1157,7 @@ __m128i ssp_cvtepi8_epi32_SSE2 ( __m128i a)
 	return _mm_add_epi32(c, d);
 }
 
-/** \IMP{SSE2,_mm_cvtepi8_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepi8_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepi8_epi64_SSE2 ( __m128i a)
 {
@@ -1173,7 +1173,7 @@ __m128i ssp_cvtepi8_epi64_SSE2 ( __m128i a)
 	return _mm_add_epi64(c, d);
 }
 
-/** \IMP{SSE2,_mm_cvtepi16_epi32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepi16_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepi16_epi32_SSE2 ( __m128i a)
 {
@@ -1187,7 +1187,7 @@ __m128i ssp_cvtepi16_epi32_SSE2 ( __m128i a)
 	return _mm_add_epi32(c, d);
 }
 
-/** \IMP{SSE2,_mm_cvtepi16_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepi16_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepi16_epi64_SSE2 ( __m128i a)
 {
@@ -1202,7 +1202,7 @@ __m128i ssp_cvtepi16_epi64_SSE2 ( __m128i a)
 	return _mm_add_epi64(c, d);
 }
 
-/** \IMP{SSE2,_mm_cvtepi32_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepi32_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepi32_epi64_SSE2 ( __m128i a)
 {
@@ -1216,7 +1216,7 @@ __m128i ssp_cvtepi32_epi64_SSE2 ( __m128i a)
 	return _mm_add_epi64(c, d);
 }
 
-/** \IMP{SSE2,_mm_cvtepu8_epi16,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepu8_epi16} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepu8_epi16_SSE2 ( __m128i a)
 {
@@ -1225,7 +1225,7 @@ __m128i ssp_cvtepu8_epi16_SSE2 ( __m128i a)
 	return _mm_unpacklo_epi8(a, b);
 }
 
-/** \IMP{SSE2,_mm_cvtepu8_epi32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepu8_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepu8_epi32_SSE2 ( __m128i a)
 {
@@ -1236,7 +1236,7 @@ __m128i ssp_cvtepu8_epi32_SSE2 ( __m128i a)
 	return _mm_unpacklo_epi16(a, b);
 }
 
-/** \IMP{SSE2,_mm_cvtepu8_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepu8_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepu8_epi64_SSE2 ( __m128i a)
 {
@@ -1249,7 +1249,7 @@ __m128i ssp_cvtepu8_epi64_SSE2 ( __m128i a)
 	return _mm_unpacklo_epi32(a, b);
 }
 
-/** \IMP{SSE2,_mm_cvtepu16_epi32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepu16_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepu16_epi32_SSE2 ( __m128i a)
 {
@@ -1258,7 +1258,7 @@ __m128i ssp_cvtepu16_epi32_SSE2 ( __m128i a)
 	return _mm_unpacklo_epi16(a, b);
 }
 
-/** \IMP{SSE2,_mm_cvtepu16_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepu16_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepu16_epi64_SSE2 ( __m128i a)
 {
@@ -1269,7 +1269,7 @@ __m128i ssp_cvtepu16_epi64_SSE2 ( __m128i a)
 	return _mm_unpacklo_epi32(a, b);
 }
 
-/** \IMP{SSE2,_mm_cvtepu32_epi64,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_cvtepu32_epi64} */
 SSP_FORCEINLINE
 __m128i ssp_cvtepu32_epi64_SSE2 ( __m128i a)
 {
@@ -1278,7 +1278,7 @@ __m128i ssp_cvtepu32_epi64_SSE2 ( __m128i a)
 	return _mm_unpacklo_epi32(a, b);
 }
 
-/** \IMP{SSE2,_mm_packus_epi32,SSE4.1} */
+/** \SSE4_1{SSE2,_mm_packus_epi32} */
 SSP_FORCEINLINE
 __m128i ssp_packus_epi32_SSE2( __m128i a, __m128i b )
 {
@@ -1295,7 +1295,7 @@ __m128i ssp_packus_epi32_SSE2( __m128i a, __m128i b )
 //SSSE3
 // bit manipulation
 //__m128i _mm_alignr_epi8(__m128i a, __m128i b, const int ralign);
-/**  \IMP{Reference,_mm_alignr_epi8,SSSE3} */
+/**  \SSSE3{Reference,_mm_alignr_epi8} */
 SSP_FORCEINLINE
 __m128i ssp_alignr_epi8_SSE2 (__m128i a, __m128i b, const int ralign)
 {
@@ -1424,7 +1424,7 @@ __m128i ssp_alignr_epi8_SSE2 (__m128i a, __m128i b, const int ralign)
 //---------------------------------------
 //Insert
 //---------------------------------------
-/** \IMP{SSE2,_mm_insert_epi8, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_insert_epi8} */
 SSP_FORCEINLINE __m128i ssp_insert_epi8_SSE2( __m128i a, int b, const int ndx )
 {
     ssp_m128 Ahi, Alo;
@@ -1464,7 +1464,7 @@ SSP_FORCEINLINE __m128i ssp_insert_epi8_SSE2( __m128i a, int b, const int ndx )
     //A.i = _mm_or_si128( A.i, mask.i );
     //return A.i;
 }
-/** \IMP{SSE2,_mm_inserti_si64, SSE4a} */
+/** \SSE4a{SSE2,_mm_inserti_si64} */
 SSP_FORCEINLINE __m128i ssp_inserti_si64_SSE2( __m128i a, __m128i b, int len, int ndx )
 {
     const static __m128i MASK = SSP_CONST_SET_32I( 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF );
@@ -1481,7 +1481,7 @@ SSP_FORCEINLINE __m128i ssp_inserti_si64_SSE2( __m128i a, __m128i b, int len, in
 }
 
 
-/** \IMP{SSE2,_mm_insert_si64, SSE4a} */
+/** \SSE4a{SSE2,_mm_insert_si64} */
 SSP_FORCEINLINE __m128i ssp_insert_si64_SSE2( __m128i a, __m128i b )
 {
     ssp_u32 ndx, len;
@@ -1499,7 +1499,7 @@ SSP_FORCEINLINE __m128i ssp_insert_si64_SSE2( __m128i a, __m128i b )
 //Extract
 //---------------------------------------
 
-/** \IMP{SSE2,_mm_extract_epi8, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_extract_epi8} */
 SSP_FORCEINLINE int ssp_extract_epi8_SSE2( __m128i a, const int ndx )                       
 {
     ssp_m128 mask;
@@ -1528,7 +1528,7 @@ SSP_FORCEINLINE int ssp_extract_epi8_SSE2( __m128i a, const int ndx )
     return mask.s8[0];
 }
 
-/** \IMP{SSE2,_mm_extract_epi32, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_extract_epi32} */
 SSP_FORCEINLINE int ssp_extract_epi32_SSE2( __m128i a, const int imm )                            
 {
     ssp_m128 mask;
@@ -1545,7 +1545,7 @@ SSP_FORCEINLINE int ssp_extract_epi32_SSE2( __m128i a, const int imm )
     return mask.s32[0];
 }
 
-/** \IMP{SSE2,_mm_extract_ps, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_extract_ps} */
 SSP_FORCEINLINE int ssp_extract_ps_SSE2( __m128 a, const int ndx )                          
 {
     ssp_m128 A;
@@ -1553,7 +1553,7 @@ SSP_FORCEINLINE int ssp_extract_ps_SSE2( __m128 a, const int ndx )
     return ssp_extract_epi32_SSE2( A.i, ndx );
 }
 
-/** \IMP{SSE2,_mm_extract_epi64, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_extract_epi64} */
 SSP_FORCEINLINE ssp_s64 ssp_extract_epi64_SSE2( __m128i a, const int ndx )                  
 {
     ssp_m128 mask;
@@ -1568,7 +1568,7 @@ SSP_FORCEINLINE ssp_s64 ssp_extract_epi64_SSE2( __m128i a, const int ndx )
     return mask.s64[0];
 }
 
-/**  \IMP{SSE2,_mm_extracti_si64,SSE4a}
+/**  \SSE4a{SSE2,_mm_extracti_si64}
 \n  NOTE: The upper 64-bits of the destination register are undefined.
 */
 SSP_FORCEINLINE __m128i ssp_extracti_si64_SSE2( __m128i a, int len, int ndx )   
@@ -1580,7 +1580,7 @@ SSP_FORCEINLINE __m128i ssp_extracti_si64_SSE2( __m128i a, int len, int ndx )
 }
 
 
-/**  \IMP{SSE2,_mm_extract_si64,SSE4a} 
+/**  \SSE4a{SSE2,_mm_extract_si64} 
 \n  NOTE: The upper 64-bit of the destination register are undefined.
 */
 SSP_FORCEINLINE __m128i ssp_extract_si64_SSE2( __m128i a ,__m128i b )        
@@ -1597,7 +1597,7 @@ SSP_FORCEINLINE __m128i ssp_extract_si64_SSE2( __m128i a ,__m128i b )
 }
 
 
-/**  \IMP{SSE2,_mm_shuffle_epi8,SSSE3} */
+/**  \SSSE3{SSE2,_mm_shuffle_epi8} */
 SSP_FORCEINLINE __m128i ssp_shuffle_epi8_SSE2 (__m128i a, __m128i mask)
 {  
     ssp_m128 A,B, MASK, maskZero;	
@@ -1627,7 +1627,7 @@ SSP_FORCEINLINE __m128i ssp_shuffle_epi8_SSE2 (__m128i a, __m128i mask)
 }
 
 
-/** \IMP{SSE2,_mm_sign_epi8,SSSE3} */
+/** \SSSE3{SSE2,_mm_sign_epi8} */
 SSP_FORCEINLINE 
 __m128i ssp_sign_epi8_SSE2 (__m128i a, __m128i b)
 {
@@ -1649,7 +1649,7 @@ __m128i ssp_sign_epi8_SSE2 (__m128i a, __m128i b)
 	return _mm_or_si128(an, ap);//_mm_add_epi8(an, ap);
 }
 
-/** \IMP{SSE2,_mm_sign_epi16,SSSE3} */
+/** \SSSE3{SSE2,_mm_sign_epi16} */
 SSP_FORCEINLINE 
 __m128i ssp_sign_epi16_SSE2 (__m128i a, __m128i b)
 {
@@ -1674,7 +1674,7 @@ __m128i ssp_sign_epi16_SSE2 (__m128i a, __m128i b)
 	return a;
 }
 
-/** \IMP{SSE2,_mm_sign_epi32,SSSE3} */
+/** \SSSE3{SSE2,_mm_sign_epi32} */
 SSP_FORCEINLINE 
 __m128i ssp_sign_epi32_SSE2 (__m128i a, __m128i b)
 {
@@ -1699,14 +1699,14 @@ __m128i ssp_sign_epi32_SSE2 (__m128i a, __m128i b)
 //---------------------------------------
 // Test
 //---------------------------------------
-/** \IMP{SSE2,_mm_testc_si128, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_testc_si128} */
 SSP_FORCEINLINE int ssp_testc_si128_SSE2( __m128i a, __m128i b)                              
 {
     a = _mm_xor_si128( a, b );
     return ssp_testz_si128_SSE2( a, a );
 }
 
-/** \IMP{SSE2,_mm_testz_si128, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_testz_si128} */
 SSP_FORCEINLINE 
 int ssp_testz_si128_SSE2( __m128i a, __m128i b)   // This is much faster in 64 bit                           
 {
@@ -1716,7 +1716,7 @@ int ssp_testz_si128_SSE2( __m128i a, __m128i b)   // This is much faster in 64 b
     return t.u64[0] == 0;
 }
 
-/** \IMP{SSE2,_mm_testnzc_si128, SSE4.1} */
+/** \SSE4_1{SSE2,_mm_testnzc_si128} */
 SSP_FORCEINLINE 
 int ssp_testnzc_si128_SSE2( __m128i a, __m128i b)                            
 {
@@ -1735,7 +1735,7 @@ int ssp_testnzc_si128_SSE2( __m128i a, __m128i b)
 //---------------------------------------
 // Move
 //---------------------------------------
-/** \IMP{SSE2,_mm_movehdup_ps, SSE3} */
+/** \SSE3{SSE2,_mm_movehdup_ps} */
 SSP_FORCEINLINE __m128 ssp_movehdup_ps_SSE2(__m128 a)                                   
 {
     ssp_m128 A;
@@ -1744,7 +1744,7 @@ SSP_FORCEINLINE __m128 ssp_movehdup_ps_SSE2(__m128 a)
     return A.f;
 }
 
-/** \IMP{SSE2,_mm_moveldup_ps, SSE3} */
+/** \SSE3{SSE2,_mm_moveldup_ps} */
 SSP_FORCEINLINE __m128 ssp_moveldup_ps_SSE2(__m128 a)                                   
 {
     ssp_m128 A;
@@ -1753,7 +1753,7 @@ SSP_FORCEINLINE __m128 ssp_moveldup_ps_SSE2(__m128 a)
     return A.f;
 }
 
-/** \IMP{SSE2,_mm_movedup_pd, SSE3} */
+/** \SSE3{SSE2,_mm_movedup_pd} */
 SSP_FORCEINLINE __m128d ssp_movedup_pd_SSE2(__m128d a)                                  
 {
     ssp_m128 A;

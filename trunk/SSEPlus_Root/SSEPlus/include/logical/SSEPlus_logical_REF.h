@@ -12,8 +12,6 @@
  *  @{ 
  *  @name Logical Operations
  */
-
-
 SSP_FORCEINLINE __m128i ssp_logical_invert_si128_REF( __m128i a )
 {
     ssp_m128 A;

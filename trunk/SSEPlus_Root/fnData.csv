@@ -1,7 +1,7 @@
 Function                      ,Assembly  ,Source,   REF     ,   SSE     ,  SSE2     ,  SSE3     , SSSE3     , SSE4A     ,SSE4_1     ,SSE4_2     ,  SSE5     
-ssp_abs_epi16                 ,pabsw     ,SSSE3   ,46,           ,7,           ,1.6,           ,           ,           ,           
-ssp_abs_epi32                 ,pabsd     ,SSSE3   ,22.6,           ,7,           ,1.6,           ,           ,           ,           
-ssp_abs_epi8                  ,pabsb     ,SSSE3   ,62,           ,7,           ,1.6,           ,           ,           ,           
+ssp_abs_epi16                 ,pabsw     ,SSSE3 ,46,           ,7,           ,1.6,           ,           ,           ,           
+ssp_abs_epi32                 ,pabsd     ,SSSE3 ,22.6,           ,7,           ,1.6,           ,           ,           ,           
+ssp_abs_epi8                  ,pabsb     ,SSSE3 ,62,           ,7,           ,1.6,           ,           ,           ,           
 ssp_add_epi16                 ,paddw,SSE2,,,-1,,,,,,
 ssp_add_epi32                 ,paddd,SSE2,,,-1,,,,,,
 ssp_add_epi64                 ,paddq,SSE2,,,-1,,,,,,
@@ -15,9 +15,9 @@ ssp_adds_epi16                ,paddsw,SSE2,,,-1,,,,,,
 ssp_adds_epi8                 ,paddsb,SSE2,,,-1,,,,,,
 ssp_adds_epu16                ,paddusw,SSE2,,,-1,,,,,,
 ssp_adds_epu8                 ,paddusb,SSE2,,,-1,,,,,,
-ssp_addsub_pd                 ,addsubpd  ,SSE3,5.8,           ,6,4,           ,           ,           ,           ,           
-ssp_addsub_ps                 ,addsubps  ,SSE3,16.2,           ,6,4,           ,           ,           ,           ,           
-ssp_alignr_epi8               ,palignr   ,SSSE3   ,63,           ,4,           ,3.2,           ,           ,           ,           
+ssp_addsub_pd                 ,addsubpd  ,SSE3  ,5.8,           ,6,4,           ,           ,           ,           ,           
+ssp_addsub_ps                 ,addsubps  ,SSE3  ,16.2,           ,6,4,           ,           ,           ,           ,           
+ssp_alignr_epi8               ,palignr   ,SSSE3 ,63,           ,4,           ,3.2,           ,           ,           ,           
 ssp_and_pd                    ,amdpd,SSE2,,,-1,,,,,,
 ssp_and_ps                    ,andps,SSE,,-1,,,,,,,
 ssp_and_si128                 ,pand,SSE2,,,-1,,,,,,
@@ -40,7 +40,7 @@ ssp_castps_pd                 ,(comp),SSE2,,,-1,,,,,,
 ssp_castps_si128              ,(comp),SSE2,,,-1,,,,,,
 ssp_castsi128_pd              ,(comp),SSE2,,,-1,,,,,,
 ssp_castsi128_ps              ,(comp),SSE2,,,-1,,,,,,
-ssp_ceil_pd                   ,roundpd   ,SSE4_1,76,           ,38,           ,           ,           ,4.8,           ,           
+ssp_ceil_pd                   ,roundpd   ,SSE4_1,75.5,           ,38,           ,           ,           ,4.8,           ,           
 ssp_ceil_ps                   ,roundps   ,SSE4_1,173,           ,32,           ,           ,           ,4.8,           ,           
 ssp_ceil_sd                   ,roundsd   ,SSE4_1,35,           ,35,           ,           ,           ,4.8,           ,           
 ssp_ceil_ss                   ,roundss   ,SSE4_1,50.9,           ,40,           ,           ,           ,4.8,           ,           
@@ -119,54 +119,54 @@ ssp_cmpunord_pd               ,cmpunordpd,SSE2,,,-1,,,,,,
 ssp_cmpunord_ps               ,cmpunordps,SSE,,-1,,,,,,,
 ssp_cmpunord_sd               ,cmpunordsd,SSE2,,,-1,,,,,,
 ssp_cmpunord_ss               ,cmpunordss,SSE,,-1,,,,,,,
-ssp_comeq_epi16               ,pcomw,SSE5,,,,,,,,,-1
-ssp_comeq_epi32               ,pcomd,SSE5,,,,,,,,,-1
-ssp_comeq_epi64               ,pcomq,SSE5,,,,,,,,,-1
-ssp_comeq_epi8                ,pcomb,SSE5,,,,,,,,,-1
-ssp_comeq_epu16               ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comeq_epu32               ,pcomud,SSE5,,,,,,,,,-1
-ssp_comeq_epu64               ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comeq_epu8                ,pcomub,SSE5,,,,,,,,,-1
-ssp_comeq_pd                  ,compd,SSE5,,,,,,,,,-1
-ssp_comeq_ps                  ,comps,SSE5,,,,,,,,,-1
-ssp_comeq_sd                  ,comsd,SSE5,,,,,,,,,-1
-ssp_comeq_ss                  ,comss,SSE5,,,,,,,,,-1
-ssp_comfalse_epi16            ,pcomw,SSE5,,,,,,,,,-1
-ssp_comfalse_epi32            ,pcomd,SSE5,,,,,,,,,-1
-ssp_comfalse_epi64            ,pcomq,SSE5,,,,,,,,,-1
-ssp_comfalse_epi8             ,pcomb,SSE5,,,,,,,,,-1
-ssp_comfalse_epu16            ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comfalse_epu32            ,pcomud,SSE5,,,,,,,,,-1
-ssp_comfalse_epu64            ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comfalse_epu8             ,pcomub,SSE5,,,,,,,,,-1
-ssp_comfalse_pd               ,compd,SSE5,,,,,,,,,-1
-ssp_comfalse_ps               ,comps,SSE5,,,,,,,,,-1
-ssp_comfalse_sd               ,comsd,SSE5,,,,,,,,,-1
-ssp_comfalse_ss               ,comss,SSE5,,,,,,,,,-1
-ssp_comge_epi16               ,pcomw,SSE5,,,,,,,,,-1
-ssp_comge_epi32               ,pcomd,SSE5,,,,,,,,,-1
-ssp_comge_epi64               ,pcomq,SSE5,,,,,,,,,-1
-ssp_comge_epi8                ,pcomb,SSE5,,,,,,,,,-1
-ssp_comge_epu16               ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comge_epu32               ,pcomud,SSE5,,,,,,,,,-1
-ssp_comge_epu64               ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comge_epu8                ,pcomub,SSE5,,,,,,,,,-1
-ssp_comge_pd                  ,compd,SSE5,,,,,,,,,-1
-ssp_comge_ps                  ,comps,SSE5,,,,,,,,,-1
-ssp_comge_sd                  ,comsd,SSE5,,,,,,,,,-1
-ssp_comge_ss                  ,comss,SSE5,,,,,,,,,-1
-ssp_comgt_epi16               ,pcomw,SSE5,,,,,,,,,-1
-ssp_comgt_epi32               ,pcomd,SSE5,,,,,,,,,-1
-ssp_comgt_epi64               ,pcomq,SSE5,,,,,,,,,-1
-ssp_comgt_epi8                ,pcomb,SSE5,,,,,,,,,-1
-ssp_comgt_epu16               ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comgt_epu32               ,pcomud,SSE5,,,,,,,,,-1
-ssp_comgt_epu64               ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comgt_epu8                ,pcomub,SSE5,,,,,,,,,-1
-ssp_comgt_pd                  ,compd,SSE5,,,,,,,,,-1
-ssp_comgt_ps                  ,comps,SSE5,,,,,,,,,-1
-ssp_comgt_sd                  ,comsd,SSE5,,,,,,,,,-1
-ssp_comgt_ss                  ,comss,SSE5,,,,,,,,,-1
+ssp_comeq_epi16               ,pcomw     ,SSE5  ,47,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_epi32               ,pcomd     ,SSE5  ,34,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_epi64               ,pcomq     ,SSE5  ,25,           ,10,           ,           ,           ,           ,           ,-1
+ssp_comeq_epi8                ,pcomb     ,SSE5  ,59,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_epu16               ,pcomuw    ,SSE5  ,47,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_epu32               ,pcomud    ,SSE5  ,34,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_epu64               ,pcomuq    ,SSE5  ,25,           ,10,           ,           ,           ,           ,           ,-1
+ssp_comeq_epu8                ,pcomub    ,SSE5  ,59,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_pd                  ,compd     ,SSE5  ,30,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_ps                  ,comps     ,SSE5  ,28.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_sd                  ,comsd     ,SSE5  ,28.4,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comeq_ss                  ,comss     ,SSE5  ,11.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epi16            ,pcomw     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epi32            ,pcomd     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epi64            ,pcomq     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epi8             ,pcomb     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epu16            ,pcomuw    ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epu32            ,pcomud    ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epu64            ,pcomuq    ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_epu8             ,pcomub    ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_pd               ,compd     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_ps               ,comps     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comfalse_sd               ,comsd     ,SSE5  ,21.3,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comfalse_ss               ,comss     ,SSE5  ,19.5,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comge_epi16               ,pcomw     ,SSE5  ,47,           ,8,           ,           ,           ,           ,           ,-1
+ssp_comge_epi32               ,pcomd     ,SSE5  ,34,           ,8,           ,           ,           ,           ,           ,-1
+ssp_comge_epi64               ,pcomq     ,SSE5  ,38.5,           ,9999.9,           ,           ,           ,           ,           ,-1
+ssp_comge_epi8                ,pcomb     ,SSE5  ,59,           ,8.1,           ,           ,           ,           ,           ,-1
+ssp_comge_epu16               ,pcomuw    ,SSE5  ,44,           ,12,           ,           ,           ,           ,           ,-1
+ssp_comge_epu32               ,pcomud    ,SSE5  ,37.3,           ,12,           ,           ,           ,           ,           ,-1
+ssp_comge_epu64               ,pcomuq    ,SSE5  ,39,           ,39,           ,           ,           ,           ,           ,-1
+ssp_comge_epu8                ,pcomub    ,SSE5  ,67,           ,67,           ,           ,           ,           ,           ,-1
+ssp_comge_pd                  ,compd     ,SSE5  ,29.6,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comge_ps                  ,comps     ,SSE5  ,27.6,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comge_sd                  ,comsd     ,SSE5  ,28.4,           ,11.3,           ,           ,           ,           ,           ,-1
+ssp_comge_ss                  ,comss     ,SSE5  ,14.1,           ,18.2,           ,           ,           ,           ,           ,-1
+ssp_comgt_epi16               ,pcomw     ,SSE5  ,184.7,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comgt_epi32               ,pcomd     ,SSE5  ,34,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comgt_epi64               ,pcomq     ,SSE5  ,38.5,           ,38.5,           ,           ,           ,           ,           ,-1
+ssp_comgt_epi8                ,pcomb     ,SSE5  ,59,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comgt_epu16               ,pcomuw    ,SSE5  ,43.7,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comgt_epu32               ,pcomud    ,SSE5  ,35.9,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comgt_epu64               ,pcomuq    ,SSE5  ,38.4,           ,38.4,           ,           ,           ,           ,           ,-1
+ssp_comgt_epu8                ,pcomub    ,SSE5  ,64,           ,64,           ,           ,           ,           ,           ,-1
+ssp_comgt_pd                  ,compd     ,SSE5  ,30,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comgt_ps                  ,comps     ,SSE5  ,28.4,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comgt_sd                  ,comsd     ,SSE5  ,28.4,           ,11.3,           ,           ,           ,           ,           ,-1
+ssp_comgt_ss                  ,comss     ,SSE5  ,13.8,           ,18.2,           ,           ,           ,           ,           ,-1
 ssp_comieq_sd                 ,comisd,SSE2,,,-1,,,,,,
 ssp_comieq_ss                 ,comiss,SSE,,-1,,,,,,,
 ssp_comige_sd                 ,comisd,SSE2,,,-1,,,,,,
@@ -179,86 +179,86 @@ ssp_comilt_sd                 ,comisd,SSE2,,,-1,,,,,,
 ssp_comilt_ss                 ,comiss,SSE,,-1,,,,,,,
 ssp_comineq_sd                ,comisd,SSE2,,,-1,,,,,,
 ssp_comineq_ss                ,comiss,SSE,,-1,,,,,,,
-ssp_comle_epi16               ,pcomw,SSE5,,,,,,,,,-1
-ssp_comle_epi32               ,pcomd,SSE5,,,,,,,,,-1
-ssp_comle_epi64               ,pcomq,SSE5,,,,,,,,,-1
-ssp_comle_epi8                ,pcomb,SSE5,,,,,,,,,-1
-ssp_comle_epu16               ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comle_epu32               ,pcomud,SSE5,,,,,,,,,-1
-ssp_comle_epu64               ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comle_epu8                ,pcomub,SSE5,,,,,,,,,-1
-ssp_comle_pd                  ,compd,SSE5,,,,,,,,,-1
-ssp_comle_ps                  ,comps,SSE5,,,,,,,,,-1
-ssp_comle_sd                  ,comsd,SSE5,,,,,,,,,-1
-ssp_comle_ss                  ,comss,SSE5,,,,,,,,,-1
-ssp_comlt_epi16               ,pcomw,SSE5,,,,,,,,,-1
-ssp_comlt_epi32               ,pcomd,SSE5,,,,,,,,,-1
-ssp_comlt_epi64               ,pcomq,SSE5,,,,,,,,,-1
-ssp_comlt_epi8                ,pcomb,SSE5,,,,,,,,,-1
-ssp_comlt_epu16               ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comlt_epu32               ,pcomud,SSE5,,,,,,,,,-1
-ssp_comlt_epu64               ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comlt_epu8                ,pcomub,SSE5,,,,,,,,,-1
-ssp_comlt_pd                  ,compd,SSE5,,,,,,,,,-1
-ssp_comlt_ps                  ,comps,SSE5,,,,,,,,,-1
-ssp_comlt_sd                  ,comsd,SSE5,,,,,,,,,-1
-ssp_comlt_ss                  ,comss,SSE5,,,,,,,,,-1
-ssp_comneq_epi16              ,pcomw,SSE5,,,,,,,,,-1
-ssp_comneq_epi32              ,pcomd,SSE5,,,,,,,,,-1
-ssp_comneq_epi64              ,pcomq,SSE5,,,,,,,,,-1
-ssp_comneq_epi8               ,pcomb,SSE5,,,,,,,,,-1
-ssp_comneq_epu16              ,pcomuw,SSE5,,,,,,,,,-1
-ssp_comneq_epu32              ,pcomud,SSE5,,,,,,,,,-1
-ssp_comneq_epu64              ,pcomuq,SSE5,,,,,,,,,-1
-ssp_comneq_epu8               ,pcomub,SSE5,,,,,,,,,-1
-ssp_comneq_pd                 ,compd,SSE5,,,,,,,,,-1
-ssp_comneq_ps                 ,comps,SSE5,,,,,,,,,-1
-ssp_comneq_sd                 ,comsd,SSE5,,,,,,,,,-1
-ssp_comneq_ss                 ,comss,SSE5,,,,,,,,,-1
-ssp_comnge_pd                 ,compd,SSE5,,,,,,,,,-1
-ssp_comnge_ps                 ,comps,SSE5,,,,,,,,,-1
-ssp_comnge_sd                 ,comsd,SSE5,,,,,,,,,-1
-ssp_comnge_ss                 ,comss,SSE5,,,,,,,,,-1
-ssp_comngt_pd                 ,compd,SSE5,,,,,,,,,-1
-ssp_comngt_ps                 ,comps,SSE5,,,,,,,,,-1
-ssp_comngt_sd                 ,comsd,SSE5,,,,,,,,,-1
-ssp_comngt_ss                 ,comss,SSE5,,,,,,,,,-1
-ssp_comnle_pd                 ,compd,SSE5,,,,,,,,,-1
-ssp_comnle_ps                 ,comps,SSE5,,,,,,,,,-1
-ssp_comnle_sd                 ,comsd,SSE5,,,,,,,,,-1
-ssp_comnle_ss                 ,comss,SSE5,,,,,,,,,-1
-ssp_comnlt_pd                 ,compd,SSE5,,,,,,,,,-1
-ssp_comnlt_ps                 ,comps,SSE5,,,,,,,,,-1
-ssp_comnlt_sd                 ,comsd,SSE5,,,,,,,,,-1
-ssp_comnlt_ss                 ,comss,SSE5,,,,,,,,,-1
-ssp_comoneq_pd                ,compd,SSE5,,,,,,,,,-1
-ssp_comoneq_ps                ,comps,SSE5,,,,,,,,,-1
-ssp_comoneq_sd                ,comsd,SSE5,,,,,,,,,-1
-ssp_comoneq_ss                ,comss,SSE5,,,,,,,,,-1
-ssp_comord_pd                 ,compd,SSE5,,,,,,,,,-1
-ssp_comord_ps                 ,comps,SSE5,,,,,,,,,-1
-ssp_comord_sd                 ,comsd,SSE5,,,,,,,,,-1
-ssp_comord_ss                 ,comss,SSE5,,,,,,,,,-1
-ssp_comtrue_epi16             ,pcomw,SSE5,,,,,,,,,-1
-ssp_comtrue_epi32             ,pcomd,SSE5,,,,,,,,,-1
-ssp_comtrue_epi64             ,pcomq,SSE5,,,,,,,,,-1
-ssp_comtrue_epi8              ,pcomb,SSE5,,,,,,,,,-1
-ssp_comtrue_epu16             ,pcomw,SSE5,,,,,,,,,-1
-ssp_comtrue_epu32             ,pcomd,SSE5,,,,,,,,,-1
-ssp_comtrue_epu64             ,pcomq,SSE5,,,,,,,,,-1
-ssp_comtrue_epu8              ,pcomb,SSE5,,,,,,,,,-1
-ssp_comtrue_pd                ,pcompd,SSE5,,,,,,,,,-1
-ssp_comtrue_ps                ,pcomps,SSE5,,,,,,,,,-1
-ssp_comtrue_sd                ,pcomsd,SSE5,,,,,,,,,-1
-ssp_comtrue_ss                ,pcomss,SSE5,,,,,,,,,-1
-ssp_comueq_pd                 ,pcompd,SSE5,,,,,,,,,-1
-ssp_comueq_ps                 ,pcomps,SSE5,,,,,,,,,-1
-ssp_comueq_sd                 ,pcomsd,SSE5,,,,,,,,,-1
-ssp_comueq_ss                 ,pcomss,SSE5,,,,,,,,,-1
-ssp_comunord_pd               ,pcompd,SSE5,,,,,,,,,-1
-ssp_comunord_ps               ,pcomps,SSE5,,,,,,,,,-1
-ssp_comunord_sd               ,pcomsd,SSE5,,,,,,,,,-1
-ssp_comunord_ss               ,pcomss,SSE5,,,,,,,,,-1
+ssp_comle_epi16               ,pcomw     ,SSE5  ,47,           ,8,           ,           ,           ,           ,           ,-1
+ssp_comle_epi32               ,pcomd     ,SSE5  ,34.4,           ,8,           ,           ,           ,           ,           ,-1
+ssp_comle_epi64               ,pcomq     ,SSE5  ,36.5,           ,36.5,           ,           ,           ,           ,           ,-1
+ssp_comle_epi8                ,pcomb     ,SSE5  ,59,           ,8,           ,           ,           ,           ,           ,-1
+ssp_comle_epu16               ,pcomuw    ,SSE5  ,43.5,           ,43.5,           ,           ,           ,           ,           ,-1
+ssp_comle_epu32               ,pcomud    ,SSE5  ,37.4,           ,37.3,           ,           ,           ,           ,           ,-1
+ssp_comle_epu64               ,pcomuq    ,SSE5  ,36.8,           ,36.8,           ,           ,           ,           ,           ,-1
+ssp_comle_epu8                ,pcomub    ,SSE5  ,71.3,           ,71,           ,           ,           ,           ,           ,-1
+ssp_comle_pd                  ,compd     ,SSE5  ,29.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comle_ps                  ,comps     ,SSE5  ,28.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comle_sd                  ,comsd     ,SSE5  ,28.4,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comle_ss                  ,comss     ,SSE5  ,13.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comlt_epi16               ,pcomw     ,SSE5  ,47,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comlt_epi32               ,pcomd     ,SSE5  ,34,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comlt_epi64               ,pcomq     ,SSE5  ,36,           ,36,           ,           ,           ,           ,           ,-1
+ssp_comlt_epi8                ,pcomb     ,SSE5  ,59,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comlt_epu16               ,pcomuw    ,SSE5  ,44,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comlt_epu32               ,pcomud    ,SSE5  ,35,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comlt_epu64               ,pcomuq    ,SSE5  ,35,           ,35,           ,           ,           ,           ,           ,-1
+ssp_comlt_epu8                ,pcomub    ,SSE5  ,66,           ,66.5,           ,           ,           ,           ,           ,-1
+ssp_comlt_pd                  ,compd     ,SSE5  ,29.3,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comlt_ps                  ,comps     ,SSE5  ,27.5,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comlt_sd                  ,comsd     ,SSE5  ,28.4,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comlt_ss                  ,comss     ,SSE5  ,12.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comneq_epi16              ,pcomw     ,SSE5  ,47,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comneq_epi32              ,pcomd     ,SSE5  ,34.6,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comneq_epi64              ,pcomq     ,SSE5  ,26.2,           ,12,           ,           ,           ,           ,           ,-1
+ssp_comneq_epi8               ,pcomb     ,SSE5  ,59,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comneq_epu16              ,pcomuw    ,SSE5  ,47,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comneq_epu32              ,pcomud    ,SSE5  ,33.9,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comneq_epu64              ,pcomuq    ,SSE5  ,26.2,           ,12,           ,           ,           ,           ,           ,-1
+ssp_comneq_epu8               ,pcomub    ,SSE5  ,59,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comneq_pd                 ,compd     ,SSE5  ,29.2,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comneq_ps                 ,comps     ,SSE5  ,25,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comneq_sd                 ,comsd     ,SSE5  ,27.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comneq_ss                 ,comss     ,SSE5  ,11.4,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnge_pd                 ,compd     ,SSE5  ,30,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comnge_ps                 ,comps     ,SSE5  ,29.2,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comnge_sd                 ,comsd     ,SSE5  ,28.4,           ,11.3,           ,           ,           ,           ,           ,-1
+ssp_comnge_ss                 ,comss     ,SSE5  ,13.8,           ,18.2,           ,           ,           ,           ,           ,-1
+ssp_comngt_pd                 ,compd     ,SSE5  ,29.6,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comngt_ps                 ,comps     ,SSE5  ,27.6,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comngt_sd                 ,comsd     ,SSE5  ,28.4,           ,12,           ,           ,           ,           ,           ,-1
+ssp_comngt_ss                 ,comss     ,SSE5  ,13.8,           ,18.2,           ,           ,           ,           ,           ,-1
+ssp_comnle_pd                 ,compd     ,SSE5  ,31.5,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnle_ps                 ,comps     ,SSE5  ,27.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnle_sd                 ,comsd     ,SSE5  ,28.4,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnle_ss                 ,comss     ,SSE5  ,13.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnlt_pd                 ,compd     ,SSE5  ,29.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnlt_ps                 ,comps     ,SSE5  ,29.2,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnlt_sd                 ,comsd     ,SSE5  ,28.4,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comnlt_ss                 ,comss     ,SSE5  ,13.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comoneq_pd                ,compd     ,SSE5  ,34.5,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comoneq_ps                ,comps     ,SSE5  ,63,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comoneq_sd                ,comsd     ,SSE5  ,32.8,           ,11.3,           ,           ,           ,           ,           ,-1
+ssp_comoneq_ss                ,comss     ,SSE5  ,13.8,           ,11,           ,           ,           ,           ,           ,-1
+ssp_comord_pd                 ,compd     ,SSE5  ,34.9,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comord_ps                 ,comps     ,SSE5  ,64.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comord_sd                 ,comsd     ,SSE5  ,35.6,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comord_ss                 ,comss     ,SSE5  ,17.8,           ,2,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epi16             ,pcomw     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epi32             ,pcomd     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epi64             ,pcomq     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epi8              ,pcomb     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epu16             ,pcomw     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epu32             ,pcomd     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epu64             ,pcomq     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_epu8              ,pcomb     ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_pd                ,pcompd    ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_ps                ,pcomps    ,SSE5  ,0,           ,0,           ,           ,           ,           ,           ,-1
+ssp_comtrue_sd                ,pcomsd    ,SSE5  ,21.3,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comtrue_ss                ,pcomss    ,SSE5  ,18.5,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comueq_pd                 ,pcompd    ,SSE5  ,32.5,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comueq_ps                 ,pcomps    ,SSE5  ,59,           ,9,           ,           ,           ,           ,           ,-1
+ssp_comueq_sd                 ,pcomsd    ,SSE5  ,32.8,           ,11,           ,           ,           ,           ,           ,-1
+ssp_comueq_ss                 ,pcomss    ,SSE5  ,15.2,           ,10,           ,           ,           ,           ,           ,-1
+ssp_comunord_pd               ,pcompd    ,SSE5  ,34.8,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comunord_ps               ,pcomps    ,SSE5  ,56,           ,4,           ,           ,           ,           ,           ,-1
+ssp_comunord_sd               ,pcomsd    ,SSE5  ,29.5,           ,7,           ,           ,           ,           ,           ,-1
+ssp_comunord_ss               ,pcomss    ,SSE5  ,12.1,           ,6,           ,           ,           ,           ,           ,-1
 ssp_crc32_u16                 ,crc32,SSE4_2,,,,,,,,-1,
 ssp_crc32_u32                 ,crc32,SSE4_2,,,,,,,,-1,
 ssp_crc32_u64                 ,crc32,SSE4_2,,,,,,,,-1,
@@ -317,50 +317,50 @@ ssp_extract_epi32             ,pextrd    ,SSE4_1,1,           ,2,           ,   
 ssp_extract_epi64             ,pextrq    ,SSE4_1,4.2,           ,14,           ,           ,           ,           ,           ,           
 ssp_extract_epi8              ,pextrb    ,SSE4_1,1,           ,2,           ,           ,           ,1,           ,           
 ssp_extract_ps                ,extractps ,SSE4_1,1,           ,4.3,           ,           ,           ,1,           ,           
-ssp_extract_si64              ,extrq     ,SSE4a   ,38,           ,5.8,           ,           ,-1,           ,           ,           
-ssp_extracti_si64             ,extrq     ,SSE4a   ,34,           ,4,           ,           ,-1,           ,           ,           
+ssp_extract_si64              ,extrq     ,SSE4a ,38,           ,5.8,           ,           ,-1,           ,           ,           
+ssp_extracti_si64             ,extrq     ,SSE4a ,34,           ,4,           ,           ,-1,           ,           ,           
 ssp_floor_pd                  ,roundpd   ,SSE4_1,64,           ,38,           ,           ,           ,3,           ,           
 ssp_floor_ps                  ,roundps   ,SSE4_1,150,           ,32,           ,           ,           ,3,           ,           
 ssp_floor_sd                  ,roundsd   ,SSE4_1,8.9,           ,35,           ,           ,           ,3,           ,           
 ssp_floor_ss                  ,roundss   ,SSE4_1,17.8,           ,40,           ,           ,           ,3,           ,           
-ssp_frcz_pd                   ,frczpd,SSE5,,,,,,,,,-1
-ssp_frcz_ps                   ,frczps,SSE5,,,,,,,,,-1
-ssp_frcz_sd                   ,frczsd,SSE5,,,,,,,,,-1
-ssp_frcz_ss                   ,frczss,SSE5,,,,,,,,,-1
+ssp_frcz_pd                   ,frczpd    ,SSE5  ,103.5,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_frcz_ps                   ,frczps    ,SSE5  ,88,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_frcz_sd                   ,frczsd    ,SSE5  ,69.3,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_frcz_ss                   ,frczss    ,SSE5  ,55,           ,           ,           ,           ,           ,           ,           ,-1
 ssp_getcsr                    ,stmxcsr,SSE,,-1,,,,,,,
-ssp_hadd_epi16                ,phaddw    ,SSSE3   ,43,           ,9,           ,5,           ,           ,           ,           
-ssp_hadd_epi32                ,phaddd    ,SSSE3   ,34.5,           ,8,           ,5.1,           ,           ,           ,           
-ssp_hadd_pd                   ,haddpd    ,SSE3,5.8,           ,8,4,           ,           ,           ,           ,           
-ssp_hadd_ps                   ,haddps    ,SSE3,15.8,           ,8,4,           ,           ,           ,           ,           
-ssp_haddd_epi16               ,phaddwd,SSE5,,,,,,,,,-1
-ssp_haddd_epi8                ,phaddbd,SSE5,,,,,,,,,-1
-ssp_haddd_epu16               ,phadduwd,SSE5,,,,,,,,,-1
-ssp_haddd_epu8                ,phaddubd,SSE5,,,,,,,,,-1
-ssp_haddq_epi16               ,phaddwq,SSE5,,,,,,,,,-1
-ssp_haddq_epi32               ,phadddq,SSE5,,,,,,,,,-1
-ssp_haddq_epi8                ,phaddbq,SSE5,,,,,,,,,-1
-ssp_haddq_epu16               ,phadduwq,SSE5,,,,,,,,,-1
-ssp_haddq_epu32               ,phaddudq,SSE5,,,,,,,,,-1
-ssp_haddq_epu8                ,phaddubq,SSE5,,,,,,,,,-1
-ssp_hadds_epi16               ,phaddsw   ,SSSE3   ,58.1,           ,12,           ,5.1,           ,           ,           ,           
-ssp_haddw_epi8                ,phaddbw,SSE5,,,,,,,,,-1
-ssp_haddw_epu8                ,phaddubw,SSE5,,,,,,,,,-1
-ssp_hsub_epi16                ,phsubw    ,SSSE3   ,41.5,           ,12,           ,5.1,           ,           ,           ,           
-ssp_hsub_epi32                ,phsubd    ,SSSE3   ,34.5,           ,10,           ,5,           ,           ,           ,           
-ssp_hsub_pd                   ,hsubpd    ,SSE3,5.6,           ,8,4,           ,           ,           ,           ,           
-ssp_hsub_ps                   ,hsubps    ,SSE3,16,           ,10,4,           ,           ,           ,           ,           
-ssp_hsubd_epi16               ,phsubwd,SSE5,,,,,,,,,-1
-ssp_hsubq_epi32               ,phsubdq,SSE5,,,,,,,,,-1
-ssp_hsubs_epi16               ,phsubsw   ,SSSE3   ,58.7,           ,12,           ,5,           ,           ,           ,           
-ssp_hsubw_epi8                ,phsubbw,SSE5,,,,,,,,,-1
+ssp_hadd_epi16                ,phaddw    ,SSSE3 ,43,           ,9,           ,5,           ,           ,           ,           
+ssp_hadd_epi32                ,phaddd    ,SSSE3 ,34.5,           ,8,           ,5.1,           ,           ,           ,           
+ssp_hadd_pd                   ,haddpd    ,SSE3  ,5.8,           ,8,4,           ,           ,           ,           ,           
+ssp_hadd_ps                   ,haddps    ,SSE3  ,15.8,           ,8,4,           ,           ,           ,           ,           
+ssp_haddd_epi16               ,phaddwd   ,SSE5  ,39.3,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddd_epi8                ,phaddbd   ,SSE5  ,44.7,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddd_epu16               ,phadduwd  ,SSE5  ,39.3,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddd_epu8                ,phaddubd  ,SSE5  ,44.7,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddq_epi16               ,phaddwq   ,SSE5  ,37,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddq_epi32               ,phadddq   ,SSE5  ,37,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddq_epi8                ,phaddbq   ,SSE5  ,47,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddq_epu16               ,phadduwq  ,SSE5  ,37,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddq_epu32               ,phaddudq  ,SSE5  ,31,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddq_epu8                ,phaddubq  ,SSE5  ,50.9,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_hadds_epi16               ,phaddsw   ,SSSE3 ,58.1,           ,12,           ,5.1,           ,           ,           ,           
+ssp_haddw_epi8                ,phaddbw   ,SSE5  ,54,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_haddw_epu8                ,phaddubw  ,SSE5  ,54,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_hsub_epi16                ,phsubw    ,SSSE3 ,41.5,           ,12,           ,5.1,           ,           ,           ,           
+ssp_hsub_epi32                ,phsubd    ,SSSE3 ,34.5,           ,10,           ,5,           ,           ,           ,           
+ssp_hsub_pd                   ,hsubpd    ,SSE3  ,5.6,           ,8,4,           ,           ,           ,           ,           
+ssp_hsub_ps                   ,hsubps    ,SSE3  ,16,           ,10,4,           ,           ,           ,           ,           
+ssp_hsubd_epi16               ,phsubwd   ,SSE5  ,39.3,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_hsubq_epi32               ,phsubdq   ,SSE5  ,35.7,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_hsubs_epi16               ,phsubsw   ,SSSE3 ,58.7,           ,12,           ,5,           ,           ,           ,           
+ssp_hsubw_epi8                ,phsubbw   ,SSE5  ,47.1,           ,           ,           ,           ,           ,           ,           ,-1
 ssp_insert_epi16              ,pinsrw,SSE2,,,-1,,,,,,
 ssp_insert_epi32              ,pinsrd    ,SSE4_1,18.5,           ,6.5,           ,           ,           ,2,           ,           
 ssp_insert_epi64              ,pinsrq,SSE4_1,-1,,,,,,-1,,
 ssp_insert_epi8               ,pinsrb    ,SSE4_1,20.7,           ,10,           ,           ,           ,2,           ,           
 ssp_insert_ps                 ,insertps  ,SSE4_1,2.6,           ,           ,           ,           ,           ,2,           ,           
-ssp_insert_si64               ,insertq   ,SSE4a   ,59.1,           ,6,           ,           ,-1,           ,           ,           
-ssp_inserti_si64              ,insertq   ,SSE4a   ,35,           ,6,           ,           ,-1,           ,           ,           
-ssp_lddqu_si128               ,lddqu     ,SSE3,0,           ,           ,0,           ,           ,           ,           ,           
+ssp_insert_si64               ,insertq   ,SSE4a ,59,           ,6,           ,           ,-1,           ,           ,           
+ssp_inserti_si64              ,insertq   ,SSE4a ,35,           ,6,           ,           ,-1,           ,           ,           
+ssp_lddqu_si128               ,lddqu     ,SSE3  ,0,           ,           ,0,           ,           ,           ,           ,           
 ssp_lfence                    ,lfence,SSE2,,,-1,,,,,,
 ssp_load_pd                   ,movapd,SSE2,,,-1,,,,,,
 ssp_load_ps                   ,movaps,SSE,,-1,,,,,,,
@@ -370,7 +370,7 @@ ssp_load_si128                ,movdqa,SSE2,,,-1,,,,,,
 ssp_load_ss                   ,movss,SSE,,-1,,,,,,,
 ssp_load1_pd                  ,movlpd,SSE2,,,-1,,,,,,
 ssp_load1_ps                  ,(comp),SSE,,-1,,,,,,,
-ssp_loaddup_pd                ,movddup   ,SSE3,0.6,           ,           ,0,           ,           ,           ,           ,           
+ssp_loaddup_pd                ,movddup   ,SSE3  ,0.6,           ,           ,0,           ,           ,           ,           ,           
 ssp_loadh_pd                  ,movhpd,SSE2,,,-1,,,,,,
 ssp_loadl_epi64               ,movq,SSE2,,,-1,,,,,,
 ssp_loadl_pd                  ,(comp),SSE2,,,-1,,,,,,
@@ -379,27 +379,27 @@ ssp_loadr_ps                  ,(comp),SSE,,-1,,,,,,,
 ssp_loadu_pd                  ,movupd,SSE2,,,-1,,,,,,
 ssp_loadu_ps                  ,movups,SSE,,-1,,,,,,,
 ssp_loadu_si128               ,movdqu,SSE2,,,-1,,,,,,
-ssp_lzcnt                     ,lzcnt,SSE4a   ,17,           ,           ,           ,           ,-1,           ,           ,           
-ssp_lzcnt16                   ,lzcnt,SSE4a   ,15,           ,           ,           ,           ,-1,           ,           ,           
-ssp_lzcnt64                   ,lzcnt,SSE4a   ,26.1,           ,           ,           ,           ,-1,           ,           ,           
-ssp_macc_epi16                ,pmacsww,SSE5,,,,,,,,,-1
-ssp_macc_epi32                ,pmacsdd,SSE5,,,,,,,,,-1
-ssp_macc_pd                   ,fmaddpd   ,SSE5,9.8,           ,8,           ,           ,           ,           ,           ,           
-ssp_macc_ps                   ,fmaddps   ,SSE5,20,           ,8,           ,           ,           ,           ,           ,           
-ssp_macc_sd                   ,fmaddsd   ,SSE5,9.5,           ,16,           ,           ,           ,           ,           ,           
-ssp_macc_ss                   ,fmaddss   ,SSE5,18.3,           ,16,           ,           ,           ,           ,           ,           
-ssp_maccd_epi16               ,pmacswd,SSE5,,,,,,,,,-1
-ssp_macchi_epi32              ,pmacssdqh,SSE5,,,,,,,,,-1
-ssp_macclo_epi32              ,pmacsdql,SSE5,,,,,,,,,-1
-ssp_maccs_epi16               ,pmacssww,SSE5,,,,,,,,,-1
-ssp_maccs_epi32               ,pmacssdd,SSE5,,,,,,,,,-1
-ssp_maccsd_epi16              ,pmacsswd,SSE5,,,,,,,,,-1
-ssp_maccshi_epi32             ,pmacssdqh,SSE5,,,,,,,,,-1
-ssp_maccslo_epi32             ,pmacssdql,SSE5,,,,,,,,,-1
+ssp_lzcnt                     ,lzcnt     ,SSE4a ,17,           ,           ,           ,           ,-1,           ,           ,           
+ssp_lzcnt16                   ,lzcnt     ,SSE4a ,15,           ,           ,           ,           ,-1,           ,           ,           
+ssp_lzcnt64                   ,lzcnt     ,SSE4a ,26,           ,           ,           ,           ,-1,           ,           ,           
+ssp_macc_epi16                ,pmacsww   ,SSE5  ,98,           ,5,           ,           ,           ,           ,           ,-1
+ssp_macc_epi32                ,pmacsdd   ,SSE5  ,41,           ,16,           ,           ,           ,           ,           ,-1
+ssp_macc_pd                   ,fmaddpd   ,SSE5  ,9.8,           ,8,           ,           ,           ,           ,           ,-1
+ssp_macc_ps                   ,fmaddps   ,SSE5  ,20,           ,8,           ,           ,           ,           ,           ,-1
+ssp_macc_sd                   ,fmaddsd   ,SSE5  ,9.5,           ,16,           ,           ,           ,           ,           ,-1
+ssp_macc_ss                   ,fmaddss   ,SSE5  ,18.3,           ,16,           ,           ,           ,           ,           ,-1
+ssp_maccd_epi16               ,pmacswd   ,SSE5  ,34,           ,16,           ,           ,           ,           ,           ,-1
+ssp_macchi_epi32              ,pmacssdqh ,SSE5  ,43.8,           ,24,           ,           ,           ,           ,           ,-1
+ssp_macclo_epi32              ,pmacsdql  ,SSE5  ,34.5,           ,22,           ,           ,           ,           ,           ,-1
+ssp_maccs_epi16               ,pmacssww  ,SSE5  ,57.5,           ,17.5,           ,           ,           ,           ,           ,-1
+ssp_maccs_epi32               ,pmacssdd  ,SSE5  ,51,           ,37,           ,           ,           ,           ,           ,-1
+ssp_maccsd_epi16              ,pmacsswd  ,SSE5  ,185.3,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_maccshi_epi32             ,pmacssdqh ,SSE5  ,53,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_maccslo_epi32             ,pmacssdql ,SSE5  ,51,           ,           ,           ,           ,           ,           ,           ,-1
 ssp_madd_epi16                ,pmaddwd,SSE2,,,-1,,,,,,
-ssp_maddd_epi16               ,pmadcswd,SSE5,,,,,,,,,-1
-ssp_maddsd_epi16              ,pmadcsswd,SSE5,,,,,,,,,-1
-ssp_maddubs_epi16             ,pmaddubsw ,SSSE3   ,85.5,           ,12,           ,4.8,           ,           ,           ,           
+ssp_maddd_epi16               ,pmadcswd  ,SSE5  ,46,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_maddsd_epi16              ,pmadcsswd ,SSE5  ,90.6,           ,           ,           ,           ,           ,           ,           ,-1
+ssp_maddubs_epi16             ,pmaddubsw ,SSSE3 ,81,           ,12,           ,4.8,           ,           ,           ,           
 ssp_maskmove_si64             ,maskmovq,SSE,,-1,,,,,,,
 ssp_maskmoveu_si128           ,maskmovdqu,SSE2,,,-1,,,,,,
 ssp_max_epi16                 ,pmaxsw,SSE2,,,-1,,,,,,
@@ -429,21 +429,21 @@ ssp_minpos_epu16              ,phminposuw,SSE4_1,44.5,           ,           ,  
 ssp_move_epi64                ,movq,SSE2,,,-1,,,,,,
 ssp_move_sd                   ,movsd,SSE2,,,-1,,,,,,
 ssp_move_ss                   ,movss,SSE,,-1,,,,,,,
-ssp_movedup_pd                ,movddup   ,SSE3,0.9,           ,2,2,           ,           ,           ,           ,           
-ssp_movehdup_ps               ,movshdup  ,SSE3,3.4,           ,3,2,           ,           ,           ,           ,           
+ssp_movedup_pd                ,movddup   ,SSE3  ,0.9,           ,2,2,           ,           ,           ,           ,           
+ssp_movehdup_ps               ,movshdup  ,SSE3  ,3.4,           ,3,2,           ,           ,           ,           ,           
 ssp_movehl_ps                 ,movhlps,SSE,,-1,,,,,,,
-ssp_moveldup_ps               ,movsldup  ,SSE3,2.4,           ,3,2,           ,           ,           ,           ,           
+ssp_moveldup_ps               ,movsldup  ,SSE3  ,2.4,           ,3,2,           ,           ,           ,           ,           
 ssp_movelh_ps                 ,movlhps,SSE,,-1,,,,,,,
 ssp_movemask_epi8             ,pmovmskb,SSE2,,,-1,,,,,,
 ssp_movemask_pd               ,movmskpd,SSE2,,,-1,,,,,,
 ssp_movemask_ps               ,movmskps,SSE,,-1,,,,,,,
 ssp_movepi64_pi64             ,movdq2q,SSE2,,,-1,,,,,,
 ssp_movpi64_epi64             ,movq2dq,SSE2,,,-1,,,,,,
-ssp_mpsadbw_epu8              ,mpsadbw   ,SSE4_1,181.3,           ,70,           ,           ,           ,7,           ,           
-ssp_msub_pd                   ,fmsubpd   ,SSE5,9.8,           ,8,           ,           ,           ,           ,           ,           
-ssp_msub_ps                   ,fmsubps   ,SSE5,20,           ,8,           ,           ,           ,           ,           ,           
-ssp_msub_sd                   ,fmsubsd   ,SSE5,9.5,           ,16,           ,           ,           ,           ,           ,           
-ssp_msub_ss                   ,fmsubss   ,SSE5,18.3,           ,16,           ,           ,           ,           ,           ,           
+ssp_mpsadbw_epu8              ,mpsadbw   ,SSE4_1,38.4,           ,70,           ,           ,           ,7,           ,           
+ssp_msub_pd                   ,fmsubpd   ,SSE5  ,9.8,           ,8,           ,           ,           ,           ,           ,-1
+ssp_msub_ps                   ,fmsubps   ,SSE5  ,20,           ,8,           ,           ,           ,           ,           ,-1
+ssp_msub_sd                   ,fmsubsd   ,SSE5  ,9.5,           ,16,           ,           ,           ,           ,           ,-1
+ssp_msub_ss                   ,fmsubss   ,SSE5  ,18.3,           ,16,           ,           ,           ,           ,           ,-1
 ssp_mul_epi32                 ,pmuldq,SSE4_1,-1,,,,,,-1,,
 ssp_mul_epu32                 ,pmuludq,SSE2,,,-1,,,,,,
 ssp_mul_pd                    ,mulpd,SSE2,,,-1,,,,,,
@@ -452,17 +452,17 @@ ssp_mul_sd                    ,mulsd,SSE2,,,-1,,,,,,
 ssp_mul_ss                    ,mulss,SSE,,-1,,,,,,,
 ssp_mulhi_epi16               ,pmulhw,SSE2,,,-1,,,,,,
 ssp_mulhi_epu16               ,pmulhuw,SSE2,,,-1,,,,,,
-ssp_mulhrs_epi16              ,pmulhrsw  ,SSSE3   ,45,           ,18.5,           ,4.8,           ,           ,           ,           
+ssp_mulhrs_epi16              ,pmulhrsw  ,SSSE3 ,45,           ,18.5,           ,4.8,           ,           ,           ,           
 ssp_mullo_epi16               ,pmullw,SSE2,,,-1,,,,,,
 ssp_mullo_epi32               ,pmullud,SSE4_1,-1,,,,,,2,,
-ssp_nmacc_pd                  ,fnmaddpd  ,SSE5,9.4,           ,12,           ,           ,           ,           ,           ,           
-ssp_nmacc_ps                  ,fnmaddps  ,SSE5,20.1,           ,12,           ,           ,           ,           ,           ,           
-ssp_nmacc_sd                  ,fnmaddsd  ,SSE5,9.5,           ,20,           ,           ,           ,           ,           ,           
-ssp_nmacc_ss                  ,fnmaddss  ,SSE5,18.2,           ,20,           ,           ,           ,           ,           ,           
-ssp_nmsub_pd                  ,fnmsubpd  ,SSE5,11.8,           ,12,           ,           ,           ,           ,           ,           
-ssp_nmsub_ps                  ,fnmsubps  ,SSE5,22,           ,12,           ,           ,           ,           ,           ,           
-ssp_nmsub_sd                  ,fnmsubsd  ,SSE5,11.6,           ,20,           ,           ,           ,           ,           ,           
-ssp_nmsub_ss                  ,fnmsubss  ,SSE5,20.3,           ,20,           ,           ,           ,           ,           ,           
+ssp_nmacc_pd                  ,fnmaddpd  ,SSE5  ,9.4,           ,12,           ,           ,           ,           ,           ,-1
+ssp_nmacc_ps                  ,fnmaddps  ,SSE5  ,20,           ,12,           ,           ,           ,           ,           ,-1
+ssp_nmacc_sd                  ,fnmaddsd  ,SSE5  ,9.5,           ,20,           ,           ,           ,           ,           ,-1
+ssp_nmacc_ss                  ,fnmaddss  ,SSE5  ,18.2,           ,20,           ,           ,           ,           ,           ,-1
+ssp_nmsub_pd                  ,fnmsubpd  ,SSE5  ,11.8,           ,12,           ,           ,           ,           ,           ,-1
+ssp_nmsub_ps                  ,fnmsubps  ,SSE5  ,22,           ,12,           ,           ,           ,           ,           ,-1
+ssp_nmsub_sd                  ,fnmsubsd  ,SSE5  ,11.6,           ,20,           ,           ,           ,           ,           ,-1
+ssp_nmsub_ss                  ,fnmsubss  ,SSE5  ,20.2,           ,20,           ,           ,           ,           ,           ,-1
 ssp_or_pd                     ,orpd,SSE2,,,-1,,,,,,
 ssp_or_ps                     ,orps,SSE,,-1,,,,,,,
 ssp_or_si128                  ,por,SSE2,,,-1,,,,,,
@@ -471,29 +471,29 @@ ssp_packs_epi32               ,packssdw,SSE2,,,-1,,,,,,
 ssp_packus_epi16              ,packuswb,SSE2,,,-1,,,,,,
 ssp_packus_epi32              ,packusdw  ,SSE4_1,46,           ,6,           ,           ,           ,2,           ,           
 ssp_pause                     ,,SSE2,,,-1,,,,,,
-ssp_perm_epi8                 ,pperm,SSE5,,,,,,,,,-1
+ssp_perm_epi8                 ,pperm     ,SSE5  ,506.7,           ,           ,           ,           ,           ,           ,           ,-1
 ssp_perm_pd                   ,permpd,SSE5,,,,,,,,,-1
 ssp_perm_ps                   ,permps,SSE5,,,,,,,,,-1
-ssp_popcnt                    ,popcnt,SSE4a   ,5,           ,           ,           ,           ,-1,           ,           ,           
+ssp_popcnt                    ,popcnt    ,SSE4a ,5,           ,           ,           ,           ,-1,           ,           ,           
 ssp_popcnt_u32                ,popcnt,SSE4_2,,,,,,,,-1,
 ssp_popcnt_u64                ,popcnt,SSE4_2,,,,,,,,-1,
-ssp_popcnt16                  ,popcnt,SSE4a   ,5,           ,           ,           ,           ,-1,           ,           ,           
-ssp_popcnt64                  ,popcnt,SSE4a   ,10,           ,           ,           ,           ,-1,           ,           ,           
+ssp_popcnt16                  ,popcnt    ,SSE4a ,5,           ,           ,           ,           ,-1,           ,           ,           
+ssp_popcnt64                  ,popcnt    ,SSE4a ,10,           ,           ,           ,           ,-1,           ,           ,           
 ssp_prefetch                  ,prefetch,SSE,,-1,,,,,,,
 ssp_rcp_ps                    ,rcpps,SSE,,-1,,,,,,,
 ssp_rcp_ss                    ,rcpss,SSE,,-1,,,,,,,
-ssp_rot_epi16                 ,protw,SSE5,,,,,,,,,-1
-ssp_rot_epi32                 ,protd,SSE5,,,,,,,,,-1
-ssp_rot_epi64                 ,protq,SSE5,,,,,,,,,-1
-ssp_rot_epi8                  ,protb,SSE5,,,,,,,,,-1
-ssp_roti_epi16                ,protw,SSE5,,,,,,,,,-1
-ssp_roti_epi32                ,protd,SSE5,,,,,,,,,-1
-ssp_roti_epi64                ,protq,SSE5,,,,,,,,,-1
-ssp_roti_epi8                 ,protb,SSE5,,,,,,,,,-1
-ssp_round_pd                  ,roundpd   ,SSE4&5  ,119.5,           ,35,           ,           ,           ,6,           ,           
-ssp_round_ps                  ,roundps   ,SSE4&5  ,129.5,           ,33.8,           ,           ,           ,6,           ,           
+ssp_rot_epi16                 ,protw     ,SSE5  ,107,           ,107,           ,           ,           ,           ,           ,-1
+ssp_rot_epi32                 ,protd     ,SSE5  ,44,           ,44,           ,           ,           ,           ,           ,-1
+ssp_rot_epi64                 ,protq     ,SSE5  ,237.4,           ,235,           ,           ,           ,           ,           ,-1
+ssp_rot_epi8                  ,protb     ,SSE5  ,155,           ,155.7,           ,           ,           ,           ,           ,-1
+ssp_roti_epi16                ,protw     ,SSE5  ,51.7,           ,9.3,           ,           ,           ,           ,           ,-1
+ssp_roti_epi32                ,protd     ,SSE5  ,36,           ,9.3,           ,           ,           ,           ,           ,-1
+ssp_roti_epi64                ,protq     ,SSE5  ,63.1,           ,9.3,           ,           ,           ,           ,           ,-1
+ssp_roti_epi8                 ,protb     ,SSE5  ,93.1,           ,19,           ,           ,           ,           ,           ,-1
+ssp_round_pd                  ,roundpd   ,SSE4&5,115,           ,35,           ,           ,           ,6,           ,-1
+ssp_round_ps                  ,roundps   ,SSE4&5,129.5,           ,33,           ,           ,           ,6,           ,-1
 ssp_round_sd                  ,roundsd,SSE4&5,-1,,,,,,6,,-1
-ssp_round_ss                  ,roundss   ,SSE4&5  ,42,           ,37,           ,           ,           ,6,           ,           
+ssp_round_ss                  ,roundss   ,SSE4&5,42,           ,37,           ,           ,           ,6,           ,-1
 ssp_rsqrt_ps                  ,rsqrtps,SSE,,-1,
 ssp_rsqrt_ss                  ,rsqrtss,SSE,,-1,
 ssp_sad_epu8                  ,psadbw,SSE2,,,-1
@@ -522,23 +522,23 @@ ssp_setzero_pd                ,xorpd,SSE2,,,-1,,,,,,
 ssp_setzero_ps                ,(comp),SSE,,-1,,,,,,,
 ssp_setzero_si128             ,pxor,SSE2,,,-1,,,,,,
 ssp_sfence                    ,sfence,SSE,,-1,,,,,,,
-ssp_sha_epi16                 ,pshaw,SSE5,,,,,,,,,-1
-ssp_sha_epi32                 ,pshad,SSE5,,,,,,,,,-1
-ssp_sha_epi64                 ,pshaq,SSE5,,,,,,,,,-1
-ssp_sha_epi8                  ,pshab,SSE5,,,,,,,,,-1
-ssp_shl_epi16                 ,pshaw,SSE5,,,,,,,,,-1
-ssp_shl_epi32                 ,pshad,SSE5,,,,,,,,,-1
-ssp_shl_epi64                 ,pshaq,SSE5,,,,,,,,,-1
-ssp_shl_epi8                  ,pshab,SSE5,,,,,,,,,-1
+ssp_sha_epi16                 ,pshaw     ,SSE5  ,47.7,           ,99,           ,           ,           ,           ,           ,-1
+ssp_sha_epi32                 ,pshad     ,SSE5  ,35,           ,54.3,           ,           ,           ,           ,           ,-1
+ssp_sha_epi64                 ,pshaq     ,SSE5  ,49,           ,51,           ,           ,           ,           ,           ,-1
+ssp_sha_epi8                  ,pshab     ,SSE5  ,92,           ,119.6,           ,           ,           ,           ,           ,-1
+ssp_shl_epi16                 ,pshaw     ,SSE5  ,47.7,           ,100.1,           ,           ,           ,           ,           ,-1
+ssp_shl_epi32                 ,pshad     ,SSE5  ,35,           ,54.7,           ,           ,           ,           ,           ,-1
+ssp_shl_epi64                 ,pshaq     ,SSE5  ,48.9,           ,24,           ,           ,           ,           ,           ,-1
+ssp_shl_epi8                  ,pshab     ,SSE5  ,92,           ,108,           ,           ,           ,           ,           ,-1
 ssp_shuffle_epi32             ,pshufd,SSE2,,,-1,,,,,,
-ssp_shuffle_epi8              ,pshufb    ,SSSE3   ,82.1,           ,63,           ,3.5,           ,           ,           ,           
+ssp_shuffle_epi8              ,pshufb    ,SSSE3 ,82,           ,63,           ,3.5,           ,           ,           ,           
 ssp_shuffle_pd                ,shufpd,SSE2,,,-1,,,,,,
 ssp_shuffle_ps                ,shufps,SSE,,-1,,,,,,,
 ssp_shufflehi_epi16           ,pshufhw,SSE2,,,-1,,,,,,
 ssp_shufflelo_epi16           ,pshuflw,SSE2,,,-1,,,,,,
-ssp_sign_epi16                ,psignw    ,SSSE3   ,51,           ,3,           ,1.6,           ,           ,           ,           
-ssp_sign_epi32                ,psignd    ,SSSE3   ,37.6,           ,12,           ,1.6,           ,           ,           ,           
-ssp_sign_epi8                 ,psignb    ,SSSE3   ,89,           ,12,           ,1.6,           ,           ,           ,           
+ssp_sign_epi16                ,psignw    ,SSSE3 ,51,           ,3,           ,1.6,           ,           ,           ,           
+ssp_sign_epi32                ,psignd    ,SSSE3 ,37.6,           ,12,           ,1.6,           ,           ,           ,           
+ssp_sign_epi8                 ,psignb    ,SSSE3 ,89,           ,12,           ,1.6,           ,           ,           ,           
 ssp_sll_epi16                 ,psllw,SSE2,,,-1,,,,,,
 ssp_sll_epi32                 ,pslld,SSE2,,,-1,,,,,,
 ssp_sll_epi64                 ,psllq,SSE2,,,-1,,,,,,
@@ -580,10 +580,10 @@ ssp_storeu_si128              ,movdqu,SSE2,,,-1,,,,,,
 ssp_stream_load_si128         ,movntdqa,SSE4_1,-1,,,,,,-1,,
 ssp_stream_pd                 ,movlpd,SSE2,,,-1,,,,,,
 ssp_stream_ps                 ,movlps,SSE,,-1,,,,,,,
-ssp_stream_sd                 ,movntsd   ,SSE4a   ,0.2,           ,           ,           ,           ,-1,           ,           ,           
+ssp_stream_sd                 ,movntsd   ,SSE4a ,0.2,           ,           ,           ,           ,-1,           ,           ,           
 ssp_stream_si128              ,movntdq,SSE2,,,-1,,,,,,
 ssp_stream_si32               ,movnti,SSE2,,,-1,,,,,,
-ssp_stream_ss                 ,movntss   ,SSE4a   ,0.2,           ,           ,           ,           ,-1,           ,           ,           
+ssp_stream_ss                 ,movntss   ,SSE4a ,0.2,           ,           ,           ,           ,-1,           ,           ,           
 ssp_sub_epi16                 ,psubw,SSE2,,,-1,,,,,,
 ssp_sub_epi32                 ,psubd,SSE2,,,-1,,,,,,
 ssp_sub_epi64                 ,psubq,SSE2,,,-1,,,,,,
@@ -596,9 +596,9 @@ ssp_subs_epi16                ,psubsw,SSE2,,,-1,,,,,,
 ssp_subs_epi8                 ,psubsb,SSE2,,,-1,,,,,,
 ssp_subs_epu16                ,psubusw,SSE2,,,-1,,,,,,
 ssp_subs_epu8                 ,psubusb,SSE2,,,-1,,,,,,
-ssp_testc_si128               ,ptest     ,SSE4&5  ,7,           ,5,           ,           ,           ,1,           ,           
-ssp_testnzc_si128             ,ptest     ,SSE4&5  ,11,           ,5,           ,           ,           ,1,           ,           
-ssp_testz_si128               ,ptest     ,SSE4&5  ,5,           ,5,           ,           ,           ,1,           ,           
+ssp_testc_si128               ,ptest     ,SSE4&5,7,           ,5,           ,           ,           ,1,           ,-1
+ssp_testnzc_si128             ,ptest     ,SSE4&5,11,           ,5,           ,           ,           ,1,           ,-1
+ssp_testz_si128               ,ptest     ,SSE4&5,5,           ,5,           ,           ,           ,1,           ,-1
 ssp_ucomieq_sd                ,ucomisd,SSE2,,,-1,,,,,,
 ssp_ucomieq_ss                ,ucomiss,SSE,,-1,,,,,,,
 ssp_ucomige_sd                ,ucomisd,SSE2,,,-1,,,,,,
@@ -628,29 +628,29 @@ ssp_xor_ps                    ,xorps,SSE,,-1,,,,,,,
 ssp_xor_si128                 ,pxor,SSE2,,,-1,,,,,,
 ssp_arithmetic_hadd4_epi16    ,(comp),SSP,,,-1,,,,,,
 ssp_arithmetic_hadd4_epu16    ,(comp),SSP,-1,,,,,,,,
+ssp_logical_cmpgt_epu16       ,(comp),SSP,43.7,,9,,,,,,
+ssp_logical_cmpgt_epu32       ,(comp),SSP,32.8,,9,,,,,,
+ssp_logical_cmplt_epu16       ,(comp),SSP,44,,9,,,,,,
+ssp_logical_cmplt_epu32       ,(comp),SSP,32.8,,9,,,,,,
 ssp_number_changeSNanToQNaN_F32,(comp),SSP,-1,,,,,,,,
 ssp_number_changeSNanToQNaN_F64,(comp),SSP,-1,,,,,,,,
 ssp_number_isValidNumber_F32  ,(comp),SSP,-1,,,,,,,,
 ssp_number_isValidNumber_F64  ,(comp),SSP,-1,,,,,,,,
 ssp_round_ps_neg_zero         ,(comp),SSP,,,-1,,,,,,
-ssp_arithmetic_hadd4_dup_ps   ,(comp)    ,SSP  ,25.8,           ,18,12,           ,           ,           ,           ,           
-ssp_convert_3c_3p_epi16       ,(comp)    ,SSP  ,90.5,           ,39.5,           ,           ,           ,           ,           ,           
-ssp_convert_3c_3p_epi32       ,(comp)    ,SSP  ,95.3,           ,30,           ,           ,           ,           ,           ,           
-ssp_convert_3c_3p_epi8        ,(comp)    ,SSP  ,131,           ,52.5,           ,           ,           ,           ,           ,           
-ssp_convert_3p_3c_epi16       ,(comp)    ,SSP  ,116,           ,94.5,           ,           ,           ,           ,           ,           
-ssp_convert_3p_3c_epi32       ,(comp)    ,SSP  ,96,           ,49.5,           ,           ,           ,           ,           ,           
-ssp_convert_3p_3c_epi8        ,(comp)    ,SSP  ,102.5,           ,53,           ,           ,           ,           ,           ,           
-ssp_convert_4c_4p_epi16       ,(comp)    ,SSP  ,96.5,           ,55,           ,           ,           ,           ,           ,           
-ssp_convert_4c_4p_epi32       ,(comp)    ,SSP  ,92,           ,39,           ,           ,           ,           ,           ,           
-ssp_convert_4c_4p_epi8        ,(comp)    ,SSP  ,118,           ,70,           ,           ,           ,           ,           ,           
-ssp_convert_4p_4c_epi16       ,(comp)    ,SSP  ,101,           ,39,           ,           ,           ,           ,           ,           
-ssp_convert_4p_4c_epi32       ,(comp)    ,SSP  ,127,           ,39,           ,           ,           ,           ,           ,           
-ssp_convert_4p_4c_epi8        ,(comp)    ,SSP  ,123,           ,39,           ,           ,           ,           ,           ,           
-ssp_convert_reverse_transpose ,(comp)    ,SSP  ,82,           ,29,           ,           ,           ,           ,           ,           
-ssp_logical_bitwise_select    ,(comp)    ,SSP  ,           ,           ,4,           ,           ,           ,           ,           ,           
-ssp_logical_cmpgt_epu16       ,(comp)    ,SSP  ,43.7,           ,9,           ,           ,           ,           ,           ,           
-ssp_logical_cmpgt_epu32       ,(comp)    ,SSP  ,32.8,           ,9,           ,           ,           ,           ,           ,           
-ssp_logical_cmplt_epu16       ,(comp)    ,SSP  ,44,           ,9,           ,           ,           ,           ,           ,           
-ssp_logical_cmplt_epu32       ,(comp)    ,SSP  ,32.8,           ,9,           ,           ,           ,           ,           ,           
-ssp_memory_load1_epu8         ,(comp)    ,SSP  ,0,           ,0,           ,           ,           ,           ,           ,           
-ssp_movmask_imm8_to_epi32     ,(comp)    ,SSP  ,           ,           ,3,           ,           ,           ,           ,           ,           
+ssp_arithmetic_hadd4_dup_ps   ,(comp)    ,SSP   ,25.8,           ,18,12,           ,           ,           ,           ,           
+ssp_convert_3c_3p_epi16       ,(comp)    ,SSP   ,90.5,           ,39,           ,           ,           ,           ,           ,           
+ssp_convert_3c_3p_epi32       ,(comp)    ,SSP   ,95,           ,30,           ,           ,           ,           ,           ,           
+ssp_convert_3c_3p_epi8        ,(comp)    ,SSP   ,129.3,           ,52.5,           ,           ,           ,           ,           ,           
+ssp_convert_3p_3c_epi16       ,(comp)    ,SSP   ,116,           ,89,           ,           ,           ,           ,           ,           
+ssp_convert_3p_3c_epi32       ,(comp)    ,SSP   ,96,           ,49.5,           ,           ,           ,           ,           ,           
+ssp_convert_3p_3c_epi8        ,(comp)    ,SSP   ,102.5,           ,53,           ,           ,           ,           ,           ,           
+ssp_convert_4c_4p_epi16       ,(comp)    ,SSP   ,96.5,           ,53,           ,           ,           ,           ,           ,           
+ssp_convert_4c_4p_epi32       ,(comp)    ,SSP   ,92,           ,39,           ,           ,           ,           ,           ,           
+ssp_convert_4c_4p_epi8        ,(comp)    ,SSP   ,118,           ,68,           ,           ,           ,           ,           ,           
+ssp_convert_4p_4c_epi16       ,(comp)    ,SSP   ,101,           ,39,           ,           ,           ,           ,           ,           
+ssp_convert_4p_4c_epi32       ,(comp)    ,SSP   ,125,           ,39,           ,           ,           ,           ,           ,           
+ssp_convert_4p_4c_epi8        ,(comp)    ,SSP   ,122,           ,39,           ,           ,           ,           ,           ,           
+ssp_convert_reverse_transpose ,(comp)    ,SSP   ,82,           ,29,           ,           ,           ,           ,           ,           
+ssp_logical_bitwise_select    ,(comp)    ,SSP   ,           ,           ,4,           ,           ,           ,           ,           ,           
+ssp_memory_load1_epu8         ,(comp)    ,SSP   ,0,           ,0,           ,           ,           ,           ,           ,           
+ssp_movmask_imm8_to_epi32     ,(comp)    ,SSP   ,           ,           ,3,           ,           ,           ,           ,           ,           

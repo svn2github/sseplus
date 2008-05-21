@@ -439,7 +439,7 @@ void PrintCell( const std::string &result, double expected )
 {
     std::string tmp = result;
 
-    if( g_update && result.empty() && expected > 0 )
+    if( g_update && result.empty() && expected != 0 )
     {
         std::ostringstream oss; 
         oss << expected;
@@ -451,15 +451,15 @@ void PrintCell( const std::string &result, double expected )
     std::cout << std::setprecision(1); 
     std::cout << "," << std::setw(COL_WIDTH_CYCLES) << std::right << tmp;
 
-	if( expected && !g_update )
+	if( expected && !g_update && expected > 0 )
 		std::cout << "|" << std::setw(COL_WIDTH_EXP)    << std::right  << expected;
 	else
 		std::cout << std::setw( COL_WIDTH_EXP + COL_WIDTH_BAR) << " " ;  
 }
 
-void PrintSpace()
+void PrintSpace( double expectedCycles )
 {
-    std::cout << "," << std::setw(COL_WIDTH_TOTAL) << " " ; 
+     PrintCell( g_update ? "" : " " , expectedCycles );
 }
 
 void PrintException( double expectedCycles ) // Instruction threw exception

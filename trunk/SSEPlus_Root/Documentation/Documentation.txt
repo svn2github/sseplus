@@ -88,8 +88,8 @@ td.a{ text-align:left }
 </style>
 \endhtmlonly
 <ul>
-<li>Numbers are processor cycles
-<li>'X' entries have not yet been benchmarked
+<li>Function names link to MSDN
+<li>Cycle times/'X' (no benchmark) link to implementation
 </ul>
 
 \page comps SSE5 Instruction Comps

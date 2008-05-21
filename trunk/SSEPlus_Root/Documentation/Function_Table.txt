@@ -579,7 +579,7 @@
   <td class="a">\MSDN{_mm_ceil_pd}</td>
   <td>roundpd</td>
   <td>SSE4_1</td>
-  <td>\link ssp_ceil_pd_REF() 76\endlink</td>
+  <td>\link ssp_ceil_pd_REF() 75.5\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_ceil_pd_SSE2() 38\endlink</td>
   <td>&nbsp;</td>
@@ -1662,9 +1662,9 @@
   <td class="a">\MSDN{_mm_comeq_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epi16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi16_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1675,9 +1675,9 @@
   <td class="a">\MSDN{_mm_comeq_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epi32_REF() 34\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi32_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1688,9 +1688,9 @@
   <td class="a">\MSDN{_mm_comeq_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epi64_REF() 25\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi64_SSE2() 10\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1701,9 +1701,9 @@
   <td class="a">\MSDN{_mm_comeq_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epi8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epi8_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1714,9 +1714,9 @@
   <td class="a">\MSDN{_mm_comeq_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epu16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu16_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1727,9 +1727,9 @@
   <td class="a">\MSDN{_mm_comeq_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epu32_REF() 34\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu32_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1740,9 +1740,9 @@
   <td class="a">\MSDN{_mm_comeq_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epu64_REF() 25\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu64_SSE2() 10\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1753,9 +1753,9 @@
   <td class="a">\MSDN{_mm_comeq_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_epu8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_epu8_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1766,9 +1766,9 @@
   <td class="a">\MSDN{_mm_comeq_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_pd_REF() 30\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1779,9 +1779,9 @@
   <td class="a">\MSDN{_mm_comeq_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_ps_REF() 28.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1792,9 +1792,9 @@
   <td class="a">\MSDN{_mm_comeq_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1805,9 +1805,9 @@
   <td class="a">\MSDN{_mm_comeq_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comeq_ss_REF() 11.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comeq_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1818,9 +1818,9 @@
   <td class="a">\MSDN{_mm_comfalse_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epi16_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi16_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1831,9 +1831,9 @@
   <td class="a">\MSDN{_mm_comfalse_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epi32_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi32_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1844,9 +1844,9 @@
   <td class="a">\MSDN{_mm_comfalse_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epi64_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi64_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1857,9 +1857,9 @@
   <td class="a">\MSDN{_mm_comfalse_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epi8_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epi8_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1870,9 +1870,9 @@
   <td class="a">\MSDN{_mm_comfalse_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epu16_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu16_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1883,9 +1883,9 @@
   <td class="a">\MSDN{_mm_comfalse_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epu32_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu32_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1896,9 +1896,9 @@
   <td class="a">\MSDN{_mm_comfalse_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epu64_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu64_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1909,9 +1909,9 @@
   <td class="a">\MSDN{_mm_comfalse_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_epu8_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_epu8_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1936,9 +1936,9 @@
   <td class="a">\MSDN{_mm_comfalse_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_pd_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_pd_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1949,9 +1949,9 @@
   <td class="a">\MSDN{_mm_comfalse_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_ps_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_ps_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1962,9 +1962,9 @@
   <td class="a">\MSDN{_mm_comfalse_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_sd_REF() 21.3\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_sd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1975,9 +1975,9 @@
   <td class="a">\MSDN{_mm_comfalse_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comfalse_ss_REF() 19.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comfalse_ss_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -1988,9 +1988,9 @@
   <td class="a">\MSDN{_mm_comge_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epi16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi16_SSE2() 8\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2001,9 +2001,9 @@
   <td class="a">\MSDN{_mm_comge_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epi32_REF() 34\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi32_SSE2() 8\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2014,9 +2014,9 @@
   <td class="a">\MSDN{_mm_comge_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epi64_REF() 38.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi64_SSE2() 9999.9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2027,9 +2027,9 @@
   <td class="a">\MSDN{_mm_comge_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epi8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epi8_SSE2() 8.1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2040,9 +2040,9 @@
   <td class="a">\MSDN{_mm_comge_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epu16_REF() 44\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu16_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2053,9 +2053,9 @@
   <td class="a">\MSDN{_mm_comge_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epu32_REF() 37.3\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu32_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2066,9 +2066,9 @@
   <td class="a">\MSDN{_mm_comge_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epu64_REF() 39\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu64_SSE2() 39\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2079,9 +2079,9 @@
   <td class="a">\MSDN{_mm_comge_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_epu8_REF() 67\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_epu8_SSE2() 67\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2092,9 +2092,9 @@
   <td class="a">\MSDN{_mm_comge_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_pd_REF() 29.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_pd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2105,9 +2105,9 @@
   <td class="a">\MSDN{_mm_comge_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_ps_REF() 27.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_ps_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2118,9 +2118,9 @@
   <td class="a">\MSDN{_mm_comge_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_sd_SSE2() 11.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2131,9 +2131,9 @@
   <td class="a">\MSDN{_mm_comge_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comge_ss_REF() 14.1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comge_ss_SSE2() 18.2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2144,9 +2144,9 @@
   <td class="a">\MSDN{_mm_comgt_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epi16_REF() 184.7\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi16_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2157,9 +2157,9 @@
   <td class="a">\MSDN{_mm_comgt_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epi32_REF() 34\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi32_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2170,9 +2170,9 @@
   <td class="a">\MSDN{_mm_comgt_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epi64_REF() 38.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi64_SSE2() 38.5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2183,9 +2183,9 @@
   <td class="a">\MSDN{_mm_comgt_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epi8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epi8_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2210,9 +2210,9 @@
   <td class="a">\MSDN{_mm_comgt_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epu16_REF() 43.7\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu16_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2223,9 +2223,9 @@
   <td class="a">\MSDN{_mm_comgt_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epu32_REF() 35.9\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu32_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2236,9 +2236,9 @@
   <td class="a">\MSDN{_mm_comgt_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epu64_REF() 38.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu64_SSE2() 38.4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2249,9 +2249,9 @@
   <td class="a">\MSDN{_mm_comgt_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_epu8_REF() 64\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_epu8_SSE2() 64\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2262,9 +2262,9 @@
   <td class="a">\MSDN{_mm_comgt_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_pd_REF() 30\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_pd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2275,9 +2275,9 @@
   <td class="a">\MSDN{_mm_comgt_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_ps_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_ps_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2288,9 +2288,9 @@
   <td class="a">\MSDN{_mm_comgt_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_sd_SSE2() 11.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2301,9 +2301,9 @@
   <td class="a">\MSDN{_mm_comgt_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comgt_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comgt_ss_SSE2() 18.2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2484,9 +2484,9 @@
   <td class="a">\MSDN{_mm_comle_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epi16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi16_SSE2() 8\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2497,9 +2497,9 @@
   <td class="a">\MSDN{_mm_comle_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epi32_REF() 34.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi32_SSE2() 8\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2510,9 +2510,9 @@
   <td class="a">\MSDN{_mm_comle_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epi64_REF() 36.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi64_SSE2() 36.5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2523,9 +2523,9 @@
   <td class="a">\MSDN{_mm_comle_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epi8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epi8_SSE2() 8\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2536,9 +2536,9 @@
   <td class="a">\MSDN{_mm_comle_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epu16_REF() 43.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu16_SSE2() 43.5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2549,9 +2549,9 @@
   <td class="a">\MSDN{_mm_comle_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epu32_REF() 37.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu32_SSE2() 37.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2562,9 +2562,9 @@
   <td class="a">\MSDN{_mm_comle_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epu64_REF() 36.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu64_SSE2() 36.8\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2575,9 +2575,9 @@
   <td class="a">\MSDN{_mm_comle_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_epu8_REF() 71.3\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_epu8_SSE2() 71\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2588,9 +2588,9 @@
   <td class="a">\MSDN{_mm_comle_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_pd_REF() 29.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2601,9 +2601,9 @@
   <td class="a">\MSDN{_mm_comle_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_ps_REF() 28.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2614,9 +2614,9 @@
   <td class="a">\MSDN{_mm_comle_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2627,9 +2627,9 @@
   <td class="a">\MSDN{_mm_comle_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comle_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comle_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2640,9 +2640,9 @@
   <td class="a">\MSDN{_mm_comlt_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epi16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi16_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2653,9 +2653,9 @@
   <td class="a">\MSDN{_mm_comlt_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epi32_REF() 34\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi32_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2666,9 +2666,9 @@
   <td class="a">\MSDN{_mm_comlt_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epi64_REF() 36\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi64_SSE2() 36\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2679,9 +2679,9 @@
   <td class="a">\MSDN{_mm_comlt_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epi8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epi8_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2692,9 +2692,9 @@
   <td class="a">\MSDN{_mm_comlt_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epu16_REF() 44\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu16_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2705,9 +2705,9 @@
   <td class="a">\MSDN{_mm_comlt_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epu32_REF() 35\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu32_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2718,9 +2718,9 @@
   <td class="a">\MSDN{_mm_comlt_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epu64_REF() 35\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu64_SSE2() 35\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2731,9 +2731,9 @@
   <td class="a">\MSDN{_mm_comlt_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_epu8_REF() 66\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_epu8_SSE2() 66.5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2758,9 +2758,9 @@
   <td class="a">\MSDN{_mm_comlt_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_pd_REF() 29.3\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2771,9 +2771,9 @@
   <td class="a">\MSDN{_mm_comlt_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_ps_REF() 27.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2784,9 +2784,9 @@
   <td class="a">\MSDN{_mm_comlt_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2797,9 +2797,9 @@
   <td class="a">\MSDN{_mm_comlt_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comlt_ss_REF() 12.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comlt_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2810,9 +2810,9 @@
   <td class="a">\MSDN{_mm_comneq_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epi16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi16_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2823,9 +2823,9 @@
   <td class="a">\MSDN{_mm_comneq_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epi32_REF() 34.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi32_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2836,9 +2836,9 @@
   <td class="a">\MSDN{_mm_comneq_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epi64_REF() 26.2\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi64_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2849,9 +2849,9 @@
   <td class="a">\MSDN{_mm_comneq_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epi8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epi8_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2862,9 +2862,9 @@
   <td class="a">\MSDN{_mm_comneq_epu16}</td>
   <td>pcomuw</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epu16_REF() 47\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu16_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2875,9 +2875,9 @@
   <td class="a">\MSDN{_mm_comneq_epu32}</td>
   <td>pcomud</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epu32_REF() 33.9\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu32_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2888,9 +2888,9 @@
   <td class="a">\MSDN{_mm_comneq_epu64}</td>
   <td>pcomuq</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epu64_REF() 26.2\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu64_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2901,9 +2901,9 @@
   <td class="a">\MSDN{_mm_comneq_epu8}</td>
   <td>pcomub</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_epu8_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_epu8_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2914,9 +2914,9 @@
   <td class="a">\MSDN{_mm_comneq_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_pd_REF() 29.2\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2927,9 +2927,9 @@
   <td class="a">\MSDN{_mm_comneq_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_ps_REF() 25\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2940,9 +2940,9 @@
   <td class="a">\MSDN{_mm_comneq_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_sd_REF() 27.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2953,9 +2953,9 @@
   <td class="a">\MSDN{_mm_comneq_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comneq_ss_REF() 11.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comneq_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2966,9 +2966,9 @@
   <td class="a">\MSDN{_mm_comnge_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comnge_pd_REF() 30\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnge_pd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2979,9 +2979,9 @@
   <td class="a">\MSDN{_mm_comnge_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comnge_ps_REF() 29.2\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnge_ps_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -2992,9 +2992,9 @@
   <td class="a">\MSDN{_mm_comnge_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comnge_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnge_sd_SSE2() 11.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3005,9 +3005,9 @@
   <td class="a">\MSDN{_mm_comnge_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comnge_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnge_ss_SSE2() 18.2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3032,9 +3032,9 @@
   <td class="a">\MSDN{_mm_comngt_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comngt_pd_REF() 29.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comngt_pd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3045,9 +3045,9 @@
   <td class="a">\MSDN{_mm_comngt_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comngt_ps_REF() 27.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comngt_ps_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3058,9 +3058,9 @@
   <td class="a">\MSDN{_mm_comngt_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comngt_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comngt_sd_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3071,9 +3071,9 @@
   <td class="a">\MSDN{_mm_comngt_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comngt_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comngt_ss_SSE2() 18.2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3084,9 +3084,9 @@
   <td class="a">\MSDN{_mm_comnle_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comnle_pd_REF() 31.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnle_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3097,9 +3097,9 @@
   <td class="a">\MSDN{_mm_comnle_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comnle_ps_REF() 27.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnle_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3110,9 +3110,9 @@
   <td class="a">\MSDN{_mm_comnle_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comnle_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnle_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3123,9 +3123,9 @@
   <td class="a">\MSDN{_mm_comnle_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comnle_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnle_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3136,9 +3136,9 @@
   <td class="a">\MSDN{_mm_comnlt_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comnlt_pd_REF() 29.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3149,9 +3149,9 @@
   <td class="a">\MSDN{_mm_comnlt_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comnlt_ps_REF() 29.2\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3162,9 +3162,9 @@
   <td class="a">\MSDN{_mm_comnlt_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comnlt_sd_REF() 28.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3175,9 +3175,9 @@
   <td class="a">\MSDN{_mm_comnlt_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comnlt_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comnlt_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3188,9 +3188,9 @@
   <td class="a">\MSDN{_mm_comoneq_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comoneq_pd_REF() 34.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_pd_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3201,9 +3201,9 @@
   <td class="a">\MSDN{_mm_comoneq_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comoneq_ps_REF() 63\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_ps_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3214,9 +3214,9 @@
   <td class="a">\MSDN{_mm_comoneq_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comoneq_sd_REF() 32.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_sd_SSE2() 11.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3227,9 +3227,9 @@
   <td class="a">\MSDN{_mm_comoneq_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comoneq_ss_REF() 13.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comoneq_ss_SSE2() 11\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3240,9 +3240,9 @@
   <td class="a">\MSDN{_mm_comord_pd}</td>
   <td>compd</td>
   <td>SSE5</td>
+  <td>\link ssp_comord_pd_REF() 34.9\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comord_pd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3253,9 +3253,9 @@
   <td class="a">\MSDN{_mm_comord_ps}</td>
   <td>comps</td>
   <td>SSE5</td>
+  <td>\link ssp_comord_ps_REF() 64.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comord_ps_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3266,9 +3266,9 @@
   <td class="a">\MSDN{_mm_comord_sd}</td>
   <td>comsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comord_sd_REF() 35.6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comord_sd_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3279,9 +3279,9 @@
   <td class="a">\MSDN{_mm_comord_ss}</td>
   <td>comss</td>
   <td>SSE5</td>
+  <td>\link ssp_comord_ss_REF() 17.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comord_ss_SSE2() 2\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3306,9 +3306,9 @@
   <td class="a">\MSDN{_mm_comtrue_epi16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epi16_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi16_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3319,9 +3319,9 @@
   <td class="a">\MSDN{_mm_comtrue_epi32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epi32_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi32_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3332,9 +3332,9 @@
   <td class="a">\MSDN{_mm_comtrue_epi64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epi64_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi64_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3345,9 +3345,9 @@
   <td class="a">\MSDN{_mm_comtrue_epi8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epi8_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epi8_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3358,9 +3358,9 @@
   <td class="a">\MSDN{_mm_comtrue_epu16}</td>
   <td>pcomw</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epu16_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu16_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3371,9 +3371,9 @@
   <td class="a">\MSDN{_mm_comtrue_epu32}</td>
   <td>pcomd</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epu32_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu32_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3384,9 +3384,9 @@
   <td class="a">\MSDN{_mm_comtrue_epu64}</td>
   <td>pcomq</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epu64_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu64_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3397,9 +3397,9 @@
   <td class="a">\MSDN{_mm_comtrue_epu8}</td>
   <td>pcomb</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_epu8_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_epu8_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3410,9 +3410,9 @@
   <td class="a">\MSDN{_mm_comtrue_pd}</td>
   <td>pcompd</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_pd_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_pd_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3423,9 +3423,9 @@
   <td class="a">\MSDN{_mm_comtrue_ps}</td>
   <td>pcomps</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_ps_REF() 0\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_ps_SSE2() 0\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3436,9 +3436,9 @@
   <td class="a">\MSDN{_mm_comtrue_sd}</td>
   <td>pcomsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_sd_REF() 21.3\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_sd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3449,9 +3449,9 @@
   <td class="a">\MSDN{_mm_comtrue_ss}</td>
   <td>pcomss</td>
   <td>SSE5</td>
+  <td>\link ssp_comtrue_ss_REF() 18.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comtrue_ss_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3462,9 +3462,9 @@
   <td class="a">\MSDN{_mm_comueq_pd}</td>
   <td>pcompd</td>
   <td>SSE5</td>
+  <td>\link ssp_comueq_pd_REF() 32.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comueq_pd_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3475,9 +3475,9 @@
   <td class="a">\MSDN{_mm_comueq_ps}</td>
   <td>pcomps</td>
   <td>SSE5</td>
+  <td>\link ssp_comueq_ps_REF() 59\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comueq_ps_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3488,9 +3488,9 @@
   <td class="a">\MSDN{_mm_comueq_sd}</td>
   <td>pcomsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comueq_sd_REF() 32.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comueq_sd_SSE2() 11\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3501,9 +3501,9 @@
   <td class="a">\MSDN{_mm_comueq_ss}</td>
   <td>pcomss</td>
   <td>SSE5</td>
+  <td>\link ssp_comueq_ss_REF() 15.2\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comueq_ss_SSE2() 10\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3514,9 +3514,9 @@
   <td class="a">\MSDN{_mm_comunord_pd}</td>
   <td>pcompd</td>
   <td>SSE5</td>
+  <td>\link ssp_comunord_pd_REF() 34.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comunord_pd_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3527,9 +3527,9 @@
   <td class="a">\MSDN{_mm_comunord_ps}</td>
   <td>pcomps</td>
   <td>SSE5</td>
+  <td>\link ssp_comunord_ps_REF() 56\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comunord_ps_SSE2() 4\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3540,9 +3540,9 @@
   <td class="a">\MSDN{_mm_comunord_sd}</td>
   <td>pcomsd</td>
   <td>SSE5</td>
+  <td>\link ssp_comunord_sd_REF() 29.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comunord_sd_SSE2() 7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -3553,9 +3553,9 @@
   <td class="a">\MSDN{_mm_comunord_ss}</td>
   <td>pcomss</td>
   <td>SSE5</td>
+  <td>\link ssp_comunord_ss_REF() 12.1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_comunord_ss_SSE2() 6\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4454,7 +4454,7 @@
   <td class="a">\MSDN{_mm_frcz_pd}</td>
   <td>frczpd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_frcz_pd_REF() 103.5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4467,7 +4467,7 @@
   <td class="a">\MSDN{_mm_frcz_ps}</td>
   <td>frczps</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_frcz_ps_REF() 88\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4480,7 +4480,7 @@
   <td class="a">\MSDN{_mm_frcz_sd}</td>
   <td>frczsd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_frcz_sd_REF() 69.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4493,7 +4493,7 @@
   <td class="a">\MSDN{_mm_frcz_ss}</td>
   <td>frczss</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_frcz_ss_REF() 55\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4571,7 +4571,7 @@
   <td class="a">\MSDN{_mm_haddd_epi16}</td>
   <td>phaddwd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epi16_REF() 39.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4584,7 +4584,7 @@
   <td class="a">\MSDN{_mm_haddd_epi8}</td>
   <td>phaddbd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epi8_REF() 44.7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4597,7 +4597,7 @@
   <td class="a">\MSDN{_mm_haddd_epu16}</td>
   <td>phadduwd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epu16_REF() 39.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4610,7 +4610,7 @@
   <td class="a">\MSDN{_mm_haddd_epu8}</td>
   <td>phaddubd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddd_epu8_REF() 44.7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4623,7 +4623,7 @@
   <td class="a">\MSDN{_mm_haddq_epi16}</td>
   <td>phaddwq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epi16_REF() 37\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4636,7 +4636,7 @@
   <td class="a">\MSDN{_mm_haddq_epi32}</td>
   <td>phadddq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epi32_REF() 37\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4649,7 +4649,7 @@
   <td class="a">\MSDN{_mm_haddq_epi8}</td>
   <td>phaddbq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epi8_REF() 47\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4676,7 +4676,7 @@
   <td class="a">\MSDN{_mm_haddq_epu16}</td>
   <td>phadduwq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epu16_REF() 37\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4689,7 +4689,7 @@
   <td class="a">\MSDN{_mm_haddq_epu32}</td>
   <td>phaddudq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epu32_REF() 31\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4702,7 +4702,7 @@
   <td class="a">\MSDN{_mm_haddq_epu8}</td>
   <td>phaddubq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddq_epu8_REF() 50.9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4728,7 +4728,7 @@
   <td class="a">\MSDN{_mm_haddw_epi8}</td>
   <td>phaddbw</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddw_epi8_REF() 54\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4741,7 +4741,7 @@
   <td class="a">\MSDN{_mm_haddw_epu8}</td>
   <td>phaddubw</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_haddw_epu8_REF() 54\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4806,7 +4806,7 @@
   <td class="a">\MSDN{_mm_hsubd_epi16}</td>
   <td>phsubwd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_hsubd_epi16_REF() 39.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4819,7 +4819,7 @@
   <td class="a">\MSDN{_mm_hsubq_epi32}</td>
   <td>phsubdq</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_hsubq_epi32_REF() 35.7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4845,7 +4845,7 @@
   <td class="a">\MSDN{_mm_hsubw_epi8}</td>
   <td>phsubbw</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_hsubw_epi8_REF() 47.1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -4923,7 +4923,7 @@
   <td class="a">\MSDN{_mm_insert_si64}</td>
   <td>insertq</td>
   <td>SSE4a</td>
-  <td>\link ssp_insert_si64_REF() 59.1\endlink</td>
+  <td>\link ssp_insert_si64_REF() 59\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_insert_si64_SSE2() 6\endlink</td>
   <td>&nbsp;</td>
@@ -5250,7 +5250,7 @@
   <td class="a">\MSDN{_mm_lzcnt64}</td>
   <td>lzcnt</td>
   <td>SSE4a</td>
-  <td>\link ssp_lzcnt64_REF() 26.1\endlink</td>
+  <td>\link ssp_lzcnt64_REF() 26\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5263,9 +5263,9 @@
   <td class="a">\MSDN{_mm_macc_epi16}</td>
   <td>pmacsww</td>
   <td>SSE5</td>
+  <td>\link ssp_macc_epi16_REF() 98\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_epi16_SSE2() 5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5276,9 +5276,9 @@
   <td class="a">\MSDN{_mm_macc_epi32}</td>
   <td>pmacsdd</td>
   <td>SSE5</td>
+  <td>\link ssp_macc_epi32_REF() 41\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_epi32_SSE2() 16\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5297,7 +5297,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_pd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_macc_ps}</td>
   <td>fmaddps</td>
@@ -5310,7 +5310,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_ps_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_macc_sd}</td>
   <td>fmaddsd</td>
@@ -5323,7 +5323,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_sd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_macc_ss}</td>
   <td>fmaddss</td>
@@ -5336,14 +5336,14 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macc_ss_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_maccd_epi16}</td>
   <td>pmacswd</td>
   <td>SSE5</td>
+  <td>\link ssp_maccd_epi16_REF() 34\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maccd_epi16_SSE2() 16\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5354,9 +5354,9 @@
   <td class="a">\MSDN{_mm_macchi_epi32}</td>
   <td>pmacssdqh</td>
   <td>SSE5</td>
+  <td>\link ssp_macchi_epi32_REF() 43.8\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macchi_epi32_SSE2() 24\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5367,9 +5367,9 @@
   <td class="a">\MSDN{_mm_macclo_epi32}</td>
   <td>pmacsdql</td>
   <td>SSE5</td>
+  <td>\link ssp_macclo_epi32_REF() 34.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_macclo_epi32_SSE2() 22\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5380,9 +5380,9 @@
   <td class="a">\MSDN{_mm_maccs_epi16}</td>
   <td>pmacssww</td>
   <td>SSE5</td>
+  <td>\link ssp_maccs_epi16_REF() 57.5\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maccs_epi16_SSE2() 17.5\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5393,9 +5393,9 @@
   <td class="a">\MSDN{_mm_maccs_epi32}</td>
   <td>pmacssdd</td>
   <td>SSE5</td>
+  <td>\link ssp_maccs_epi32_REF() 51\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maccs_epi32_SSE2() 37\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5406,7 +5406,7 @@
   <td class="a">\MSDN{_mm_maccsd_epi16}</td>
   <td>pmacsswd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maccsd_epi16_REF() 185.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5419,7 +5419,7 @@
   <td class="a">\MSDN{_mm_maccshi_epi32}</td>
   <td>pmacssdqh</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maccshi_epi32_REF() 53\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5432,7 +5432,7 @@
   <td class="a">\MSDN{_mm_maccslo_epi32}</td>
   <td>pmacssdql</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maccslo_epi32_REF() 51\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5458,7 +5458,7 @@
   <td class="a">\MSDN{_mm_maddd_epi16}</td>
   <td>pmadcswd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maddd_epi16_REF() 46\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5471,7 +5471,7 @@
   <td class="a">\MSDN{_mm_maddsd_epi16}</td>
   <td>pmadcsswd</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_maddsd_epi16_REF() 90.6\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -5498,7 +5498,7 @@
   <td class="a">\MSDN{_mm_maddubs_epi16}</td>
   <td>pmaddubsw</td>
   <td>SSSE3</td>
-  <td>\link ssp_maddubs_epi16_REF() 85.5\endlink</td>
+  <td>\link ssp_maddubs_epi16_REF() 81\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_maddubs_epi16_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
@@ -6046,7 +6046,7 @@
   <td class="a">\MSDN{_mm_mpsadbw_epu8}</td>
   <td>mpsadbw</td>
   <td>SSE4_1</td>
-  <td>\link ssp_mpsadbw_epu8_REF() 181.3\endlink</td>
+  <td>\link ssp_mpsadbw_epu8_REF() 38.4\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_mpsadbw_epu8_SSE2() 70\endlink</td>
   <td>&nbsp;</td>
@@ -6067,7 +6067,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_pd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_msub_ps}</td>
   <td>fmsubps</td>
@@ -6080,7 +6080,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_ps_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_msub_sd}</td>
   <td>fmsubsd</td>
@@ -6093,7 +6093,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_sd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_msub_ss}</td>
   <td>fmsubss</td>
@@ -6106,7 +6106,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_msub_ss_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_mul_epi32}</td>
   <td>pmuldq</td>
@@ -6262,12 +6262,12 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_pd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_nmacc_ps}</td>
   <td>fnmaddps</td>
   <td>SSE5</td>
-  <td>\link ssp_nmacc_ps_REF() 20.1\endlink</td>
+  <td>\link ssp_nmacc_ps_REF() 20\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_nmacc_ps_SSE2() 12\endlink</td>
   <td>&nbsp;</td>
@@ -6275,7 +6275,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_ps_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_nmacc_sd}</td>
   <td>fnmaddsd</td>
@@ -6288,7 +6288,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_sd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_nmacc_ss}</td>
   <td>fnmaddss</td>
@@ -6301,7 +6301,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmacc_ss_SSE5() X\endlink</td>
 </tr>
 <tr>
   <th>Function</th>
@@ -6328,7 +6328,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_pd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_nmsub_ps}</td>
   <td>fnmsubps</td>
@@ -6341,7 +6341,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_ps_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_nmsub_sd}</td>
   <td>fnmsubsd</td>
@@ -6354,12 +6354,12 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_sd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_nmsub_ss}</td>
   <td>fnmsubss</td>
   <td>SSE5</td>
-  <td>\link ssp_nmsub_ss_REF() 20.3\endlink</td>
+  <td>\link ssp_nmsub_ss_REF() 20.2\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_nmsub_ss_SSE2() 20\endlink</td>
   <td>&nbsp;</td>
@@ -6367,7 +6367,7 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_nmsub_ss_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_or_pd}</td>
   <td>orpd</td>
@@ -6476,7 +6476,7 @@
   <td class="a">\MSDN{_mm_perm_epi8}</td>
   <td>pperm</td>
   <td>SSE5</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_perm_epi8_REF() 506.7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6633,9 +6633,9 @@
   <td class="a">\MSDN{_mm_rot_epi16}</td>
   <td>protw</td>
   <td>SSE5</td>
+  <td>\link ssp_rot_epi16_REF() 107\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi16_SSE2() 107\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6646,9 +6646,9 @@
   <td class="a">\MSDN{_mm_rot_epi32}</td>
   <td>protd</td>
   <td>SSE5</td>
+  <td>\link ssp_rot_epi32_REF() 44\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi32_SSE2() 44\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6659,9 +6659,9 @@
   <td class="a">\MSDN{_mm_rot_epi64}</td>
   <td>protq</td>
   <td>SSE5</td>
+  <td>\link ssp_rot_epi64_REF() 237.4\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi64_SSE2() 235\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6672,9 +6672,9 @@
   <td class="a">\MSDN{_mm_rot_epi8}</td>
   <td>protb</td>
   <td>SSE5</td>
+  <td>\link ssp_rot_epi8_REF() 155\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_rot_epi8_SSE2() 155.7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6685,9 +6685,9 @@
   <td class="a">\MSDN{_mm_roti_epi16}</td>
   <td>protw</td>
   <td>SSE5</td>
+  <td>\link ssp_roti_epi16_REF() 51.7\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi16_SSE2() 9.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6698,9 +6698,9 @@
   <td class="a">\MSDN{_mm_roti_epi32}</td>
   <td>protd</td>
   <td>SSE5</td>
+  <td>\link ssp_roti_epi32_REF() 36\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi32_SSE2() 9.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6711,9 +6711,9 @@
   <td class="a">\MSDN{_mm_roti_epi64}</td>
   <td>protq</td>
   <td>SSE5</td>
+  <td>\link ssp_roti_epi64_REF() 63.1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi64_SSE2() 9.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6724,9 +6724,9 @@
   <td class="a">\MSDN{_mm_roti_epi8}</td>
   <td>protb</td>
   <td>SSE5</td>
+  <td>\link ssp_roti_epi8_REF() 93.1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_roti_epi8_SSE2() 19\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -6737,7 +6737,7 @@
   <td class="a">\MSDN{_mm_round_pd}</td>
   <td>roundpd</td>
   <td>SSE4&5</td>
-  <td>\link ssp_round_pd_REF() 119.5\endlink</td>
+  <td>\link ssp_round_pd_REF() 115\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_pd_SSE2() 35\endlink</td>
   <td>&nbsp;</td>
@@ -6745,20 +6745,20 @@
   <td>&nbsp;</td>
   <td>\link ssp_round_pd_SSE4_1() 6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_pd_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_round_ps}</td>
   <td>roundps</td>
   <td>SSE4&5</td>
   <td>\link ssp_round_ps_REF() 129.5\endlink</td>
   <td>&nbsp;</td>
-  <td>\link ssp_round_ps_SSE2() 33.8\endlink</td>
+  <td>\link ssp_round_ps_SSE2() 33\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>\link ssp_round_ps_SSE4_1() 6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_ps_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_round_sd}</td>
   <td>roundsd</td>
@@ -6784,7 +6784,7 @@
   <td>&nbsp;</td>
   <td>\link ssp_round_ss_SSE4_1() 6\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_round_ss_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_rsqrt_ps}</td>
   <td>rsqrtps</td>
@@ -7181,9 +7181,9 @@
   <td class="a">\MSDN{_mm_sha_epi16}</td>
   <td>pshaw</td>
   <td>SSE5</td>
+  <td>\link ssp_sha_epi16_REF() 47.7\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi16_SSE2() 99\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7194,9 +7194,9 @@
   <td class="a">\MSDN{_mm_sha_epi32}</td>
   <td>pshad</td>
   <td>SSE5</td>
+  <td>\link ssp_sha_epi32_REF() 35\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi32_SSE2() 54.3\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7207,9 +7207,9 @@
   <td class="a">\MSDN{_mm_sha_epi64}</td>
   <td>pshaq</td>
   <td>SSE5</td>
+  <td>\link ssp_sha_epi64_REF() 49\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi64_SSE2() 51\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7220,9 +7220,9 @@
   <td class="a">\MSDN{_mm_sha_epi8}</td>
   <td>pshab</td>
   <td>SSE5</td>
+  <td>\link ssp_sha_epi8_REF() 92\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_sha_epi8_SSE2() 119.6\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7233,9 +7233,9 @@
   <td class="a">\MSDN{_mm_shl_epi16}</td>
   <td>pshaw</td>
   <td>SSE5</td>
+  <td>\link ssp_shl_epi16_REF() 47.7\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi16_SSE2() 100.1\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7246,9 +7246,9 @@
   <td class="a">\MSDN{_mm_shl_epi32}</td>
   <td>pshad</td>
   <td>SSE5</td>
+  <td>\link ssp_shl_epi32_REF() 35\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi32_SSE2() 54.7\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7259,9 +7259,9 @@
   <td class="a">\MSDN{_mm_shl_epi64}</td>
   <td>pshaq</td>
   <td>SSE5</td>
+  <td>\link ssp_shl_epi64_REF() 48.9\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi64_SSE2() 24\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7272,9 +7272,9 @@
   <td class="a">\MSDN{_mm_shl_epi8}</td>
   <td>pshab</td>
   <td>SSE5</td>
+  <td>\link ssp_shl_epi8_REF() 92\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_shl_epi8_SSE2() 108\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -7298,7 +7298,7 @@
   <td class="a">\MSDN{_mm_shuffle_epi8}</td>
   <td>pshufb</td>
   <td>SSSE3</td>
-  <td>\link ssp_shuffle_epi8_REF() 82.1\endlink</td>
+  <td>\link ssp_shuffle_epi8_REF() 82\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_shuffle_epi8_SSE2() 63\endlink</td>
   <td>&nbsp;</td>
@@ -8193,7 +8193,7 @@
   <td>&nbsp;</td>
   <td>\link ssp_testc_si128_SSE4_1() 1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_testc_si128_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_testnzc_si128}</td>
   <td>ptest</td>
@@ -8206,7 +8206,7 @@
   <td>&nbsp;</td>
   <td>\link ssp_testnzc_si128_SSE4_1() 1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_testnzc_si128_SSE5() X\endlink</td>
 </tr><tr>
   <td class="a">\MSDN{_mm_testz_si128}</td>
   <td>ptest</td>
@@ -8219,7 +8219,7 @@
   <td>&nbsp;</td>
   <td>\link ssp_testz_si128_SSE4_1() 1\endlink</td>
   <td>&nbsp;</td>
-  <td>&nbsp;</td>
+  <td>\link ssp_testz_si128_SSE5() X\endlink</td>
 </tr>
 <tr>
   <th>Function</th>
@@ -8626,6 +8626,58 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
 </tr><tr>
+  <td class="a">ssp_logical_cmpgt_epu16</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_logical_cmpgt_epu16_REF() 43.7\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmpgt_epu16_SSE2() 9\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
+  <td class="a">ssp_logical_cmpgt_epu32</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_logical_cmpgt_epu32_REF() 32.8\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmpgt_epu32_SSE2() 9\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
+  <td class="a">ssp_logical_cmplt_epu16</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_logical_cmplt_epu16_REF() 44\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmplt_epu16_SSE2() 9\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
+  <td class="a">ssp_logical_cmplt_epu32</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_logical_cmplt_epu32_REF() 32.8\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_logical_cmplt_epu32_SSE2() 9\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
   <td class="a">ssp_number_changeSNanToQNaN_F32</td>
   <td>(comp)</td>
   <td>SSP</td>
@@ -8709,59 +8761,7 @@
   <td>SSP</td>
   <td>\link ssp_convert_3c_3p_epi16_REF() 90.5\endlink</td>
   <td>&nbsp;</td>
-  <td>\link ssp_convert_3c_3p_epi16_SSE2() 39.5\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_convert_3c_3p_epi32</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_convert_3c_3p_epi32_REF() 95.3\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_convert_3c_3p_epi32_SSE2() 30\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_convert_3c_3p_epi8</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_convert_3c_3p_epi8_REF() 131\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_convert_3c_3p_epi8_SSE2() 52.5\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_convert_3p_3c_epi16</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_convert_3p_3c_epi16_REF() 116\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_convert_3p_3c_epi16_SSE2() 94.5\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_convert_3p_3c_epi32</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_convert_3p_3c_epi32_REF() 96\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_convert_3p_3c_epi32_SSE2() 49.5\endlink</td>
+  <td>\link ssp_convert_3c_3p_epi16_SSE2() 39\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -8783,6 +8783,58 @@
   <th>SSE4_2</th>
   <th>SSE5</th>
 </tr><tr>
+  <td class="a">ssp_convert_3c_3p_epi32</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_convert_3c_3p_epi32_REF() 95\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3c_3p_epi32_SSE2() 30\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
+  <td class="a">ssp_convert_3c_3p_epi8</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_convert_3c_3p_epi8_REF() 129.3\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3c_3p_epi8_SSE2() 52.5\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
+  <td class="a">ssp_convert_3p_3c_epi16</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_convert_3p_3c_epi16_REF() 116\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3p_3c_epi16_SSE2() 89\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
+  <td class="a">ssp_convert_3p_3c_epi32</td>
+  <td>(comp)</td>
+  <td>SSP</td>
+  <td>\link ssp_convert_3p_3c_epi32_REF() 96\endlink</td>
+  <td>&nbsp;</td>
+  <td>\link ssp_convert_3p_3c_epi32_SSE2() 49.5\endlink</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr><tr>
   <td class="a">ssp_convert_3p_3c_epi8</td>
   <td>(comp)</td>
   <td>SSP</td>
@@ -8801,7 +8853,7 @@
   <td>SSP</td>
   <td>\link ssp_convert_4c_4p_epi16_REF() 96.5\endlink</td>
   <td>&nbsp;</td>
-  <td>\link ssp_convert_4c_4p_epi16_SSE2() 55\endlink</td>
+  <td>\link ssp_convert_4c_4p_epi16_SSE2() 53\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -8827,7 +8879,7 @@
   <td>SSP</td>
   <td>\link ssp_convert_4c_4p_epi8_REF() 118\endlink</td>
   <td>&nbsp;</td>
-  <td>\link ssp_convert_4c_4p_epi8_SSE2() 70\endlink</td>
+  <td>\link ssp_convert_4c_4p_epi8_SSE2() 68\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -8851,7 +8903,7 @@
   <td class="a">ssp_convert_4p_4c_epi32</td>
   <td>(comp)</td>
   <td>SSP</td>
-  <td>\link ssp_convert_4p_4c_epi32_REF() 127\endlink</td>
+  <td>\link ssp_convert_4p_4c_epi32_REF() 125\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_convert_4p_4c_epi32_SSE2() 39\endlink</td>
   <td>&nbsp;</td>
@@ -8864,7 +8916,7 @@
   <td class="a">ssp_convert_4p_4c_epi8</td>
   <td>(comp)</td>
   <td>SSP</td>
-  <td>\link ssp_convert_4p_4c_epi8_REF() 123\endlink</td>
+  <td>\link ssp_convert_4p_4c_epi8_REF() 122\endlink</td>
   <td>&nbsp;</td>
   <td>\link ssp_convert_4p_4c_epi8_SSE2() 39\endlink</td>
   <td>&nbsp;</td>
@@ -8893,58 +8945,6 @@
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>\link ssp_logical_bitwise_select_SSE2() 4\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_logical_cmpgt_epu16</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_logical_cmpgt_epu16_REF() 43.7\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_logical_cmpgt_epu16_SSE2() 9\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_logical_cmpgt_epu32</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_logical_cmpgt_epu32_REF() 32.8\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_logical_cmpgt_epu32_SSE2() 9\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_logical_cmplt_epu16</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_logical_cmplt_epu16_REF() 44\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_logical_cmplt_epu16_SSE2() 9\endlink</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr><tr>
-  <td class="a">ssp_logical_cmplt_epu32</td>
-  <td>(comp)</td>
-  <td>SSP</td>
-  <td>\link ssp_logical_cmplt_epu32_REF() 32.8\endlink</td>
-  <td>&nbsp;</td>
-  <td>\link ssp_logical_cmplt_epu32_SSE2() 9\endlink</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>

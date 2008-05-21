@@ -143,7 +143,7 @@ public:
         return tmp;
     }
 
-    std::string UnusedEntriesString()
+    std::string UnusedEntriesString( bool dumpAll)
     {
         std::ostringstream oss;
 
@@ -151,10 +151,10 @@ public:
         {
             if( !it->second.useCount )
             {
-                if(  "SSE"  != it->second.source 
-                  && "SSE2" != it->second.source  )
-                {
-               
+                if( dumpAll  
+                    || ("SSE"!=it->second.source && "SSE2"!=it->second.source)
+                  )
+                {               
                     oss << std::left << std::setw(30) << it->first << "," << it->second.ToString() << std::endl;
                 }
             }

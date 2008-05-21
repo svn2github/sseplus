@@ -13,7 +13,7 @@
  *  @name Native SSE4.2 Operations
  */
 
-/** \IMP{SSE4.2 Native,_mm_cmpestra,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpestra} */ 
 SSP_FORCEINLINE int ssp_cmpestra_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
 {
     switch( mode & 0xFF )
@@ -21,7 +21,7 @@ SSP_FORCEINLINE int ssp_cmpestra_SSE4_2 ( __m128i a, int la, __m128i b, int lb, 
         CASE_256( _mm_cmpestra, a, la, b, lb );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpestrc,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpestrc} */ 
 SSP_FORCEINLINE int ssp_cmpestrc_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
 {
     switch( mode & 0xFF )
@@ -29,7 +29,7 @@ SSP_FORCEINLINE int ssp_cmpestrc_SSE4_2 ( __m128i a, int la, __m128i b, int lb, 
         CASE_256( _mm_cmpestrc, a, la, b, lb );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpestri,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpestri} */ 
 SSP_FORCEINLINE int ssp_cmpestri_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
 {
     switch( mode & 0xFF )
@@ -44,7 +44,7 @@ SSP_FORCEINLINE __m128i	ssp_cmpestrm_SSE4_2 ( __m128i a, int la, __m128i b, int 
         CASE_256( _mm_cmpestrm, a, la, b, lb );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpestro,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpestro} */ 
 SSP_FORCEINLINE int ssp_cmpestro_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
 {
     switch( mode & 0xFF )
@@ -52,7 +52,7 @@ SSP_FORCEINLINE int ssp_cmpestro_SSE4_2 ( __m128i a, int la, __m128i b, int lb, 
         CASE_256( _mm_cmpestro, a, la, b, lb );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpestrs,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpestrs} */ 
 SSP_FORCEINLINE int ssp_cmpestrs_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
 {
     switch( mode & 0xFF)
@@ -60,7 +60,7 @@ SSP_FORCEINLINE int ssp_cmpestrs_SSE4_2 ( __m128i a, int la, __m128i b, int lb, 
         CASE_256( _mm_cmpestrs, a, la, b, lb );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpestrz,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpestrz} */ 
 SSP_FORCEINLINE int ssp_cmpestrz_SSE4_2 ( __m128i a, int la, __m128i b, int lb, const int mode )
 {
     switch( mode & 0xFF)
@@ -72,7 +72,7 @@ SSP_FORCEINLINE __m128i	ssp_cmpgt_epi64_SSE4_2 ( __m128i a, __m128i b )
 {
     return _mm_cmpgt_epi64 ( a, b );
 }
-/** \IMP{SSE4.2 Native,_mm_cmpistra,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpistra} */ 
 SSP_FORCEINLINE int ssp_cmpistra_SSE4_2 ( __m128i a, __m128i b, const int mode )
 {
     switch( mode & 0xFF)
@@ -80,7 +80,7 @@ SSP_FORCEINLINE int ssp_cmpistra_SSE4_2 ( __m128i a, __m128i b, const int mode )
         CASE_256( _mm_cmpistra, a, b );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpistrc,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpistrc} */ 
 SSP_FORCEINLINE int ssp_cmpistrc_SSE4_2 ( __m128i a, __m128i b, const int mode )
 {
     switch( mode & 0xFF)
@@ -88,7 +88,7 @@ SSP_FORCEINLINE int ssp_cmpistrc_SSE4_2 ( __m128i a, __m128i b, const int mode )
         CASE_256( _mm_cmpistrc, a, b );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpistri,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpistri} */ 
 SSP_FORCEINLINE int ssp_cmpistri_SSE4_2 ( __m128i a, __m128i b, const int mode )
 {
     switch( mode & 0xFF)
@@ -103,7 +103,7 @@ SSP_FORCEINLINE __m128i	ssp_cmpistrm_SSE4_2 ( __m128i a, __m128i b, const int mo
         CASE_256( _mm_cmpistrm	, a, b );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpistro,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpistro} */ 
 SSP_FORCEINLINE int ssp_cmpistro_SSE4_2 ( __m128i a, __m128i b, const int mode )
 {
     switch( mode & 0xFF)
@@ -111,7 +111,7 @@ SSP_FORCEINLINE int ssp_cmpistro_SSE4_2 ( __m128i a, __m128i b, const int mode )
         CASE_256( _mm_cmpistro, a, b );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpistrs,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpistrs} */ 
 SSP_FORCEINLINE int ssp_cmpistrs_SSE4_2 ( __m128i a, __m128i b, const int mode )
 {
     switch( mode & 0xFF)
@@ -119,7 +119,7 @@ SSP_FORCEINLINE int ssp_cmpistrs_SSE4_2 ( __m128i a, __m128i b, const int mode )
         CASE_256( _mm_cmpistrs, a, b );
     }
 }
-/** \IMP{SSE4.2 Native,_mm_cmpistrz,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_cmpistrz} */ 
 SSP_FORCEINLINE int ssp_cmpistrz_SSE4_2 ( __m128i a, __m128i b, const int mode )
 {
     switch( mode & 0xFF)
@@ -147,13 +147,13 @@ SSP_FORCEINLINE unsigned int ssp_crc32_u8_SSE4_2 ( unsigned int crc, unsigned ch
 {
     return _mm_crc32_u8( crc, v );
 }
-/** \IMP{SSE4.2 Native,_mm_popcnt_u32,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_popcnt_u32} */ 
 SSP_FORCEINLINE int ssp_popcnt_u32_SSE4_2 ( unsigned int a     )
 {
     return _mm_popcnt_u32( a );
 }
 #ifdef SYS64
-/** \IMP{SSE4.2 Native,_mm_popcnt_u64,SSE4.2} */ 
+/** \SSE4_2{Native,_mm_popcnt_u64} */ 
 SSP_FORCEINLINE int ssp_popcnt_u64_SSE4_2 ( ssp_u64 a )
 {
     return _mm_popcnt_u64( a );

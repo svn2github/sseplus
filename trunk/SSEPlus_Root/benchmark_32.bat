@@ -1,0 +1,1 @@
+build\VS9_UnitTest_Win32_Release\UnitTest.exe fnData.csv update > out.csv

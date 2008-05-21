@@ -1961,7 +1961,7 @@ int main(int argc, char *argv[])
         !strcmp( "update", argv[2] ))
         g_update = true;
       
-    CSVTable csv( file.c_str() );
+    CSVTable csv( file.c_str() );   
 
     PrintHeader();
     SSE3_Tests( csv );
@@ -1987,6 +1987,6 @@ int main(int argc, char *argv[])
     SSP_Tests( csv );
 
     std::cout << "\nUntested (SSE3 and above):\n";
-    std::cout << csv.UnusedEntriesString() << std::endl;    
+    std::cout << csv.UnusedEntriesString( g_update ) << std::endl;    
     return 0;
 }
