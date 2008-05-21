@@ -321,7 +321,7 @@ SSP_FORCEINLINE int ssp_testnzc_si128_SSE4_1(__m128i mask, __m128i b)
     return _mm_testnzc_si128( mask, b);
 }
 
-/** \SSE4_1{Native,_mm_round_pd and SSE5} */ 
+/** \SSE45{Native,_mm_round_pd, roundpd} */ 
 SSP_FORCEINLINE __m128d ssp_round_pd_SSE4_1(__m128d a, int iRoundMode)
 {
     switch( iRoundMode & 0xF )
@@ -329,7 +329,7 @@ SSP_FORCEINLINE __m128d ssp_round_pd_SSE4_1(__m128d a, int iRoundMode)
         CASE_16( _mm_round_pd, a );
     }
 }
-/** \SSE4_1{Native,_mm_round_sd and SSE5} */ 
+/** \SSE45{Native,_mm_round_sd, roundsd} */ 
 SSP_FORCEINLINE __m128d ssp_round_sd_SSE4_1(__m128d dst, __m128d a, int iRoundMode)
 {
     switch( iRoundMode & 0xF )
@@ -337,7 +337,7 @@ SSP_FORCEINLINE __m128d ssp_round_sd_SSE4_1(__m128d dst, __m128d a, int iRoundMo
         CASE_16( _mm_round_sd, dst, a );
     }
 }
-/** \SSE4_1{Native,_mm_round_ps and SSE5} */ 
+/** \SSE45{Native,_mm_round_ps, roundps} */ 
 SSP_FORCEINLINE __m128 ssp_round_ps_SSE4_1(__m128  a, int iRoundMode)
 {
     switch( iRoundMode & 0xF )
@@ -345,7 +345,7 @@ SSP_FORCEINLINE __m128 ssp_round_ps_SSE4_1(__m128  a, int iRoundMode)
         CASE_16( _mm_round_ps, a );
     }
 }
-/** \SSE4_1{Native,_mm_round_ss and SSE5} */ 
+/** \SSE45{Native,_mm_round_ss, roundss} */ 
 SSP_FORCEINLINE __m128 ssp_round_ss_SSE4_1(__m128 dst, __m128  a, int iRoundMode)
 {
     switch( iRoundMode & 0xF )

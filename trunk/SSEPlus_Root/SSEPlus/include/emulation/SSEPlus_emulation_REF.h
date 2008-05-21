@@ -2135,7 +2135,7 @@ SSP_FORCEINLINE __m128d ssp_round_pd_REF( __m128d val, int iRoundMode )
     return Val.d;
 }
 
-/** \SSE45{Reference,_mm_round_ps} */
+/** \SSE45{Reference,_mm_round_ps, roundps } */
 SSP_FORCEINLINE __m128 ssp_round_ps_REF( __m128 val, int iRoundMode )                     
 {
     ssp_s32 *valPtr;
@@ -2263,7 +2263,7 @@ SSP_FORCEINLINE __m128 ssp_round_ps_REF( __m128 val, int iRoundMode )
     return Val.f;
 }
 
-/** \SSE45{Reference,_mm_round_sd} */
+/** \SSE45{Reference,_mm_round_sd, roundsd} */
 SSP_FORCEINLINE __m128d ssp_round_sd_REF( __m128d dst, __m128d val, int iRoundMode )        
 {
     ssp_s64 *valPtr;
@@ -2300,7 +2300,7 @@ SSP_FORCEINLINE __m128d ssp_round_sd_REF( __m128d dst, __m128d val, int iRoundMo
     return Dst.d;
 }
 
-/** \SSE45{Reference,_mm_round_ss} */
+/** \SSE45{Reference,_mm_round_ss, roundss} */
 SSP_FORCEINLINE __m128 ssp_round_ss_REF( __m128 dst, __m128 val, int iRoundMode )        //_mm_round_ss
 {
     ssp_s32 *valPtr;
@@ -2344,7 +2344,7 @@ SSP_FORCEINLINE __m128 ssp_round_ss_REF( __m128 dst, __m128 val, int iRoundMode 
 //---------------------------------------
 // Test
 //---------------------------------------
-/** \SSE45{Reference,_mm_testc_si128} */
+/** \SSE45{Reference,_mm_testc_si128,ptest} */
 SSP_FORCEINLINE int ssp_testc_si128_REF( __m128i a, __m128i b)                              
 {
     ssp_m128 A,B;
@@ -2355,7 +2355,7 @@ SSP_FORCEINLINE int ssp_testc_si128_REF( __m128i a, __m128i b)
            ( (A.s64[1] & B.s64[1]) == A.s64[1] ) ;
 }
 
-/** \SSE45{Reference,_mm_testz_si128} */
+/** \SSE45{Reference,_mm_testz_si128,ptest} */
 SSP_FORCEINLINE int ssp_testz_si128_REF( __m128i a, __m128i b)                              
 {
     ssp_m128 A,B;
@@ -2366,7 +2366,7 @@ SSP_FORCEINLINE int ssp_testz_si128_REF( __m128i a, __m128i b)
            ( (A.s64[1] & B.s64[1]) == 0 ) ;
 }
 
-/** \SSE45{Reference,_mm_testnzc_si128} */
+/** \SSE45{Reference,_mm_testnzc_si128,ptest} */
 SSP_FORCEINLINE int ssp_testnzc_si128_REF( __m128i a, __m128i b)                            
 {
     int zf, cf;
