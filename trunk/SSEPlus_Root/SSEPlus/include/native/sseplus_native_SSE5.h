@@ -677,27 +677,16 @@ SSP_FORCEINLINE __m128d ssp_frcz_pd_SSE5(__m128d a)
 {
     return _mm_frcz_pd (a);
 }
-///** \SSE5{SSE5 Native,_mm_frcz_ss, frczss } */
-//SSP_FORCEINLINE __m128 ssp_frcz_ss_SSE5(__m128 a, __m128 b)
-//{
-//    return _mm_frcz_ss (a, b);
-//}
-///** \SSE5{SSE5 Native,_mm_frcz_sd, frczsd } */
-//SSP_FORCEINLINE __m128d ssp_frcz_sd_SSE5(__m128d a, __m128d b)
-//{
-//    return _mm_frcz_sd (a, b);
-//}
-/** \SSE5{SSE5 Native,_mm_frcz_ss, frczss } */
-SSP_FORCEINLINE __m128 ssp_frcz_ss_SSE5(__m128 a)
+** \SSE5{SSE5 Native,_mm_frcz_ss, frczss } */
+SSP_FORCEINLINE __m128 ssp_frcz_ss_SSE5(__m128 a, __m128 b)
 {
-    return _mm_frcz_ss (a);
+    return _mm_frcz_ss (a, b);
 }
-/** \SSE5{SSE5 Native,_mm_frcz_sd, frczsd } */
-SSP_FORCEINLINE __m128d ssp_frcz_sd_SSE5(__m128d a)
+** \SSE5{SSE5 Native,_mm_frcz_sd, frczsd } */
+SSP_FORCEINLINE __m128d ssp_frcz_sd_SSE5(__m128d a, __m128d b)
 {
-    return _mm_frcz_sd (a);
+    return _mm_frcz_sd (a, b);
 }
-
 /** \SSE5{SSE5 Native,_mm_haddw_epi8,	 phaddbw } */
 SSP_FORCEINLINE __m128i ssp_haddw_epi8_SSE5(__m128i a)
 {

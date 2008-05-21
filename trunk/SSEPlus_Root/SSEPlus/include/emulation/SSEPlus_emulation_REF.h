@@ -56,32 +56,34 @@ SSP_FORCEINLINE __m128 ssp_frcz_ps_REF(__m128 a)
 }
 
 /** \SSE5{Reference,_mm_frcz_sd_REF, frczsd  } */
-SSP_FORCEINLINE __m128d ssp_frcz_sd_REF(__m128d a)
+SSP_FORCEINLINE __m128d ssp_frcz_sd_REF(__m128d a, __m128d b)
 {
-	ssp_m128 A;
+	ssp_m128 A, B;
 	long long temp;
 
 	A.d = a;
+	B.d = b;
 
 	temp = (long long) A.f64[0];
-	A.f64[0] -= temp;
+	B.f64[0] = A.f64[0] - temp;
 
-	return A.d;
+	return B.d;
 }
 
 /** \SSE5{Reference,_mm_frcz_ss_REF, frczss  } */
-SSP_FORCEINLINE __m128 ssp_frcz_ss_REF(__m128 a)
+SSP_FORCEINLINE __m128 ssp_frcz_ss_REF(__m128 a, __m128 b)
 {
-	ssp_m128 A;
+	ssp_m128 A, B;
 	int temp;
+
 	A.f = a;
+	B.f = b;
 
 	temp = (int) A.f32[0];
-	A.f32[0] -= temp;
+	B.f32[0] = A.f32[0] - temp;
 
-	return A.f;
+	return B.f;
 }
-
 
 //--------------------------------------
 // Horizontal Add and Sub

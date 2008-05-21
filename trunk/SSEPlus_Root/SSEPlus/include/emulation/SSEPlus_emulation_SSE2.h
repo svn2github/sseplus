@@ -178,10 +178,69 @@ SSP_FORCEINLINE __m128i ssp_macclo_epi32_SSE2( __m128i a, __m128i b, __m128i c )
 	return _mm_add_epi64(a, c);
 }
 
+/** \SSE5{SSE2,_mm_maccs_epi16, pmacssww } */ 
+SSP_FORCEINLINE __m128i ssp_maccs_epi16_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	//similar to the version in Framewave CBL
+	__m128i ablo, abhi, unlo, unhi, signC, clo, chi;
+
+	ablo  = _mm_mullo_epi16( a, b );
+	abhi  = _mm_mulhi_epi16( a, b );
+	unlo  = _mm_unpacklo_epi16( ablo, abhi );
+	unhi  = _mm_unpackhi_epi16( ablo, abhi );
+
+	//unpack and keep the sign of C
+	signC = _mm_srai_epi16 (c, 15);
+	chi   = _mm_unpackhi_epi16(c, signC);
+	clo   = _mm_unpacklo_epi16(c, signC);
+
+	chi   = _mm_add_epi32(chi, unhi);
+	clo   = _mm_add_epi32(clo, unlo);
+
+	return _mm_packs_epi32(clo, chi);
+}
+
+/** \SSE5{SSE2,_mm_maccs_epi32, pmacssdd } */ 
+SSP_FORCEINLINE __m128i ssp_maccs_epi32_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	//Version 1, slightly modified from Framewave CBL
+	ssp_m128 s1lo,s1hi,s2lo,s2hi,s3lo,s3hi, sl, sh;
+	static const __m128d max_val = {(double)0x7FFFFFFFl, (double)0x7FFFFFFFl};
+	static const __m128d min_val = {(-(double)0x80000000l), (-(double)0x80000000l)};
+
+	s1lo.d =  _mm_cvtepi32_pd(a);
+	s1hi.d = _mm_cvtepi32_pd(_mm_srli_si128(a, 8)); 
+
+	s2lo.d =  _mm_cvtepi32_pd(b);
+	s2hi.d = _mm_cvtepi32_pd(_mm_srli_si128(b,8)); 
+
+	s1lo.d = _mm_mul_pd(s1lo.d,s2lo.d);
+	s1hi.d = _mm_mul_pd(s1hi.d,s2hi.d);
+
+	s3lo.d =  _mm_cvtepi32_pd(c);
+	s3hi.d = _mm_cvtepi32_pd(_mm_srli_si128(c,8)); 
+	
+	s1lo.d = _mm_add_pd(s1lo.d,s3lo.d);
+	s1hi.d = _mm_add_pd(s1hi.d,s3hi.d);
+
+	sl.d   = _mm_min_pd(s1lo.d, max_val);
+	sl.d   = _mm_max_pd(sl.d, min_val);
+
+	sh.d   = _mm_min_pd(s1hi.d, max_val);
+	sh.d   = _mm_max_pd(sh.d, min_val);
+
+	sl.i   = _mm_cvtpd_epi32(sl.d); 
+	sh.i   = _mm_cvtpd_epi32(sh.d);
+
+	sh.i   = _mm_slli_si128(sh.i, 8); 
+	sl.i   = _mm_or_si128(sl.i, sh.i);
+
+    return sl.i;
+}
+
 //
 // Negative Multiply Add
 //
-
 /** \SSE5{SSE2,_mm_nmacc_ps,fnmaddps} */ 
 SSP_FORCEINLINE __m128 ssp_nmacc_ps_SSE2( __m128 a, __m128 b, __m128 c )
 {
