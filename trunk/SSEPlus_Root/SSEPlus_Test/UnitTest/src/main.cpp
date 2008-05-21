@@ -395,16 +395,15 @@ void SSE4_1_Tests( CSVTable & csv )
         vF32( 0.1f,   2.1f, 3.9f,  4.0f),
         vF32(90.5f, -34.2f, 0.1f, -2.9f) );
 
-    TEST_026( ssp_cmpeq_epi64, ssp_s64, __m128i, __m128i, __m128i  )
-        vS64( 0xFFFFFFFFFFFFFFFFll, 0xFFFFFFFFFFFFFFFFll ),
-        vS64( 0x0000000000000001ll, 0x0100000000000000ll ),
+ TEST_026( ssp_cmpeq_epi64, ssp_s64, __m128i, __m128i, __m128i  )
+        vS64( 0x0000000000000000ll, 0xFFFFFFFFFFFFFFFFll ),
+        vS64( 0x0000000000000002ll, 0x0100000000000000ll ),
         vS64( 0x0000000000000001ll, 0x0100000000000000ll ) ); 
 
     TEST_026( ssp_cmpeq_epi64, ssp_s64, __m128i, __m128i, __m128i  )
-        vS64( 0x0000000000000000ll, 0x0000000000000000ll ),
-        vS64( 0x0000000000000002ll, 0x0200000000000000ll ),
+        vS64( 0xFFFFFFFFFFFFFFFFll, 0x0000000000000000ll ),
+        vS64( 0x0000000000000001ll, 0x0200000000000000ll ),
         vS64( 0x0000000000000001ll, 0x0100000000000000ll ) ); 
-
 
     TEST_026(ssp_cvtepi16_epi32, ssp_s32, __m128i, __m128i ) 
         vS32(5,-5,8,-7),

@@ -52,6 +52,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "emulation", "emulation", "{
 	ProjectSection(SolutionItems) = preProject
 		SSEPlus\include\emulation\SSEPlus_emulation_comps_REF.h = SSEPlus\include\emulation\SSEPlus_emulation_comps_REF.h
 		SSEPlus\include\emulation\SSEPlus_emulation_comps_SSE2.h = SSEPlus\include\emulation\SSEPlus_emulation_comps_SSE2.h
+		SSEPlus\include\emulation\SSEPlus_emulation_comps_SSE3.h = SSEPlus\include\emulation\SSEPlus_emulation_comps_SSE3.h
 		SSEPlus\include\emulation\SSEPlus_emulation_REF.h = SSEPlus\include\emulation\SSEPlus_emulation_REF.h
 		SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE2.h
 		SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h = SSEPlus\include\emulation\SSEPlus_emulation_SSE3.h
