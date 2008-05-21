@@ -17,21 +17,21 @@
 // COMEQ (Condition 0)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comeq_epi16, pcomw } */ 
+/** \SSE5{SSE2,_mm_comeq_epi16, pcomw } */ 
 SSP_FORCEINLINE __m128i ssp_comeq_epi16_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpeq_epi16( a, b );
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comeq_epi32, pcomd } */  
+/** \SSE5{SSE2,_mm_comeq_epi32, pcomd } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epi32_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpeq_epi32( a, b );
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comeq_epi64, pcomq } */  
+/** \SSE5{SSE2,_mm_comeq_epi64, pcomq } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epi64_SSE2(__m128i a, __m128i b)
 {
     ssp_m128 A, B;
@@ -44,35 +44,35 @@ SSP_FORCEINLINE __m128i ssp_comeq_epi64_SSE2(__m128i a, __m128i b)
     return A.i;
 }
 
-/** \SSE5{Reference,_mm_comeq_epi8, pcomb } */  
+/** \SSE5{SSE2,_mm_comeq_epi8, pcomb } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epi8_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpeq_epi8( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comeq_epu16, pcomuw } */  
+/** \SSE5{SSE2,_mm_comeq_epu16, pcomuw } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epu16_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpeq_epi16( a, b );
     return a; 
 }
 
-/** \SSE5{Reference,_mm_comeq_epu32, pcomud } */  
+/** \SSE5{SSE2,_mm_comeq_epu32, pcomud } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epu32_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpeq_epi32( a, b );
     return a; 
 }
 
-/** \SSE5{Reference,_mm_comeq_epu64, pcomuq } */  
+/** \SSE5{SSE2,_mm_comeq_epu64, pcomuq } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epu64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epi64_SSE2( a, b );  
     return a;
 }
 
-/** \SSE5{Reference,_mm_comeq_epu8, pcomub } */ 
+/** \SSE5{SSE2,_mm_comeq_epu8, pcomub } */ 
 SSP_FORCEINLINE __m128i ssp_comeq_epu8_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpeq_epi8( a, b );
@@ -93,14 +93,14 @@ SSP_FORCEINLINE __m128 ssp_comeq_ps_SSE2(__m128 a, __m128 b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comeq_sd, comsd }*/   
+/** \SSE5{SSE2,_mm_comeq_sd, comsd }*/   
 SSP_FORCEINLINE __m128d ssp_comeq_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpeq_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comeq_ss, comss } */  
+/** \SSE5{SSE2,_mm_comeq_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comeq_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpeq_ss( a, b );
@@ -111,35 +111,35 @@ SSP_FORCEINLINE __m128 ssp_comeq_ss_SSE2(__m128 a, __m128 b)
 // COMLT (Condition 1)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comlt_epi16, pcomw } */  
+/** \SSE5{SSE2,_mm_comlt_epi16, pcomw } */  
 SSP_FORCEINLINE __m128i ssp_comlt_epi16_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmplt_epi16( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_epi32, pcomd } */  
+/** \SSE5{SSE2,_mm_comlt_epi32, pcomd } */  
 SSP_FORCEINLINE __m128i ssp_comlt_epi32_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmplt_epi32( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_epi64, pcomq } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comlt_epi64, pcomq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comlt_epi64_SSE2(__m128i a, __m128i b)
 {
-    a = ssp_comlt_epi64_SSE2( a, b );
+    a = ssp_comlt_epi64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_epi8, pcomb } */  
+/** \SSE5{SSE2,_mm_comlt_epi8, pcomb } */  
 SSP_FORCEINLINE __m128i ssp_comlt_epi8_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmplt_epi8( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_epu16, pcomuw } */  
+/** \SSE5{SSE2,_mm_comlt_epu16, pcomuw } */  
 SSP_FORCEINLINE __m128i ssp_comlt_epu16_SSE2(__m128i a, __m128i b)
 {
     __m128i signMask, mask;
@@ -151,7 +151,7 @@ SSP_FORCEINLINE __m128i ssp_comlt_epu16_SSE2(__m128i a, __m128i b)
     return mask;
 }
 
-/** \SSE5{Reference,_mm_comlt_epu32, pcomud } */  
+/** \SSE5{SSE2,_mm_comlt_epu32, pcomud } */  
 SSP_FORCEINLINE __m128i ssp_comlt_epu32_SSE2(__m128i a, __m128i b)
 {
     __m128i signMask, mask;
@@ -163,21 +163,21 @@ SSP_FORCEINLINE __m128i ssp_comlt_epu32_SSE2(__m128i a, __m128i b)
     return mask;
 }
 
-/** \SSE5{Reference,_mm_comlt_epu64, pcomuq } */  // TODO: SSE2
+/** \SSE5{SSE2,_mm_comlt_epu64, pcomuq } */  // TODO: SSE2
 SSP_FORCEINLINE __m128i ssp_comlt_epu64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comlt_epu64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_epu8, pcomub } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comlt_epu8, pcomub } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comlt_epu8_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comlt_epu8_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_pd, compd } */  
+/** \SSE5{SSE2,_mm_comlt_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comlt_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmplt_pd( a, b );
@@ -191,14 +191,14 @@ SSP_FORCEINLINE __m128 ssp_comlt_ps_SSE2(__m128 a, __m128 b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comlt_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comlt_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmplt_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comlt_ss, comss } */  
+/** \SSE5{SSE2,_mm_comlt_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comlt_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmplt_ss( a, b );
@@ -209,7 +209,7 @@ SSP_FORCEINLINE __m128 ssp_comlt_ss_SSE2(__m128 a, __m128 b)
 // COMLE (Condition 2)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comle_epi16, pcomw } */  
+/** \SSE5{SSE2,_mm_comle_epi16, pcomw } */  
 SSP_FORCEINLINE __m128i ssp_comle_epi16_SSE2(__m128i a, __m128i b)
 {
     __m128i c;    
@@ -219,7 +219,7 @@ SSP_FORCEINLINE __m128i ssp_comle_epi16_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epi32, pcomd } */  
+/** \SSE5{SSE2,_mm_comle_epi32, pcomd } */  
 SSP_FORCEINLINE __m128i ssp_comle_epi32_SSE2(__m128i a, __m128i b)
 {
     __m128i c;    
@@ -229,14 +229,14 @@ SSP_FORCEINLINE __m128i ssp_comle_epi32_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epi64, pcomq } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epi64, pcomq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epi64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comle_epi64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epi8, pcomb } */  
+/** \SSE5{SSE2,_mm_comle_epi8, pcomb } */  
 SSP_FORCEINLINE __m128i ssp_comle_epi8_SSE2(__m128i a, __m128i b)
 {
     __m128i c;    
@@ -246,56 +246,56 @@ SSP_FORCEINLINE __m128i ssp_comle_epi8_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epu16, pcomuw } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epu16, pcomuw } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epu16_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comle_epu16_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epu32, pcomud } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epu32, pcomud } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epu32_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comle_epu32_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epu64, pcomuq } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epu64, pcomuq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epu64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comle_epu64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_epu8, pcomub } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epu8, pcomub } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epu8_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comle_epu8_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comle_pd, compd } */ 
+/** \SSE5{SSE2,_mm_comle_pd, compd } */ 
 SSP_FORCEINLINE __m128d ssp_comle_pd_SSE2(__m128d a, __m128d b)
 {
    a = _mm_cmple_pd( a, b );
    return a;
 }
 
-/** \SSE5{Reference,_mm_comle_ps, comps } */  
+/** \SSE5{SSE2,_mm_comle_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comle_ps_SSE2(__m128 a, __m128 b)
 {
    a = _mm_cmple_ps( a, b );
    return a;
 }
 
-/** \SSE5{Reference,_mm_comle_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comle_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comle_sd_SSE2(__m128d a, __m128d b)
 {
    a = _mm_cmple_sd( a, b );
    return a;
 }
 
-/** \SSE5{Reference,_mm_comle_ss, comss } */  
+/** \SSE5{SSE2,_mm_comle_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comle_ss_SSE2(__m128 a, __m128 b)
 {
    a = _mm_cmple_ss( a, b );
@@ -306,7 +306,7 @@ SSP_FORCEINLINE __m128 ssp_comle_ss_SSE2(__m128 a, __m128 b)
 // COMUNORD (Condition 3)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comunord_pd, compd } */  
+/** \SSE5{SSE2,_mm_comunord_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comunord_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_or_pd    ( a, b );
@@ -314,7 +314,7 @@ SSP_FORCEINLINE __m128d ssp_comunord_pd_SSE2(__m128d a, __m128d b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comunord_ps, comps } */  
+/** \SSE5{SSE2,_mm_comunord_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comunord_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_or_ps    ( a, b );
@@ -322,7 +322,7 @@ SSP_FORCEINLINE __m128 ssp_comunord_ps_SSE2(__m128 a, __m128 b)
     return a;      
 }
 
-/** \SSE5{Reference,_mm_comunord_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comunord_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comunord_sd_SSE2(__m128d a, __m128d b)
 {
     b = _mm_or_pd    ( a, b );
@@ -330,7 +330,7 @@ SSP_FORCEINLINE __m128d ssp_comunord_sd_SSE2(__m128d a, __m128d b)
     return a; 
 }
 
-/** \SSE5{Reference,_mm_comunord_ss, comss } */  
+/** \SSE5{SSE2,_mm_comunord_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comunord_ss_SSE2(__m128 a, __m128 b)
 {
     b = _mm_or_ps    ( a, b );
@@ -343,7 +343,7 @@ SSP_FORCEINLINE __m128 ssp_comunord_ss_SSE2(__m128 a, __m128 b)
 // COMNEQ (Condition 4)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comneq_epi16, pcomw } */  
+/** \SSE5{SSE2,_mm_comneq_epi16, pcomw } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epi16_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epi16_SSE2( a, b );
@@ -351,7 +351,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epi16_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epi32, pcomd } */  
+/** \SSE5{SSE2,_mm_comneq_epi32, pcomd } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epi32_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epi32_SSE2( a, b );
@@ -359,7 +359,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epi32_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epi64, pcomq } */  
+/** \SSE5{SSE2,_mm_comneq_epi64, pcomq } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epi64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epi64_SSE2( a, b );
@@ -367,7 +367,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epi64_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epi8, pcomb } */  
+/** \SSE5{SSE2,_mm_comneq_epi8, pcomb } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epi8_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epi8_SSE2( a, b );
@@ -375,7 +375,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epi8_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epu16, pcomuw } */  
+/** \SSE5{SSE2,_mm_comneq_epu16, pcomuw } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epu16_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epu16_SSE2( a, b );
@@ -383,7 +383,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epu16_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epu32, pcomud } */  
+/** \SSE5{SSE2,_mm_comneq_epu32, pcomud } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epu32_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epu32_SSE2( a, b );
@@ -391,7 +391,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epu32_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epu64, pcomuq } */ 
+/** \SSE5{SSE2,_mm_comneq_epu64, pcomuq } */ 
 SSP_FORCEINLINE __m128i ssp_comneq_epu64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epu64_SSE2( a, b );
@@ -399,7 +399,7 @@ SSP_FORCEINLINE __m128i ssp_comneq_epu64_SSE2(__m128i a, __m128i b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comneq_epu8, pcomub } */  
+/** \SSE5{SSE2,_mm_comneq_epu8, pcomub } */  
 SSP_FORCEINLINE __m128i ssp_comneq_epu8_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comeq_epu8_SSE2( a, b );
@@ -421,14 +421,14 @@ SSP_FORCEINLINE __m128 ssp_comneq_ps_SSE2(__m128 a, __m128 b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comneq_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comneq_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comneq_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpneq_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comneq_ss, comss } */  
+/** \SSE5{SSE2,_mm_comneq_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comneq_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpneq_ss( a, b );
@@ -439,28 +439,28 @@ SSP_FORCEINLINE __m128 ssp_comneq_ss_SSE2(__m128 a, __m128 b)
 // COMNLT (Condition 5)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comnlt_pd, compd } */  
+/** \SSE5{SSE2,_mm_comnlt_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comnlt_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpnlt_pd( a, b );    
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnlt_ps, comps } */  
+/** \SSE5{SSE2,_mm_comnlt_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comnlt_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpnlt_ps( a, b );    
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnlt_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comnlt_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comnlt_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpnlt_sd( a, b );    
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnlt_ss, comss } */  
+/** \SSE5{SSE2,_mm_comnlt_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comnlt_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpnlt_ss( a, b );    
@@ -472,28 +472,28 @@ SSP_FORCEINLINE __m128 ssp_comnlt_ss_SSE2(__m128 a, __m128 b)
 // COMNLE (Condition 6)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comnle_pd, compd } */  
+/** \SSE5{SSE2,_mm_comnle_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comnle_pd_SSE2(__m128d a, __m128d b)
 {    
     a = _mm_cmpnle_pd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnle_ps, comps } */  
+/** \SSE5{SSE2,_mm_comnle_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comnle_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpnle_ps( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnle_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comnle_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comnle_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpnle_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnle_ss, comss } */  
+/** \SSE5{SSE2,_mm_comnle_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comnle_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpnle_ss( a, b );
@@ -505,28 +505,28 @@ SSP_FORCEINLINE __m128 ssp_comnle_ss_SSE2(__m128 a, __m128 b)
 // COMORD (Condition 7)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comord_pd, compd } */  
+/** \SSE5{SSE2,_mm_comord_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comord_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpord_pd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comord_ps, comps } */  
+/** \SSE5{SSE2,_mm_comord_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comord_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpord_ps( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comord_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comord_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comord_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpord_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comord_ss, comss } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comord_ss, comss } */  //TODO:SSE2
 SSP_FORCEINLINE __m128 ssp_comord_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpord_ss( a, b );
@@ -538,7 +538,7 @@ SSP_FORCEINLINE __m128 ssp_comord_ss_SSE2(__m128 a, __m128 b)
 // COMUEQ (Condition 8)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comueq_pd, compd } */  
+/** \SSE5{SSE2,_mm_comueq_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comueq_pd_SSE2(__m128d a, __m128d b)
 {
     __m128d c;
@@ -558,7 +558,7 @@ SSP_FORCEINLINE __m128 ssp_comueq_ps_SSE2(__m128 a, __m128 b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comueq_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comueq_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comueq_sd_SSE2(__m128d a, __m128d b)
 {
     __m128d c;
@@ -569,7 +569,7 @@ SSP_FORCEINLINE __m128d ssp_comueq_sd_SSE2(__m128d a, __m128d b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comueq_ss, comss } */  
+/** \SSE5{SSE2,_mm_comueq_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comueq_ss_SSE2(__m128 a, __m128 b)
 {
     __m128 c;
@@ -585,28 +585,28 @@ SSP_FORCEINLINE __m128 ssp_comueq_ss_SSE2(__m128 a, __m128 b)
 // COMNGE (Condition 9)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comnge_pd, compd } */  
+/** \SSE5{SSE2,_mm_comnge_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comnge_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpnge_pd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnge_ps, comps } */  
+/** \SSE5{SSE2,_mm_comnge_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comnge_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpnge_ps( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnge_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comnge_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comnge_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpnge_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comnge_ss, comss } */  
+/** \SSE5{SSE2,_mm_comnge_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comnge_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpnge_ss( a, b );
@@ -618,28 +618,28 @@ SSP_FORCEINLINE __m128 ssp_comnge_ss_SSE2(__m128 a, __m128 b)
 // COMNGT (Condition 10)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comngt_pd, compd } */  
+/** \SSE5{SSE2,_mm_comngt_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comngt_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpngt_pd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comngt_ps, comps } */  
+/** \SSE5{SSE2,_mm_comngt_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comngt_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpngt_ps( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comngt_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comngt_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comngt_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpngt_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comngt_ss, comps } */  
+/** \SSE5{SSE2,_mm_comngt_ss, comps } */  
 SSP_FORCEINLINE __m128 ssp_comngt_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpngt_ss( a, b );
@@ -732,7 +732,7 @@ SSP_FORCEINLINE __m128 ssp_comfalse_ss_SSE2(__m128 a, __m128 b)
 // COMONEQ (Condition 12)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comoneq_pd, compd } */  
+/** \SSE5{SSE2,_mm_comoneq_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comoneq_pd_SSE2(__m128d a, __m128d b)
 {
     __m128d c;
@@ -753,7 +753,7 @@ SSP_FORCEINLINE __m128 ssp_comoneq_ps_SSE2(__m128 a, __m128 b)
 }
 
 
-/** \SSE5{Reference,_mm_comoneq_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comoneq_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comoneq_sd_SSE2(__m128d a, __m128d b)
 {
     __m128d c;
@@ -764,7 +764,7 @@ SSP_FORCEINLINE __m128d ssp_comoneq_sd_SSE2(__m128d a, __m128d b)
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comoneq_ss, comss } */  
+/** \SSE5{SSE2,_mm_comoneq_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comoneq_ss_SSE2(__m128 a, __m128 b)
 {
     __m128 c;
@@ -780,7 +780,7 @@ SSP_FORCEINLINE __m128 ssp_comoneq_ss_SSE2(__m128 a, __m128 b)
 // COMGE (Condition 13)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comge_epi16, pcomw } */  
+/** \SSE5{SSE2,_mm_comge_epi16, pcomw } */  
 SSP_FORCEINLINE __m128i ssp_comge_epi16_SSE2(__m128i a, __m128i b)
 {
     __m128i c;
@@ -790,7 +790,7 @@ SSP_FORCEINLINE __m128i ssp_comge_epi16_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comge_epi32, pcomd } */  
+/** \SSE5{SSE2,_mm_comge_epi32, pcomd } */  
 SSP_FORCEINLINE __m128i ssp_comge_epi32_SSE2(__m128i a, __m128i b)
 {
     __m128i c;
@@ -800,14 +800,14 @@ SSP_FORCEINLINE __m128i ssp_comge_epi32_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comge_epi64, pcomq } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comge_epi64, pcomq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comge_epi64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comge_epi64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comge_epi8, pcomb } */  
+/** \SSE5{SSE2,_mm_comge_epi8, pcomb } */  
 SSP_FORCEINLINE __m128i ssp_comge_epi8_SSE2(__m128i a, __m128i b)
 {
     __m128i c;
@@ -818,7 +818,7 @@ SSP_FORCEINLINE __m128i ssp_comge_epi8_SSE2(__m128i a, __m128i b)
 }
 
 
-/** \SSE5{Reference,_mm_comge_epu16, pcomuw } */  
+/** \SSE5{SSE2,_mm_comge_epu16, pcomuw } */  
 SSP_FORCEINLINE __m128i ssp_comge_epu16_SSE2(__m128i a, __m128i b)
 {
     __m128i mask;
@@ -827,7 +827,7 @@ SSP_FORCEINLINE __m128i ssp_comge_epu16_SSE2(__m128i a, __m128i b)
     return mask;
 }
 
-/** \SSE5{Reference,_mm_comge_epu32, pcomud } */  
+/** \SSE5{SSE2,_mm_comge_epu32, pcomud } */  
 SSP_FORCEINLINE __m128i ssp_comge_epu32_SSE2(__m128i a, __m128i b)
 {
     __m128i mask;
@@ -836,42 +836,42 @@ SSP_FORCEINLINE __m128i ssp_comge_epu32_SSE2(__m128i a, __m128i b)
     return mask;
 }
 
-/** \SSE5{Reference,_mm_comge_epu64, pcomuq } */  //TODO: SSE2
+/** \SSE5{SSE2,_mm_comge_epu64, pcomuq } */  //TODO: SSE2
 SSP_FORCEINLINE __m128i ssp_comge_epu64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comge_epu64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comge_epu8, pcomub } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comge_epu8, pcomub } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comge_epu8_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comge_epu8_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comge_pd, compd } */  
+/** \SSE5{SSE2,_mm_comge_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comge_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpge_pd( a, b );
     return a;    
 }
 
-/** \SSE5{Reference,_mm_comge_ps, comps } */  
+/** \SSE5{SSE2,_mm_comge_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comge_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpge_ps( a, b );
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comge_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comge_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comge_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpge_sd( a, b );
     return a;   
 }
 
-/** \SSE5{Reference,_mm_comge_ss, comss } */  
+/** \SSE5{SSE2,_mm_comge_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comge_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpge_ss( a, b );
@@ -883,35 +883,35 @@ SSP_FORCEINLINE __m128 ssp_comge_ss_SSE2(__m128 a, __m128 b)
 // COMGT (Condition 14)
 //----------------------------------------
 
-/** \SSE5{Reference,_mm_comgt_epi16, pcomw } */ 
+/** \SSE5{SSE2,_mm_comgt_epi16, pcomw } */ 
 SSP_FORCEINLINE __m128i ssp_comgt_epi16_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpgt_epi16( a, b );
     return a;  
 }
 
-/** \SSE5{Reference,_mm_comgt_epi32, pcomd } */ 
+/** \SSE5{SSE2,_mm_comgt_epi32, pcomd } */ 
 SSP_FORCEINLINE __m128i ssp_comgt_epi32_SSE2(__m128i a, __m128i b)
 {
     a = _mm_cmpgt_epi32( a, b );
     return a;  
 }
 
-/** \SSE5{Reference,_mm_comgt_epi64, pcomq } */  
+/** \SSE5{SSE2,_mm_comgt_epi64, pcomq } */  //TODO: SSE2
 SSP_FORCEINLINE __m128i ssp_comgt_epi64_SSE2(__m128i a, __m128i b)
 {
-    a = _mm_cmpgt_epi64( a, b );
+    a = ssp_comgt_epi64_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comgt_epi8, pcomb } */  
+/** \SSE5{SSE2,_mm_comgt_epi8, pcomb } */  
 SSP_FORCEINLINE __m128i ssp_comgt_epi8_SSE2(__m128i a, __m128i b)
 {
      a = _mm_cmpgt_epi8( a, b );
     return a;  
 }
 
-/** \SSE5{Reference,_mm_comgt_epu16, pcomuw } */  
+/** \SSE5{SSE2,_mm_comgt_epu16, pcomuw } */  
 SSP_FORCEINLINE __m128i ssp_comgt_epu16_SSE2(__m128i a, __m128i b)
 {
     __m128i signMask, mask;
@@ -923,7 +923,7 @@ SSP_FORCEINLINE __m128i ssp_comgt_epu16_SSE2(__m128i a, __m128i b)
     return mask;
 }
 
-/** \SSE5{Reference,_mm_comgt_epu32, pcomud } */ 
+/** \SSE5{SSE2,_mm_comgt_epu32, pcomud } */ 
 SSP_FORCEINLINE __m128i ssp_comgt_epu32_SSE2(__m128i a, __m128i b)
 {
     __m128i signMask, mask;
@@ -935,41 +935,42 @@ SSP_FORCEINLINE __m128i ssp_comgt_epu32_SSE2(__m128i a, __m128i b)
     return mask;
 }
 
-/** \SSE5{Reference,_mm_comgt_epu64, pcomuq } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comgt_epu64, pcomuq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comgt_epu64_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comgt_epu64_REF( a, b );
+    return a;
 }
 
-/** \SSE5{Reference,_mm_comgt_epu8, pcomub } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comgt_epu8, pcomub } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comgt_epu8_SSE2(__m128i a, __m128i b)
 {
     a = ssp_comgt_epu8_REF( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comgt_pd, compd } */  
+/** \SSE5{SSE2,_mm_comgt_pd, compd } */  
 SSP_FORCEINLINE __m128d ssp_comgt_pd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpgt_pd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comgt_ps, comps } */  
+/** \SSE5{SSE2,_mm_comgt_ps, comps } */  
 SSP_FORCEINLINE __m128 ssp_comgt_ps_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpgt_ps( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comgt_sd, comsd } */  
+/** \SSE5{SSE2,_mm_comgt_sd, comsd } */  
 SSP_FORCEINLINE __m128d ssp_comgt_sd_SSE2(__m128d a, __m128d b)
 {
     a = _mm_cmpgt_sd( a, b );
     return a;
 }
 
-/** \SSE5{Reference,_mm_comgt_ss, comss } */  
+/** \SSE5{SSE2,_mm_comgt_ss, comss } */  
 SSP_FORCEINLINE __m128 ssp_comgt_ss_SSE2(__m128 a, __m128 b)
 {
     a = _mm_cmpgt_ss( a, b );
