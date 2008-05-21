@@ -1969,7 +1969,7 @@ int main(int argc, char *argv[])
     PrintHeader();
     SSP_Tests( csv );
 
-    std::cout << "\nUntested:\n";
+    std::cout << "\nUntested (SSE3 and above):\n";
     std::cout << csv.UnusedEntriesString() << std::endl;    
     return 0;
 }

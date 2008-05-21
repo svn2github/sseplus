@@ -151,7 +151,12 @@ public:
         {
             if( !it->second.useCount )
             {
-                oss << std::left << std::setw(30) << it->first << "," << it->second.ToString() << std::endl;
+                if(  "SSE"  != it->second.source 
+                  && "SSE2" != it->second.source  )
+                {
+               
+                    oss << std::left << std::setw(30) << it->first << "," << it->second.ToString() << std::endl;
+                }
             }
         }       
 

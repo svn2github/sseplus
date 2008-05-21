@@ -128,12 +128,8 @@ SSP_FORCEINLINE __m128i ssp_comlt_epi32_SSE2(__m128i a, __m128i b)
 /** \SSE5{Reference,_mm_comlt_epi64, pcomq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comlt_epi64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.s64[0]<B.s64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.s64[1]<B.s64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
+    a = ssp_comlt_epi64_SSE2( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comlt_epi8, pcomb } */  
@@ -236,12 +232,8 @@ SSP_FORCEINLINE __m128i ssp_comle_epi32_SSE2(__m128i a, __m128i b)
 /** \SSE5{Reference,_mm_comle_epi64, pcomq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epi64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.s64[0]<=B.s64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.s64[1]<=B.s64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
+    a = ssp_comle_epi64_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comle_epi8, pcomb } */  
@@ -257,31 +249,15 @@ SSP_FORCEINLINE __m128i ssp_comle_epi8_SSE2(__m128i a, __m128i b)
 /** \SSE5{Reference,_mm_comle_epu16, pcomuw } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epu16_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u16[0] = (A.u16[0]<=B.u16[0]) ? 0xFFFF : 0;
-    A.u16[1] = (A.u16[1]<=B.u16[1]) ? 0xFFFF : 0;
-    A.u16[2] = (A.u16[2]<=B.u16[2]) ? 0xFFFF : 0;
-    A.u16[3] = (A.u16[3]<=B.u16[3]) ? 0xFFFF : 0;
-    A.u16[4] = (A.u16[4]<=B.u16[4]) ? 0xFFFF : 0;
-    A.u16[5] = (A.u16[5]<=B.u16[5]) ? 0xFFFF : 0;
-    A.u16[6] = (A.u16[6]<=B.u16[6]) ? 0xFFFF : 0;
-    A.u16[7] = (A.u16[7]<=B.u16[7]) ? 0xFFFF : 0;
-    return A.i;
+    a = ssp_comle_epu16_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comle_epu32, pcomud } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comle_epu32_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u32[0] = (A.u32[0]<=B.u32[0]) ? 0xFFFFFFFF : 0;
-    A.u32[1] = (A.u32[1]<=B.u32[1]) ? 0xFFFFFFFF : 0;
-    A.u32[2] = (A.u32[2]<=B.u32[2]) ? 0xFFFFFFFF : 0;
-    A.u32[3] = (A.u32[3]<=B.u32[3]) ? 0xFFFFFFFF : 0;
-    return A.i;
+    a = ssp_comle_epu32_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comle_epu64, pcomuq } */  //TODO:SSE2
@@ -827,12 +803,8 @@ SSP_FORCEINLINE __m128i ssp_comge_epi32_SSE2(__m128i a, __m128i b)
 /** \SSE5{Reference,_mm_comge_epi64, pcomq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comge_epi64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.s64[0]>=B.s64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.s64[1]>=B.s64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
+    a = ssp_comge_epi64_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comge_epi8, pcomb } */  
@@ -845,70 +817,37 @@ SSP_FORCEINLINE __m128i ssp_comge_epi8_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{Reference,_mm_comge_epu16, pcomuw } */  //TODO:SSE2
+
+/** \SSE5{Reference,_mm_comge_epu16, pcomuw } */  
 SSP_FORCEINLINE __m128i ssp_comge_epu16_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u16[0] = (A.u16[0]>=B.u16[0]) ? 0xFFFF : 0;
-    A.u16[1] = (A.u16[1]>=B.u16[1]) ? 0xFFFF : 0;
-    A.u16[2] = (A.u16[2]>=B.u16[2]) ? 0xFFFF : 0;
-    A.u16[3] = (A.u16[3]>=B.u16[3]) ? 0xFFFF : 0;
-    A.u16[4] = (A.u16[4]>=B.u16[4]) ? 0xFFFF : 0;
-    A.u16[5] = (A.u16[5]>=B.u16[5]) ? 0xFFFF : 0;
-    A.u16[6] = (A.u16[6]>=B.u16[6]) ? 0xFFFF : 0;
-    A.u16[7] = (A.u16[7]>=B.u16[7]) ? 0xFFFF : 0;
-    return A.i;
+    __m128i mask;
+    mask = ssp_comge_epi16_SSE2( a, b );         // FFFF where a < b (signed)
+    mask = ssp_logical_signinvert_16_SSE2( mask, a, b );
+    return mask;
 }
 
-/** \SSE5{Reference,_mm_comge_epu32, pcomud } */  //TODO:SSE2
+/** \SSE5{Reference,_mm_comge_epu32, pcomud } */  
 SSP_FORCEINLINE __m128i ssp_comge_epu32_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u32[0] = (A.u32[0]>=B.u32[0]) ? 0xFFFFFFFF : 0;
-    A.u32[1] = (A.u32[1]>=B.u32[1]) ? 0xFFFFFFFF : 0;
-    A.u32[2] = (A.u32[2]>=B.u32[2]) ? 0xFFFFFFFF : 0;
-    A.u32[3] = (A.u32[3]>=B.u32[3]) ? 0xFFFFFFFF : 0;
-    return A.i;
+    __m128i mask;
+    mask = ssp_comge_epi32_SSE2( a, b );         // FFFF where a < b (signed)
+    mask = ssp_logical_signinvert_32_SSE2( mask, a, b );
+    return mask;
 }
 
-/** \SSE5{Reference,_mm_comge_epu64, pcomuq } */  //TODO:SSE2
+/** \SSE5{Reference,_mm_comge_epu64, pcomuq } */  //TODO: SSE2
 SSP_FORCEINLINE __m128i ssp_comge_epu64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.u64[0]>=B.u64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.u64[1]>=B.u64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
+    a = ssp_comge_epu64_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comge_epu8, pcomub } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comge_epu8_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u8[ 0] = (A.u8[ 0]>=B.u8[ 0]) ? 0xFF : 0;
-    A.u8[ 1] = (A.u8[ 1]>=B.u8[ 1]) ? 0xFF : 0;
-    A.u8[ 2] = (A.u8[ 2]>=B.u8[ 2]) ? 0xFF : 0;
-    A.u8[ 3] = (A.u8[ 3]>=B.u8[ 3]) ? 0xFF : 0;
-    A.u8[ 4] = (A.u8[ 4]>=B.u8[ 4]) ? 0xFF : 0;
-    A.u8[ 5] = (A.u8[ 5]>=B.u8[ 5]) ? 0xFF : 0;
-    A.u8[ 6] = (A.u8[ 6]>=B.u8[ 6]) ? 0xFF : 0;
-    A.u8[ 7] = (A.u8[ 7]>=B.u8[ 7]) ? 0xFF : 0; 
-	A.u8[ 8] = (A.u8[ 8]>=B.u8[ 8]) ? 0xFF : 0;
-    A.u8[ 9] = (A.u8[ 9]>=B.u8[ 9]) ? 0xFF : 0;
-    A.u8[10] = (A.u8[10]>=B.u8[10]) ? 0xFF : 0;
-    A.u8[11] = (A.u8[11]>=B.u8[11]) ? 0xFF : 0;
-    A.u8[12] = (A.u8[12]>=B.u8[12]) ? 0xFF : 0;
-    A.u8[13] = (A.u8[13]>=B.u8[13]) ? 0xFF : 0;
-    A.u8[14] = (A.u8[14]>=B.u8[14]) ? 0xFF : 0;
-    A.u8[15] = (A.u8[15]>=B.u8[15]) ? 0xFF : 0;
-    return A.i;
+    a = ssp_comge_epu8_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comge_pd, compd } */  
@@ -958,15 +897,11 @@ SSP_FORCEINLINE __m128i ssp_comgt_epi32_SSE2(__m128i a, __m128i b)
     return a;  
 }
 
-/** \SSE5{Reference,_mm_comgt_epi64, pcomq } */  //TODO:SSE2
+/** \SSE5{Reference,_mm_comgt_epi64, pcomq } */  
 SSP_FORCEINLINE __m128i ssp_comgt_epi64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.s64[0]>B.s64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.s64[1]>B.s64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
+    a = _mm_cmpgt_epi64( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comgt_epi8, pcomb } */  
@@ -1003,37 +938,14 @@ SSP_FORCEINLINE __m128i ssp_comgt_epu32_SSE2(__m128i a, __m128i b)
 /** \SSE5{Reference,_mm_comgt_epu64, pcomuq } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comgt_epu64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u64[0] = (A.u64[0]>B.u64[0]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    A.u64[1] = (A.u64[1]>B.u64[1]) ? 0xFFFFFFFFFFFFFFFF : 0;
-    return A.i;
+    a = ssp_comgt_epu64_REF( a, b );
 }
 
 /** \SSE5{Reference,_mm_comgt_epu8, pcomub } */  //TODO:SSE2
 SSP_FORCEINLINE __m128i ssp_comgt_epu8_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A,B;
-    A.i = a;
-    B.i = b;
-    A.u8[ 0] = (A.u8[ 0]>B.u8[ 0]) ? 0xFF : 0;
-    A.u8[ 1] = (A.u8[ 1]>B.u8[ 1]) ? 0xFF : 0;
-    A.u8[ 2] = (A.u8[ 2]>B.u8[ 2]) ? 0xFF : 0;
-    A.u8[ 3] = (A.u8[ 3]>B.u8[ 3]) ? 0xFF : 0;
-    A.u8[ 4] = (A.u8[ 4]>B.u8[ 4]) ? 0xFF : 0;
-    A.u8[ 5] = (A.u8[ 5]>B.u8[ 5]) ? 0xFF : 0;
-    A.u8[ 6] = (A.u8[ 6]>B.u8[ 6]) ? 0xFF : 0;
-    A.u8[ 7] = (A.u8[ 7]>B.u8[ 7]) ? 0xFF : 0; 
-	A.u8[ 8] = (A.u8[ 8]>B.u8[ 8]) ? 0xFF : 0;
-    A.u8[ 9] = (A.u8[ 9]>B.u8[ 9]) ? 0xFF : 0;
-    A.u8[10] = (A.u8[10]>B.u8[10]) ? 0xFF : 0;
-    A.u8[11] = (A.u8[11]>B.u8[11]) ? 0xFF : 0;
-    A.u8[12] = (A.u8[12]>B.u8[12]) ? 0xFF : 0;
-    A.u8[13] = (A.u8[13]>B.u8[13]) ? 0xFF : 0;
-    A.u8[14] = (A.u8[14]>B.u8[14]) ? 0xFF : 0;
-    A.u8[15] = (A.u8[15]>B.u8[15]) ? 0xFF : 0;
-    return A.i;
+    a = ssp_comgt_epu8_REF( a, b );
+    return a;
 }
 
 /** \SSE5{Reference,_mm_comgt_pd, compd } */  

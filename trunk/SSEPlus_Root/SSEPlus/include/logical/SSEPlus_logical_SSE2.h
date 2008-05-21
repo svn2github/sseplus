@@ -12,6 +12,28 @@
  *  @name Logical Operations
  */
 
+
+/** Invert 'mask' if 'a' and 'b' have different signs. */
+SSP_FORCEINLINE __m128i ssp_logical_signinvert_16_SSE2( __m128i mask, __m128i a, __m128i b)
+{
+    __m128i signMask;   
+    signMask = _mm_xor_si128  ( a, b );              // Signbit is 1 where signs differ 
+    signMask = _mm_srai_epi16 ( signMask, 15 );      // fill all fields with sign bit     
+    mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
+    return mask;  
+}
+
+/** Invert 'mask' if 'a' and 'b' have different signs. */
+SSP_FORCEINLINE __m128i ssp_logical_signinvert_32_SSE2( __m128i mask, __m128i a, __m128i b)
+{
+    __m128i signMask;   
+    signMask = _mm_xor_si128  ( a, b );              // Signbit is 1 where signs differ 
+    signMask = _mm_srai_epi32 ( signMask, 31 );      // fill all fields with sign bit     
+    mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
+    return mask;  
+}
+
+
 SSP_FORCEINLINE __m128i ssp_logical_invert_si128_SSE2( __m128i a )
 {
     const static __m128i mask = SSP_CONST_SET_32I( 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF );
