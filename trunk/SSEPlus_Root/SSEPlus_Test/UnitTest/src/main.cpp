@@ -1046,7 +1046,7 @@ void SSE5_Tests( CSVTable & csv )
         vU64( 0x80, 0xA1 ));
 
     TEST_08( ssp_perm_pd, ssp_f64, __m128d, __m128d, __m128d, __m128i )
-        vF64( 1.0f, 3.141593f ),
+        vF64( 1.0f, 3.1415926535897931 ),
         vF64(   50,  100 ),
         vF64(   10,  -25 ),
 // src (hex)    02    03
