@@ -65,6 +65,11 @@
 #define TEST_028   TEST_02
 #endif 
 
+#ifndef SSP_COMPILER_SUPPORTS_SSE5
+#undef  TEST_08
+#define TEST_08   TEST_0
+#endif 
+
 
 #define MIN_INT     (-2147483647 - 1) /* minimum (signed) int value */
 
@@ -972,6 +977,16 @@ void SSE5_Tests( CSVTable & csv )
         vF64( 1.0, 3.3   ), 
         vF64(-5.5, 3.3   ),
         vF64(-5.5, 3.3   ));
+
+    // permute
+    TEST_08( ssp_perm_epi8, ssp_u8, __m128i, __m128i, __m128i, __m128i )
+// in val      00    11    55    66    AA    BB    EE    FF    F0    C3    B4    87    78    69    3C    2D
+        vU8( 0x00, 0xEE, 0xAA, 0x99, 0x00, 0xFF, 0xFF, 0x00, 0xF0, 0x3C, 0x2D, 0x1E, 0x00, 0xFF, 0x00, 0xFF ),
+        vU8( 0xFF, 0xEE, 0xDD, 0xCC, 0xBB, 0xAA, 0x99, 0x88, 0x77, 0x66, 0x55, 0x44, 0x33, 0x22, 0x11, 0x00 ),
+        vU8( 0x0F, 0x1E, 0x2D, 0x3C, 0x4B, 0x5A, 0x69, 0x78, 0x87, 0x96, 0xA5, 0xB4, 0xC3, 0xD2, 0xE1, 0xF0 ),
+// src (hex)   00    01    05    06    0A    0B    0E    0F    10    13    14    17    18    19    1C    1D
+// op (bin)   000   001   010   011   100   101   110   111   000   001   010   011   100   101   110   111
+        vU8( 0x00, 0x21, 0x45, 0x66, 0x8A, 0xAB, 0xCE, 0xDF, 0x10, 0x33, 0x54, 0x77, 0x98, 0xB9, 0xDC, 0xFD )); 
 
     // rotates
     TEST_028( ssp_rot_epi8, ssp_u8, __m128i, __m128i, __m128i )

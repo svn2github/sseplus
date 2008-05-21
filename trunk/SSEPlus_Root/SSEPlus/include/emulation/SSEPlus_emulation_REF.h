@@ -3017,11 +3017,69 @@ SSP_FORCEINLINE ssp_u64 ssp_popcnt64_REF( ssp_u64 val )
 // Packed permute
 //--------------------------------------
 
-///** \SSE5{Reference,_mm_perm_epi8, pperm } */
-//SSP_FORCEINLINE __m128i ssp_perm_epi8_REF(__m128i a, __m128i b, __m128i c)
-//{
-//    return _mm_perm_epi8 (a, b, c);
-//}
+/** \SSE5{Reference,_mm_perm_epi8, pperm } */
+SSP_FORCEINLINE __m128i ssp_perm_epi8_REF(__m128i a, __m128i b, __m128i c)
+{
+    int n;
+    ssp_m128 A,B,C,R;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    for( n = 0; n < 16; n++ )
+    {
+        int op = C.u8[n] >> 5;
+        switch( op )
+        {
+        case 0: // source byte (no logical opeartion)
+            R.u8[n] = ( C.u8[n] & 0x10 ) ? ( B.u8[C.u8[n] & 0xF] ) : ( A.u8[C.u8[n] & 0xF] );
+            break;
+        case 1: // invert source byte
+            {
+                ssp_u8 src = ( C.u8[n] & 0x10 ) ? ( B.u8[C.u8[n] & 0xF] ) : ( A.u8[C.u8[n] & 0xF] );
+                R.u8[n] = ~src;
+            }
+            break;
+        case 2: // bit reverse of source byte
+            {
+                ssp_u8 src = ( C.u8[n] & 0x10 ) ? ( B.u8[C.u8[n] & 0xF] ) : ( A.u8[C.u8[n] & 0xF] );
+                R.u8[n] = ( (src & 0x0F) << 4 ) | ( (src & 0xF0) >> 4 );
+                R.u8[n] = ( (R.u8[n] & 0x33) << 2 ) | ( (R.u8[n] & 0xCC) >> 2 );
+                R.u8[n] = ( (R.u8[n] & 0x55) << 1 ) | ( (R.u8[n] & 0xAA) >> 1 );
+            }
+            break;
+        case 3: // bit reverse of inverted source byte
+            {
+                ssp_u8 src = ( C.u8[n] & 0x10 ) ? ( B.u8[C.u8[n] & 0xF] ) : ( A.u8[C.u8[n] & 0xF] );
+                R.u8[n] = ( (src & 0x0F) << 4 ) | ( (src & 0xF0) >> 4 );
+                R.u8[n] = ( (R.u8[n] & 0x33) << 2 ) | ( (R.u8[n] & 0xCC) >> 2 );
+                R.u8[n] = ( (R.u8[n] & 0x55) << 1 ) | ( (R.u8[n] & 0xAA) >> 1 );
+                R.u8[n] = ~R.u8[n];
+            }
+            break;
+        case 4: // 0x00
+            R.u8[n] = 0x00;
+            break;
+        case 5: // 0xFF
+            R.u8[n] = 0xFF;
+            break;
+        case 6: // most significant bit of source byte replicated in all bit positions
+            {
+                ssp_s8 src = ( C.u8[n] & 0x10 ) ? ( B.s8[C.u8[n] & 0xF] ) : ( A.s8[C.u8[n] & 0xF] );
+                R.s8[n] = src >> 7;
+            }
+            break;
+        case 7: // invert most significant bit of source byte and replicate in all bit positions
+            {
+                ssp_s8 src = ( C.u8[n] & 0x10 ) ? ( B.s8[C.u8[n] & 0xF] ) : ( A.s8[C.u8[n] & 0xF] );
+                R.s8[n] = src >> 7;
+                R.u8[n] = ~R.u8[n];
+            }
+            break;
+        }
+    }
+    return R.i;
+}
 ///** \SSE5{Reference,_mm_perm_ps,		 permps } */
 //SSP_FORCEINLINE __m128 ssp_perm_ps_REF(__m128 a, __m128 b, __m128i c)
 //{
