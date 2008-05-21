@@ -1058,7 +1058,7 @@ SSP_FORCEINLINE __m128 ssp_round_ss_SSE5(__m128 dst, __m128 a, int iRoundMode)
    }
 }
 
-/** @} 
- *  @} */
+//@}
+//@}
 
 #endif // __SSEPLUS_NATIVE_SSE5_H__
