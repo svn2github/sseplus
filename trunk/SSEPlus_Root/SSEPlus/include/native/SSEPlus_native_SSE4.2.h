@@ -127,22 +127,28 @@ SSP_FORCEINLINE int ssp_cmpistrz_SSE4_2 ( __m128i a, __m128i b, const int mode )
         CASE_256( _mm_cmpistrz, a, b );
     }
 }
+
+/** \SSE4_2{Native,_mm_crc32_u16} */ 
 SSP_FORCEINLINE unsigned int ssp_crc32_u16_SSE4_2 ( unsigned int crc, unsigned short   v )
 {
     return _mm_crc32_u16( crc, v );
 }
+
+/** \SSE4_2{Native,_mm_crc32_u32} */ 
 SSP_FORCEINLINE unsigned int ssp_crc32_u32_SSE4_2 ( unsigned int crc, unsigned int     v )
 {
     return _mm_crc32_u32( crc, v );
 }
 
 #ifdef SYS64
+/** \SSE4_2{Native,_mm_crc32_u64} */ 
 SSP_FORCEINLINE ssp_u64 ssp_crc32_u64_SSE4_2 ( unsigned int crc, ssp_u64 v )
 {
     return _mm_crc32_u64( crc, v );
 }
 #endif
 
+/** \SSE4_2{Native,_mm_crc32_u8} */ 
 SSP_FORCEINLINE unsigned int ssp_crc32_u8_SSE4_2 ( unsigned int crc, unsigned char    v )
 {
     return _mm_crc32_u8( crc, v );

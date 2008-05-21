@@ -1858,14 +1858,20 @@ SSP_FORCEINLINE __m128i ssp_mul_epi32_REF( __m128i a, __m128i b )
 /** \SSE4_1{Reference,_mm_mullo_epi32} */
 SSP_FORCEINLINE __m128i ssp_mullo_epi32_REF( __m128i a, __m128i b )                    
 {
+    ssp_m128 t[2];
     ssp_m128 A,B;
     A.i = a;
     B.i = b;
 
-    A.s32[0] = A.s32[0] + B.s32[0];
-    A.s32[1] = A.s32[1] + B.s32[1];
-    A.s32[2] = A.s32[2] + B.s32[2];
-    A.s32[3] = A.s32[3] + B.s32[3];
+    t[0].s64[0] = A.s32[0] * B.s32[0];
+    t[0].s64[1] = A.s32[1] * B.s32[1];
+    t[1].s64[0] = A.s32[2] * B.s32[2];
+    t[1].s64[1] = A.s32[3] * B.s32[3];    
+
+    A.s32[0] = t[0].s32[0];
+    A.s32[1] = t[0].s32[2];
+    A.s32[2] = t[1].s32[0];
+    A.s32[3] = t[1].s32[2];
     return A.i;
 }
 
@@ -2081,7 +2087,7 @@ SSP_FORCEINLINE __m128 ssp_floor_ss_REF( __m128 a, __m128 b )
     return A.f;
 }
 
-/** \SSE45{Reference,_mm_round_pd} */
+/** \SSE45{Reference,_mm_round_pd, roundpd} */
 SSP_FORCEINLINE __m128d ssp_round_pd_REF( __m128d val, int iRoundMode )                     
 {
     ssp_s64 *valPtr;
@@ -2283,19 +2289,19 @@ SSP_FORCEINLINE __m128d ssp_round_sd_REF( __m128d dst, __m128d val, int iRoundMo
     case SSP_FROUND_TO_POS_INF:
         valPtr = (ssp_s64*)(&Val.f64[0]);
         if( ssp_number_isValidNumber_F64_REF( valPtr ) )
-            Val.f64[0] = ceil( Val.f64[0] );
+            Dst.f64[0] = ceil( Val.f64[0] );
         break;
     case SSP_FROUND_TO_NEG_INF:
         valPtr = (ssp_s64*)(&Val.f64[0]);
         if( ssp_number_isValidNumber_F64_REF( valPtr ) )
-            Val.f64[0] = floor( Val.f64[0] );
+            Dst.f64[0] = floor( Val.f64[0] );
         break;
     default: // SSP_FROUND_TO_NEAREST_INT
         valPtr = (ssp_s64*)(&Val.f64[0]);
         if( ssp_number_isValidNumber_F64_REF( valPtr ) )
-            Val.f64[0] = (ssp_f64)( (Val.f64[0]>0) ? (ssp_s64)(Val.f64[0]+0.5) : (ssp_s64)(Val.f64[0]-0.5) );
+            Dst.f64[0] = (ssp_f64)( (Val.f64[0]>0) ? (ssp_s64)(Val.f64[0]+0.5) : (ssp_s64)(Val.f64[0]-0.5) );
         else
-            Val.f64[0] = ssp_number_changeSNanToQNaN_F64_REF( valPtr );
+            Dst.f64[0] = ssp_number_changeSNanToQNaN_F64_REF( valPtr );
     }
     return Dst.d;
 }

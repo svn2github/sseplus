@@ -677,12 +677,14 @@ SSP_FORCEINLINE __m128d ssp_frcz_pd_SSE5(__m128d a)
 {
     return _mm_frcz_pd (a);
 }
-** \SSE5{Native,_mm_frcz_ss, frczss } */
+
+/** \SSE5{Native,_mm_frcz_ss, frczss } */
 SSP_FORCEINLINE __m128 ssp_frcz_ss_SSE5(__m128 a, __m128 b)
 {
     return _mm_frcz_ss (a, b);
 }
-** \SSE5{Native,_mm_frcz_sd, frczsd } */
+
+/** \SSE5{Native,_mm_frcz_sd, frczsd } */
 SSP_FORCEINLINE __m128d ssp_frcz_sd_SSE5(__m128d a, __m128d b)
 {
     return _mm_frcz_sd (a, b);

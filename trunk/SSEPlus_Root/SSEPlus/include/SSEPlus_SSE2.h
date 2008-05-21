@@ -319,8 +319,7 @@ __m128i   ssp_min_epu16_SSE2        ( __m128i val1, __m128i val2 );
 __m128i   ssp_min_epu32_SSE2        ( __m128i val1, __m128i val2 );    
 __m128i   ssp_minpos_epu16_SSE2     ( __m128i shortValues );    
 __m128i   ssp_mpsadbw_epu8_SSE2     ( __m128i s1,   __m128i s2,   const int msk  );    
-__m128i   ssp_mul_epi32_SSE2        ( __m128i a,    __m128i b );    
-__m128i   ssp_mullo_epi32_SSE2      ( __m128i a,    __m128i b );    
+__m128i   ssp_mul_epi32_SSE2        ( __m128i a,    __m128i b );   
 __m128i   ssp_packus_epi32_SSE2     ( __m128i val1, __m128i val2 );    
 __m128d   ssp_round_pd_SSE2         ( __m128d val, int iRoundMode );    
 

@@ -608,6 +608,13 @@ void SSE4_1_Tests( CSVTable & csv )
         vF64( 128.0, -315.0   ),
         vF64( 127.5, -315.125 ),
         SSP_FROUND_TO_NEAREST_INT );
+
+    TEST_06( ssp_round_sd, ssp_f64, __m128d, __m128d, __m128d, int  )        
+        vF64( 127.5, -315.0   ),
+        vF64( 127.5,      0   ),
+        vF64(     0, -315.125 ),
+        SSP_FROUND_TO_NEAREST_INT );
+
     TEST_026( ssp_round_pd, ssp_f64, __m128d, __m128d, int  )   
         vF64( 128.0, -315.0   ),
         vF64( 127.5, -315.125 ),
@@ -690,10 +697,15 @@ void SSE4_1_Tests( CSVTable & csv )
         vU64( 0xF0F0F0F0F0F0F0F0ll, 0x1020304050607080ll ),
         vU64( 0x0F0F0F0F0F0F0F0Fll, 0x090A0B0C0D0E0FB0ll ) );   
 
+    TEST_06( ssp_mullo_epi32, ssp_s32, __m128i, __m128i, __m128i )
+        vS32(-1,4,-9,16),
+        vS32( 1,2, 3,4),
+        vS32(-1,2,-3,4) );
 
-
-    //TEST_0( ssp_mullo_epi32 ), vS32(1,2,3,4), vS32(-1,2,-3,4), vS32(-1,4,-9,16) );
-    //TEST_0( ssp_mul_epi32 ), vS32(1,2,3,4), vS32(-1,2,-3,4), vS32(0,4,0,16) );
+    TEST_06( ssp_mul_epi32, ssp_s32, __m128i, __m128i, __m128i  )
+        vS32(0,4,0,16),
+        vS32( 1,2, 3,4), 
+        vS32(-1,2,-3,4) );
 
     //expected_output.u64[0] = 0xFFFFFFFFFFFFFFFFll; expected_output.u64[1] = 0xFFF8FFFFFFFFFFFFll; 
     //input.u64[0] = 0x7FF0000000000001ll; input.u64[1] = 0xFFF8FFFFFFFFFFFFll;

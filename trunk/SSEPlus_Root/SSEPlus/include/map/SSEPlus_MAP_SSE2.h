@@ -479,9 +479,5 @@
 
 // Logical
 #define ssp_logical_bitwise_select  ssp_logical_bitwise_select_SSE2
-#define ssp_logical_cmpgt_epu32     ssp_logical_cmpgt_epu32_SSE2
-#define ssp_logical_cmplt_epu32     ssp_logical_cmplt_epu32_SSE2
-#define ssp_logical_cmplt_epu16     ssp_logical_cmplt_epu16_SSE2
-#define ssp_logical_cmpgt_epu16     ssp_logical_cmpgt_epu16_SSE2
 
 #endif __MAP_SSE2__

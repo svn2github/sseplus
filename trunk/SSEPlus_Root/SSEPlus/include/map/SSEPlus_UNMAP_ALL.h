@@ -479,9 +479,6 @@
 
 // Logical
 #undef ssp_logical_bitwise_select 
-#undef ssp_logical_cmpgt_epu32    
-#undef ssp_logical_cmplt_epu32    
-#undef ssp_logical_cmplt_epu16    
-#undef ssp_logical_cmpgt_epu16    
+   
 
 //no header guard

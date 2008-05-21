@@ -91,30 +91,6 @@ __m128i ssp_movmask_imm8_to_epi32_SSE2( int mask )
     return screen;
 }
 
-/**
-
- r_:= (a_<=b_) ? 0xff : 0x0
-*/
-SSP_FORCEINLINE
-__m128i ssp_logical_cmplte_epi8( __m128i a, __m128i b )
-{
-    a = _mm_cmpgt_epi8( a, b );
-    a = _mm_xor_si128 ( a, _mm_set1_epi8( (char)0xFF) );
-    return a;
-}
-
-/**
-
- r_:= (a_>=b_) ? 0xff : 0x0
-*/
-SSP_FORCEINLINE
-__m128i ssp_logical_cmpgte_epi8( __m128i a, __m128i b )
-{
-    a = _mm_cmplt_epi8( a, b );
-    a = _mm_xor_si128 ( a, _mm_set1_epi8( (char)0xFF) );
-    return a;
-}
-
 
 /**
   r_:= a_ << b; (logical left shift)

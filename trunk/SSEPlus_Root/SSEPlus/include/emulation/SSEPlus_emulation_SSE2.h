@@ -1602,8 +1602,8 @@ SSP_FORCEINLINE __m128i ssp_shuffle_epi8_SSE2 (__m128i a, __m128i mask)
 {  
     ssp_m128 A,B, MASK, maskZero;	
     A.i        = a;
-    maskZero.i = ssp_logical_cmpgte_epi8( mask, _mm_setzero_si128()        );    
-    MASK.i     = _mm_and_si128          ( mask, _mm_set1_epi8( (char)0x0F) );
+    maskZero.i = ssp_comge_epi8_SSE2( mask, _mm_setzero_si128()        );    
+    MASK.i     = _mm_and_si128      ( mask, _mm_set1_epi8( (char)0x0F) );
 
     B.s8[ 0] = A.s8[ (MASK.s8[ 0]) ];
 	B.s8[ 1] = A.s8[ (MASK.s8[ 1]) ];
