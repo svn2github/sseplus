@@ -3088,16 +3088,110 @@ SSP_FORCEINLINE __m128i ssp_perm_epi8_REF(__m128i a, __m128i b, __m128i c)
     }
     return R.i;
 }
-///** \SSE5{Reference,_mm_perm_ps,		 permps } */
-//SSP_FORCEINLINE __m128 ssp_perm_ps_REF(__m128 a, __m128 b, __m128i c)
-//{
-//    return _mm_perm_ps (a, b, c);
-//}
-///** \SSE5{Reference,_mm_perm_pd,		 permpd } */
-//SSP_FORCEINLINE __m128d ssp_perm_pd_REF(__m128d a, __m128d b, __m128i c)
-//{
-//    return _mm_perm_pd (a, b, c);
-//}
+/** \SSE5{Reference,_mm_perm_ps,		 permps } */
+SSP_FORCEINLINE __m128 ssp_perm_ps_REF(__m128 a, __m128 b, __m128i c)
+{
+    int n;
+    ssp_m128 A,B,C,R;
+    A.f = a;
+    B.f = b;
+    C.i = c;
+
+    for( n = 0; n < 4; n++ )
+    {
+        unsigned char cb = C.u8[n*4];
+        int op = (cb >> 5) & 0x7;
+        switch( op )
+        {
+        case 0: // single-precision source operand
+            R.f32[n] = ( cb & 0x04 ) ? ( B.f32[cb & 0x03] ) : ( A.f32[cb & 0x03] );
+            break;
+        case 1: // absolute value of single-precision source operand
+            {
+                ssp_f32 src = ( cb & 0x04 ) ? ( B.f32[cb & 0x03] ) : ( A.f32[cb & 0x03] );
+                R.f32[n] = ( src < 0.0f ) ? (-src) : src;
+            }
+            break;
+        case 2: // negative value of single-precision source operand
+            {
+                ssp_f32 src = ( cb & 0x04 ) ? ( B.f32[cb & 0x03] ) : ( A.f32[cb & 0x03] );
+                R.f32[n] = -src;
+            }
+            break;
+        case 3: // negative of absolute value of single-precision source operand
+            {
+                ssp_f32 src = ( cb & 0x04 ) ? ( B.f32[cb & 0x03] ) : ( A.f32[cb & 0x03] );
+                R.f32[n] = ( src < 0.0f ) ? src : (-src);
+            }
+            break;
+        case 4: // +0.0
+            R.f32[n] = 0.0f;
+            break;
+        case 5: // -1.0
+            R.f32[n] = -1.0f;
+            break;
+        case 6: // +1.0
+            R.f32[n] = 1.0f;
+            break;
+        case 7: // +0.0
+            R.u32[n] = 0x40490FDB; //(for mxcsr.rc 00 or 10 use 0x40490FDB, for 01 or 11 use 0x40490FDA)
+            break;
+        }
+    }
+    return R.f;
+}
+/** \SSE5{Reference,_mm_perm_pd,		 permpd } */
+SSP_FORCEINLINE __m128d ssp_perm_pd_REF(__m128d a, __m128d b, __m128i c)
+{
+    int n;
+    ssp_m128 A,B,C,R;
+    A.d = a;
+    B.d = b;
+    C.i = c;
+
+    for( n = 0; n < 2; n++ )
+    {
+        unsigned char cb = C.u8[n*8];
+        int op = (cb >> 5) & 0x7;
+        switch( op )
+        {
+        case 0: // single-precision source operand
+            R.f64[n] = ( cb & 0x02 ) ? ( B.f64[cb & 0x01] ) : ( A.f64[cb & 0x01] );
+            break;
+        case 1: // absolute value of single-precision source operand
+            {
+                ssp_f64 src = ( cb & 0x02 ) ? ( B.f64[cb & 0x01] ) : ( A.f64[cb & 0x01] );
+                R.f64[n] = ( src < 0.0 ) ? (-src) : src;
+            }
+            break;
+        case 2: // negative value of single-precision source operand
+            {
+                ssp_f64 src = ( cb & 0x02 ) ? ( B.f64[cb & 0x01] ) : ( A.f64[cb & 0x01] );
+                R.f64[n] = -src;
+            }
+            break;
+        case 3: // negative of absolute value of single-precision source operand
+            {
+                ssp_f64 src = ( cb & 0x02 ) ? ( B.f64[cb & 0x01] ) : ( A.f64[cb & 0x01] );
+                R.f64[n] = ( src < 0.0 ) ? src : (-src);
+            }
+            break;
+        case 4: // +0.0
+            R.f64[n] = 0.0;
+            break;
+        case 5: // -1.0
+            R.f64[n] = -1.0;
+            break;
+        case 6: // +1.0
+            R.f64[n] = 1.0;
+            break;
+        case 7: // +0.0
+            R.u64[n] = 0x400921FB54442D18; //(for mxcsr.rc 00, 01 or 11 use 0x400921FB54442D18, for 10 use 0x400921FB54442D19)
+            break;
+        }
+    }
+    return R.d;
+}
 
 //--------------------------------------
 // Packed rotates
