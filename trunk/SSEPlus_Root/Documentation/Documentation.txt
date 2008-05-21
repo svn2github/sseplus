@@ -12,7 +12,7 @@
 	  <td>Downloads, forums, SVN access, and more</td>
 	</tr>
 	<tr>
-	  <td>\htmlonly <a href=../html/fntable.html><b>Function Table</b></a> \endhtmlonly</td>
+	  <td>\htmlonly <a href=fntable.html><b>Function Table</b></a> \endhtmlonly</td>
 	  <td>Alphabetical list of functions</td>
 	</tr>
 	<tr>
