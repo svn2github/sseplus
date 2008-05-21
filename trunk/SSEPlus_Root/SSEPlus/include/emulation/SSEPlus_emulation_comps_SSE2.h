@@ -34,14 +34,17 @@ SSP_FORCEINLINE __m128i ssp_comeq_epi32_SSE2(__m128i a, __m128i b)
 /** \SSE5{SSE2,_mm_comeq_epi64, pcomq } */  
 SSP_FORCEINLINE __m128i ssp_comeq_epi64_SSE2(__m128i a, __m128i b)
 {
-    ssp_m128 A, B;
-    A.i = a;
-    B.i = b;
-    A.i = _mm_cmpeq_epi32( A.i, B.i );  // A0=B0,  A1=B1, A2=B2,  A3=B3
-    B.f = _mm_movehdup_ps( A.f );       // A1=B1,  A1=B1, A3=B3,  A3=B3
-    A.f = _mm_moveldup_ps( A.f );       // A0=B0,  A0=B0, A2=B2,  A2=B2
-    A.i = _mm_and_si128  ( A.i, B.i );  // A0=B0 & A1=B1, A2=B2 & A3=B3   
-    return A.i;
+    a = ssp_comeq_epi64_REF( a, b );
+    return a;
+
+    //ssp_m128 A, B;
+    //A.i = a;
+    //B.i = b;
+    //A.i = _mm_cmpeq_epi32( A.i, B.i );  // A0=B0,  A1=B1, A2=B2,  A3=B3
+    //B.f = _mm_movehdup_ps( A.f );       // A1=B1,  A1=B1, A3=B3,  A3=B3
+    //A.f = _mm_moveldup_ps( A.f );       // A0=B0,  A0=B0, A2=B2,  A2=B2
+    //A.i = _mm_and_si128  ( A.i, B.i );  // A0=B0 & A1=B1, A2=B2 & A3=B3   
+    //return A.i;
 }
 
 /** \SSE5{SSE2,_mm_comeq_epi8, pcomb } */  

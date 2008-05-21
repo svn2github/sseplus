@@ -1189,7 +1189,7 @@ void SSE5_Tests( CSVTable & csv )
             vS32( -12345, 11, 0, 124678),
             vS32( -12345, 22, 0,     0));
 
-	TEST_02( ssp_comeq_epi64, ssp_u64, __m128i, __m128i, __m128i )
+	TEST_023( ssp_comeq_epi64, ssp_u64, __m128i, __m128i, __m128i )
             vU64( 0xFFFFFFFFFFFFFFFF, 0),
             vS64( -1234578901ll, 11),
             vS64( -1234578901ll, 22));

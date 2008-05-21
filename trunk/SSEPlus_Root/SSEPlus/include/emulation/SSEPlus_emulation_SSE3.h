@@ -8,6 +8,7 @@
 #include "../SSEPlus_base.h"
 #include "../native/SSEPlus_native_SSE3.h"
 #include "../arithmetic/SSEPlus_arithmetic_SSE3.h"
+#include "SSEPlus_emulation_comps_SSE3.h"
 
 /** @addtogroup emulated_SSE3   
  *  @{ 
