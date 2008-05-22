@@ -102,6 +102,7 @@ SSP_FORCEINLINE __m128i ssp_maccd_epi16_SSE2( __m128i a, __m128i b, __m128i c )
 	ab_hi = _mm_and_si128(ab_hi, mask);
 	ab_hi = _mm_slli_epi32(ab_hi, 16);
 	a = _mm_add_epi32( ab_lo, ab_hi );
+
 	return _mm_add_epi32 (a, c);
 
 	////another method ported from Framewave CBL
@@ -203,21 +204,21 @@ SSP_FORCEINLINE __m128i ssp_maccs_epi16_SSE2( __m128i a, __m128i b, __m128i c )
 /** \SSE5{SSE2,_mm_maccs_epi32, pmacssdd } */ 
 SSP_FORCEINLINE __m128i ssp_maccs_epi32_SSE2( __m128i a, __m128i b, __m128i c )
 {
-	//Version 1, slightly modified from Framewave CBL
+	//slightly modified from Framewave CBL
 	ssp_m128 s1lo,s1hi,s2lo,s2hi,s3lo,s3hi, sl, sh;
 	static const __m128d max_val = {(double)0x7FFFFFFFl, (double)0x7FFFFFFFl};
 	static const __m128d min_val = {(-(double)0x80000000l), (-(double)0x80000000l)};
 
-	s1lo.d =  _mm_cvtepi32_pd(a);
+	s1lo.d = _mm_cvtepi32_pd(a);
 	s1hi.d = _mm_cvtepi32_pd(_mm_srli_si128(a, 8)); 
 
-	s2lo.d =  _mm_cvtepi32_pd(b);
+	s2lo.d = _mm_cvtepi32_pd(b);
 	s2hi.d = _mm_cvtepi32_pd(_mm_srli_si128(b,8)); 
 
 	s1lo.d = _mm_mul_pd(s1lo.d,s2lo.d);
 	s1hi.d = _mm_mul_pd(s1hi.d,s2hi.d);
 
-	s3lo.d =  _mm_cvtepi32_pd(c);
+	s3lo.d = _mm_cvtepi32_pd(c);
 	s3hi.d = _mm_cvtepi32_pd(_mm_srli_si128(c,8)); 
 	
 	s1lo.d = _mm_add_pd(s1lo.d,s3lo.d);
@@ -236,6 +237,68 @@ SSP_FORCEINLINE __m128i ssp_maccs_epi32_SSE2( __m128i a, __m128i b, __m128i c )
 	sl.i   = _mm_or_si128(sl.i, sh.i);
 
     return sl.i;
+}
+
+/** \SSE5{SSE2,_mm_maccsd_epi16, pmacsswd } */ 
+SSP_FORCEINLINE __m128i ssp_maccsd_epi16_SSE2( __m128i a, __m128i b, __m128i c )
+{
+	__m128i ab_lo, ab_hi, apos, cpos, cneg;
+	__m128i mask = _mm_set1_epi32(0xFFFF);
+	__m128i zero = _mm_setzero_si128();
+	__m128i minV = _mm_set1_epi32(0x80000000);
+
+    ab_lo = _mm_mullo_epi16(a, b);
+	ab_hi = _mm_mulhi_epi16(a, b);
+
+	ab_lo = _mm_and_si128(ab_lo, mask);
+	ab_hi = _mm_and_si128(ab_hi, mask);
+	ab_hi = _mm_slli_epi32(ab_hi, 16);
+	a     = _mm_or_si128(ab_lo, ab_hi);
+
+	apos  = _mm_cmpgt_epi32(a, zero);
+	cpos  = _mm_cmpgt_epi32(c, zero);
+	cneg  = _mm_cmplt_epi32(c, zero);
+	apos  = _mm_and_si128(apos, cpos);    // a & c both positive
+	cneg  = _mm_andnot_si128(apos, cneg); // a & c both negative
+
+	a     = _mm_add_epi32(a, c);
+	ab_hi = _mm_cmplt_epi32(a, c);
+	ab_lo = _mm_cmpgt_epi32(a, c);
+	ab_hi = _mm_and_si128(ab_hi, apos);   //need to saturate to pos max
+	ab_lo = _mm_and_si128(ab_lo, cneg);   //need to saturate to neg min
+
+	a     = _mm_andnot_si128(ab_hi, a);
+	ab_hi = _mm_srli_epi32(ab_hi, 1);     // to 0x7FFFFFFF
+	a     = _mm_andnot_si128(ab_lo, a);
+	ab_lo = _mm_and_si128(ab_lo, minV);
+	a     = _mm_add_epi32(a, ab_hi);
+	return _mm_add_epi32(a, ab_lo);
+
+	////modifed from Framewave CBL version, slower
+	//__m128d a01, c01, a23, c23;	
+	//static const __m128d max_val = {(double)0x7FFFFFFFl, (double)0x7FFFFFFFl};
+	//static const __m128d min_val = {(-(double)0x80000000l), (-(double)0x80000000l)};
+	//a01   = _mm_cvtepi32_pd(a);
+	//c01   = _mm_cvtepi32_pd(c);
+	//ab_lo = _mm_srli_si128(a, 8);
+	//ab_hi = _mm_srli_si128(c, 8);
+	//a23   = _mm_cvtepi32_pd(ab_lo);
+	//c23   = _mm_cvtepi32_pd(ab_hi);
+
+	//a01   = _mm_add_pd(a01, c01);
+	//a23   = _mm_add_pd(a23, c23);
+
+	//c01   = _mm_min_pd(a01, max_val);
+	//c23   = _mm_max_pd(c01, min_val);
+
+	//a01   = _mm_min_pd(a23, max_val);
+	//a23   = _mm_max_pd(a01, min_val);
+
+	//ab_lo = _mm_cvtpd_epi32(c23);
+	//ab_hi = _mm_cvtpd_epi32(a23);
+	//ab_hi = _mm_slli_si128(ab_hi, 8);
+
+	//return _mm_or_si128 (ab_lo, ab_hi);
 }
 
 //
