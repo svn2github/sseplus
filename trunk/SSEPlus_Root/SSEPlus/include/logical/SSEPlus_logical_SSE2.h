@@ -12,6 +12,27 @@
  *  @name Logical Operations
  */
 
+SSP_FORCEINLINE __m128i ssp_logical_bitwise_select_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 
+{
+    a = _mm_and_si128   ( a,    mask );                                 // clear a where mask = 0
+    b = _mm_andnot_si128( mask, b    );                                 // clear b where mask = 1
+    a = _mm_or_si128    ( a,    b    );                                 // a = a OR b                         
+    return a; 
+}
+
+
+/** Arithmetic 8 bit right shift */
+SSP_FORCEINLINE __m128i ssp_logical_srai_epi8_SSE2( __m128i a, int count )
+{
+    const static __m128i MASK = SSP_CONST_SET_8I( 0xFF,0,0xFF,0,0xFF,0,0xFF,0,0xFF,0,0xFF,0,0xFF,0,0xFF,0 );
+    __m128i b;         
+    b = _mm_srai_epi16 ( a, count   ); // Shift even indexes into position
+    a = _mm_slli_epi16 ( a, 8       ); // Prepare odd indexes
+    a = _mm_srai_epi16 ( a, count+8 ); // Shift even indexes into position
+    a = ssp_logical_bitwise_select_SSE2( b, a, MASK );
+    return a;
+}
+
 
 /** Invert 'mask' if 'a' and 'b' have different signs. */
 SSP_FORCEINLINE __m128i ssp_logical_signinvert_16_SSE2( __m128i mask, __m128i a, __m128i b)
@@ -32,6 +53,17 @@ SSP_FORCEINLINE __m128i ssp_logical_signinvert_32_SSE2( __m128i mask, __m128i a,
     mask     = _mm_xor_si128  ( mask, signMask );    // Invert output where signs differed
     return mask;  
 }
+
+/** Invert 'mask' if 'a' and 'b' have different signs. */
+SSP_FORCEINLINE __m128i ssp_logical_signinvert_8_SSE2( __m128i mask, __m128i a, __m128i b)
+{
+    __m128i signMask;   
+    signMask = _mm_xor_si128              ( a, b );             // Signbit is 1 where signs differ 
+    signMask = ssp_logical_srai_epi8_SSE2 ( signMask, 7 );      // fill all fields with sign bit     
+    mask     = _mm_xor_si128              ( mask, signMask );   // Invert output where signs differed
+    return mask;  
+}
+
 
 
 SSP_FORCEINLINE __m128i ssp_logical_invert_si128_SSE2( __m128i a )
@@ -60,13 +92,7 @@ SSP_FORCEINLINE __m128 ssp_logical_invert_ss_SSE2( __m128 a )
 }
 
 
-SSP_FORCEINLINE __m128i ssp_logical_bitwise_select_SSE2( __m128i a, __m128i b, __m128i mask )   // Bitwise (mask ? a : b) 
-{
-    a = _mm_and_si128   ( a,    mask );                                 // clear a where mask = 0
-    b = _mm_andnot_si128( mask, b    );                                 // clear b where mask = 1
-    a = _mm_or_si128    ( a,    b    );                                 // a = a OR b                         
-    return a; 
-}
+
 
 
 //SSP_FORCEINLINE

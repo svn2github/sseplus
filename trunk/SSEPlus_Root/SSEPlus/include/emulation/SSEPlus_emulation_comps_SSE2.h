@@ -42,8 +42,7 @@ SSP_FORCEINLINE __m128i ssp_comeq_epi64_SSE2(__m128i a, __m128i b)
     A.i = _mm_and_si128  ( A.i, B.i );  //  A0=B0      x,  A2=B2,     x
                                         //& A1=B1,        &A3=B3  
 
-    A.i = _mm_shuffle_epi32( A.i, _MM_SHUFFLE(3,3,1,1) );    
-    
+    A.i = _mm_shuffle_epi32( A.i, _MM_SHUFFLE(3,3,1,1) );        
     return A.i;
 }
 
@@ -173,10 +172,11 @@ SSP_FORCEINLINE __m128i ssp_comlt_epu64_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{SSE2,_mm_comlt_epu8, pcomub } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comlt_epu8, pcomub } */  
 SSP_FORCEINLINE __m128i ssp_comlt_epu8_SSE2(__m128i a, __m128i b)
 {
-    a = ssp_comlt_epu8_REF( a, b );
+    __m128i mask = _mm_cmplt_epi8( a, b );
+    a = ssp_logical_signinvert_8_SSE2( mask, a, b );
     return a;
 }
 
@@ -249,17 +249,19 @@ SSP_FORCEINLINE __m128i ssp_comle_epi8_SSE2(__m128i a, __m128i b)
     return a;
 }
 
-/** \SSE5{SSE2,_mm_comle_epu16, pcomuw } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epu16, pcomuw } */ 
 SSP_FORCEINLINE __m128i ssp_comle_epu16_SSE2(__m128i a, __m128i b)
 {
-    a = ssp_comle_epu16_REF( a, b );
+    __m128i mask = ssp_comle_epi16_SSE2( a, b );
+    a = ssp_logical_signinvert_16_SSE2( mask, a, b );   
     return a;
 }
 
-/** \SSE5{SSE2,_mm_comle_epu32, pcomud } */  //TODO:SSE2
+/** \SSE5{SSE2,_mm_comle_epu32, pcomud } */ 
 SSP_FORCEINLINE __m128i ssp_comle_epu32_SSE2(__m128i a, __m128i b)
 {
-    a = ssp_comle_epu32_REF( a, b );
+    __m128i mask = ssp_comle_epi32_SSE2( a, b );
+    a = ssp_logical_signinvert_32_SSE2( mask, a, b );   
     return a;
 }
 
