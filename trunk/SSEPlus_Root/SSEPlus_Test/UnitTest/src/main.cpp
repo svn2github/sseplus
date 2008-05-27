@@ -991,6 +991,13 @@ void SSE5_Tests( CSVTable & csv )
         vF64(-5.5, 3.3   ),
         vF64(-5.5, 3.3   ));
 
+    // conditional move
+    TEST_028( ssp_cmov_si128, ssp_u32, __m128i, __m128i, __m128i, __m128i )
+        vU32( 0xFF15DD13, 0xBBAA1009, 0x77665544, 0x04030201 ),
+        vU32( 0xFFEEDDCC, 0xBBAA9988, 0x77665544, 0x33221100 ),
+        vU32( 0x16151413, 0x12111009, 0x08070605, 0x04030201 ),
+        vU32( 0xFF00FF00, 0xFFFF0000, 0xFFFFFFFF, 0x00000000 )); 
+
     // permute
     TEST_08( ssp_perm_epi8, ssp_u8, __m128i, __m128i, __m128i, __m128i )
 // in val      00    11    55    66    AA    BB    EE    FF    F0    C3    B4    87    78    69    3C    2D
@@ -1053,22 +1060,22 @@ void SSE5_Tests( CSVTable & csv )
         vU64( 0xC2, 0xE3 ));
 
     // rotates
-    TEST_028( ssp_rot_epi8, ssp_u8, __m128i, __m128i, __m128i )
+    TEST_08( ssp_rot_epi8, ssp_u8, __m128i, __m128i, __m128i )
         vU8( 0x60, 0xC0, 0x81, 0x03, 0x06, 0x60, 0xC0, 0x81, 0x03, 0x06, 0x60, 0xC0, 0x81, 0x03, 0x06, 0x60 ),
         vU8( 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81 ),
         vU8( 0xFE, 0xFF, 0x00, 0x01, 0x02, 0xFE, 0xFF, 0x00, 0x01, 0x02, 0xFE, 0xFF, 0x00, 0x01, 0x02, 0xFE )); 
 
-    TEST_028( ssp_rot_epi16, ssp_u16, __m128i, __m128i, __m128i )
+    TEST_08( ssp_rot_epi16, ssp_u16, __m128i, __m128i, __m128i )
         vU16( 0x6000, 0xC000, 0x8001, 0x0003, 0x0006, 0x6000, 0xC000, 0x8001 ),
         vU16( 0x8001, 0x8001, 0x8001, 0x8001, 0x8001, 0x8001, 0x8001, 0x8001 ),
         vU16( 0xFFFE, 0xFFFF, 0x0000, 0x0001, 0x0002, 0xFFFE, 0xFFFF, 0x0000 )); 
 
-    TEST_028( ssp_rot_epi32, ssp_u32, __m128i, __m128i, __m128i )
+    TEST_08( ssp_rot_epi32, ssp_u32, __m128i, __m128i, __m128i )
         vU32( 0x60000000, 0xC0000000, 0x80000001, 0x00000003 ),
         vU32( 0x80000001, 0x80000001, 0x80000001, 0x80000001 ),
         vS32(         -2,         -1,          0,          1 )); 
 
-    TEST_028( ssp_rot_epi64, ssp_u64, __m128i, __m128i, __m128i )
+    TEST_08( ssp_rot_epi64, ssp_u64, __m128i, __m128i, __m128i )
         vU64( 0xC000000000000000, 0x0000000000000003 ),
         vU64( 0x8000000000000001, 0x8000000000000001 ),
         vS64(                 -1,                  1)); 
@@ -1114,12 +1121,12 @@ void SSE5_Tests( CSVTable & csv )
         -1); 
 
     // Logical and arithmetic shifts
-    TEST_028( ssp_shl_epi8, ssp_s8, __m128i, __m128i, __m128i )
+    TEST_08( ssp_shl_epi8, ssp_s8, __m128i, __m128i, __m128i )
         vS8( -20,   78, -50,  0, 0, 50,  50, 20, -20,   78, -50,  0, 0, 50,  50, 20 ),
         vS8( -10, -100, -25,  0, 0, 25, 100, 10, -10, -100, -25,  0, 0, 25, 100, 10 ), 
         vS8(   1,   -1,   1, -1, 1,  1,  -1,  1,   1,   -1,   1, -1, 1,  1,  -1,  1 ));
 
-    TEST_028( ssp_sha_epi8, ssp_s8, __m128i, __m128i, __m128i )
+    TEST_08( ssp_sha_epi8, ssp_s8, __m128i, __m128i, __m128i )
         vS8( -20,  -50, -50,  0, 0, 50,  50, 20, -20,  -50, -50,  0, 0, 50,  50, 20 ),
         vS8( -10, -100, -25,  0, 0, 25, 100, 10, -10, -100, -25,  0, 0, 25, 100, 10 ), 
         vS8(   1,   -1,   1, -1, 1,  1,  -1,  1,   1,   -1,   1, -1, 1,  1,  -1,  1 ));
@@ -1149,7 +1156,7 @@ void SSE5_Tests( CSVTable & csv )
         vS64( -100,               -100 ),
         vS64(    1,                 -1 ));
 
-    TEST_028( ssp_sha_epi64, ssp_s64, __m128i, __m128i, __m128i )
+    TEST_08( ssp_sha_epi64, ssp_s64, __m128i, __m128i, __m128i )
         vS64( -200,  -50 ),
         vS64( -100, -100 ),
         vS64(    1,   -1 ));

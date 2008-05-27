@@ -3194,6 +3194,30 @@ SSP_FORCEINLINE __m128d ssp_perm_pd_REF(__m128d a, __m128d b, __m128i c)
 }
 
 //--------------------------------------
+// conditional move
+//--------------------------------------
+
+/** \SSE5{Reference,_mm_cmov_si128, pcmov } */
+SSP_FORCEINLINE __m128i ssp_cmov_si128_REF(__m128i a, __m128i b, __m128i c)
+{
+    int n;
+    ssp_m128 A,B,C;
+    A.i = a;
+    B.i = b;
+    C.i = c;
+
+    for( n = 0; n < 4; n++ )
+    {
+        A.u32[n] &= C.u32[n];
+        C.u32[n] = ~C.u32[n];
+        B.u32[n] &= C.u32[n];
+        A.u32[n] |= B.u32[n];
+    }
+
+    return A.i;
+}
+
+//--------------------------------------
 // Packed rotates
 //--------------------------------------
 
